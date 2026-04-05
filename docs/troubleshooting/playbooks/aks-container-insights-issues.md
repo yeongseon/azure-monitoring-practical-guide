@@ -68,13 +68,13 @@ az k8s-extension show \
 
 ```bash
 # Check ama-logs pods (Azure Monitor Agent)
-kubectl get pods -n kube-system -l component=ama-logs
+kubectl get pods --namespace kube-system --selector component=ama-logs
 
 # Check for any pod issues
-kubectl describe pod -n kube-system -l component=ama-logs
+kubectl describe pod --namespace kube-system --selector component=ama-logs
 
 # Check ama-metrics pods
-kubectl get pods -n kube-system -l app.kubernetes.io/name=ama-metrics
+kubectl get pods --namespace kube-system --selector app.kubernetes.io/name=ama-metrics
 ```
 
 Expected output:
@@ -88,13 +88,13 @@ ama-logs-rs-xxxxx             1/1     Running   0          2d
 
 ```bash
 # Check AMA logs for errors
-kubectl logs -n kube-system -l component=ama-logs --tail=100
+kubectl logs --namespace kube-system --selector component=ama-logs --tail=100
 
 # Look for specific errors
-kubectl logs -n kube-system -l component=ama-logs | grep -i error
+kubectl logs --namespace kube-system --selector component=ama-logs | grep -i error
 
 # Check recent events
-kubectl get events -n kube-system --sort-by='.lastTimestamp' | grep ama
+kubectl get events --namespace kube-system --sort-by='.lastTimestamp' | grep ama
 ```
 
 ### Step 4: Verify Data Collection Rule
@@ -207,10 +207,10 @@ az k8s-extension create \
 kubectl top nodes
 
 # Check if agent pods are being evicted
-kubectl get events -n kube-system --field-selector reason=Evicted
+kubectl get events --namespace kube-system --field-selector reason=Evicted
 
 # Increase agent resource limits if needed
-kubectl edit daemonset ama-logs -n kube-system
+kubectl edit daemonset ama-logs --namespace kube-system
 ```
 
 ### Fix 4: Update Data Collection Settings
@@ -245,13 +245,13 @@ Required endpoints for Container Insights:
 
 ```bash
 # Test connectivity from inside cluster
-kubectl run test-connectivity --rm -i --tty --image=curlimages/curl -- sh
+kubectl run test-connectivity --rm --stdin --tty --image=curlimages/curl -- sh
 
 # Test DCE endpoint
-curl -v https://<dce-name>.<region>.ingest.monitor.azure.com
+curl --verbose https://<dce-name>.<region>.ingest.monitor.azure.com
 
 # Test workspace endpoint  
-curl -v https://<workspace-id>.ods.opinsights.azure.com
+curl --verbose https://<workspace-id>.ods.opinsights.azure.com
 ```
 
 Required outbound rules:
@@ -264,10 +264,10 @@ Required outbound rules:
 
 ```bash
 # Rolling restart of ama-logs
-kubectl rollout restart daemonset ama-logs -n kube-system
+kubectl rollout restart daemonset ama-logs --namespace kube-system
 
 # Check rollout status
-kubectl rollout status daemonset ama-logs -n kube-system
+kubectl rollout status daemonset ama-logs --namespace kube-system
 ```
 
 ## Verification
@@ -292,8 +292,8 @@ InsightsMetrics
 
 ```bash
 # Check agent health
-kubectl get pods -n kube-system -l component=ama-logs -o wide
-kubectl top pods -n kube-system -l component=ama-logs
+kubectl get pods --namespace kube-system --selector component=ama-logs --output wide
+kubectl top pods --namespace kube-system --selector component=ama-logs
 ```
 
 ## Prevention
