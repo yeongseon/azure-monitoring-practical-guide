@@ -8,6 +8,7 @@ flowchart LR
     Transform --> Destination[Log Analytics workspace]
     DCR --> Association[Association object]
 ```
+
 ## Prerequisites
 - Azure CLI authenticated with `az login`.
 - Azure Monitor Agent installed on the target machine or scale set.
@@ -25,6 +26,7 @@ VM_ID="/subscriptions/<subscription-id>/resourceGroups/rg-prod/providers/Microso
 WORKSPACE_RESOURCE_ID="/subscriptions/<subscription-id>/resourceGroups/rg-monitoring-prod/providers/Microsoft.OperationalInsights/workspaces/law-ops-central"
 DCR_FILE="./docs/examples/dcr-vm-perf.json"
 ```
+
 ## When to Use
 - You need to onboard Azure Monitor Agent data collection to new servers.
 - Performance counters, syslog, or event logs must change without redeploying the VM.
@@ -33,7 +35,9 @@ DCR_FILE="./docs/examples/dcr-vm-perf.json"
 - Data stopped arriving and you need to validate the full DCR chain.
 - You are splitting collection between production and non-production landing zones.
 - You need to verify that only approved streams reach the shared workspace.
+
 ## Procedure
+
 ### Step 1: Inspect current DCR inventory and associations
 List rules first so you know whether you are creating a new baseline or modifying an existing one.
 ```bash
@@ -61,6 +65,7 @@ Name                    RuleId
 ----------------------  -----------------------------------------------------------------------------------------------
 dcr-assoc-vm-prod-01    /subscriptions/<subscription-id>/resourceGroups/rg-monitoring-prod/providers/Microsoft.Insights/dataCollectionRules/dcr-vm-perf
 ```
+
 ### Step 2: Create or update the data collection rule from JSON
 Create the rule from a checked-in JSON file so that the configuration stays reviewable and repeatable.
 ```bash
@@ -95,6 +100,7 @@ Expected output:
   "provisioningState": "Succeeded"
 }
 ```
+
 ### Step 3: Review streams, destinations, and transformations
 Read back the rule after creation so you confirm the intended streams rather than trusting the local file alone.
 ```bash
@@ -121,6 +127,7 @@ Expected output:
 }
 ```
 If your rule uses transformations, validate that the relevant stream still maps to the intended table after the update.
+
 ### Step 4: Associate the DCR with the target resource
 Association is a separate object. A valid DCR without an association will not collect anything from the VM.
 ```bash
@@ -155,6 +162,7 @@ Expected output:
   "ruleId": "/subscriptions/<subscription-id>/resourceGroups/rg-monitoring-prod/providers/Microsoft.Insights/dataCollectionRules/dcr-vm-perf"
 }
 ```
+
 ### Step 5: Validate data arrival in the workspace
 After the association is in place, confirm that the destination workspace receives the expected stream.
 ```bash
@@ -172,6 +180,7 @@ Memory        Available MBytes               36
 LogicalDisk   % Free Space                   36
 ```
 If results appear, the rule, association, agent, and workspace path are all functioning. If not, inspect the agent extension, association scope, and DCR region compatibility.
+
 ## Verification
 List all DCR associations on the target resource:
 ```bash
@@ -217,6 +226,7 @@ Name                           Publisher                    Type                
 AzureMonitorLinuxAgent         Microsoft.Azure.Monitor     AzureMonitorLinuxAgent    Succeeded
 ```
 This confirms the agent-side prerequisite is present and healthy.
+
 ## Rollback / Troubleshooting
 Remove an incorrect association:
 ```bash
@@ -244,6 +254,7 @@ Common problems:
     - Re-read `properties.dataFlows` and check the destination table mapping in the JSON file.
 - Multiple DCRs appear to overlap
     - Audit all associations on the resource and confirm which rule owns each stream.
+
 ## Automation
 DCR operations should live in source control because JSON drift is difficult to review in the portal.
 ```bash
@@ -263,6 +274,7 @@ Useful automation patterns:
 - Review DCR ownership quarterly so abandoned rules do not continue ingesting low-value data.
 - Tag DCR files by owning team and approved destination workspace.
 - Review transformation logic whenever downstream schemas change.
+
 ## See Also
 - [Operations index](index.md)
 - [Workspace Management](workspace-management.md)
@@ -272,6 +284,7 @@ Useful automation patterns:
 - [Service guide: VM observability](../service-guides/vm/observability.md)
 - [Reference CLI cheatsheet](../reference/cli-cheatsheet.md)
 - [Troubleshooting KQL query packs](../troubleshooting/kql/index.md)
+
 ## Sources
 - [Microsoft Learn: Data collection rules in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/data-collection/data-collection-rule-overview)
 - [Microsoft Learn: Structure of a data collection rule in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/data-collection/data-collection-rule-structure)

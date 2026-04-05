@@ -8,6 +8,7 @@ flowchart LR
     ActionGroup --> Human[Ops notifications]
     ActionGroup --> Automation[Webhook or automation]
 ```
+
 ## Prerequisites
 - Azure CLI authenticated with `az login`.
 - A target resource that already emits metrics or logs.
@@ -23,13 +24,16 @@ WORKSPACE_ID="/subscriptions/<subscription-id>/resourceGroups/rg-monitoring-prod
 ACTION_GROUP_ID="/subscriptions/<subscription-id>/resourceGroups/rg-monitoring-prod/providers/microsoft.insights/actionGroups/ag-oncall-team"
 ALERT_RULE_NAME="alert-vm-high-cpu"
 ```
+
 ## When to Use
 - A new workload needs baseline monitoring.
 - Alert noise is increasing and thresholds need tuning.
 - Notifications must be rerouted to a different action group.
 - A rule must be disabled during planned maintenance.
 - A production incident requires confirming whether the rule really evaluates as expected.
+
 ## Procedure
+
 ### Step 1: Inventory existing alert rules and action groups
 List current metric alerts in the resource group before creating or changing anything.
 ```bash
@@ -60,6 +64,7 @@ Expected output:
   "shortName": "oncall"
 }
 ```
+
 ### Step 2: Create a metric alert with explicit evaluation settings
 Create the rule with an explicit window size, frequency, severity, and action group.
 ```bash
@@ -89,6 +94,7 @@ Expected output:
 }
 ```
 This baseline matches Microsoft Learn guidance: a clear signal, tight scope, and an explicit action path.
+
 ### Step 3: Add or update a scheduled query alert for log-based detection
 Use scheduled query alerts for conditions that cannot be expressed as a single Azure Monitor metric.
 ```bash
@@ -134,6 +140,7 @@ Count
 -----
 10
 ```
+
 ### Step 4: Tune or disable rules during maintenance and noise reduction
 Update rules instead of deleting them when you want to preserve history and configuration intent.
 ```bash
@@ -168,6 +175,7 @@ Expected output:
 }
 ```
 Temporary disablement is safer than permanent deletion because it keeps the alert definition available for immediate rollback.
+
 ### Step 5: Review rule state and recent firing history
 Validate the final state of both metric and scheduled query alerts.
 ```bash
@@ -202,6 +210,7 @@ Time                         Status     Operation
 2026-04-05T08:42:09.000000Z  Succeeded  Create or Update Metric Alert Rule
 2026-04-05T08:44:31.000000Z  Succeeded  Create or Update Scheduled Query Rule
 ```
+
 ## Verification
 List rules again and confirm state, severity, and naming conventions.
 ```bash
@@ -235,6 +244,7 @@ Expected output:
 }
 ```
 Verification succeeds when both rules are enabled as intended and their action group references remain intact.
+
 ## Rollback / Troubleshooting
 Disable a noisy metric alert immediately:
 ```bash
@@ -260,6 +270,7 @@ Common problems:
     - Validate the action group receivers and downstream email or webhook health.
 - Too many false positives
     - Increase the threshold, widen the evaluation window, or reduce frequency.
+
 ## Automation
 Alert rule hygiene should be scripted rather than handled only in the portal.
 ```bash
@@ -272,11 +283,13 @@ Useful automation patterns:
 - Run lint checks for naming, severity, and action group presence.
 - Use scheduled jobs to flag disabled rules older than a maintenance window.
 - Pair rule inventory with incident review to retire low-value alerts.
+
 ## See Also
 - [Operations index](index.md)
 - [Workbooks and Dashboards](workbooks-and-dashboards.md)
 - [Cost Control](cost-control.md)
 - [Reference CLI cheatsheet](../reference/cli-cheatsheet.md)
+
 ## Sources
 - [Microsoft Learn: Create and manage metric alerts](https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-create-metric-alert-rule)
 - [Microsoft Learn: Create and manage log search alerts](https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-create-log-alert-rule)

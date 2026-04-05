@@ -101,6 +101,7 @@ flowchart TD
     ```
 
 ## 5. Evidence to Collect
+
 ### 5.1 KQL Queries
 ```kusto
 // Alert operation activity by hour
@@ -181,6 +182,7 @@ Perf
 
 ### 5.2 CLI Investigation
 ```bash
+
 # Inspect the storming metric alert
 az monitor metrics alert show \
     --resource-group $RG \
@@ -207,6 +209,7 @@ Interpretation:
 - Keep this output beside the replayed metric pattern.
 
 ```bash
+
 # List alert processing rules that shape suppression or routing
 az monitor alert-processing-rule list \
     --resource-group $RG \
@@ -234,6 +237,7 @@ Interpretation:
 - Compare scope carefully; broad suppression can hide real incidents while narrow suppression may do nothing.
 
 ```bash
+
 # Inspect action-group receiver fan-out
 az monitor action-group show \
     --resource-group $RG \
@@ -273,6 +277,7 @@ Interpretation:
 - During mitigation, reducing fan-out can buy time while rule logic is fixed.
 
 ```bash
+
 # Inventory metric alerts to find overlap in one resource group
 az monitor metrics alert list \
     --resource-group $RG \
@@ -305,6 +310,7 @@ Interpretation:
 - Inventory evidence is essential before consolidating rules.
 
 ## 6. Validation and Disproof by Hypothesis
+
 ### Hypothesis 1: One flapping rule is repeatedly crossing the threshold
 **Proves if**: Manual replay shows repeated threshold crossings and the same rule dominates alert activity.
 

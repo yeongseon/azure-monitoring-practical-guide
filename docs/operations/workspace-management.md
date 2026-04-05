@@ -8,6 +8,7 @@ flowchart LR
     Workspace --> Network[Private or public ingestion settings]
     Workspace --> Recovery[Soft-delete and recovery workflow]
 ```
+
 ## Prerequisites
 - Azure CLI authenticated with `az login`.
 - A resource group for the monitoring platform.
@@ -23,13 +24,16 @@ LOCATION="eastus"
 SUBSCRIPTION_ID="<subscription-id>"
 WORKSPACE_ID="/subscriptions/<subscription-id>/resourceGroups/rg-monitoring-prod/providers/Microsoft.OperationalInsights/workspaces/law-ops-central"
 ```
+
 ## When to Use
 - You need to create a new production or non-production workspace.
 - You need to adjust retention, daily cap, or pricing settings after cost review.
 - You need to validate workspace features before onboarding more data sources.
 - You need to review access boundaries before delegating operational ownership.
 - You need to recover from accidental deletion or configuration drift.
+
 ## Procedure
+
 ### Step 1: Inspect the current workspace inventory
 Start by confirming whether a workspace already exists and which operational settings are currently applied.
 ```bash
@@ -45,6 +49,7 @@ Name             Location    Sku       Retention    PublicNetworkAccessForIngest
 law-ops-central  eastus      PerGB2018 30           Enabled
 ```
 If the list is empty, proceed with workspace creation. If a workspace already exists, record the SKU, retention days, and public ingestion setting before making changes.
+
 ### Step 2: Create or standardize the workspace baseline
 Create the workspace with an explicit region and then confirm the immutable identifiers that downstream configurations depend on.
 ```bash
@@ -88,6 +93,7 @@ Expected output:
 }
 ```
 This step establishes the baseline object that every other Azure Monitor operations page depends on.
+
 ### Step 3: Configure retention and daily cap guardrails
 Microsoft Learn recommends tuning retention and ingestion controls according to compliance and cost objectives instead of leaving defaults unchanged.
 ```bash
@@ -129,6 +135,7 @@ Expected output:
 }
 ```
 Use a lower daily cap only for environments where temporary ingestion stop is acceptable. For critical production environments, use alerts and ingestion analysis before lowering the cap aggressively. Microsoft Learn positions the daily cap as a safeguard against unexpected spikes, not as the main cost-control method.
+
 ### Step 4: Review access mode and operational permissions
 Workspace operations frequently fail because access is configured for the wrong audience. Validate feature flags first, then inspect RBAC assignments.
 ```bash
@@ -162,6 +169,7 @@ platform-readers            Log Analytics Reader        Group
 automation-monitoring-spn   Monitoring Contributor      ServicePrincipal
 ```
 This verifies that operational roles align with the least-privilege model documented in Microsoft Learn. If you need to delegate control, use explicit workspace scope assignments instead of broad subscription-wide rights.
+
 ### Step 5: Validate workspace health and ingestion readiness
 Before onboarding new resources, verify that the workspace responds to metadata queries and returns usage data.
 ```bash
@@ -199,6 +207,7 @@ Perf             0.08
 AzureActivity    0.03
 ```
 No results can be normal in a brand-new workspace, but query execution itself must succeed. A successful response proves workspace identity, control-plane health, and query permissions are aligned.
+
 ## Verification
 Confirm that the workspace exists with the expected baseline:
 ```bash
@@ -235,6 +244,7 @@ Expected output:
 }
 ```
 Verification is complete when both commands return the intended values and the query in Step 5 succeeds without authorization or resource-not-found errors.
+
 ## Rollback / Troubleshooting
 If retention or daily cap changes cause operational issues, revert them explicitly:
 ```bash
@@ -277,6 +287,7 @@ Common issues and responses:
     - Check whether diagnostic settings, DCR associations, or agents are actually sending data.
 - Daily cap reached
     - Increase quota temporarily or reduce noisy tables before business-critical data is lost.
+
 ## Automation
 Workspace administration is a good candidate for scheduled governance checks. Use automation to detect drift in retention, cap, access mode, and role assignments.
 
@@ -291,11 +302,13 @@ Typical automation patterns:
 - Compare actual settings with a baseline JSON document stored in source control.
 - Trigger an alert or pull request when retention or cap values drift.
 - Pair workspace inventory reports with cost review from the `Usage` table.
+
 ## See Also
 - [Operations index](index.md)
 - [Diagnostic Settings](diagnostic-settings.md)
 - [Data Collection Rules Operations](data-collection-rules-ops.md)
 - [Cost Control](cost-control.md)
+
 ## Sources
 - [Microsoft Learn: Create a Log Analytics workspace in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/quick-create-workspace)
 - [Microsoft Learn: Manage access to Log Analytics workspaces](https://learn.microsoft.com/azure/azure-monitor/logs/manage-access)

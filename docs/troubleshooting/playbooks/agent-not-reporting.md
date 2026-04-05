@@ -102,6 +102,7 @@ flowchart TD
     ```
 
 ## 5. Evidence to Collect
+
 ### 5.1 KQL Queries
 ```kusto
 // Last heartbeat per computer
@@ -179,6 +180,7 @@ Heartbeat
 
 ### 5.2 CLI Investigation
 ```bash
+
 # Check VM identity and provisioning basics
 az vm show \
     --resource-group $RG \
@@ -208,6 +210,7 @@ Interpretation:
 - Capture this before spending time on guest-side remediation.
 
 ```bash
+
 # Confirm AMA extension deployment on the VM
 az vm extension list \
     --resource-group $RG \
@@ -230,6 +233,7 @@ Interpretation:
 - Extension name differs by OS, so compare against the expected Windows or Linux package.
 
 ```bash
+
 # Check DCR association for the affected resource
 az monitor data-collection rule association list \
     --resource $RESOURCE_ID \
@@ -255,6 +259,7 @@ Interpretation:
 - Use the returned DCR ID in the next command to inspect data flows.
 
 ```bash
+
 # Inspect DCR streams and destination workspace
 az monitor data-collection rule show \
     --resource-group $RG \
@@ -295,6 +300,7 @@ Interpretation:
 - DCR content also helps prove whether this is one-machine drift or a fleet-wide configuration issue.
 
 ## 6. Validation and Disproof by Hypothesis
+
 ### Hypothesis 1: No DCR association exists for the resource
 **Proves if**: Section 5.2 CLI command 3 returns no association or a failed association.
 

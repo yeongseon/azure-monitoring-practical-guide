@@ -8,6 +8,7 @@ flowchart LR
     Workspace --> QueryAPI[Logs query API or CLI query]
     QueryAPI --> External[External tools and reports]
 ```
+
 ## Prerequisites
 - Azure CLI authenticated with `az login`.
 - A Log Analytics workspace already collecting data.
@@ -25,6 +26,7 @@ STORAGE_ACCOUNT_ID="/subscriptions/<subscription-id>/resourceGroups/rg-storage/p
 EVENT_HUBS_ID="/subscriptions/<subscription-id>/resourceGroups/rg-integration/providers/Microsoft.EventHub/namespaces/eh-monitoring"
 EXPORT_RULE_NAME="export-security-logs"
 ```
+
 ## When to Use
 - Security or compliance teams need a copy of selected tables.
 - Another analytics platform consumes logs from Storage or Event Hubs.
@@ -32,7 +34,9 @@ EXPORT_RULE_NAME="export-security-logs"
 - Export rules must be reviewed after table growth or schema changes.
 - A downstream integration broke and you need to confirm whether Azure Monitor is still exporting data.
 - Teams want to reduce direct workspace access by moving consumers to curated exports.
+
 ## Procedure
+
 ### Step 1: Inspect current export rules and target tables
 Start with the workspace inventory so you do not create overlapping rules accidentally.
 ```bash
@@ -63,6 +67,7 @@ Heartbeat        0.12
 SecurityEvent    0.09
 Perf             0.08
 ```
+
 ### Step 2: Create a continuous export rule to Storage
 Use Storage export when downstream systems need durable files instead of near-real-time streaming.
 ```bash
@@ -91,6 +96,7 @@ Expected output:
 ```
 This gives you a stable export path for compliance, archival, or offline reprocessing.
 Storage export is usually the safer first choice when the downstream consumer can tolerate file-based delivery instead of streaming.
+
 ### Step 3: Create or switch an export rule for Event Hubs streaming
 Use Event Hubs when a SIEM or external stream processor needs near-real-time delivery.
 ```bash
@@ -118,6 +124,7 @@ Expected output:
 ```
 Choose tables carefully. Exporting broad high-volume tables to Event Hubs can create unnecessary downstream cost and throughput pressure.
 Prefer a small initial table set, validate downstream parsing, and expand only after the consumer proves stable.
+
 ### Step 4: Validate the export rule definitions
 Read back each rule after creation so the destination and table set are confirmed from Azure rather than assumed from local commands.
 ```bash
@@ -141,6 +148,7 @@ Expected output:
 }
 ```
 This step catches common errors such as the wrong destination resource ID or an incomplete table list.
+
 ### Step 5: Validate workspace integration queries for external consumers
 Even when exports are enabled, many teams still rely on direct query integration for reports, automation, and operational checks.
 ```bash
@@ -157,6 +165,7 @@ LastSeen                     Agents
 ```
 If the query works and the export rules exist, Azure Monitor is ready for both pull-based and push-based integration patterns.
 If you are onboarding a new consumer, document whether it uses push-based export, pull-based queries, or both so future teams understand the support boundary.
+
 ## Verification
 Verify all export rules on the workspace:
 ```bash
@@ -206,6 +215,7 @@ Expected output:
 }
 ```
 Verification succeeds when export rules exist with the right destinations and the source tables still have current records.
+
 ## Rollback / Troubleshooting
 Disable or delete an export rule that is sending the wrong data:
 ```bash
@@ -230,6 +240,7 @@ Common problems:
     - Move that consumer to Event Hubs or direct query integration instead of archive-style export.
 - Event-driven parser breaks after schema changes
     - Restrict the table set and coordinate schema validation with the consumer team before widening coverage.
+
 ## Automation
 Export rules should be tracked like any other integration contract.
 ```bash
@@ -249,11 +260,13 @@ Useful automation patterns:
 - Review exported table lists whenever workspace cost reviews identify noisy data types.
 - Keep a small canary export rule for validation before broadening coverage to high-volume tables.
 - Test both push and pull integrations during platform recovery exercises.
+
 ## See Also
 - [Operations index](index.md)
 - [Workspace Management](workspace-management.md)
 - [Diagnostic Settings](diagnostic-settings.md)
 - [Cost Control](cost-control.md)
+
 ## Sources
 - [Microsoft Learn: Log Analytics workspace data export in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/logs-data-export)
 - [Microsoft Learn: Configure Azure Monitor Logs export](https://learn.microsoft.com/azure/azure-monitor/logs/logs-data-export-configure)

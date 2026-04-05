@@ -100,6 +100,7 @@ flowchart TD
     ```
 
 ## 5. Evidence to Collect
+
 ### 5.1 KQL Queries
 ```kusto
 // Alert-related Azure Activity entries for recent rule operations
@@ -177,6 +178,7 @@ Perf
 
 ### 5.2 CLI Investigation
 ```bash
+
 # Inspect a metric alert rule
 az monitor metrics alert show \
     --resource-group $RG \
@@ -205,6 +207,7 @@ Interpretation:
 - Incorrect `scopes` are a common explanation for "this alert never fires."
 
 ```bash
+
 # Inspect a scheduled query rule
 az monitor scheduled-query show \
     --resource-group $RG \
@@ -232,6 +235,7 @@ Interpretation:
 - Keep this output beside the manual KQL replay to avoid comparing different windows.
 
 ```bash
+
 # List alert processing rules that may suppress notifications
 az monitor alert-processing-rule list \
     --resource-group $RG \
@@ -259,6 +263,7 @@ Interpretation:
 - Always compare suppression scope with the rule target resource.
 
 ```bash
+
 # Inspect the action group tied to the rule
 az monitor action-group show \
     --resource-group $RG \
@@ -293,6 +298,7 @@ Interpretation:
 - Keep the action group investigation separate from rule evaluation logic.
 
 ## 6. Validation and Disproof by Hypothesis
+
 ### Hypothesis 1: The signal never met the exact rule logic
 **Proves if**: Section 5.1 Query 3 fails to cross the actual threshold across the actual window and dimensions.
 

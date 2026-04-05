@@ -101,6 +101,7 @@ graph LR
 ## CLI Evidence Collection
 
 ```bash
+
 # Check diagnostic settings for a resource
 az monitor diagnostic-settings list \
     --resource $RESOURCE_ID

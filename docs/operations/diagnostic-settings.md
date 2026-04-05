@@ -9,6 +9,7 @@ flowchart LR
     Logs --> Archive[Storage or Event Hubs]
     Metrics --> Workspace
 ```
+
 ## Prerequisites
 - Azure CLI authenticated with `az login`.
 - A destination workspace, storage account, or Event Hubs namespace already exists.
@@ -24,6 +25,7 @@ WORKSPACE_ID="/subscriptions/<subscription-id>/resourceGroups/rg-monitoring-prod
 STORAGE_ACCOUNT_ID="/subscriptions/<subscription-id>/resourceGroups/rg-storage/providers/Microsoft.Storage/storageAccounts/stmonitoringarchive"
 DIAG_NAME="ds-kv-prod-01"
 ```
+
 ## When to Use
 - A resource is not sending platform logs to the workspace.
 - Compliance requires archiving logs in Storage.
@@ -31,7 +33,9 @@ DIAG_NAME="ds-kv-prod-01"
 - Log categories changed after a service feature rollout.
 - You need to standardize diagnostics across multiple resource types.
 - A team added a new resource type and monitoring baseline must be enforced quickly.
+
 ## Procedure
+
 ### Step 1: Discover current diagnostic settings and categories
 Start by checking whether the resource already has a setting and which categories are supported.
 ```bash
@@ -61,6 +65,7 @@ AuditEvent             Logs
 AzurePolicyEvaluation  Logs
 AllMetrics             Metrics
 ```
+
 ### Step 2: Create or update a workspace-bound diagnostic setting
 Create a setting that sends both logs and metrics to Log Analytics.
 ```bash
@@ -95,6 +100,7 @@ Expected output:
 This is the most common operating pattern because it keeps searchable platform data inside Azure Monitor.
 
 Prefer category groups such as `allLogs` when the resource type supports them, but always verify supported categories first because not every Azure service exposes the same log and metric groups.
+
 ### Step 3: Add an archive destination when retention requirements exceed workspace needs
 If the resource needs long-term archive, add Storage as a secondary destination.
 ```bash
@@ -116,6 +122,7 @@ Expected output:
 }
 ```
 Use storage primarily for archive and replay scenarios, not for interactive operational queries.
+
 ### Step 4: Read back the effective configuration
 Confirm that the categories and destinations are exactly what you intended.
 ```bash
@@ -140,6 +147,7 @@ Expected output:
 }
 ```
 This step catches category mismatches, missing destinations, and accidental overwrites.
+
 ### Step 5: Validate data in the destination workspace
 Run a workspace query to confirm that the routed data is visible after the change.
 ```bash
@@ -156,6 +164,7 @@ AuditEvent    14
 ```
 If the query returns no records, wait several minutes and then re-check categories, destination IDs, and resource support for the selected streams.
 For new resource types, also verify that the service emits logs into `AzureDiagnostics` or a resource-specific table expected by your workbook and alert queries.
+
 ## Verification
 Verify the setting still exists and is bound to the right destinations:
 ```bash
@@ -197,6 +206,7 @@ AuditEvent             Logs
 AzurePolicyEvaluation  Logs
 AllMetrics             Metrics
 ```
+
 ## Rollback / Troubleshooting
 Delete an incorrect diagnostic setting:
 ```bash
@@ -219,6 +229,7 @@ Common problems:
     - Check whether the storage account firewall or regional support blocks delivery.
 - Event Hubs integration fails
     - Validate namespace permissions and confirm the target service supports diagnostic export to Event Hubs.
+
 ## Automation
 Diagnostic settings are ideal for policy-driven or scripted enforcement.
 ```bash
@@ -237,6 +248,7 @@ Useful automation patterns:
 - Review unsupported categories during service onboarding and update the baseline template before production rollout.
 - Keep per-resource-type JSON examples in source control for faster operational recovery.
 - Tag policy exemptions with an expiry date so temporary exceptions do not become permanent.
+
 ## See Also
 - [Operations index](index.md)
 - [Workspace Management](workspace-management.md)
@@ -245,6 +257,7 @@ Useful automation patterns:
 - [Alert Rule Management](alert-rule-management.md)
 - [Reference CLI cheatsheet](../reference/cli-cheatsheet.md)
 - [Troubleshooting KQL query packs](../troubleshooting/kql/index.md)
+
 ## Sources
 - [Microsoft Learn: Diagnostic settings in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
 - [Microsoft Learn: Create diagnostic settings using Azure CLI](https://learn.microsoft.com/azure/azure-monitor/essentials/diagnostic-settings-cli)

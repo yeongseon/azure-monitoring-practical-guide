@@ -103,6 +103,7 @@ flowchart TD
     ```
 
 ## 5. Evidence to Collect
+
 ### 5.1 KQL Queries
 ```kusto
 // Billable usage by table for the last 7 days
@@ -181,6 +182,7 @@ union requests, dependencies, traces, exceptions
 
 ### 5.2 CLI Investigation
 ```bash
+
 # Review workspace commercial settings
 az monitor log-analytics workspace show \
     --resource-group $RG \
@@ -212,6 +214,7 @@ Interpretation:
 - `dailyQuotaGb = -1` means there is no hard cap to stop runaway spend automatically.
 
 ```bash
+
 # Inspect a DCR when AMA-collected data is suspected
 az monitor data-collection rule show \
     --resource-group $RG \
@@ -254,6 +257,7 @@ Interpretation:
 - Absence of transformation rules means all matching source data lands unfiltered.
 
 ```bash
+
 # Inspect diagnostic settings on a top contributing resource
 az monitor diagnostic-settings list \
     --resource $RESOURCE_ID \
@@ -289,6 +293,7 @@ Interpretation:
 - If the resource is the top `_Usage` contributor, this output often identifies the fastest reduction opportunity.
 
 ```bash
+
 # Review Application Insights component configuration when app tables are expensive
 az monitor app-insights component show \
     --app $APP_INSIGHTS_NAME \
@@ -315,6 +320,7 @@ Interpretation:
 - Use this output with the application telemetry KQL to decide whether to tune SDK sampling or log levels.
 
 ## 6. Validation and Disproof by Hypothesis
+
 ### Hypothesis 1: A small set of tables is generating most billable GB
 **Proves if**: Section 5.1 Query 1 shows one or two tables dominating recent usage.
 

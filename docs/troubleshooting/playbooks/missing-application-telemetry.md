@@ -104,6 +104,7 @@ flowchart TD
     ```
 
 ## 5. Evidence to Collect
+
 ### 5.1 KQL Queries
 ```kusto
 // Telemetry volume by type in the last 24 hours
@@ -179,6 +180,7 @@ AppRequests
 
 ### 5.2 CLI Investigation
 ```bash
+
 # Inspect the Application Insights component
 az monitor app-insights component show \
     --app $APP_INSIGHTS_NAME \
@@ -205,6 +207,7 @@ Interpretation:
 - `samplingPercentage` helps determine whether sparse data is expected.
 
 ```bash
+
 # Verify the application setting on App Service
 az webapp config appsettings list \
     --resource-group $RG \
@@ -230,6 +233,7 @@ Interpretation:
 - Presence alone is not enough; the application must actually consume the setting at startup.
 
 ```bash
+
 # Inspect current app runtime configuration at the component level
 az monitor app-insights component show \
     --app $APP_INSIGHTS_NAME \
@@ -254,6 +258,7 @@ Interpretation:
 - Wrong workspace binding explains why the team is querying the wrong destination.
 
 ```bash
+
 # Capture workspace identity for direct Log Analytics validation
 az monitor log-analytics workspace show \
     --resource-group $RG \
@@ -278,6 +283,7 @@ Interpretation:
 - Capture it before escalating to a workspace-side hypothesis.
 
 ## 6. Validation and Disproof by Hypothesis
+
 ### Hypothesis 1: Connection string or resource linkage is wrong
 **Proves if**: App settings or component output show missing, stale, or wrong destination values.
 

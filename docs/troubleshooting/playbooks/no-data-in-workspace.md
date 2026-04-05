@@ -103,6 +103,7 @@ flowchart TD
     ```
 
 ## 5. Evidence to Collect
+
 ### 5.1 KQL Queries
 ```kusto
 // Operation log evidence for ingestion controls
@@ -184,6 +185,7 @@ Heartbeat
 
 ### 5.2 CLI Investigation
 ```bash
+
 # Review workspace state and capping settings
 az monitor log-analytics workspace show \
     --resource-group $RG \
@@ -215,6 +217,7 @@ Interpretation:
 - `quotaNextResetTime` explains why data may reappear without any other fix.
 
 ```bash
+
 # Check DCR associations on an affected source resource
 az monitor data-collection rule association list \
     --resource $RESOURCE_ID \
@@ -241,6 +244,7 @@ Interpretation:
 - If the association exists, continue to local service logs and endpoint reachability.
 
 ```bash
+
 # Verify diagnostic settings still target the expected workspace
 az monitor diagnostic-settings list \
     --resource $RESOURCE_ID \
@@ -277,6 +281,7 @@ Interpretation:
 - Disabled category groups create table-specific gaps that look like ingestion failure.
 
 ```bash
+
 # Check Azure Monitor Agent extension presence on a VM
 az vm extension list \
     --resource-group $RG \
@@ -299,6 +304,7 @@ Interpretation:
 - If the extension is present, move next to guest logs, identity, and network tests.
 
 ## 6. Validation and Disproof by Hypothesis
+
 ### Hypothesis 1: Workspace daily cap was reached
 **Proves if**: `Operation` shows cap warnings, the configured quota is low, and ingestion resumes after reset or after raising the cap.
 **Disproves if**: No cap signals exist and the quota is effectively unlimited or comfortably above observed usage.

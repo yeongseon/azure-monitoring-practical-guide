@@ -8,6 +8,7 @@ flowchart LR
     Dashboard --> NOC[Operations viewers]
     Workbook --> Ops[Investigators]
 ```
+
 ## Prerequisites
 - Azure CLI authenticated with `az login`.
 - A Log Analytics workspace with queryable data.
@@ -26,6 +27,7 @@ DASHBOARD_NAME="dashboard-monitoring-overview"
 DASHBOARD_FILE="./docs/examples/dashboard-monitoring-overview.json"
 LOCATION="eastus"
 ```
+
 ## When to Use
 - You need a reusable operational view for incident triage.
 - A workbook query or parameter set needs an update after schema changes.
@@ -33,7 +35,9 @@ LOCATION="eastus"
 - Visual content drifted from the version-controlled baseline.
 - A workbook needs to be verified after alert or DCR changes.
 - A central team needs the same monitoring view deployed across environments.
+
 ## Procedure
+
 ### Step 1: Inventory existing workbooks and dashboards
 Check what already exists before you create a duplicate artifact.
 ```bash
@@ -61,6 +65,7 @@ Name                            Location    Tags
 ------------------------------  ----------  --------------------------------
 dashboard-monitoring-overview   eastus      {'owner':'monitoring','tier':'ops'}
 ```
+
 ### Step 2: Create or update the workbook from a checked-in file
 Use a versioned source file rather than editing only in the portal.
 ```bash
@@ -99,6 +104,7 @@ Expected output:
   "revision": "1d2f7d4c-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```
+
 ### Step 3: Read back workbook metadata and serialized content
 Confirm that the workbook saved as a shared resource and still contains the expected definition.
 ```bash
@@ -119,6 +125,7 @@ Expected output:
 }
 ```
 Use this step to verify that the workbook is still the shared artifact your team expects, not a private copy with drift.
+
 ### Step 4: Create or update the Azure dashboard definition
 Dashboards are best treated like infrastructure definitions for team-wide operational views.
 ```bash
@@ -144,6 +151,7 @@ Expected output:
 ```
 If you need to refresh the JSON later, rerun the same command with the updated file so the dashboard stays aligned with source control.
 Microsoft Learn guidance is to treat workbooks as rich investigative views and dashboards as broad operational summaries, so keep the two definitions intentionally different instead of mirroring every visual.
+
 ### Step 5: Validate workbook queries and dashboard presence
 Operational views are only useful if the underlying queries still return data.
 ```bash
@@ -178,6 +186,7 @@ Expected output:
 }
 ```
 If the dashboard exists but workbook-backed tiles are empty, validate the workbook query directly before changing the dashboard JSON.
+
 ## Verification
 Verify workbook presence:
 ```bash
@@ -222,6 +231,7 @@ Expected output:
 }
 ```
 Verification succeeds when the workbook and dashboard exist in the resource group and the validation query used by the workbook still returns data.
+
 ## Rollback / Troubleshooting
 Delete a broken workbook:
 ```bash
@@ -249,6 +259,7 @@ Common problems:
     - Re-check deployment scope before assuming the JSON definition is broken.
 - Shared workbook was replaced by a private draft
     - Re-deploy the shared workbook from source control and confirm the `kind` value.
+
 ## Automation
 Treat workbook JSON and dashboard JSON as deployable artifacts.
 ```bash
@@ -266,6 +277,7 @@ Useful automation patterns:
 - Export workbook metadata regularly so private copies and shared copies are easy to compare.
 - Validate at least one parameterized workbook query after every monitoring schema change.
 - Review dashboard viewers and owners during quarterly operational access checks.
+
 ## See Also
 - [Operations index](index.md)
 - [Alert Rule Management](alert-rule-management.md)
@@ -273,6 +285,7 @@ Useful automation patterns:
 - [Troubleshooting KQL query packs](../troubleshooting/kql/index.md)
 - [Export and Integration](export-and-integration.md)
 - [Reference KQL quick reference](../reference/kql-quick-reference.md)
+
 ## Sources
 - [Microsoft Learn: Azure Monitor workbooks overview](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-overview)
 - [Microsoft Learn: Create Azure Monitor workbooks](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-create-workbook)

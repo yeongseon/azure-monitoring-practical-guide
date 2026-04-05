@@ -9,6 +9,7 @@ flowchart LR
     Usage --> Action[Reduce noisy tables or routes]
     Action --> Savings[Lower Azure Monitor spend]
 ```
+
 ## Prerequisites
 - Azure CLI authenticated with `az login`.
 - A Log Analytics workspace already ingesting data.
@@ -24,6 +25,7 @@ WORKSPACE_ID="/subscriptions/<subscription-id>/resourceGroups/rg-monitoring-prod
 START_DATE="2026-04-01"
 END_DATE="2026-04-30"
 ```
+
 ## When to Use
 - Daily ingestion is trending above budget.
 - A workspace suddenly shows unexpected cost growth.
@@ -32,7 +34,9 @@ END_DATE="2026-04-30"
 - DCR or diagnostic-setting changes need cost validation.
 - A migration consolidated multiple workloads into one workspace and spend must be re-baselined.
 - Finance or FinOps teams need evidence for why Azure Monitor costs changed month over month.
+
 ## Procedure
+
 ### Step 1: Inspect current workspace cost settings
 Start by reading the workspace billing controls already in place.
 ```bash
@@ -53,6 +57,7 @@ Expected output:
 }
 ```
 This establishes whether cost growth is caused by configuration drift or by new data sources.
+
 ### Step 2: Identify the noisiest tables in the workspace
 Use the `Usage` table first because it explains where billed ingestion is actually going.
 ```bash
@@ -87,6 +92,7 @@ Perf              2026-03-30T00:00:00Z    1.8
 Perf              2026-03-31T00:00:00Z    1.7
 AzureDiagnostics  2026-03-31T00:00:00Z    1.2
 ```
+
 ### Step 3: Adjust retention and daily cap to match policy
 Change controls explicitly after you understand the ingestion pattern.
 ```bash
@@ -110,6 +116,7 @@ Expected output:
 ```
 Lower retention only when operational, audit, and incident-response teams agree that the new search window is still acceptable.
 For strict environments, document whether daily cap is a last-resort safety control or an actively enforced budget mechanism. Microsoft Learn warns that cap-driven stoppage can interrupt log collection.
+
 ### Step 4: Re-check billable trends after the change window
 Do not assume a workspace update solved the problem. Query recent usage again and compare the before and after pattern.
 ```bash
@@ -129,6 +136,7 @@ Heartbeat          0.2
 ```
 Reduced values confirm that upstream collection changes or lower-volume periods are taking effect.
 If the values did not change, the bill is likely driven by sources outside this workspace or by unchanged upstream collection rules.
+
 ### Step 5: Validate subscription cost evidence and operational safety
 Use consumption data to confirm that Azure billing trends align with workspace-level improvements.
 ```bash
@@ -174,6 +182,7 @@ InstanceName        Cost    Meter
 law-ops-central     214.63  Log Analytics Data Ingestion
 appi-prod-central    41.27  Application Insights Data Ingest
 ```
+
 ## Verification
 Verify the effective workspace settings:
 ```bash
@@ -221,6 +230,7 @@ AzureDiagnostics   1.0
 ContainerLogV2     0.8
 ```
 Verification succeeds when the workspace reflects the new retention and cap values and continues ingesting the expected data types.
+
 ## Rollback / Troubleshooting
 Restore a less restrictive policy if the cost change affected operations:
 ```bash
@@ -255,6 +265,7 @@ Common problems:
     - Restore a longer retention period or move selected tables to archive destinations for low-cost access.
 - Cost anomaly is month-end only
     - Compare daily `Usage` trends against deployment windows, incident periods, and onboarding events.
+
 ## Automation
 Cost control needs recurring review, not one-time tuning.
 ```bash
@@ -280,6 +291,7 @@ Useful automation patterns:
 - Store the expected daily ingestion range for each workspace so anomalies are measurable.
 - Review cost posture after every major diagnostic-setting rollout or AMA onboarding wave.
 - Keep a documented list of tables that may justify premium spend during incidents.
+
 ## See Also
 - [Operations index](index.md)
 - [Workspace Management](workspace-management.md)
@@ -291,6 +303,7 @@ Useful automation patterns:
 - [Reference platform limits](../reference/platform-limits.md)
 - [Troubleshooting KQL query packs](../troubleshooting/kql/index.md)
 - [Alert Rule Management](alert-rule-management.md)
+
 ## Sources
 - [Microsoft Learn: Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/cost-logs)
 - [Microsoft Learn: Azure Monitor cost and usage](https://learn.microsoft.com/azure/azure-monitor/cost-usage)
