@@ -1,5 +1,10 @@
 # Azure Monitoring Practical Guide
 
+[![Documentation](https://img.shields.io/badge/docs-live-blue)](https://yeongseon.github.io/azure-monitoring-practical-guide/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+📖 **[View Documentation](https://yeongseon.github.io/azure-monitoring-practical-guide/)**
+
 Comprehensive guide for monitoring Azure workloads — from Azure Monitor fundamentals to production operations with Log Analytics and Application Insights.
 
 ## What's Inside
