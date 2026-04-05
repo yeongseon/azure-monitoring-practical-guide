@@ -91,7 +91,7 @@ ama-logs-rs-xxxxx             1/1     Running   0          2d
 kubectl logs --namespace kube-system --selector component=ama-logs --tail=100
 
 # Look for specific errors
-kubectl logs --namespace kube-system --selector component=ama-logs | grep -i error
+kubectl logs --namespace kube-system --selector component=ama-logs | grep --ignore-case error
 
 # Check recent events
 kubectl get events --namespace kube-system --sort-by='.lastTimestamp' | grep ama
@@ -217,7 +217,7 @@ kubectl edit daemonset ama-logs --namespace kube-system
 
 ```bash
 # Create or update ConfigMap for collection settings
-cat <<EOF | kubectl apply -f -
+cat <<EOF | kubectl apply --filename -
 apiVersion: v1
 kind: ConfigMap
 metadata:

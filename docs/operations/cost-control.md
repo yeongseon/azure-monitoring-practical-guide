@@ -81,9 +81,10 @@ Usage
 ## See Also
 
 - [Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/manage-cost-storage)
-- [Azure Monitor pricing details](https://azure.microsoft.com/pricing/details/monitor/)
+- [Azure Monitor pricing overview](https://learn.microsoft.com/azure/azure-monitor/cost-usage)
 
 ## Sources
 
 - [MS Learn: Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/manage-cost-storage)
 - [MS Learn: Optimize Azure Monitor Logs costs](https://learn.microsoft.com/azure/azure-monitor/logs/cost-logs)
+- [MS Learn: Azure Monitor cost and usage](https://learn.microsoft.com/azure/azure-monitor/cost-usage)
