@@ -85,17 +85,20 @@ az monitor metrics alert create \
     --description "High CPU alert"
 ```
 
-### Create Log Search Alert (v2)
+### Create Scheduled Query Alert
 ```bash
 az monitor scheduled-query create \
-    --name <alert-name> \
-    --resource-group <resource-group-name> \
-    --scopes <workspace-id> \
-    --condition-query "AppServiceHTTPLogs | where ScStatus >= 500 | summarize AggregatedValue = count() by bin(TimeGenerated, 5m)" \
-    --condition-threshold 10 \
-    --condition-operator GreaterThan \
-    --evaluation-frequency 5m \
-    --window-size 5m
+    --name "<alert-name>" \
+    --resource-group "$RG" \
+    --scopes "$WORKSPACE_ID" \
+    --condition "count 'ErrorQuery' > 10" \
+    --condition-query "ErrorQuery=AppServiceHTTPLogs | where ScStatus >= 500 | summarize AggregatedValue = count() by bin(TimeGenerated, 5m)" \
+    --evaluation-frequency "5m" \
+    --window-size "5m" \
+    --severity 2 \
+    --skip-query-validation true \
+    --description "Trigger when App Service HTTP 5xx responses exceed the alert threshold." \
+    --output json
 ```
 
 ## Metrics and Logs

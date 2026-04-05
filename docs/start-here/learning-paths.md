@@ -36,7 +36,7 @@ Focus on application-level visibility and tracing.
 Focus on reliability, alerting, and system health.
 
 *   **Platform Foundation**: Understand Log Analytics workspaces and data retention.
-*   **Alerting**: Configure metric alerts and log search alerts with Action Groups.
+*   **Alerting**: Configure metric alerts and scheduled query alerts with Action Groups.
 *   **Dashboards**: Build Azure Workbooks for unified views of infrastructure health.
 *   **Read**: [Platform Setup](../platform/index.md), [Operations](../operations/index.md).
 

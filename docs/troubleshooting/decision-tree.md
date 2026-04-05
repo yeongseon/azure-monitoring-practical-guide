@@ -9,7 +9,7 @@ flowchart TD
     B -->|No data appearing| C{Where is data missing?}
     B -->|Alerts not working| D{What's the alert issue?}
     B -->|High costs| E[High Ingestion Cost]
-    B -->|Slow queries| F[Query Performance]
+    B -->|Slow queries| F[Slow Query Performance]
     
     C -->|Log Analytics workspace| G{Is agent involved?}
     C -->|Application Insights| H[Missing Application Telemetry]
@@ -21,7 +21,7 @@ flowchart TD
     D -->|Too many alerts| L[Alert Storm]
     
     E --> E1[Playbook: High Ingestion Cost]
-    F --> F1[Playbook: Query Performance]
+    F --> F1[Playbook: Slow Query Performance]
     H --> H1[Playbook: Missing Application Telemetry]
     I --> I1[Playbook: Agent Not Reporting]
     J --> J1[Playbook: No Data in Workspace]
@@ -29,7 +29,7 @@ flowchart TD
     L --> L1[Playbook: Alert Storm]
     
     click E1 "playbooks/high-ingestion-cost.md"
-    click F1 "playbooks/query-performance.md"
+    click F1 "playbooks/slow-query-performance.md"
     click H1 "playbooks/missing-application-telemetry.md"
     click I1 "playbooks/agent-not-reporting.md"
     click J1 "playbooks/no-data-in-workspace.md"
@@ -46,7 +46,7 @@ flowchart TD
 | Alert rule never fires | Signal has data? | [Alert Not Firing](playbooks/alert-not-firing.md) |
 | Getting too many alerts | Thresholds appropriate? | [Alert Storm](playbooks/alert-storm.md) |
 | Unexpected cost increase | Which table growing? | [High Ingestion Cost](playbooks/high-ingestion-cost.md) |
-| Queries timing out | Time range too wide? | [Query Performance](playbooks/query-performance.md) |
+| Queries timing out | Time range too wide? | [Slow Query Performance](playbooks/slow-query-performance.md) |
 | VM metrics missing | AMA installed and healthy? | [Agent Not Reporting](playbooks/agent-not-reporting.md) |
 
 ## First 5 Minutes Checklist

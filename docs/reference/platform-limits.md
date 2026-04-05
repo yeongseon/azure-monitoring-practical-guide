@@ -10,7 +10,7 @@ flowchart LR
         C[Query Level]
         
         A --> A1[5,000 Metric Alerts]
-        A --> A2[5,000 Log Alerts]
+        A --> A2[5,000 Scheduled Query Alerts]
         A --> A3[100 Activity Log Alerts]
         
         B --> B1[730 Days Retention]
@@ -43,7 +43,7 @@ flowchart LR
 | --- | --- | --- |
 | Metric Alerts | 5,000 | N/A |
 | Activity Log Alerts | 100 | N/A |
-| Log Search Alerts | 5,000 | 1,000 |
+| Scheduled Query Alerts | 5,000 | 1,000 |
 | Alert Processing Rules | 1,000 | N/A |
 | Action Groups | Unlimited | N/A |
 

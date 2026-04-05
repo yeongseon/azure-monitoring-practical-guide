@@ -104,13 +104,13 @@ nav:
     - platform/networking-and-security.md
   - Best Practices:
     - best-practices/index.md
-    - best-practices/monitoring-baseline.md
     - best-practices/workspace-design.md
-    - best-practices/alerting.md
+    - best-practices/security-and-access.md
+    - best-practices/data-retention.md
+    - best-practices/alert-strategy.md
     - best-practices/cost-optimization.md
-    - best-practices/instrumentation.md
-    - best-practices/dashboards-and-workbooks.md
-    - best-practices/common-anti-patterns.md
+    - best-practices/tagging-and-organization.md
+    - best-practices/multi-cloud-hybrid.md
   - Service Guides:
     - service-guides/index.md
     - App Service:
@@ -141,6 +141,8 @@ nav:
     - operations/export-and-integration.md
   - Troubleshooting:
     - troubleshooting/index.md
+    - troubleshooting/architecture-overview.md
+    - troubleshooting/mental-model.md
     - troubleshooting/decision-tree.md
     - troubleshooting/evidence-map.md
     - Playbooks:
@@ -150,7 +152,6 @@ nav:
       - troubleshooting/playbooks/alert-not-firing.md
       - troubleshooting/playbooks/alert-storm.md
       - troubleshooting/playbooks/high-ingestion-cost.md
-      - troubleshooting/playbooks/query-performance.md
       - troubleshooting/playbooks/slow-query-performance.md
       - troubleshooting/playbooks/agent-not-reporting.md
       - troubleshooting/playbooks/aks-container-insights-issues.md

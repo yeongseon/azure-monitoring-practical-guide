@@ -19,19 +19,19 @@ graph LR
 | Section | Description | Pages |
 |---------|-------------|-------|
 | [Start Here](start-here/overview.md) | Overview, learning paths, repository map | 3 |
-| [Platform](platform/index.md) | Azure Monitor architecture, data platform, Log Analytics, Application Insights | 8 |
-| [Best Practices](best-practices/index.md) | Monitoring baseline, workspace design, alerting strategy, cost optimization | 7 |
-| [Service Guides](service-guides/index.md) | Per-service monitoring for App Service, Container Apps, Functions, AKS, VMs | 12 |
-| [Operations](operations/index.md) | Workspace management, diagnostic settings, alert rules, workbooks | 7 |
-| [Troubleshooting](troubleshooting/index.md) | Decision tree, playbooks, KQL query packs | 21 |
-| [Reference](reference/index.md) | CLI cheatsheet, KQL quick reference, platform limits | 4 |
+| [Platform](platform/index.md) | Azure Monitor architecture, data platform, Log Analytics, Application Insights | 9 |
+| [Best Practices](best-practices/index.md) | Monitoring baseline, workspace design, alerting strategy, cost optimization | 8 |
+| [Service Guides](service-guides/index.md) | Per-service monitoring for App Service, Container Apps, Functions, AKS, VMs | 13 |
+| [Operations](operations/index.md) | Workspace management, diagnostic settings, alert rules, workbooks | 8 |
+| [Troubleshooting](troubleshooting/index.md) | Decision tree, evidence map, playbooks, KQL query packs | 29 |
+| [Reference](reference/index.md) | CLI cheatsheet, KQL quick reference, platform limits | 5 |
 
 ## Quick Start
 
 Choose your path based on your role:
 
-- **Developer** — Start with [Application Insights](platform/application-insights.md), then [Instrumentation Best Practices](best-practices/instrumentation.md)
-- **SRE/Operator** — Start with [How Azure Monitor Works](platform/how-azure-monitor-works.md), then [Monitoring Baseline](best-practices/monitoring-baseline.md)
+- **Developer** — Start with [Application Insights](platform/application-insights.md), then [Alert Strategy](best-practices/alert-strategy.md)
+- **SRE/Operator** — Start with [How Azure Monitor Works](platform/how-azure-monitor-works.md), then [Workspace Design](best-practices/workspace-design.md)
 - **Incident Responder** — Start with [Decision Tree](troubleshooting/decision-tree.md), then [KQL Query Packs](troubleshooting/kql/index.md)
 - **Architect** — Start with [Data Platform](platform/data-platform.md), then [Workspace Design](best-practices/workspace-design.md)
 

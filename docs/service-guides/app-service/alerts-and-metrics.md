@@ -37,7 +37,7 @@ az monitor metrics alert create \
     --window-size "5m" \
     --evaluation-frequency "1m" \
     --description "Alert when HTTP 5xx errors are high" \
-    --action-group "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/actionGroups/{actionGroupName}"
+    --action "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/actionGroups/{actionGroupName}"
 ```
 
 ## KQL Query Examples

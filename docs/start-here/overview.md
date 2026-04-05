@@ -43,11 +43,13 @@ This guide covers the implementation and operational aspects of Azure Monitor. I
 
 The guide is organized into logical sections that follow the monitoring lifecycle:
 
-1.  **Start Here**: Introduction, learning paths, and repository structure.
-2.  **Platform Setup**: Foundation for monitoring data collection and storage.
-3.  **Service Guides**: Tailored monitoring for specific Azure services.
-4.  **Operations**: Day-to-day management, alerts, and cost optimization.
-5.  **Troubleshooting**: Practical KQL examples and incident response playbooks.
+1.  **Start Here**: Orientation, role-based learning paths, and repository navigation.
+2.  **Platform**: Core Azure Monitor architecture, data platform, workspace design foundations, and security concepts.
+3.  **Best Practices**: Recommended patterns for retention, alerting, access control, tagging, and cost optimization.
+4.  **Service Guides**: Tailored monitoring implementations for App Service, Container Apps, Functions, AKS, and virtual machines.
+5.  **Operations**: Repeatable day-2 runbooks for workspaces, diagnostics, alert rules, dashboards, exports, and cost control.
+6.  **Troubleshooting**: Decision trees, evidence mapping, KQL query packs, and incident playbooks.
+7.  **Reference**: Quick lookup material for CLI commands, KQL syntax, diagnostic tables, and platform limits.
 
 ## See Also
 
