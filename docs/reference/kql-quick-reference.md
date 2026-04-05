@@ -2,6 +2,35 @@
 
 Quick patterns for common Azure Monitor Log Analytics operations.
 
+```mermaid
+flowchart LR
+    subgraph "KQL Query Structure"
+        A[Table Name] --> B[where]
+        B --> C[extend]
+        C --> D[summarize]
+        D --> E[project]
+        E --> F[order by]
+        F --> G[render]
+    end
+    
+    subgraph "Common Operators"
+        H[Filtering]
+        I[Aggregation]
+        J[Transformation]
+        K[Visualization]
+    end
+    
+    B -.-> H
+    D -.-> I
+    C -.-> J
+    G -.-> K
+
+    style A fill:#0078d4,color:#fff
+    style B fill:#339af0,color:#fff
+    style D fill:#51cf66,color:#fff
+    style G fill:#ffd43b,color:#333
+```
+
 ## Time Filtering
 ```kusto
 // Time offset relative to current time
@@ -69,3 +98,16 @@ AzureActivity
 | summarize count() by ScStatus
 | render piechart
 ```
+
+## See Also
+
+- [CLI Cheatsheet](cli-cheatsheet.md)
+- [Diagnostic Tables Reference](diagnostic-tables.md)
+- [KQL Query Packs](../troubleshooting/kql/index.md)
+
+## Sources
+
+- [KQL quick reference](https://learn.microsoft.com/azure/data-explorer/kusto/query/kql-quick-reference)
+- [Query best practices](https://learn.microsoft.com/azure/azure-monitor/logs/query-optimization)
+- [Log Analytics tutorial](https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-tutorial)
+- [Summarize operator](https://learn.microsoft.com/azure/data-explorer/kusto/query/summarize-operator)

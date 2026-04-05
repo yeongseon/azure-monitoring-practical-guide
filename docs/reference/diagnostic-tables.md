@@ -2,6 +2,50 @@
 
 Summary of common Azure Monitor diagnostic tables by service.
 
+```mermaid
+flowchart TD
+    subgraph "Azure Monitor Tables"
+        A[Log Analytics Workspace]
+        
+        subgraph "Platform Logs"
+            B[AzureActivity]
+            C[AzureDiagnostics]
+        end
+        
+        subgraph "App Service"
+            D[AppServiceHTTPLogs]
+            E[AppServiceConsoleLogs]
+        end
+        
+        subgraph "Container Apps"
+            F[ContainerAppConsoleLogs]
+            G[ContainerAppSystemLogs]
+        end
+        
+        subgraph "Application Insights"
+            H[requests]
+            I[exceptions]
+            J[dependencies]
+        end
+    end
+    
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+    A --> F
+    A --> G
+    A --> H
+    A --> I
+    A --> J
+
+    style A fill:#0078d4,color:#fff
+    style B fill:#339af0,color:#fff
+    style D fill:#51cf66,color:#fff
+    style F fill:#ffd43b,color:#333
+    style H fill:#ff6b6b,color:#fff
+```
+
 ## App Service
 
 ### AppServiceHTTPLogs

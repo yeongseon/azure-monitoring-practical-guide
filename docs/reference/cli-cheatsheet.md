@@ -2,6 +2,32 @@
 
 Quick reference for common `az monitor` commands. All examples use long flags for clarity and script compatibility.
 
+```mermaid
+flowchart LR
+    subgraph "Azure Monitor CLI Commands"
+        A[az monitor] --> B[log-analytics]
+        A --> C[diagnostic-settings]
+        A --> D[metrics]
+        A --> E[alert]
+        A --> F[action-group]
+        
+        B --> B1[workspace create/list/show]
+        B --> B2[query]
+        C --> C1[create/list/delete]
+        D --> D1[list/list-definitions]
+        E --> E1[metrics alert]
+        E --> E2[scheduled-query]
+        F --> F1[create/list/update]
+    end
+
+    style A fill:#0078d4,color:#fff
+    style B fill:#339af0,color:#fff
+    style C fill:#339af0,color:#fff
+    style D fill:#339af0,color:#fff
+    style E fill:#339af0,color:#fff
+    style F fill:#339af0,color:#fff
+```
+
 ## Log Analytics Workspaces
 
 ### Create a Workspace
@@ -111,3 +137,17 @@ az monitor action-group create \
 az monitor action-group list \
     --resource-group <resource-group-name>
 ```
+
+## See Also
+
+- [KQL Quick Reference](kql-quick-reference.md)
+- [Platform Limits](platform-limits.md)
+- [Operations: Alert Rule Management](../operations/alert-rule-management.md)
+
+## Sources
+
+- [az monitor reference](https://learn.microsoft.com/cli/azure/monitor)
+- [az monitor log-analytics](https://learn.microsoft.com/cli/azure/monitor/log-analytics)
+- [az monitor diagnostic-settings](https://learn.microsoft.com/cli/azure/monitor/diagnostic-settings)
+- [az monitor metrics alert](https://learn.microsoft.com/cli/azure/monitor/metrics/alert)
+- [az monitor action-group](https://learn.microsoft.com/cli/azure/monitor/action-group)

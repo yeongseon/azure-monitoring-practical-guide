@@ -2,6 +2,31 @@
 
 Reference of current service limits and quotas for Azure Monitor components. For the most up-to-date values, always refer to the [official Microsoft Learn limits page](https://learn.microsoft.com/azure/azure-monitor/service-limits).
 
+```mermaid
+flowchart LR
+    subgraph "Azure Monitor Limits Overview"
+        A[Subscription Level]
+        B[Workspace Level]
+        C[Query Level]
+        
+        A --> A1[5,000 Metric Alerts]
+        A --> A2[5,000 Log Alerts]
+        A --> A3[100 Activity Log Alerts]
+        
+        B --> B1[730 Days Retention]
+        B --> B2[500 Columns/Table]
+        B --> B3[500 Custom Tables]
+        
+        C --> C1[500K Records Max]
+        C --> C2[10 Min Timeout]
+        C --> C3[5 Concurrent Queries]
+    end
+
+    style A fill:#0078d4,color:#fff
+    style B fill:#339af0,color:#fff
+    style C fill:#51cf66,color:#fff
+```
+
 ## Log Analytics Workspaces
 
 | Resource | Default Limit | Maximum Limit |
