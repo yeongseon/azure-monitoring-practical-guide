@@ -1,10 +1,5 @@
 # Azure Monitoring Practical Guide
 
-[![Documentation](https://img.shields.io/badge/docs-live-blue)](https://yeongseon.github.io/azure-monitoring-practical-guide/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-📖 **[View Documentation](https://yeongseon.github.io/azure-monitoring-practical-guide/)**
-
 Comprehensive guide for monitoring Azure workloads — from Azure Monitor fundamentals to production operations with Log Analytics and Application Insights.
 
 ## What's Inside
@@ -13,10 +8,10 @@ Comprehensive guide for monitoring Azure workloads — from Azure Monitor fundam
 |---------|-------------|
 | [Start Here](https://yeongseon.github.io/azure-monitoring-practical-guide/) | Overview, learning paths, and repository map |
 | [Platform](https://yeongseon.github.io/azure-monitoring-practical-guide/platform/) | Azure Monitor architecture, data platform, Log Analytics, Application Insights |
-| [Best Practices](https://yeongseon.github.io/azure-monitoring-practical-guide/best-practices/) | Monitoring baseline, workspace design, alerting strategy, cost optimization |
-| [Service Guides](https://yeongseon.github.io/azure-monitoring-practical-guide/service-guides/) | Per-service monitoring guides for App Service, Container Apps, Functions, AKS, VMs |
+| [Best Practices](https://yeongseon.github.io/azure-monitoring-practical-guide/best-practices/) | Workspace design, alerting strategy, cost optimization, data retention |
+| [Service Guides](https://yeongseon.github.io/azure-monitoring-practical-guide/service-guides/) | Per-service monitoring for App Service, Container Apps, Functions, AKS, VMs |
 | [Operations](https://yeongseon.github.io/azure-monitoring-practical-guide/operations/) | Workspace management, diagnostic settings, alert rules, workbooks |
-| [Troubleshooting](https://yeongseon.github.io/azure-monitoring-practical-guide/troubleshooting/) | Playbooks, KQL query packs, decision tree |
+| [Troubleshooting](https://yeongseon.github.io/azure-monitoring-practical-guide/troubleshooting/) | 9 playbooks, KQL query packs, decision tree, evidence map |
 | [Reference](https://yeongseon.github.io/azure-monitoring-practical-guide/reference/) | CLI cheatsheet, KQL quick reference, platform limits |
 
 ## Service Guides
@@ -26,6 +21,8 @@ Comprehensive guide for monitoring Azure workloads — from Azure Monitor fundam
 - **Functions** — Execution logs, host metrics, invocation tracing
 - **AKS** — Container Insights, Prometheus metrics, node/pod metrics
 - **Virtual Machines** — Azure Monitor Agent, VM Insights, performance counters
+
+Each guide covers: diagnostic settings, KQL queries, alerting, and dashboards.
 
 ## Quick Start
 
@@ -64,8 +61,11 @@ Contributions welcome. Please ensure:
 | Repository | Description |
 |---|---|
 | [azure-app-service-practical-guide](https://github.com/yeongseon/azure-app-service-practical-guide) | Azure App Service practical guide |
-| [azure-container-apps-practical-guide](https://github.com/yeongseon/azure-container-apps-practical-guide) | Azure Container Apps practical guide |
+| [azure-virtual-machine-practical-guide](https://github.com/yeongseon/azure-virtual-machine-practical-guide) | Azure Virtual Machines practical guide |
 | [azure-networking-practical-guide](https://github.com/yeongseon/azure-networking-practical-guide) | Azure Networking practical guide |
+| [azure-container-apps-practical-guide](https://github.com/yeongseon/azure-container-apps-practical-guide) | Azure Container Apps practical guide |
+| [azure-storage-practical-guide](https://github.com/yeongseon/azure-storage-practical-guide) | Azure Storage practical guide |
+| [azure-functions-practical-guide](https://github.com/yeongseon/azure-functions-practical-guide) | Azure Functions practical guide |
 
 ## Disclaimer
 
