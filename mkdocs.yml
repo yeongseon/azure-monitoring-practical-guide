@@ -1,0 +1,182 @@
+site_name: Azure Monitoring Practical Guide
+site_url: https://yeongseon.github.io/azure-monitoring-practical-guide/
+site_description: Comprehensive guide for monitoring Azure workloads with Azure Monitor, Log Analytics, and Application Insights
+site_author: yeongseon
+
+repo_name: yeongseon/azure-monitoring-practical-guide
+repo_url: https://github.com/yeongseon/azure-monitoring-practical-guide
+
+theme:
+  name: material
+  language: en
+  favicon: assets/images/favicon.svg
+  logo: assets/images/favicon.svg
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+  custom_dir: docs
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mermaid-zoom.js
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.mark
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - toc:
+      permalink: true
+
+validation:
+  nav:
+    omitted_files: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yeongseon/azure-monitoring-practical-guide
+
+nav:
+  - Home: index.md
+  - Start Here:
+    - start-here/overview.md
+    - start-here/learning-paths.md
+    - start-here/repository-map.md
+  - Platform:
+    - platform/index.md
+    - platform/how-azure-monitor-works.md
+    - platform/data-platform.md
+    - platform/log-analytics-workspace.md
+    - platform/application-insights.md
+    - platform/metrics-and-dimensions.md
+    - platform/alerts-architecture.md
+    - platform/data-collection-rules.md
+    - platform/networking-and-security.md
+  - Best Practices:
+    - best-practices/index.md
+    - best-practices/monitoring-baseline.md
+    - best-practices/workspace-design.md
+    - best-practices/alerting.md
+    - best-practices/cost-optimization.md
+    - best-practices/instrumentation.md
+    - best-practices/dashboards-and-workbooks.md
+    - best-practices/common-anti-patterns.md
+  - Service Guides:
+    - service-guides/index.md
+    - App Service:
+      - service-guides/app-service/index.md
+      - service-guides/app-service/platform-logs.md
+      - service-guides/app-service/application-insights-integration.md
+      - service-guides/app-service/alerts-and-metrics.md
+    - Container Apps:
+      - service-guides/container-apps/index.md
+      - service-guides/container-apps/observability.md
+    - Functions:
+      - service-guides/functions/index.md
+      - service-guides/functions/observability.md
+    - AKS:
+      - service-guides/aks/index.md
+      - service-guides/aks/observability.md
+    - Virtual Machines:
+      - service-guides/vm/index.md
+      - service-guides/vm/observability.md
+  - Operations:
+    - operations/index.md
+    - operations/workspace-management.md
+    - operations/diagnostic-settings.md
+    - operations/alert-rule-management.md
+    - operations/data-collection-rules-ops.md
+    - operations/workbooks-and-dashboards.md
+    - operations/cost-control.md
+    - operations/export-and-integration.md
+  - Troubleshooting:
+    - troubleshooting/index.md
+    - troubleshooting/decision-tree.md
+    - troubleshooting/evidence-map.md
+    - Playbooks:
+      - troubleshooting/playbooks/index.md
+      - troubleshooting/playbooks/no-data-in-workspace.md
+      - troubleshooting/playbooks/missing-application-telemetry.md
+      - troubleshooting/playbooks/alert-not-firing.md
+      - troubleshooting/playbooks/alert-storm.md
+      - troubleshooting/playbooks/high-ingestion-cost.md
+      - troubleshooting/playbooks/query-performance.md
+      - troubleshooting/playbooks/slow-query-performance.md
+      - troubleshooting/playbooks/agent-not-reporting.md
+      - troubleshooting/playbooks/aks-container-insights-issues.md
+      - troubleshooting/playbooks/application-insights-gaps.md
+    - KQL Queries:
+      - troubleshooting/kql/index.md
+      - Application Insights:
+        - troubleshooting/kql/app-insights/index.md
+        - troubleshooting/kql/app-insights/request-performance.md
+        - troubleshooting/kql/app-insights/dependency-failures.md
+        - troubleshooting/kql/app-insights/exception-trends.md
+      - Log Analytics:
+        - troubleshooting/kql/log-analytics/index.md
+        - troubleshooting/kql/log-analytics/ingestion-volume.md
+        - troubleshooting/kql/log-analytics/resource-health.md
+        - troubleshooting/kql/log-analytics/cross-workspace.md
+      - Alerts:
+        - troubleshooting/kql/alerts/index.md
+        - troubleshooting/kql/alerts/alert-firing-history.md
+        - troubleshooting/kql/alerts/action-group-failures.md
+      - Service-Specific:
+        - troubleshooting/kql/service-specific/index.md
+        - troubleshooting/kql/service-specific/app-service-diagnostics.md
+  - Reference:
+    - reference/index.md
+    - reference/cli-cheatsheet.md
+    - reference/kql-quick-reference.md
+    - reference/platform-limits.md
+    - reference/diagnostic-tables.md

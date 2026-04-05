@@ -1,0 +1,53 @@
+# Cross-Workspace Query Patterns
+
+The `workspace()` function allows you to query data across multiple Log Analytics workspaces within your tenant. This is essential for organizations with distributed logging architectures or centralized security auditing.
+
+## Scenario
+You need to correlate heartbeat data from virtual machines that report to different workspaces, such as a Production and a Staging workspace.
+
+## KQL Query
+```kusto
+union 
+    workspace("Production-Workspace-ID").Heartbeat,
+    workspace("Staging-Workspace-ID").Heartbeat,
+    workspace("Dev-Workspace-ID").Heartbeat
+| where TimeGenerated > ago(1h)
+| summarize 
+    LastContact = max(TimeGenerated) 
+    by Computer, _ResourceId
+| order by LastContact desc
+```
+
+## Data Flow
+```mermaid
+graph TD
+    A[workspace A] --> D[Union]
+    B[workspace B] --> D
+    C[workspace C] --> D
+    D --> E[Filter last 1h]
+    E --> F[Summarize max TimeGenerated]
+    F --> G[Group by Computer]
+```
+
+## Sample Output
+| Computer | _ResourceId | LastContact |
+| :--- | :--- | :--- |
+| web-prod-01 | /subscriptions/.../web-prod-01 | 2024-03-24 11:20 |
+| srv-stage-02 | /subscriptions/.../srv-stage-02 | 2024-03-24 11:18 |
+| vm-dev-05 | /subscriptions/.../vm-dev-05 | 2024-03-24 11:15 |
+
+## How to Read This
+The `union` operator combines rows from multiple sources. Ensure that the workspaces are in the same Microsoft Entra tenant and that you have read permissions for all specified workspaces. If a workspace is inaccessible, the query may fail or return partial results.
+
+## Limitations
+*   Performance may degrade when querying across many workspaces (max 100 recommended).
+*   Latency is higher than single-workspace queries due to cross-region or cross-workspace overhead.
+*   Workspaces must be specified by their Workspace ID or Resource ID; names are not supported.
+
+## See Also
+*   [Resource Health Checks](resource-health.md)
+*   [Ingestion Volume Analysis](ingestion-volume.md)
+
+## Sources
+*   [MS Learn: Cross-workspace queries](https://learn.microsoft.com/azure/azure-monitor/logs/cross-workspace-query)
+*   [MS Learn: union operator](https://learn.microsoft.com/azure/data-explorer/kusto/query/unionoperator)
