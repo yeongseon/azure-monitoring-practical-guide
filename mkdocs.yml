@@ -146,6 +146,13 @@ nav:
     - troubleshooting/mental-model.md
     - troubleshooting/decision-tree.md
     - troubleshooting/evidence-map.md
+    - Quick Diagnosis Cards: troubleshooting/quick-diagnosis-cards.md
+    - First 10 Minutes:
+      - troubleshooting/first-10-minutes/index.md
+      - troubleshooting/first-10-minutes/no-data.md
+      - troubleshooting/first-10-minutes/alert-not-firing.md
+      - troubleshooting/first-10-minutes/high-cost.md
+      - troubleshooting/first-10-minutes/query-timeout.md
     - Playbooks:
       - troubleshooting/playbooks/index.md
       - troubleshooting/playbooks/no-data-in-workspace.md

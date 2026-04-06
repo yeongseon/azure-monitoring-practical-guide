@@ -84,6 +84,179 @@ Event
 | order by count_ desc
 ```
 
+### Detect Missing Heartbeats
+
+```kusto
+Heartbeat
+| summarize LastHeartbeat=max(TimeGenerated) by Computer, OSType
+| extend MinutesSinceHeartbeat = datetime_diff('minute', now(), LastHeartbeat) * -1
+| where MinutesSinceHeartbeat > 10
+| order by MinutesSinceHeartbeat desc
+```
+
+### Review Linux Syslog Errors
+
+```kusto
+Syslog
+| where TimeGenerated > ago(4h)
+| where SeverityLevel in ("err", "crit", "alert", "emerg")
+| project TimeGenerated, Computer, ProcessName, SyslogMessage
+| order by TimeGenerated desc
+```
+
+Sample output:
+
+```text
+TimeGenerated              Computer       ProcessName   SyslogMessage
+-------------------------  -------------  ------------  ---------------------------------------------
+2026-04-06T00:52:00Z       vm-linux-01    systemd       Failed to start contoso-agent.service
+2026-04-06T00:51:00Z       vm-linux-01    kernel        Out of memory: Killed process 4217 (python)
+```
+
+## Monitoring Baseline
+
+For Azure Virtual Machines, build your baseline around these four evidence streams:
+
+1. **Reachability and heartbeat**
+    - Heartbeat freshness
+    - Agent health
+2. **Performance**
+    - CPU, memory, disk, and network saturation
+    - Process-level anomalies if collected
+3. **Operating system logs**
+    - Windows Event logs
+    - Linux Syslog
+4. **Change visibility**
+    - Extension changes
+    - DCR association changes
+    - Planned maintenance or reboots
+
+## CLI Workflow
+
+### Verify Azure Monitor Agent extension
+
+```bash
+az vm extension list \
+    --resource-group "my-resource-group" \
+    --vm-name "my-linux-vm" \
+    --output table
+```
+
+Sample output:
+
+```text
+Name                     Publisher                 ProvisioningState
+-----------------------  ------------------------  -----------------
+AzureMonitorLinuxAgent   Microsoft.Azure.Monitor   Succeeded
+```
+
+### Review DCR associations
+
+```bash
+az monitor data-collection rule association list \
+    --resource "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Compute/virtualMachines/my-linux-vm"
+```
+
+Sample output:
+
+```json
+[
+  {
+    "name": "my-vm-dcr-association",
+    "dataCollectionRuleId": "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/dataCollectionRules/dcr-vm-perf"
+  }
+]
+```
+
+### Query recent heartbeats
+
+```bash
+az monitor log-analytics query \
+    --workspace "law-monitoring-prod" \
+    --analytics-query "Heartbeat | where TimeGenerated > ago(30m) | summarize LastHeartbeat=max(TimeGenerated) by Computer" \
+    --output table
+```
+
+Sample output:
+
+```text
+Computer       LastHeartbeat
+-------------  -------------------------
+vm-linux-01    2026-04-06T01:02:10.000Z
+vm-win-01      2026-04-06T01:02:03.000Z
+```
+
+## Practical Alert Examples
+
+### Alert on missing heartbeat
+
+```bash
+az monitor scheduled-query create \
+    --name "vm-missing-heartbeat" \
+    --resource-group "my-resource-group" \
+    --scopes "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.OperationalInsights/workspaces/law-monitoring-prod" \
+    --condition "count 'Heartbeat | summarize LastHeartbeat=max(TimeGenerated) by Computer | extend MinutesSinceHeartbeat = datetime_diff(\"minute\", now(), LastHeartbeat) * -1 | where MinutesSinceHeartbeat > 10' > 0" \
+    --description "One or more virtual machines stopped sending heartbeats" \
+    --evaluation-frequency "5m" \
+    --window-size "5m" \
+    --severity 1 \
+    --action-groups "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-platform-oncall"
+```
+
+### Alert on sustained CPU saturation
+
+```bash
+az monitor metrics alert create \
+    --name "vm-cpu-high" \
+    --resource-group "my-resource-group" \
+    --scopes "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Compute/virtualMachines/my-linux-vm" \
+    --condition "avg Percentage CPU > 85" \
+    --window-size "15m" \
+    --evaluation-frequency "5m" \
+    --severity 2 \
+    --description "Virtual machine CPU usage is above 85 percent" \
+    --action "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-platform-oncall"
+```
+
+## Investigation Workflow
+
+1. **Heartbeat**
+    - Did the VM stop sending data entirely?
+2. **Performance counters / InsightsMetrics**
+    - Was CPU, memory, or disk already degrading before the symptom?
+3. **OS logs**
+    - Are there service failures, kernel issues, or driver errors?
+4. **Recent changes**
+    - Was the AMA extension updated?
+    - Did the DCR change?
+5. **Workload context**
+    - Is the issue application-specific or host-wide?
+
+## Windows and Linux Coverage Guidance
+
+- **Windows VMs**
+    - Collect System and Application event logs for baseline operations
+    - Add Security logs only when required and sized appropriately
+- **Linux VMs**
+    - Collect Syslog with severity filters to control ingestion
+    - Include performance counters for CPU, memory, filesystem, and network activity
+- **Both**
+    - Use the same workspace naming and DCR pattern across environments for easier fleet queries
+
+## Workbook Suggestions
+
+- Fleet heartbeat status
+- Top VMs by CPU and memory utilization
+- Windows error events by source and event ID
+- Linux Syslog error trend by host
+- DCR coverage view to find VMs missing associations
+
+## Cost Notes
+
+- Heartbeat and core performance counters are low-cost and high-value; collect them everywhere.
+- Security or verbose application logs can dominate ingestion cost if sent without filters.
+- Use DCRs to narrow Windows Event IDs and Linux Syslog facilities instead of collecting everything by default.
+
 ## See Also
 
 - [AKS Observability](../aks/observability.md)
