@@ -140,6 +140,15 @@ nav:
     - operations/workbooks-and-dashboards.md
     - operations/cost-control.md
     - operations/export-and-integration.md
+  - Tutorials:
+    - tutorials/index.md
+    - Lab Guides:
+      - tutorials/lab-guides/index.md
+      - tutorials/lab-guides/lab-01-log-analytics-workspace-setup.md
+      - tutorials/lab-guides/lab-02-custom-kql-queries.md
+      - tutorials/lab-guides/lab-03-azure-monitor-alerts.md
+      - tutorials/lab-guides/lab-04-application-insights-setup.md
+      - tutorials/lab-guides/lab-05-workbooks-and-dashboards.md
   - Troubleshooting:
     - troubleshooting/index.md
     - troubleshooting/architecture-overview.md
