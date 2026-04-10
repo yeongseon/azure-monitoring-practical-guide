@@ -1,9 +1,22 @@
+---
+content_sources:
+  diagrams:
+    - id: quick-context
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+---
+
 # First 10 Minutes: High Cost
 
 ## Quick Context
 
 Use this checklist when Log Analytics ingestion cost or daily billable GB increases unexpectedly. In the first 10 minutes, determine whether the spike comes from one noisy table, one noisy resource, a new DCR or solution rollout, or application telemetry volume that grew after a deployment or incident.
 
+<!-- diagram-id: quick-context -->
 ```mermaid
 flowchart TD
     A[Cost spike detected] --> B{One table dominates usage?}

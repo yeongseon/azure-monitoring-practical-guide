@@ -1,5 +1,18 @@
+---
+content_sources:
+  diagrams:
+    - id: alert-rule-management
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+---
+
 # Alert Rule Management
 Azure Monitor alert rules only help when they are consistent, actionable, and easy to verify after every change. This runbook covers day-2 operations for metric alerts, scheduled query alerts, and their action groups.
+<!-- diagram-id: alert-rule-management -->
 ```mermaid
 flowchart LR
     Signal[Metric or log signal] --> Rule[Alert rule]

@@ -1,3 +1,15 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+---
+
 # Resource Health (Heartbeat Checks)
 
 Monitor the heartbeat signal of virtual machines and on-premises servers that have the Log Analytics agent or Azure Monitor agent installed. Frequent heartbeats indicate that the agent is healthy and communicating with the platform.
@@ -19,6 +31,7 @@ Heartbeat
 ```
 
 ## Data Flow
+<!-- diagram-id: data-flow -->
 ```mermaid
 graph TD
     A[Heartbeat table] --> B[Filter by 24h]

@@ -1,7 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: tutorials
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+---
+
 # Tutorials
 
 Hands-on tutorials turn the platform and operations guidance in this repository into repeatable Azure Monitor exercises. Use these labs to build a Log Analytics workspace, write KQL, configure alerts, instrument applications, and publish operational views.
 
+<!-- diagram-id: tutorials -->
 ```mermaid
 flowchart LR
     A[Monitoring tutorials] --> B[Foundation]

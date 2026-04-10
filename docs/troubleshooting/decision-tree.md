@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: decision-tree
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+---
+
 # Decision Tree
 
 Symptom-based routing to troubleshooting playbooks.
 
+<!-- diagram-id: decision-tree -->
 ```mermaid
 flowchart TD
     A[Start: Monitoring Issue] --> B{What's the symptom?}

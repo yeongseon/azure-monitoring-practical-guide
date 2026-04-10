@@ -1,3 +1,38 @@
+---
+content_sources:
+  diagrams:
+    - id: 1-end-to-end-azure-monitor-flow
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    - id: 3-collection-and-routing-path
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    - id: 5-consumer-architecture-queries-alerts-and-workbooks
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+---
+
 # Troubleshooting Architecture Overview
 
 This page answers the most important first question in Azure Monitor incidents: **where can the monitoring path fail?**
@@ -17,6 +52,7 @@ Use this page to map the symptom first, then move to the appropriate playbook.
 
 ## 1) End-to-end Azure Monitor flow
 
+<!-- diagram-id: 1-end-to-end-azure-monitor-flow -->
 ```mermaid
 flowchart LR
     A[Workload or Azure resource] --> B[Telemetry source and agent or SDK]
@@ -61,6 +97,7 @@ Different Azure Monitor signals originate from different collection models.
 
 ## 3) Collection and routing path
 
+<!-- diagram-id: 3-collection-and-routing-path -->
 ```mermaid
 flowchart TD
     A[Resource or app emits telemetry] --> B{Collection model}
@@ -123,6 +160,7 @@ Azure Monitor is not a single store. Troubleshooting quality improves when you k
 
 ## 5) Consumer architecture: queries, alerts, and workbooks
 
+<!-- diagram-id: 5-consumer-architecture-queries-alerts-and-workbooks -->
 ```mermaid
 flowchart LR
     A[Workspace and metrics stores] --> B[Logs query experience]

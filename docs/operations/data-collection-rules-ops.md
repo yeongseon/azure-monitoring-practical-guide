@@ -1,5 +1,18 @@
+---
+content_sources:
+  diagrams:
+    - id: data-collection-rules-operations
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+---
+
 # Data Collection Rules Operations
 Data collection rules (DCRs) control what Azure Monitor Agent collects, how streams are transformed, and where the data lands. This runbook focuses on operational changes that keep DCR-based collection predictable and auditable.
+<!-- diagram-id: data-collection-rules-operations -->
 ```mermaid
 flowchart LR
     Source[VM or Arc server] --> AMA[Azure Monitor Agent]

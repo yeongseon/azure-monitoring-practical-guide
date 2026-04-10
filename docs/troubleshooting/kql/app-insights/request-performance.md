@@ -1,3 +1,15 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-getting-started
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+---
+
 # Request Performance (P50, P95, P99)
 
 This query analyzes the latency of incoming requests to your application, providing a breakdown of median and tail latency. Monitoring percentiles helps identify performance issues that affect only a small portion of users but may indicate significant underlying problems.
@@ -20,6 +32,7 @@ requests
 ```
 
 ## Data Flow
+<!-- diagram-id: data-flow -->
 ```mermaid
 graph TD
     A[requests table] --> B[Filter by 24h]

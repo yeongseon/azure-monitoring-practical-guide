@@ -1,7 +1,19 @@
+---
+content_sources:
+  diagrams:
+    - id: app-service-monitoring
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+---
+
 # App Service Monitoring
 
 Monitoring Azure App Service with platform logs, Application Insights, and metrics.
 
+<!-- diagram-id: app-service-monitoring -->
 ```mermaid
 graph TB
     subgraph "App Service"

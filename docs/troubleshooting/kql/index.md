@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: kql-query-packs
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+---
+
 # KQL Query Packs
 
 Ready-to-use KQL queries for Azure Monitor diagnostics.
 
+<!-- diagram-id: kql-query-packs -->
 ```mermaid
 graph LR
     subgraph "Query Categories"

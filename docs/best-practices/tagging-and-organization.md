@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: tagging-and-organization
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+---
+
 # Tagging and Organization
 
 Azure Monitor gets harder to operate when resources are easy to deploy but hard to classify. Use this guide to make workspaces, Application Insights resources, action groups, and diagnostic pipelines discoverable, automatable, and accountable.
 
+<!-- diagram-id: tagging-and-organization -->
 ```mermaid
 flowchart TD
     A[Resource groups and subscriptions] --> B[Consistent names]

@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: security-and-access
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+---
+
 # Security and Access
 
 Azure Monitor security is about controlling who can read telemetry, who can change collection and alerts, and how data moves over the network. Use this guide to protect monitoring data without making operational access unusable.
 
+<!-- diagram-id: security-and-access -->
 ```mermaid
 flowchart LR
     A[Resources and agents] --> B[Private ingestion path]

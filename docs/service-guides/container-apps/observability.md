@@ -1,9 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow-diagram
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/container-apps/observability
+        - https://learn.microsoft.com/en-us/azure/container-apps/log-streaming
+---
+
 # Observability in Azure Container Apps
 
 Azure Container Apps provides several built-in observability features that help you monitor and diagnose the state of your application throughout its lifecycle.
 
 ## Data Flow Diagram
 
+<!-- diagram-id: data-flow-diagram -->
 ```mermaid
 graph TD
     App[Container App] -->|Stdout/Stderr| ConsoleLogs[Container Console Logs]

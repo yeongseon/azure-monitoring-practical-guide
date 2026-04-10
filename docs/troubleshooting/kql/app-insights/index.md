@@ -1,7 +1,19 @@
+---
+content_sources:
+  diagrams:
+    - id: application-insights-queries
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+---
+
 # Application Insights Queries
 
 KQL queries for Application Insights telemetry analysis.
 
+<!-- diagram-id: application-insights-queries -->
 ```mermaid
 graph LR
     A[requests] --> B[Performance Analysis]

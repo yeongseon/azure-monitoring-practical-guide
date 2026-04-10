@@ -1,5 +1,18 @@
+---
+content_sources:
+  diagrams:
+    - id: cost-control
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+---
+
 # Cost Control
 Azure Monitor cost control depends on measuring ingestion, limiting unnecessary retention, and changing collection patterns before costs become billing surprises. This runbook focuses on operational controls for Log Analytics workspaces and Azure Monitor Logs usage.
+<!-- diagram-id: cost-control -->
 ```mermaid
 flowchart LR
     Sources[Agents and diagnostic settings] --> Workspace[Log Analytics workspace]

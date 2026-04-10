@@ -1,3 +1,18 @@
+---
+content_sources:
+  diagrams:
+    - id: 1-summary
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot-metric
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types#log-search-alerts
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/perf
+---
+
 # Alert Not Firing
 
 ## 1. Summary
@@ -15,6 +30,7 @@ Use it when:
 - An alert activated in history, but email, webhook, ITSM, or automation never triggered.
 - Maintenance suppression, auto-mitigation, or dimension configuration may have changed the outcome.
 
+<!-- diagram-id: 1-summary -->
 ```mermaid
 flowchart TD
     A[Alert did not fire] --> B{Did the signal truly meet rule logic?}

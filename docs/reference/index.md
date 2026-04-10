@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: reference
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+---
+
 # Reference
 
 Quick lookup for CLI commands, KQL patterns, and platform limits.
 
+<!-- diagram-id: reference -->
 ```mermaid
 graph LR
     A[CLI Cheatsheet] --> B[az monitor]

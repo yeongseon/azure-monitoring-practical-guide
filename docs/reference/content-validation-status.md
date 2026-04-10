@@ -1,3 +1,14 @@
+---
+content_sources:
+  diagrams:
+    - id: summary
+      type: pie
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/
+        - https://learn.microsoft.com/en-us/azure/
+---
+
 # Content Source Validation Status
 
 This page tracks the source validation status of documentation content in this repository. All content should be traceable to official Microsoft Learn documentation or clearly marked as self-generated where allowed.
@@ -14,6 +25,7 @@ This page tracks the source validation status of documentation content in this r
 !!! warning "Validation Required"
     All 101 mermaid diagrams require source validation.
 
+<!-- diagram-id: summary -->
 ```mermaid
 pie title Content Source Status
     "Not Validated" : 101

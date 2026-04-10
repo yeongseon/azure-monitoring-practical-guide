@@ -1,9 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: first-10-minutes
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+---
+
 # First 10 Minutes
 
 Fast triage checklists for the first 10 minutes of an Azure Monitor incident.
 
 Use these pages before opening a full playbook when you need to quickly classify whether the problem is data ingestion, alert delivery, cost growth, or query performance.
 
+<!-- diagram-id: first-10-minutes -->
 ```mermaid
 flowchart TD
     A[Incident signal] --> B{Primary symptom}

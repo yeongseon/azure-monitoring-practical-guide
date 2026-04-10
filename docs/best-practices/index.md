@@ -1,7 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: best-practices
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+---
+
 # Best Practices
 
 Production patterns for Azure Monitor — what to do, why it matters, and how to validate the result in real environments.
 
+<!-- diagram-id: best-practices -->
 ```mermaid
 graph LR
     A[Workspace Design] --> B[Alert Strategy]

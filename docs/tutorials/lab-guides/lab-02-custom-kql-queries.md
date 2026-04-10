@@ -1,3 +1,16 @@
+---
+content_sources:
+  diagrams:
+    - id: architecture-diagram
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/functions
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+---
+
 # Lab 02: Custom KQL Queries
 
 This lab teaches you how to turn raw monitoring data into reusable investigation logic. You will write ad-hoc KQL queries, save a reusable function in the Log Analytics workspace, and practice parameterized query patterns that can later power alerts and workbooks.
@@ -36,6 +49,7 @@ export WORKSPACE_ID=$(az monitor log-analytics workspace show \
 
 ## Architecture Diagram
 
+<!-- diagram-id: architecture-diagram -->
 ```mermaid
 flowchart LR
     Sources[Workspace tables\nHeartbeat / Perf / AzureMetrics] --> Query1[Ad-hoc KQL query]

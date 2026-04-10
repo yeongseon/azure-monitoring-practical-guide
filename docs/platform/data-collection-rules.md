@@ -1,3 +1,28 @@
+---
+content_sources:
+  diagrams:
+    - id: architecture-overview
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-transformations-create
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-ingestion-api-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection
+        - https://learn.microsoft.com/en-us/cli/azure/monitor/data-collection/rule?view=azure-cli-latest
+    - id: data-flow-diagram-with-transformation-stage
+      type: sequenceDiagram
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-transformations-create
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-ingestion-api-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection
+        - https://learn.microsoft.com/en-us/cli/azure/monitor/data-collection/rule?view=azure-cli-latest
+---
+
 # Data Collection Rules
 Data collection rules, or DCRs, define what Azure Monitor should collect, how selected records should be transformed, and where the resulting streams should be sent.
 They are the configuration backbone for Azure Monitor Agent, the Logs Ingestion API, and several modern data onboarding patterns that need more control than legacy agent or diagnostic-setting approaches.
@@ -5,6 +30,7 @@ They are the configuration backbone for Azure Monitor Agent, the Logs Ingestion 
 ## Architecture Overview
 A DCR separates telemetry collection intent from the monitored resource itself.
 Instead of configuring every collection behavior directly on a machine, you declare sources, streams, transformations, and destinations in a reusable rule and then associate that rule with the relevant resource.
+<!-- diagram-id: architecture-overview -->
 ```mermaid
 flowchart LR
     SRC[VM / Arc server / custom app / API payload] --> AMA[Azure Monitor Agent or Logs Ingestion API]
@@ -151,6 +177,7 @@ DCR data flow is more explicit than many other Azure Monitor pipelines.
 4. The destination receives the data in the selected table or stream.
 
 ### Data flow diagram with transformation stage
+<!-- diagram-id: data-flow-diagram-with-transformation-stage -->
 ```mermaid
 sequenceDiagram
     participant S as Source

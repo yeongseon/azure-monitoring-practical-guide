@@ -1,5 +1,18 @@
+---
+content_sources:
+  diagrams:
+    - id: export-and-integration
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+---
+
 # Export and Integration
 Azure Monitor exports let you route selected tables to downstream archival, streaming, and analytics systems without giving every consumer direct workspace access. This runbook covers continuous export operations and API-driven integration checks.
+<!-- diagram-id: export-and-integration -->
 ```mermaid
 flowchart LR
     Workspace[Log Analytics workspace] --> ExportRule[Data export rule]

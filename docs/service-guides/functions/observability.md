@@ -1,9 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow-diagram
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitoring
+        - https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
+---
+
 # Observability in Azure Functions
 
 Azure Functions has built-in integration with Application Insights and Azure Monitor to provide comprehensive observability for your serverless applications.
 
 ## Data Flow Diagram
 
+<!-- diagram-id: data-flow-diagram -->
 ```mermaid
 graph TD
     Trigger[Function Trigger] -->|Invocation| Function[Azure Function]

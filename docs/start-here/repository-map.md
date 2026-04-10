@@ -1,7 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: repository-map
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+---
+
 # Repository Map
 
 The Azure Monitoring Practical Guide is organized to mirror the workflow of setting up and operating a production monitoring stack. This section explains the structure and purpose of each directory.
 
+<!-- diagram-id: repository-map -->
 ```mermaid
 graph TD
     Root[docs/] --> Start[start-here/]

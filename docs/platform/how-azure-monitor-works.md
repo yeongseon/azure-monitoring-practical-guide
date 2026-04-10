@@ -1,3 +1,36 @@
+---
+content_sources:
+  diagrams:
+    - id: architecture-overview
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+    - id: data-flow-diagram-by-signal-type
+      type: sequenceDiagram
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+---
+
 # How Azure Monitor Works
 Azure Monitor is the telemetry fabric for Azure services, guest operating systems, containers, applications, and selected non-Azure environments.
 It collects platform metrics, logs, traces, activity events, and health signals, then routes them into Azure Monitor experiences such as Metrics Explorer, Log Analytics, Application Insights, alerts, workbooks, and downstream integrations.
@@ -6,6 +39,7 @@ It collects platform metrics, logs, traces, activity events, and health signals,
 The most useful mental model is not a single product.
 Azure Monitor is a platform made of collection endpoints, ingestion services, data stores, analysis engines, and actioning services.
 Different data types move through different paths, and that difference explains why metrics feel faster than logs and why Application Insights data ends up queryable beside workspace data.
+<!-- diagram-id: architecture-overview -->
 ```mermaid
 flowchart LR
     subgraph Producers
@@ -366,6 +400,7 @@ It is more flexible and usually the preferred collection model for guest telemet
 4. Events can also be analyzed or retained using Azure Monitor integrations, including workspaces and archival destinations.
 
 ### Data flow diagram by signal type
+<!-- diagram-id: data-flow-diagram-by-signal-type -->
 ```mermaid
 sequenceDiagram
     participant R as Azure Resource

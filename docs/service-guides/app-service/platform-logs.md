@@ -1,9 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow-diagram
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+        - https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs
+---
+
 # App Service Platform Logs
 
 Azure App Service generates several types of platform logs that provide insight into the operation and status of your web applications. These logs are essential for troubleshooting issues, monitoring traffic, and auditing access.
 
 ## Data Flow Diagram
 
+<!-- diagram-id: data-flow-diagram -->
 ```mermaid
 graph TD
     AppService[Azure App Service] -->|Diagnostic Settings| LAW[Log Analytics Workspace]

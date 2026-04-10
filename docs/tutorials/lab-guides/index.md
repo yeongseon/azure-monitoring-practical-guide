@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: monitoring-lab-guides
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/
+        - https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+---
+
 # Monitoring Lab Guides
 
 These hands-on labs provide a structured path through the most important Azure Monitor workflows. Each guide follows the same pattern: prepare a sandbox, execute Azure CLI steps, validate the result, and clean up safely.
 
+<!-- diagram-id: monitoring-lab-guides -->
 ```mermaid
 graph TD
     A[Monitoring labs] --> B[Log Analytics]

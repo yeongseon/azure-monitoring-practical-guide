@@ -1,3 +1,19 @@
+---
+content_sources:
+  diagrams:
+    - id: troubleshooting-decision-flow
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-enable-aks
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-data-collection-filter
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/containerlogv2
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
+---
+
 # AKS Container Insights Issues
 
 ## 1. Summary
@@ -11,6 +27,7 @@ This playbook is for cases where the Azure portal shows an AKS cluster, but Cont
 
 ### Troubleshooting decision flow
 
+<!-- diagram-id: troubleshooting-decision-flow -->
 ```mermaid
 flowchart TD
     A[Symptom: Container Insights missing or partial] --> B{Is monitoring enabled on AKS?}

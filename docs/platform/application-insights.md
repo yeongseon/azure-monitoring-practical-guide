@@ -1,3 +1,32 @@
+---
+content_sources:
+  diagrams:
+    - id: architecture-overview
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/live-stream
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/distributed-trace-data
+        - https://learn.microsoft.com/en-us/cli/azure/monitor/app-insights?view=azure-cli-latest
+        - https://learn.microsoft.com/en-us/cli/azure/monitor/scheduled-query?view=azure-cli-latest
+    - id: data-flow-diagram-for-a-web-request
+      type: sequenceDiagram
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/live-stream
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/distributed-trace-data
+        - https://learn.microsoft.com/en-us/cli/azure/monitor/app-insights?view=azure-cli-latest
+        - https://learn.microsoft.com/en-us/cli/azure/monitor/scheduled-query?view=azure-cli-latest
+---
+
 # Application Insights
 Application Insights is Azure Monitor’s application performance management layer for requests, dependencies, exceptions, traces, page views, availability, and user-impact analysis.
 In modern Azure Monitor design, Application Insights is usually workspace-based, which means the telemetry is stored in Log Analytics while still powering curated APM experiences such as Application Map, Failures, Performance, Live Metrics, and Transaction Search.
@@ -5,6 +34,7 @@ In modern Azure Monitor design, Application Insights is usually workspace-based,
 ## Architecture Overview
 Application Insights should be understood as both an ingestion model and a set of analysis experiences.
 Instrumentation emits telemetry, Azure Monitor processes and correlates it, the workspace stores it, and the Application Insights experience layer renders application-centric views on top.
+<!-- diagram-id: architecture-overview -->
 ```mermaid
 flowchart LR
     APP[Application code / runtime] --> INST[SDK or Azure Monitor OpenTelemetry]
@@ -167,6 +197,7 @@ Application Insights data flow starts in code, but it does not end in the compon
 | Custom event / metric | Custom tables and app views | Business workflow observability |
 
 ### Data flow diagram for a web request
+<!-- diagram-id: data-flow-diagram-for-a-web-request -->
 ```mermaid
 sequenceDiagram
     participant U as User

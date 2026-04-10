@@ -1,7 +1,19 @@
+---
+content_sources:
+  diagrams:
+    - id: platform-limits
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+---
+
 # Platform Limits
 
 Reference of current service limits and quotas for Azure Monitor components. For the most up-to-date values, always refer to the [official Microsoft Learn limits page](https://learn.microsoft.com/azure/azure-monitor/service-limits).
 
+<!-- diagram-id: platform-limits -->
 ```mermaid
 flowchart LR
     subgraph "Azure Monitor Limits Overview"

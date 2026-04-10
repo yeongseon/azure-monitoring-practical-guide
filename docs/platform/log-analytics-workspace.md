@@ -1,3 +1,30 @@
+---
+content_sources:
+  diagrams:
+    - id: architecture-overview
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+    - id: data-flow-diagram-focused-on-the-workspace
+      type: sequenceDiagram
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+---
+
 # Log Analytics Workspace
 A Log Analytics workspace is the primary log storage, query, retention, access, and governance boundary in Azure Monitor.
 It is where Azure resource logs, guest telemetry, Application Insights workspace-based telemetry, and custom ingestion streams become analyzable with Kusto Query Language.
@@ -5,6 +32,7 @@ It is where Azure resource logs, guest telemetry, Application Insights workspace
 ## Architecture Overview
 A workspace is not just a database.
 It is the operating boundary for data residency, query permissions, retention, export, daily caps, and several network access controls.
+<!-- diagram-id: architecture-overview -->
 ```mermaid
 flowchart LR
     SRC[Azure resources / AMA / App Insights / APIs] --> ING[Ingestion endpoints]
@@ -214,6 +242,7 @@ The workspace participates in several data flows simultaneously.
 3. Workspace custom tables receive the transformed records.
 
 ### Data flow diagram focused on the workspace
+<!-- diagram-id: data-flow-diagram-focused-on-the-workspace -->
 ```mermaid
 sequenceDiagram
     participant R as Resource or app

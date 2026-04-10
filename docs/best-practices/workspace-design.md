@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: workspace-design
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+---
+
 # Workspace Design
 
 Use this guide to design Azure Monitor workspaces that stay governable as environments, teams, and regulatory boundaries grow. The goal is to avoid rebuilding your logging topology after alerting, retention, and access patterns are already in production.
 
+<!-- diagram-id: workspace-design -->
 ```mermaid
 flowchart LR
     A[Azure resources] --> B[Diagnostic settings]

@@ -1,5 +1,17 @@
+---
+content_sources:
+  diagrams:
+    - id: diagnostic-settings
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+---
+
 # Diagnostic Settings
 Diagnostic settings route platform logs and metrics from Azure resources to Log Analytics, Storage, Event Hubs, or partner destinations. This runbook focuses on safe day-2 changes and validation with Azure CLI.
+<!-- diagram-id: diagnostic-settings -->
 ```mermaid
 flowchart LR
     Resource[Azure resource] --> Setting[Diagnostic setting]

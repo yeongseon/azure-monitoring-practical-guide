@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: azure-monitoring-practical-guide
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+---
+
 # Azure Monitoring Practical Guide
 
 Comprehensive guide for monitoring Azure workloads — from Azure Monitor fundamentals to production operations with Log Analytics and Application Insights.
 
+<!-- diagram-id: azure-monitoring-practical-guide -->
 ```mermaid
 graph LR
     subgraph "Navigation"

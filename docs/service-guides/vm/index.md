@@ -1,7 +1,19 @@
+---
+content_sources:
+  diagrams:
+    - id: vm-monitoring
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-overview
+---
+
 # VM Monitoring
 
 Monitoring Azure Virtual Machines with Azure Monitor Agent and VM Insights.
 
+<!-- diagram-id: vm-monitoring -->
 ```mermaid
 graph TB
     subgraph "Virtual Machine"

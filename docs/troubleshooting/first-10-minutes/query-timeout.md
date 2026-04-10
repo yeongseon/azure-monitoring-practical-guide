@@ -1,9 +1,22 @@
+---
+content_sources:
+  diagrams:
+    - id: quick-context
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/scope
+---
+
 # First 10 Minutes: Query Timeout
 
 ## Quick Context
 
 Use this checklist when Log Analytics queries, workbook visuals, or scheduled query rules are slow enough to time out or become operationally unreliable. In the first 10 minutes, determine whether the problem is broad workspace health, oversized time range, inefficient query shape, or one hot table with heavy volume.
 
+<!-- diagram-id: quick-context -->
 ```mermaid
 flowchart TD
     A[Query is slow or times out] --> B{Do narrow control queries return fast?}

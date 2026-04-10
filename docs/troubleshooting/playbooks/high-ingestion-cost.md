@@ -1,3 +1,18 @@
+---
+content_sources:
+  diagrams:
+    - id: 1-summary
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/pricing
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs#table-plans
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/usage
+---
+
 # High Ingestion Cost
 
 ## 1. Summary
@@ -15,6 +30,7 @@ Use it when:
 - One or two tables suddenly dominate usage charts.
 - Teams need evidence before disabling logs or moving tables to Basic plan.
 
+<!-- diagram-id: 1-summary -->
 ```mermaid
 flowchart TD
     A[High ingestion cost] --> B{Which table grew first?}

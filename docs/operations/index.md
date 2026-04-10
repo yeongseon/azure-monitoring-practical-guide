@@ -1,7 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: operations
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+---
+
 # Operations
 
 Day-2 operational procedures for Azure Monitor.
 
+<!-- diagram-id: operations -->
 ```mermaid
 graph LR
     subgraph "Setup"

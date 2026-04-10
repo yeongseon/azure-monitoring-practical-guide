@@ -1,9 +1,22 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow-diagram
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-enable?tabs=aspnetcore
+---
+
 # Application Insights Integration
 
 Azure App Service allows for deeper application-level monitoring through integration with Application Insights. This provides detailed telemetry on requests, dependencies, exceptions, and overall application performance.
 
 ## Data Flow Diagram
 
+<!-- diagram-id: data-flow-diagram -->
 ```mermaid
 graph TD
     App[Application Code] -->|Instrumentation| AI[Application Insights SDK / Agent]

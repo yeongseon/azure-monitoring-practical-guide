@@ -1,3 +1,14 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+        - https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs
+---
+
 # App Service Diagnostics (HTTP Log Analysis)
 
 Analyze HTTP logs for Azure App Service to identify errors, slow requests, or unusual traffic patterns. This table provides raw details about each incoming request at the infrastructure level.
@@ -19,6 +30,7 @@ AppServiceHTTPLogs
 ```
 
 ## Data Flow
+<!-- diagram-id: data-flow -->
 ```mermaid
 graph TD
     A[AppServiceHTTPLogs table] --> B[Filter by 24h]

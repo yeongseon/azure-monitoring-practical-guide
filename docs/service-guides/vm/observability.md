@@ -1,9 +1,22 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow-diagram
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-overview
+---
+
 # VM Observability
 
 Monitoring Azure Virtual Machines involves collecting data from the host, the guest operating system (OS), and the workloads running within. This is primarily achieved using the Azure Monitor Agent (AMA) and VM Insights.
 
 ## Data Flow Diagram
 
+<!-- diagram-id: data-flow-diagram -->
 ```mermaid
 graph TD
     subgraph VM[Virtual Machine]

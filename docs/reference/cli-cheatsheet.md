@@ -1,7 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: azure-monitor-cli-cheatsheet
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+---
+
 # Azure Monitor CLI Cheatsheet
 
 Quick reference for common `az monitor` commands. All examples use long flags for clarity and script compatibility.
 
+<!-- diagram-id: azure-monitor-cli-cheatsheet -->
 ```mermaid
 flowchart LR
     subgraph "Azure Monitor CLI Commands"

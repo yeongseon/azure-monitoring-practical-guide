@@ -1,7 +1,18 @@
+---
+content_sources:
+  diagrams:
+    - id: playbooks
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+---
+
 # Playbooks
 
 Step-by-step troubleshooting guides for common Azure Monitor issues.
 
+<!-- diagram-id: playbooks -->
 ```mermaid
 graph TB
     subgraph "Data Issues"

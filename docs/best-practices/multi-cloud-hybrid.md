@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: multi-cloud-and-hybrid-monitoring
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+---
+
 # Multi-Cloud and Hybrid Monitoring
 
 Hybrid and multi-cloud monitoring succeeds when collection, identity, and data ownership are standardized before teams connect more environments. Use this guide to make Azure Monitor workable across Azure, Azure Arc, private datacenters, and workloads running outside Azure.
 
+<!-- diagram-id: multi-cloud-and-hybrid-monitoring -->
 ```mermaid
 flowchart LR
     A[Azure resources] --> E[Shared monitoring model]

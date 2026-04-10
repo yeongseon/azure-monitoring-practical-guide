@@ -1,3 +1,16 @@
+---
+content_sources:
+  diagrams:
+    - id: architecture-diagram
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-create-workbook
+        - https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
+---
+
 # Lab 05: Workbooks and Dashboards
 
 This lab turns raw telemetry and alert logic into shareable operational views. You will create a workbook backed by Azure Monitor queries, add parameters and visualizations, and publish a simple Azure dashboard for team consumption.
@@ -38,6 +51,7 @@ export WORKSPACE_ID=$(az monitor log-analytics workspace show \
 
 ## Architecture Diagram
 
+<!-- diagram-id: architecture-diagram -->
 ```mermaid
 flowchart LR
     LAW[Log Analytics workspace] --> KQL[Workbook KQL queries]

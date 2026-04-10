@@ -1,3 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: 1-summary
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/azurediagnostics
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-ingestion-time
+---
+
 # No Data in Workspace
 
 ## 1. Summary
@@ -15,6 +32,7 @@ Use it when:
 - One team claims the workspace is broken, but another team sees partial data.
 - You need a falsifiable path to prove whether the break is at the workspace, DCR, resource, or network layer.
 
+<!-- diagram-id: 1-summary -->
 ```mermaid
 flowchart TD
     A[No fresh results in workspace] --> B{Any cap or ingestion warnings?}

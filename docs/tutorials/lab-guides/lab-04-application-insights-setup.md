@@ -1,3 +1,16 @@
+---
+content_sources:
+  diagrams:
+    - id: architecture-diagram
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps
+---
+
 # Lab 04: Application Insights Setup
 
 This lab adds application performance monitoring to the sandbox. You will create an Application Insights resource, configure a sample App Service to send telemetry, emit custom events and traces, and create an availability test to verify end-user reachability.
@@ -33,6 +46,7 @@ export WEB_TEST_NAME="webtest-monlab04"
 
 ## Architecture Diagram
 
+<!-- diagram-id: architecture-diagram -->
 ```mermaid
 flowchart LR
     User[Browser or synthetic client] --> App[App Service app]

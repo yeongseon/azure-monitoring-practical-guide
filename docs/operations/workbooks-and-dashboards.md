@@ -1,5 +1,17 @@
+---
+content_sources:
+  diagrams:
+    - id: workbooks-and-dashboards
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
+---
+
 # Workbooks and Dashboards
 Azure Monitor workbooks provide parameterized operational analysis, while Azure dashboards provide at-a-glance status views for shared audiences. This runbook focuses on maintaining both assets as reusable, versioned operational artifacts.
+<!-- diagram-id: workbooks-and-dashboards -->
 ```mermaid
 flowchart LR
     Data[Metrics and logs] --> Workbook[Azure Monitor workbook]

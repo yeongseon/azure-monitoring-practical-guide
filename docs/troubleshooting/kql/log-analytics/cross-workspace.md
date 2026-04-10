@@ -1,3 +1,15 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+---
+
 # Cross-Workspace Query Patterns
 
 The `workspace()` function allows you to query data across multiple Log Analytics workspaces within your tenant. This is essential for organizations with distributed logging architectures or centralized security auditing.
@@ -19,6 +31,7 @@ union
 ```
 
 ## Data Flow
+<!-- diagram-id: data-flow -->
 ```mermaid
 graph TD
     A[workspace A] --> D[Union]

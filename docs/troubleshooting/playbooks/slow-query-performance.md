@@ -1,3 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: 1-summary
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits
+        - https://learn.microsoft.com/en-us/azure/service-health/service-health-portal-update
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apprequests
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/usage
+---
+
 # Slow Query Performance
 
 ## 1. Summary
@@ -9,6 +27,7 @@ Use this playbook when a query is functionally correct but operationally unhealt
 **Typical incident window**: 10-30 minutes from first timeout or slow workbook report to confirmation that the issue is query shape, data volume, or true workspace degradation.
 **Time to resolution**: 30 minutes to 2 hours depending on whether remediation is a query rewrite, reduced scope, or ingestion/data-shape change.
 
+<!-- diagram-id: 1-summary -->
 ```mermaid
 flowchart TD
     A[Symptom: slow or timing-out KQL query] --> B{Is the time range broad?}

@@ -1,7 +1,19 @@
+---
+content_sources:
+  diagrams:
+    - id: alert-investigation-queries
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+---
+
 # Alert Investigation Queries
 
 KQL queries for alert evaluation and troubleshooting.
 
+<!-- diagram-id: alert-investigation-queries -->
 ```mermaid
 graph LR
     A[AzureActivity] --> B[Alert Firing History]

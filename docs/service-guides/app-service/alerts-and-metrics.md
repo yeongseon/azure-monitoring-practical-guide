@@ -1,9 +1,22 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow-diagram
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric
+        - https://learn.microsoft.com/en-us/azure/app-service/web-sites-monitor#metrics-granularity-and-retention-policy
+---
+
 # Alerts and Metrics
 
 Azure App Service provides a rich set of platform metrics that help you monitor the health and performance of your application. You can use these metrics to create alert rules that notify you of issues in real-time.
 
 ## Data Flow Diagram
 
+<!-- diagram-id: data-flow-diagram -->
 ```mermaid
 graph TD
     Resource[Azure App Service] -->|Push| MetricsStore[Azure Monitor Metrics Store]

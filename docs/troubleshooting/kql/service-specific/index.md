@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: service-specific-queries
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+        - https://learn.microsoft.com/en-us/azure/aks/monitor-aks
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine
+---
+
 # Service-Specific Queries
 
 KQL queries for specific Azure service diagnostics.
 
+<!-- diagram-id: service-specific-queries -->
 ```mermaid
 graph LR
     A[AppServiceHTTPLogs] --> B[HTTP Analysis]

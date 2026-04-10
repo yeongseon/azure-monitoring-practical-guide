@@ -1,3 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: troubleshooting-decision-flow
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/app-insights/investigate-missing-telemetry
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apprequests
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appdependencies
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apptraces
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appexceptions
+---
+
 # Application Insights Data Gaps
 
 ## 1. Summary
@@ -11,6 +29,7 @@ This playbook is appropriate when a service was previously visible and is now pa
 
 ### Troubleshooting decision flow
 
+<!-- diagram-id: troubleshooting-decision-flow -->
 ```mermaid
 flowchart TD
     A[Symptom: Application Insights data gap] --> B{Any telemetry type arriving?}

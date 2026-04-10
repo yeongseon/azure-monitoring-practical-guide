@@ -1,3 +1,28 @@
+---
+content_sources:
+  diagrams:
+    - id: architecture-overview
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/network-security-perimeter
+        - https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview
+    - id: data-flow-with-private-connectivity
+      type: sequenceDiagram
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/network-security-perimeter
+        - https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview
+---
+
 # Networking and Security
 Azure Monitor networking and security controls determine who can ingest telemetry, who can query it, and whether those paths stay on public endpoints or traverse private connectivity.
 These controls matter because observability data often includes operationally sensitive details such as infrastructure topology, request behavior, and failure evidence.
@@ -5,6 +30,7 @@ These controls matter because observability data often includes operationally se
 ## Architecture Overview
 Azure Monitor security is not one toggle.
 It is the combination of identity, RBAC, workspace access mode, public network access settings, Private Link support, encryption, and resource-level configuration choices such as diagnostic settings and data collection rules.
+<!-- diagram-id: architecture-overview -->
 ```mermaid
 flowchart LR
     USER[User or automation identity] --> RBAC[Azure RBAC / access model]
@@ -144,6 +170,7 @@ Security controls apply differently across control and data paths.
 4. Azure Monitor returns the requested logs or metrics if authorized.
 
 ### Data flow with private connectivity
+<!-- diagram-id: data-flow-with-private-connectivity -->
 ```mermaid
 sequenceDiagram
     participant I as Identity or agent

@@ -1,5 +1,18 @@
+---
+content_sources:
+  diagrams:
+    - id: workspace-management
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+---
+
 # Workspace Management
 Log Analytics workspace operations determine where Azure Monitor Logs land, how long they stay available, and who can safely query or change the environment. This runbook focuses on repeatable day-2 workspace administration with Azure CLI.
+<!-- diagram-id: workspace-management -->
 ```mermaid
 flowchart LR
     Sources[Azure resources and agents] --> Workspace[Log Analytics workspace]

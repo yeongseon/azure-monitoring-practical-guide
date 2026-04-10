@@ -1,3 +1,15 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
+---
+
 # Ingestion Volume (Data Volume by Table)
 
 Analyze the volume of data being ingested into your Log Analytics workspace. Monitoring ingestion volume is critical for cost management and identifying unexpected spikes in logging that could lead to budget overruns.
@@ -17,6 +29,7 @@ Usage
 ```
 
 ## Data Flow
+<!-- diagram-id: data-flow -->
 ```mermaid
 graph TD
     A[Usage table] --> B[Filter IsBillable == true]

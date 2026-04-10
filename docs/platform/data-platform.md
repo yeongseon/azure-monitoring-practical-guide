@@ -1,9 +1,37 @@
+---
+content_sources:
+  diagrams:
+    - id: architecture-overview
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+    - id: data-platform-sequencing-diagram
+      type: sequenceDiagram
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+---
+
 # Data Platform
 Azure Monitor data platform combines specialized stores for metrics, logs, traces, and curated application telemetry.
 The design goal is not to force every signal into one engine, but to keep each signal in the storage model that best matches latency, scale, correlation, and cost requirements.
 
 ## Architecture Overview
 Azure Monitor data platform is easier to understand when separated into collection, routing, storage, query, and action layers.
+<!-- diagram-id: architecture-overview -->
 ```mermaid
 flowchart TD
     SRC[Telemetry sources] --> COL[Collection mechanisms]
@@ -252,6 +280,7 @@ Sampling and enrichment decisions affect both cost and diagnostic fidelity.
 | App Insights | APM and traces | Medium, with separate live features | Instrumentation and sampling |
 
 ### Data platform sequencing diagram
+<!-- diagram-id: data-platform-sequencing-diagram -->
 ```mermaid
 sequenceDiagram
     participant S as Source

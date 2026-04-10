@@ -1,9 +1,22 @@
+---
+content_sources:
+  diagrams:
+    - id: quick-context
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule
+---
+
 # First 10 Minutes: Alert Not Firing
 
 ## Quick Context
 
 Use this checklist when a metric or log condition appears real but Azure Monitor did not create the expected alert, or created it without delivering a notification. In the first 10 minutes, determine whether the miss is in signal evaluation, rule configuration, suppression, or action group delivery.
 
+<!-- diagram-id: quick-context -->
 ```mermaid
 flowchart TD
     A[Expected alert missing] --> B{Did the signal truly meet rule logic?}

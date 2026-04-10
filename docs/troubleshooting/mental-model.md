@@ -1,3 +1,35 @@
+---
+content_sources:
+  diagrams:
+    - id: symptom-to-hypothesis-framework
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    - id: 5-minimum-evidence-set
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    - id: 9-recovery-verification-model
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+---
+
 # Troubleshooting Mental Model
 
 This page provides a practical thinking model for Azure Monitor incidents so you can move from symptom to verified root cause without skipping disproof.
@@ -17,6 +49,7 @@ This model keeps the investigation falsifiable.
 
 ## Symptom-to-hypothesis framework
 
+<!-- diagram-id: symptom-to-hypothesis-framework -->
 ```mermaid
 flowchart TD
     A[Observed symptom] --> B[Classify failure domain]
@@ -82,6 +115,7 @@ This prevents premature mitigation that destroys useful evidence.
 
 ## 5) Minimum evidence set
 
+<!-- diagram-id: 5-minimum-evidence-set -->
 ```mermaid
 flowchart LR
     A[Symptom statement] --> B[Control query]
@@ -150,6 +184,7 @@ If you cannot state the disproof condition, the hypothesis is not ready.
 
 ## 9) Recovery verification model
 
+<!-- diagram-id: 9-recovery-verification-model -->
 ```mermaid
 flowchart TD
     A[Apply one targeted fix] --> B[Check fresh data or control query]

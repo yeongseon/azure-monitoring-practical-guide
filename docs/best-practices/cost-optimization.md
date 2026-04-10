@@ -1,7 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: cost-optimization
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/pricing
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+---
+
 # Cost Optimization
 
 Azure Monitor cost optimization is mostly a design discipline, not a cleanup exercise. Use this guide to control ingestion, retention, and query habits before observability growth turns into billing surprises.
 
+<!-- diagram-id: cost-optimization -->
 ```mermaid
 flowchart LR
     A[Telemetry sources] --> B[Collection filters]

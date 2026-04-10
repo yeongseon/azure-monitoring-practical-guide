@@ -1,3 +1,14 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+---
+
 # Alert Firing History (Timeline Analysis)
 
 Analyzing the history of fired alerts is critical for identifying recurring infrastructure issues and potential "alert fatigue" where too many non-critical alerts are generated.
@@ -19,6 +30,7 @@ AlertsManagementResources
 ```
 
 ## Data Flow
+<!-- diagram-id: data-flow -->
 ```mermaid
 graph TD
     A[AlertsManagementResources] --> B[Filter by 48h]

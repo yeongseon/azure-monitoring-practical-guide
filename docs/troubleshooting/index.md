@@ -1,7 +1,19 @@
+---
+content_sources:
+  diagrams:
+    - id: troubleshooting
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+---
+
 # Troubleshooting
 
 Diagnosis and resolution for common Azure Monitor issues.
 
+<!-- diagram-id: troubleshooting -->
 ```mermaid
 graph TD
     A[Symptom] --> B[Architecture Overview]

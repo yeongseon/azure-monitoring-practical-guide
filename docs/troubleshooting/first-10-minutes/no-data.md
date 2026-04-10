@@ -1,9 +1,22 @@
+---
+content_sources:
+  diagrams:
+    - id: quick-context
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+---
+
 # First 10 Minutes: No Data
 
 ## Quick Context
 
 Use this checklist when a Log Analytics workspace, workbook, or alert query shows empty or stale results. In the first 10 minutes, determine whether the break is caused by workspace capping, missing diagnostic settings, missing DCR association, unhealthy agents, or ingestion delay that only looks like data loss.
 
+<!-- diagram-id: quick-context -->
 ```mermaid
 flowchart TD
     A[No fresh data visible] --> B{Any table still updating?}

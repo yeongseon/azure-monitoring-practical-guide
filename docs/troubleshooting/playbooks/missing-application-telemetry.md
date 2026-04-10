@@ -1,3 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: 1-summary
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-troubleshooting-missing-telemetry
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/ip-addresses
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apprequests
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appdependencies
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apptraces
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appexceptions
+---
+
 # Missing Application Telemetry
 
 ## 1. Summary
@@ -15,6 +32,7 @@ Use it when:
 - Data appears in Live Metrics but not in long-term queries.
 - A release, firewall change, or SDK configuration change aligned with the telemetry gap.
 
+<!-- diagram-id: 1-summary -->
 ```mermaid
 flowchart TD
     A[Missing application telemetry] --> B{Any telemetry type still arriving?}

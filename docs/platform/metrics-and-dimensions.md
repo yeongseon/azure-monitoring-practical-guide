@@ -1,3 +1,26 @@
+---
+content_sources:
+  diagrams:
+    - id: architecture-overview
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/analyze-metrics
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/metrics-index
+        - https://learn.microsoft.com/en-us/cli/azure/monitor/metrics?view=azure-cli-latest
+    - id: data-flow-diagram
+      type: sequenceDiagram
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/analyze-metrics
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/metrics-index
+        - https://learn.microsoft.com/en-us/cli/azure/monitor/metrics?view=azure-cli-latest
+---
+
 # Metrics and Dimensions
 Azure Monitor metrics are lightweight time-series measurements designed for fast visualization, low-latency alerting, and repeated aggregation.
 Dimensions add context to those measurements so the same metric can be filtered, grouped, and alerted on by attributes such as instance, response code, or node.
@@ -5,6 +28,7 @@ Dimensions add context to those measurements so the same metric can be filtered,
 ## Architecture Overview
 Metrics in Azure Monitor follow a different architecture than workspace logs.
 Resource providers emit measurements into a dedicated metrics store, and consumers retrieve aggregated values by metric name, interval, aggregation, and optional dimension filters.
+<!-- diagram-id: architecture-overview -->
 ```mermaid
 flowchart LR
     SRC[Azure resource or custom metric source] --> NS[Metric namespace]
@@ -180,6 +204,7 @@ Metric data usually follows a shorter path than log data.
 4. Metric alerts or autoscale evaluate those points.
 
 ### Data flow diagram
+<!-- diagram-id: data-flow-diagram -->
 ```mermaid
 sequenceDiagram
     participant R as Resource

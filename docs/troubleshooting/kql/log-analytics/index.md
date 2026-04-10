@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: log-analytics-queries
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+---
+
 # Log Analytics Queries
 
 KQL queries for Log Analytics workspace analysis.
 
+<!-- diagram-id: log-analytics-queries -->
 ```mermaid
 graph LR
     A[Usage] --> B[Ingestion Volume]

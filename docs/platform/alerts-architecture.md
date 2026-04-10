@@ -1,3 +1,34 @@
+---
+content_sources:
+  diagrams:
+    - id: architecture-overview
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-log-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+        - https://learn.microsoft.com/en-us/cli/azure/monitor/metrics/alert?view=azure-cli-latest
+        - https://learn.microsoft.com/en-us/cli/azure/monitor/scheduled-query?view=azure-cli-latest
+    - id: alert-lifecycle-diagram
+      type: sequenceDiagram
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-log-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+        - https://learn.microsoft.com/en-us/cli/azure/monitor/metrics/alert?view=azure-cli-latest
+        - https://learn.microsoft.com/en-us/cli/azure/monitor/scheduled-query?view=azure-cli-latest
+---
+
 # Alerts Architecture
 Azure Monitor alerting is the response layer that turns telemetry into notifications, tickets, and automation.
 A good alert architecture does not start with actions; it starts with signal selection, scope, evaluation model, ownership, and the operational behavior of the team that will receive the alert.
@@ -5,6 +36,7 @@ A good alert architecture does not start with actions; it starts with signal sel
 ## Architecture Overview
 Azure Monitor alerting is composed of rules, evaluation engines, processing logic, and action groups.
 Different alert types exist because metrics, logs, and control-plane events have different latency and data-model characteristics.
+<!-- diagram-id: architecture-overview -->
 ```mermaid
 flowchart LR
     SIG[Metric / log / activity / health signal] --> RULE[Alert rule]
@@ -223,6 +255,7 @@ Alert data flow begins with telemetry, but operational flow begins with ownershi
 | Resource health alert | Azure health signals | Event-driven | Platform health changes |
 
 ### Alert lifecycle diagram
+<!-- diagram-id: alert-lifecycle-diagram -->
 ```mermaid
 sequenceDiagram
     participant S as Signal

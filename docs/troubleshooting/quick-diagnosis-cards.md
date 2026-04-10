@@ -1,7 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: quick-diagnosis-cards
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+---
+
 # Quick Diagnosis Cards
 
 Use these cards when you need a fast symptom-to-first-check mapping before opening a deeper checklist or playbook.
 
+<!-- diagram-id: quick-diagnosis-cards -->
 ```mermaid
 flowchart LR
     A[Symptom observed] --> B[Quick diagnosis card]

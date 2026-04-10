@@ -1,3 +1,14 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/distributed-trace-data
+---
+
 # Dependency Failures (Outbound Calls)
 
 Analyze failing outbound calls from your application to external dependencies like SQL databases, HTTP APIs, or Azure storage. Identifying dependency issues is crucial for troubleshooting systemic application failures.
@@ -19,6 +30,7 @@ dependencies
 ```
 
 ## Data Flow
+<!-- diagram-id: data-flow -->
 ```mermaid
 graph TD
     A[dependencies table] --> B[Filter success == false]

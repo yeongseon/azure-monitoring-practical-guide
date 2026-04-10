@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: evidence-map
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+---
+
 # Evidence Map
 
 Data sources to check for each symptom category.
 
+<!-- diagram-id: evidence-map -->
 ```mermaid
 graph LR
     subgraph "Symptoms"

@@ -1,9 +1,22 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow-diagram
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/aks/monitor-aks
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/prometheus-metrics-overview
+---
+
 # AKS Observability
 
 Monitoring Azure Kubernetes Service (AKS) requires a multi-layered approach covering the control plane, nodes, and containerized workloads. This is achieved through Container Insights, Azure Monitor Managed Service for Prometheus, and Azure Managed Grafana.
 
 ## Data Flow Diagram
 
+<!-- diagram-id: data-flow-diagram -->
 ```mermaid
 graph TD
     subgraph Cluster[AKS Cluster]

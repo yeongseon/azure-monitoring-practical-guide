@@ -1,7 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: platform
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+---
+
 # Platform
 
 Understanding Azure Monitor architecture and core concepts.
 
+<!-- diagram-id: platform -->
 ```mermaid
 graph TB
     subgraph "Data Sources"

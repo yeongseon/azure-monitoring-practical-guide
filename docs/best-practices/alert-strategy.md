@@ -1,7 +1,21 @@
+---
+content_sources:
+  diagrams:
+    - id: alert-strategy
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+---
+
 # Alert Strategy
 
 An alert strategy should help responders act faster, not create more noise. Use this guide to define alert rules, severities, and routing patterns that stay usable as your Azure Monitor footprint grows.
 
+<!-- diagram-id: alert-strategy -->
 ```mermaid
 flowchart LR
     A[Signals] --> B[Metric alerts]

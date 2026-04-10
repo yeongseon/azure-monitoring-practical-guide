@@ -1,7 +1,22 @@
+---
+content_sources:
+  diagrams:
+    - id: learning-paths
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+---
+
 # Learning Paths
 
 This guide is structured to support different operational roles. Select your path based on your primary responsibilities within the Azure environment.
 
+<!-- diagram-id: learning-paths -->
 ```mermaid
 graph LR
     User[Select Role] --> Dev[Developer]

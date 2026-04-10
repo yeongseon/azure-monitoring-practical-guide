@@ -1,3 +1,14 @@
+---
+content_sources:
+  diagrams:
+    - id: data-flow
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+---
+
 # Action Group Failures (Failed Notifications)
 
 When an alert fires but the notification is not sent, it is logged in the `AzureActivity` table as a failure. Troubleshooting these failures is essential for ensuring that critical issues are communicated to the correct responders.
@@ -21,6 +32,7 @@ AzureActivity
 ```
 
 ## Data Flow
+<!-- diagram-id: data-flow -->
 ```mermaid
 graph TD
     A[AzureActivity table] --> B[Filter last 7 days]

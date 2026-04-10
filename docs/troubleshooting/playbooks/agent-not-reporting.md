@@ -1,3 +1,17 @@
+---
+content_sources:
+  diagrams:
+    - id: 1-summary
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-windows-vm
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-linux-vm
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
+---
+
 # Agent Not Reporting
 
 ## 1. Summary
@@ -15,6 +29,7 @@ Use it when:
 - Data stopped after network changes, identity changes, or DCR rollout changes.
 - Only AMA-collected tables are missing; other workspace tables still update.
 
+<!-- diagram-id: 1-summary -->
 ```mermaid
 flowchart TD
     A[AMA not reporting] --> B{Heartbeat stale?}

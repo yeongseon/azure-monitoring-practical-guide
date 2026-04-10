@@ -1,3 +1,17 @@
+---
+content_sources:
+  diagrams:
+    - id: architecture-diagram
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/create-diagnostic-settings
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+---
+
 # Lab 01: Log Analytics Workspace Setup
 
 This lab builds the shared data platform for the rest of the tutorial sequence. You will create a Log Analytics workspace, configure retention and daily cap settings, and connect Azure resources so telemetry lands in one searchable location.
@@ -33,6 +47,7 @@ export DCR_NAME="dcr-monlab01"
 
 ## Architecture Diagram
 
+<!-- diagram-id: architecture-diagram -->
 ```mermaid
 flowchart LR
     VM[Azure VM] --> AMA[Azure Monitor Agent]

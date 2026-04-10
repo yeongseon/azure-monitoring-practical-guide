@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: kql-quick-reference
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+---
+
 # KQL Quick Reference
 
 Quick patterns for common Azure Monitor Log Analytics operations.
 
+<!-- diagram-id: kql-quick-reference -->
 ```mermaid
 flowchart LR
     subgraph "KQL Query Structure"

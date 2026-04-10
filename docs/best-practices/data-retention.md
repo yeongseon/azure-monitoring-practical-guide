@@ -1,7 +1,20 @@
+---
+content_sources:
+  diagrams:
+    - id: data-retention
+      type: flowchart
+      source: mslearn-adapted
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+---
+
 # Data Retention
 
 Retention strategy should preserve useful evidence without paying premium analytics cost forever. Use this guide to separate short-term troubleshooting needs from audit, legal, and historical requirements.
 
+<!-- diagram-id: data-retention -->
 ```mermaid
 flowchart LR
     A[Collected logs] --> B[Analytics retention]

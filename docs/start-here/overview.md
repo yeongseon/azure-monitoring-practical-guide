@@ -1,3 +1,14 @@
+---
+content_sources:
+  diagrams:
+    - id: core-capabilities
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+---
+
 # Overview
 
 Azure Monitor provides a full stack monitoring solution for your applications and infrastructure. This guide provides a structured approach to implementing observability using native Azure tools.
@@ -6,6 +17,7 @@ Azure Monitor provides a full stack monitoring solution for your applications an
 
 Azure Monitor collects and analyzes telemetry from your cloud and on-premises environments. It helps you understand how your applications perform and proactively identifies issues affecting them and the resources they depend on.
 
+<!-- diagram-id: core-capabilities -->
 ```mermaid
 graph TD
     A[Sources] --> B[Azure Monitor]

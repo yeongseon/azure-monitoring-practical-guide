@@ -1,7 +1,19 @@
+---
+content_sources:
+  diagrams:
+    - id: container-apps-monitoring
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/container-apps/observability
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+---
+
 # Container Apps Monitoring
 
 Monitoring Azure Container Apps observability.
 
+<!-- diagram-id: container-apps-monitoring -->
 ```mermaid
 graph TB
     subgraph "Container Apps"

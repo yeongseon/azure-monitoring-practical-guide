@@ -1,7 +1,19 @@
+---
+content_sources:
+  diagrams:
+    - id: aks-monitoring
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/aks/monitor-aks
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview
+---
+
 # AKS Monitoring
 
 Monitoring Azure Kubernetes Service with Container Insights and Prometheus.
 
+<!-- diagram-id: aks-monitoring -->
 ```mermaid
 graph TB
     subgraph "AKS Cluster"

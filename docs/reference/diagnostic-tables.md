@@ -1,7 +1,19 @@
+---
+content_sources:
+  diagrams:
+    - id: diagnostic-tables-reference
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+---
+
 # Diagnostic Tables Reference
 
 Summary of common Azure Monitor diagnostic tables by service.
 
+<!-- diagram-id: diagnostic-tables-reference -->
 ```mermaid
 flowchart TD
     subgraph "Azure Monitor Tables"

@@ -1,7 +1,19 @@
+---
+content_sources:
+  diagrams:
+    - id: functions-monitoring
+      type: flowchart
+      source: self-generated
+      based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
+        - https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitoring
+---
+
 # Functions Monitoring
 
 Monitoring Azure Functions execution and performance.
 
+<!-- diagram-id: functions-monitoring -->
 ```mermaid
 graph TB
     subgraph "Azure Functions"
