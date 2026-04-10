@@ -193,8 +193,9 @@ nav:
         - troubleshooting/kql/service-specific/index.md
         - troubleshooting/kql/service-specific/app-service-diagnostics.md
   - Reference:
-    - reference/index.md
-    - reference/cli-cheatsheet.md
-    - reference/kql-quick-reference.md
-    - reference/platform-limits.md
-    - reference/diagnostic-tables.md
+     - reference/index.md
+     - reference/cli-cheatsheet.md
+     - reference/kql-quick-reference.md
+     - reference/platform-limits.md
+     - reference/diagnostic-tables.md
+     - reference/content-validation-status.md
