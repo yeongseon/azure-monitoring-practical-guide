@@ -201,7 +201,7 @@ az monitor metrics list \
     --metrics "Requests" \
     --interval "PT5M" \
     --aggregation "Total" \
-    --filter "HttpStatusCode eq '*' and HttpStatusCode eq '500'" \
+    --filter "HttpStatusCode eq '500'" \
     --output table
 ```
 Example output:

@@ -4,6 +4,7 @@ content_sources:
     - id: evidence-map
       type: flowchart
       source: self-generated
+      justification: "Synthesized from Microsoft Learn troubleshooting articles for Azure Monitor and Log Analytics"
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot

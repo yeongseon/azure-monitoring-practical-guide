@@ -4,6 +4,7 @@ content_sources:
     - id: service-specific-queries
       type: flowchart
       source: self-generated
+      justification: "Synthesized from Microsoft Learn monitoring guides for App Service, AKS, Container Apps, Functions, and VMs"
       based_on:
         - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
         - https://learn.microsoft.com/en-us/azure/aks/monitor-aks

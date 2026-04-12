@@ -76,7 +76,7 @@ To enable Application Insights for a function app, set the `APPLICATIONINSIGHTS_
 az functionapp config appsettings set \
     --resource-group "my-resource-group" \
     --name "my-function-app" \
-    --settings "APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=00000000-0000-0000-0000-000000000000;IngestionEndpoint=https://centralus-0.in.applicationinsights.azure.com/"
+    --settings "APPLICATIONINSIGHTS_CONNECTION_STRING=<connection-string>"
 ```
 
 ## KQL Query Examples
@@ -186,7 +186,7 @@ Sample output:
 [
   {
     "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
-    "value": "InstrumentationKey=00000000-0000-0000-0000-000000000000;IngestionEndpoint=https://koreacentral-0.in.applicationinsights.azure.com/"
+    "value": "<connection-string>"
   }
 ]
 ```

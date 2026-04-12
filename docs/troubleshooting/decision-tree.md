@@ -4,6 +4,7 @@ content_sources:
     - id: decision-tree
       type: flowchart
       source: self-generated
+      justification: "Synthesized from Microsoft Learn troubleshooting articles for Azure Monitor, Log Analytics, and alerts"
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
