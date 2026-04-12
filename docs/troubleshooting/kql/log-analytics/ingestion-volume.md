@@ -24,7 +24,7 @@ Usage
 | where TimeGenerated > ago(31d)
 | summarize 
     TotalGB = sum(Quantity) / 1024 
-    by DataType, Solution, Unit
+    by DataType, Solution
 | order by TotalGB desc
 ```
 
@@ -40,12 +40,15 @@ graph TD
 ```
 
 ## Sample Output
-| DataType | Solution | Unit | TotalGB |
-| :--- | :--- | :--- | :--- |
-| AppRequests | LogManagement | GBytes | 120.5 |
-| ContainerLogV2 | ContainerInsights | GBytes | 85.2 |
-| Syslog | LogManagement | GBytes | 45.1 |
-| Heartbeat | LogManagement | GBytes | 5.3 |
+
+| DataType | Solution | TotalGB |
+| :--- | :--- | :--- |
+| AppServiceHTTPLogs | LogManagement | 0.0018 |
+| AppServiceConsoleLogs | LogManagement | 0.0012 |
+| AppServicePlatformLogs | LogManagement | 0.0008 |
+| AzureMetrics | LogManagement | 0.0003 |
+
+> **Note**: The `Usage` table aggregates data hourly. New workspaces may take several hours before Usage records appear. The example above shows a test workspace with App Service diagnostic logs enabled.
 
 ## How to Read This
 Focus on the top 3 tables. If `AppRequests` or `ContainerLogV2` are high, review the logging level in your application or cluster. High `Syslog` volume may indicate an noisy agent on a virtual machine.

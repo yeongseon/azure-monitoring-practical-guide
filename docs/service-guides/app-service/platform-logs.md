@@ -69,7 +69,7 @@ Identify trends in HTTP response codes to detect spikes in errors.
 ```kusto
 AppServiceHTTPLogs
 | where TimeGenerated > ago(1h)
-| summarize count() by Result, bin(TimeGenerated, 5m)
+| summarize count() by ScStatus, bin(TimeGenerated, 5m)
 | render timechart
 ```
 
@@ -80,8 +80,8 @@ Find specific error messages emitted by your application to stdout or stderr.
 ```kusto
 AppServiceConsoleLogs
 | where TimeGenerated > ago(4h)
-| where Result contains "Error" or Result contains "Exception"
-| project TimeGenerated, Result
+| where ResultDescription contains "Error" or ResultDescription contains "Exception"
+| project TimeGenerated, ResultDescription
 | order by TimeGenerated desc
 ```
 
@@ -119,10 +119,11 @@ AppServicePlatformLogs
 Sample output:
 
 ```text
-TimeGenerated              Level    Message
--------------------------  -------  ------------------------------------------------------
-2026-04-06T00:12:00Z       Informational  Worker process recycled after application setting change
-2026-04-06T00:11:00Z       Informational  Container start completed in 18 seconds
+TimeGenerated              Level          Message
+-------------------------  -------------  ------------------------------------------------------
+2026-04-12T08:12:00Z       Informational  Worker process recycled after application setting change.
+2026-04-12T08:08:13Z       Informational  Container start completed in 2793 ms.
+2026-04-12T08:07:33Z       Informational  Container stop initiated for revision update.
 ```
 
 ## What Platform Logs Answer
