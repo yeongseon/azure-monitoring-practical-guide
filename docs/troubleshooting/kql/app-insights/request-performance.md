@@ -56,6 +56,36 @@ Focus on the gap between P50 and P99. A large disparity (e.g., P50 is 300ms but 
 *   `duration` in Application Insights is measured in milliseconds.
 *   This query does not account for client-side latency (network transit).
 
+## Common Variations
+
+### By time window
+```kusto
+requests
+| where timestamp > ago(1h)
+| summarize P50 = percentile(duration, 50), P95 = percentile(duration, 95), P99 = percentile(duration, 99), Count = count() by name
+| order by P99 desc
+```
+
+### Grouped by cloud role
+```kusto
+requests
+| where timestamp > ago(24h)
+| summarize P95 = percentile(duration, 95), P99 = percentile(duration, 99), Count = count() by cloud_RoleName, name
+| order by P99 desc
+```
+
+## Interpretation Guide
+
+| Pattern | Indicates | Action |
+|---|---|---|
+| P99 much higher than P50 | Tail latency issue | Check cold starts, retries, and dependency spikes |
+| P50, P95, and P99 all elevated | Systemic slowness | Check CPU, memory, thread pool, and database pressure |
+| Low count with extreme P99 | Outlier-heavy endpoint | Validate whether a few failing requests skew results |
+
+## Related Playbook
+
+For the full investigation workflow, see [Missing Application Telemetry](../../playbooks/missing-application-telemetry.md).
+
 ## See Also
 *   [Application Insights Overview](../../../platform/how-azure-monitor-works.md)
 *   [Analyzing Request Failures](dependency-failures.md)

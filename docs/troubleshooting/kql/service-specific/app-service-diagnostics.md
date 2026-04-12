@@ -54,6 +54,38 @@ A high volume of `404` errors for a specific `CsUriStem` from a single `CIp` oft
 *   The `CIp` field may be obfuscated or represent a load balancer if not configured correctly.
 *   Only incoming requests to the App Service are captured; outbound calls are in the `AppDependencies` or `dependencies` tables.
 
+## Common Variations
+
+### Slow requests only
+```kusto
+AppServiceHTTPLogs
+| where TimeGenerated > ago(24h)
+| where TimeTaken > 1000
+| summarize SlowCount = count(), AvgTimeTaken = avg(TimeTaken) by CsUriStem, ScStatus
+| order by SlowCount desc
+```
+
+### Error trend by status code
+```kusto
+AppServiceHTTPLogs
+| where TimeGenerated > ago(24h)
+| where ScStatus >= 400
+| summarize ErrorCount = count() by bin(TimeGenerated, 1h), ScStatus
+| render timechart
+```
+
+## Interpretation Guide
+
+| Pattern | Indicates | Action |
+|---|---|---|
+| Many 404s from one IP | Scanner or bad client routing | Block or filter noisy clients if appropriate |
+| 5xx with high TimeTaken | Backend latency or app failure | Correlate with dependencies and app logs |
+| Errors concentrated on one path | Endpoint-specific bug | Review recent code changes for that route |
+
+## Related Playbook
+
+For the full investigation workflow, see [No Data in Workspace](../../playbooks/no-data-in-workspace.md).
+
 ## See Also
 *   [Performance Percentiles](../app-insights/request-performance.md)
 *   [App Service Monitoring Guide](../../../service-guides/app-service/index.md)

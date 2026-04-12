@@ -192,6 +192,10 @@ nav:
       - Service-Specific:
         - troubleshooting/kql/service-specific/index.md
         - troubleshooting/kql/service-specific/app-service-diagnostics.md
+        - troubleshooting/kql/service-specific/aks-diagnostics.md
+        - troubleshooting/kql/service-specific/container-apps-diagnostics.md
+        - troubleshooting/kql/service-specific/functions-diagnostics.md
+        - troubleshooting/kql/service-specific/vm-diagnostics.md
   - Reference:
      - reference/index.md
      - reference/cli-cheatsheet.md

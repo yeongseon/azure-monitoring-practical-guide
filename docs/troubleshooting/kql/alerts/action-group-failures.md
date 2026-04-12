@@ -57,6 +57,40 @@ Examine the `Properties_d.statusMessage` for the root cause. "Rate limit exceede
 *   Status messages can vary depending on the provider (Email, SMS, Webhook, Logic App).
 *   Only management-plane failures are logged here; transient downstream provider issues may not always appear.
 
+## Common Variations
+
+### Failures by receiver type
+```kusto
+AzureActivity
+| where TimeGenerated > ago(7d)
+| where OperationNameValue == "Microsoft.Insights/ActionGroups/Write"
+| where ActivityStatusValue == "Failed"
+| summarize FailureCount = count() by ResourceGroup, Caller
+| order by FailureCount desc
+```
+
+### Failure trend over time
+```kusto
+AzureActivity
+| where TimeGenerated > ago(7d)
+| where OperationNameValue == "Microsoft.Insights/ActionGroups/Write"
+| where ActivityStatusValue == "Failed"
+| summarize FailureCount = count() by bin(TimeGenerated, 1h)
+| render timechart
+```
+
+## Interpretation Guide
+
+| Pattern | Indicates | Action |
+|---|---|---|
+| SMS or email failures cluster together | Receiver quota or provider issue | Check rate limits and retry behavior |
+| Webhook failures dominate | Endpoint or auth issue | Validate URL, certificates, and payload expectations |
+| Failures appear after recent edits | Configuration regression | Review action group changes and recent deployments |
+
+## Related Playbook
+
+For the full investigation workflow, see [Alert Not Firing](../../playbooks/alert-not-firing.md).
+
 ## See Also
 *   [Alert Firing History](alert-firing-history.md)
 *   [Activity Logs Overview](../../../platform/how-azure-monitor-works.md)

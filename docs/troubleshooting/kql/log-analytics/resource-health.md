@@ -56,6 +56,36 @@ Focus on the `TimeSinceLastHeartbeat`. Large gaps for Azure virtual machines sho
 *   Lack of a heartbeat doesn't always mean the VM is down; it could be a transient networking issue.
 *   This query assumes that the agents have successfully reported at least one heartbeat in the last 24 hours.
 
+## Common Variations
+
+### Recently healthy resources
+```kusto
+Heartbeat
+| where TimeGenerated > ago(15m)
+| summarize LastHeartbeat = max(TimeGenerated) by Computer, OSType
+| order by LastHeartbeat desc
+```
+
+### Health grouped by environment
+```kusto
+Heartbeat
+| where TimeGenerated > ago(24h)
+| summarize ResourceCount = dcount(Computer), LastHeartbeat = max(TimeGenerated) by ComputerEnvironment, OSType
+| order by ResourceCount desc
+```
+
+## Interpretation Guide
+
+| Pattern | Indicates | Action |
+|---|---|---|
+| One machine has long heartbeat gap | Host-specific issue | Check VM power state, AMA agent, and network |
+| Many Azure VMs stale together | Shared platform or routing issue | Check workspace ingestion and regional incidents |
+| Only Non-Azure machines stale | Hybrid connectivity issue | Check Arc, proxy, and firewall path |
+
+## Related Playbook
+
+For the full investigation workflow, see [No Data in Workspace](../../playbooks/no-data-in-workspace.md).
+
 ## See Also
 *   [Ingestion Volume Analysis](ingestion-volume.md)
 *   [Cross-Workspace Query Patterns](cross-workspace.md)

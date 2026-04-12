@@ -123,6 +123,18 @@ This is the foundational private networking construct for many Azure Monitor des
 Microsoft Learn also documents Network Security Perimeter as a separate boundary control.
 It complements, but does not replace, AMPLS and private endpoint design for Azure Monitor resources.
 
+#### AMPLS configuration sequence
+In practice, teams usually implement AMPLS in four decisions rather than one deployment step.
+1. Select the Azure Monitor resources that need private access.
+2. Associate those resources with the private link scope.
+3. Create private endpoints in the right virtual networks and subnets.
+4. Validate DNS resolution for the supported query and ingestion endpoints.
+
+Interpretation notes:
+- A successful private endpoint deployment is not proof that operators can query logs; DNS and endpoint approval still decide the effective path.
+- In hybrid networks, the design must account for conditional forwarding so on-premises resolvers can reach the private DNS zones.
+- If different teams own networking and monitoring, publish a validation runbook because AMPLS failures are often shared-ownership failures rather than product defects.
+
 ### CLI example: inspect workspace network access settings
 ```bash
 az monitor log-analytics workspace show     --resource-group "$RG"     --workspace-name "$WORKSPACE_NAME"     --query "{name:name,publicNetworkAccessForIngestion:publicNetworkAccessForIngestion,publicNetworkAccessForQuery:publicNetworkAccessForQuery,features:features}"     --output json
@@ -182,6 +194,18 @@ sequenceDiagram
     R->>D: Read or write telemetry
 ```
 
+### Network isolation patterns
+The same private connectivity feature can support very different operating models.
+
+| Pattern | When it fits | Main trade-off |
+|---|---|---|
+| Centralized hub virtual network with shared AMPLS | One platform team owns monitoring for many spokes | Faster reuse, but stronger need for clear RBAC and DNS ownership |
+| Environment-specific private access per landing zone | Regulated dev, test, and prod boundaries | More isolation, but more private endpoints and DNS records |
+| Partial isolation with private query only | Teams still allow ingestion from approved public paths | Simpler rollout, but mixed-path troubleshooting |
+
+When reviewing one of these patterns, validate the failure mode as well as the happy path.
+If a private DNS zone link breaks, who notices first, and how do operators fall back to approved emergency access?
+
 ### Security review checkpoints in the flow
 | Flow stage | What to validate |
 |---|---|
@@ -223,6 +247,25 @@ The destination must be governed as carefully as the source workspace.
 | AMPLS | Private endpoint design | Private connectivity for supported resources |
 | Action group targets | Webhook and automation endpoints | Downstream trust boundary |
 
+### CLI example: list Azure Monitor resources linked to a private link scope
+```bash
+az resource list \
+    --resource-group "$RG" \
+    --resource-type "Microsoft.Insights/privateLinkScopes/scopedResources" \
+    --query "[?contains(id, '$AMPLS_NAME')].{name:name,linkedResourceId:properties.linkedResourceId,provisioningState:properties.provisioningState}" \
+    --output table
+```
+Example output:
+```text
+Name                                LinkedResourceId                                                                                                                  ProvisioningState
+----------------------------------  --------------------------------------------------------------------------------------------------------------------------------  -----------------
+ampls-prod-monitoring-law           /subscriptions/<subscription-id>/resourceGroups/rg-monitoring-prod/providers/Microsoft.OperationalInsights/workspaces/law-prod     Succeeded
+ampls-prod-monitoring-appi          /subscriptions/<subscription-id>/resourceGroups/rg-monitoring-prod/providers/Microsoft.Insights/components/appi-prod-web           Succeeded
+```
+Interpretation notes:
+- If the linked resource list is incomplete, private endpoint DNS may work correctly while some Azure Monitor resources still use public access paths.
+- Treat scoped resource review as part of change validation whenever a workspace or Application Insights component is replaced.
+
 ### CLI example: disable public query and ingestion access
 ```bash
 az monitor log-analytics workspace update \
@@ -254,6 +297,23 @@ Example output:
 }
 ```
 
+### CLI example: inspect private endpoint connection state for the monitoring scope
+```bash
+az network private-endpoint-connection list \
+    --id "$AMPLS_ID" \
+    --output table
+```
+Example output:
+```text
+Name                                            PrivateLinkServiceConnectionState    ProvisioningState
+----------------------------------------------  -----------------------------------  -----------------
+ampls-prod-monitoring-pe-9f3d                   Approved                             Succeeded
+```
+Interpretation notes:
+- `Approved` confirms the connection state, not the end-to-end query path.
+- If operators still cannot query, validate DNS resolution and client routing before reopening the private endpoint request.
+- Keep subnet NSG rules aligned with the approved private endpoint design; the endpoint itself is managed, but client subnets still need to reach the resolved private IPs.
+
 ### CLI example: query role-sensitive telemetry after access review
 ```bash
 az monitor log-analytics query     --workspace "$WORKSPACE_ID"     --analytics-query "AzureActivity | where TimeGenerated > ago(1d) | summarize Events=count() by Caller, CategoryValue | top 10 by Events desc"     --output table
@@ -282,6 +342,11 @@ Security settings are not free from operational trade-offs.
 3. Review export destinations and remove unused ones.
 4. Use RBAC and resource-context access before creating extra workspaces solely for visibility separation.
 
+### Security control interactions that affect cost and operations
+RBAC, network isolation, and encryption choices are often reviewed separately, but in Azure Monitor they affect each other operationally.
+For example, disabling public query access without a tested private DNS path can increase incident duration, while adding extra workspaces for simple visibility separation can increase both ingestion duplication and administrative overhead.
+The lowest-risk architecture is usually the one that meets the boundary requirement with the fewest moving parts.
+
 ## Limitations and Quotas
 Always confirm current Microsoft Learn documentation before final design approval.
 
@@ -290,6 +355,40 @@ Always confirm current Microsoft Learn documentation before final design approva
 - Query and ingestion paths may have separate network behaviors.
 - Shared workspaces still require disciplined RBAC review.
 - Exported data is only as secure as the destination platform.
+
+### Firewall, NSG, and DNS requirements
+Microsoft Learn guidance for private endpoints assumes that clients can resolve and reach the private endpoint addresses.
+That means Azure Monitor security reviews should include the surrounding network controls, not just the monitoring resource configuration.
+
+- NSGs on client subnets must allow traffic to the resolved private endpoint IPs.
+- Route tables must not blackhole the intended private path.
+- Private DNS zones or forwarded DNS rules must resolve the supported Azure Monitor private endpoints consistently.
+- Firewall policies must allow the approved egress path for agents, automation, and interactive query clients.
+
+If one of these controls is owned outside the monitoring team, document the dependency explicitly.
+
+### Data encryption guidance
+Azure Monitor data is encrypted in transit and at rest by Azure platform controls, but architecture reviews should still document what that means operationally.
+
+- Encryption at rest protects workspace and component data in Azure-managed storage.
+- TLS protects supported client and service connections in transit.
+- Customer-managed key scenarios, when supported for the relevant service, add governance responsibility around key lifecycle and availability.
+- Exported data inherits the encryption posture of the destination service, so the boundary review must continue after export.
+
+Interpretation notes:
+- Encryption does not replace RBAC or network isolation; it limits exposure if media is accessed outside the intended control path.
+- Key-management failures can become monitoring outages, so they belong in operational risk review, not just compliance documentation.
+
+### RBAC best practices for workspace access
+Use workspace access design to reduce the number of people who need broad visibility.
+
+1. Grant `Log Analytics Reader` or equivalent read roles to named groups instead of individual users.
+2. Use resource-context access where application teams only need logs for resources they own.
+3. Reserve contributor roles for the smallest possible set of platform operators.
+4. Separate automation identities for data collection management, alert deployment, and investigation tooling.
+5. Review inherited role assignments, not just direct assignments, during quarterly access reviews.
+
+The practical test is simple: if an incident commander can explain why every privileged identity exists, the access model is usually understandable enough to govern.
 
 ### Design implications
 | Limitation | Response |

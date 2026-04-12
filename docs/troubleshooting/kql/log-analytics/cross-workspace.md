@@ -57,6 +57,40 @@ The `union` operator combines rows from multiple sources. Ensure that the worksp
 *   Latency is higher than single-workspace queries due to cross-region or cross-workspace overhead.
 *   Workspaces must be specified by their Workspace ID or Resource ID; names are not supported.
 
+## Common Variations
+
+### Add source workspace label
+```kusto
+union withsource = SourceWorkspace
+    workspace("Production-Workspace-ID").Heartbeat,
+    workspace("Staging-Workspace-ID").Heartbeat
+| where TimeGenerated > ago(1h)
+| summarize LastContact = max(TimeGenerated) by SourceWorkspace, Computer
+| order by LastContact desc
+```
+
+### Compare ingestion by workspace
+```kusto
+union withsource = SourceWorkspace
+    workspace("Production-Workspace-ID").Usage,
+    workspace("Staging-Workspace-ID").Usage
+| where TimeGenerated > ago(7d)
+| summarize TotalGB = sum(Quantity) / 1024 by SourceWorkspace, DataType
+| order by TotalGB desc
+```
+
+## Interpretation Guide
+
+| Pattern | Indicates | Action |
+|---|---|---|
+| One workspace consistently lags others | Workspace-specific ingest or query issue | Narrow investigation to that workspace settings and region |
+| Results are duplicated across sources | Overlapping collection scope | Check DCRs, diagnostic settings, and workspace design |
+| Query slow only after adding more workspaces | Query fan-out cost | Reduce scope, time range, or pre-aggregate |
+
+## Related Playbook
+
+For the full investigation workflow, see [Slow Query Performance](../../playbooks/slow-query-performance.md).
+
 ## See Also
 *   [Resource Health Checks](resource-health.md)
 *   [Ingestion Volume Analysis](ingestion-volume.md)

@@ -53,6 +53,36 @@ A high volume of `System.NullReferenceException` usually points to code logic er
 *   The `outerMessage` may be truncated if it exceeds the maximum allowed length.
 *   Sensitive information within exception messages may be masked based on your workspace settings.
 
+## Common Variations
+
+### Trend by exception type
+```kusto
+exceptions
+| where timestamp > ago(24h)
+| summarize ExceptionCount = count() by bin(timestamp, 1h), type
+| render timechart
+```
+
+### Exceptions by cloud role
+```kusto
+exceptions
+| where timestamp > ago(7d)
+| summarize ExceptionCount = count(), DistinctOperations = dcount(operation_Name) by cloud_RoleName, type
+| order by ExceptionCount desc
+```
+
+## Interpretation Guide
+
+| Pattern | Indicates | Action |
+|---|---|---|
+| One exception type spikes after deployment | Regression or config drift | Compare release changes and rollback candidates |
+| Many operations share same backend exception | Shared dependency issue | Check database, cache, or API health |
+| High count with old LastOccurrence | Historical noise, not active | Validate whether alerting should target fresher windows |
+
+## Related Playbook
+
+For the full investigation workflow, see [Application Insights Data Gaps](../../playbooks/application-insights-gaps.md).
+
 ## See Also
 *   [Dependency Failures](dependency-failures.md)
 *   [Performance Trends](request-performance.md)

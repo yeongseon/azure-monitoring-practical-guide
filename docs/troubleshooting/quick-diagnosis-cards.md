@@ -63,6 +63,70 @@ flowchart LR
 | High-probability causes | Large scan scope, weak predicates, heavy join/summarize, hot table volume, workbook scope expansion |
 | Open next | [First 10 Minutes: Query Timeout](first-10-minutes/query-timeout.md) |
 
+## Card 5: Missing Application Telemetry
+
+| Field | Guidance |
+|---|---|
+| Primary symptom | App requests, dependencies, traces, or exceptions are empty or stale |
+| First question | Is every telemetry type missing, or only one type or one app role? |
+| Check first | Application Insights connection string, workspace linkage, `AppRequests`, `AppDependencies`, `AppTraces`, recent deployment timing |
+| High-probability causes | Wrong connection string, SDK initialization gap, disabled collection module, endpoint reachability issue, ingestion delay |
+| Open next | [Missing Application Telemetry](playbooks/missing-application-telemetry.md) |
+
+## Card 6: Alert Storm
+
+| Field | Guidance |
+|---|---|
+| Primary symptom | Too many alerts or duplicate notifications arrive for one incident |
+| First question | Is one rule flapping, or are several overlapping rules firing together? |
+| Check first | Alert rule inventory, action groups, alert processing rules, signal replay, dimension count |
+| High-probability causes | Flapping threshold, overlapping scope, high-cardinality dimensions, aggressive evaluation frequency, notification fan-out |
+| Open next | [Alert Storm](playbooks/alert-storm.md) |
+
+## Card 7: Agent Not Reporting
+
+| Field | Guidance |
+|---|---|
+| Primary symptom | VM or Arc machine stops sending `Heartbeat`, `Perf`, or guest logs |
+| First question | Is the failure isolated to one machine, one subnet, or one DCR rollout? |
+| Check first | `Heartbeat`, AMA extension state, DCR association, managed identity, endpoint access |
+| High-probability causes | Missing DCR association, unhealthy AMA runtime, identity drift, blocked IMDS or Azure Monitor endpoints, wrong data flows |
+| Open next | [Agent Not Reporting](playbooks/agent-not-reporting.md) |
+
+## Card 8: AKS Container Insights Issues
+
+| Field | Guidance |
+|---|---|
+| Primary symptom | Container Insights is blank, partial, or stale for AKS nodes, pods, or namespaces |
+| First question | Is monitoring disabled, or is the failure only in one table path such as `ContainerLogV2` or `KubePodInventory`? |
+| Check first | AKS monitoring enablement, Azure Monitor extension state, `ama-logs` pod health, DCR association, `KubeNodeInventory` and `ContainerLogV2` freshness |
+| High-probability causes | Monitoring never enabled, AMA pod failure, DCR or DCE mismatch, namespace filtering, blocked ingestion endpoints |
+| Open next | [AKS Container Insights Issues](playbooks/aks-container-insights-issues.md) |
+
+## Card 9: Application Insights Gaps
+
+| Field | Guidance |
+|---|---|
+| Primary symptom | Application Insights still has data, but there are gaps, partial tables, or unexpected low volume |
+| First question | Are the gaps explained by sampling, one missing telemetry type, or a recent deployment/change window? |
+| Check first | `AppRequests` `ItemCount`, `ingestion_time()`, table-by-type comparison, app settings, deployment history |
+| High-probability causes | Adaptive or fixed sampling, module-specific collection gap, recent config drift, private-link or network issue, short analytics delay |
+| Open next | [Application Insights Gaps](playbooks/application-insights-gaps.md) |
+
+## Coverage Map
+
+| Symptom family | Card to start with | Typical escalation |
+|---|---|---|
+| Workspace ingestion loss | Card 1 | No Data in Workspace playbook, then Evidence Map |
+| Missing alert | Card 2 | Alert Not Firing checklist, then alert rule validation |
+| Cost spike | Card 3 | Usage analysis, DCR review, Application Insights sampling review |
+| Query slowness | Card 4 | Query optimization and table-volume checks |
+| App telemetry outage | Card 5 | Connection string and SDK path validation |
+| Excessive notifications | Card 6 | Rule overlap and suppression review |
+| Guest agent outage | Card 7 | AMA runtime and DCR association validation |
+| AKS monitoring gap | Card 8 | Container Insights enablement and agent pod validation |
+| Partial App Insights visibility | Card 9 | Sampling, deployment, and ingestion-delay correlation |
+
 ## How to Use the Cards
 
 1. Match the incident to one primary symptom.

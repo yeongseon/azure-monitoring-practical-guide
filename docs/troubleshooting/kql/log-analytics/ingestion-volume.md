@@ -58,6 +58,38 @@ Focus on the top 3 tables. If `AppRequests` or `ContainerLogV2` are high, review
 *   Data is typically aggregated hourly, so it's not suitable for real-time traffic monitoring.
 *   This query only includes billable data; free data tiers or specific tables might not appear if filtered by `IsBillable == true`.
 
+## Common Variations
+
+### Daily ingestion trend
+```kusto
+Usage
+| where IsBillable == true
+| where TimeGenerated > ago(31d)
+| summarize TotalGB = sum(Quantity) / 1024 by bin(TimeGenerated, 1d), DataType
+| order by TimeGenerated asc
+```
+
+### Billable volume by solution only
+```kusto
+Usage
+| where IsBillable == true
+| where TimeGenerated > ago(31d)
+| summarize TotalGB = sum(Quantity) / 1024 by Solution
+| order by TotalGB desc
+```
+
+## Interpretation Guide
+
+| Pattern | Indicates | Action |
+|---|---|---|
+| One table suddenly dominates GB | New noisy source or config change | Review diagnostic settings, DCRs, or log level |
+| Many tables rise together | Broader monitoring rollout | Check new agents, solutions, or subscription scope |
+| High GB in low-value tables | Cost without operational value | Reduce verbosity or move eligible tables to Basic |
+
+## Related Playbook
+
+For the full investigation workflow, see [High Ingestion Cost](../../playbooks/high-ingestion-cost.md).
+
 ## See Also
 *   [Resource Health Status](resource-health.md)
 *   [Cross-Workspace Queries](cross-workspace.md)

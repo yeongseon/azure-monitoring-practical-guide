@@ -54,6 +54,36 @@ A cluster of alerts at the same time for different resources often points to a s
 *   Data retention for alert history may vary depending on your subscription settings.
 *   This query requires the "Resource Graph" to be queried via KQL if using the portal's Logs interface in some contexts.
 
+## Common Variations
+
+### Count by severity and state
+```kusto
+AlertsManagementResources
+| where properties.essentials.startDateTime > ago(7d)
+| summarize AlertCount = count() by properties.essentials.severity, properties.essentials.monitorCondition
+| order by AlertCount desc
+```
+
+### Trend alerts over time
+```kusto
+AlertsManagementResources
+| where properties.essentials.startDateTime > ago(7d)
+| summarize AlertCount = count() by bin(properties.essentials.startDateTime, 1h), name
+| order by properties.essentials.startDateTime asc
+```
+
+## Interpretation Guide
+
+| Pattern | Indicates | Action |
+|---|---|---|
+| Repeated alerts on same target | Flapping or unresolved condition | Review threshold stability and auto-mitigation |
+| Many resources alert at same time | Shared platform issue | Correlate with deployments and regional events |
+| Alerts show Resolved quickly | Short-lived spikes | Validate whether alert window is too sensitive |
+
+## Related Playbook
+
+For the full investigation workflow, see [Alert Not Firing](../../playbooks/alert-not-firing.md).
+
 ## See Also
 *   [Action Group Failures](action-group-failures.md)
 *   [Resource Health Status](../log-analytics/resource-health.md)

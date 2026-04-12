@@ -53,6 +53,38 @@ Large failure counts for a specific `resultCode` often point to infrastructure i
 *   Only dependencies explicitly tracked by the SDK or Auto-Instrumentation are included.
 *   The `target` field may be truncated or sanitized depending on your telemetry configuration.
 
+## Common Variations
+
+### Failure rate by target
+```kusto
+dependencies
+| where timestamp > ago(24h)
+| summarize Total = count(), Failures = countif(success == false) by target, type
+| extend FailureRate = todouble(Failures) / Total
+| order by FailureRate desc
+```
+
+### Trending failures over time
+```kusto
+dependencies
+| where timestamp > ago(24h)
+| where success == false
+| summarize FailureCount = count() by bin(timestamp, 15m), target
+| render timechart
+```
+
+## Interpretation Guide
+
+| Pattern | Indicates | Action |
+|---|---|---|
+| One target dominates failures | Single downstream dependency issue | Check that service endpoint, auth, and health |
+| High failures with long duration | Timeouts before failure | Review network path and dependency saturation |
+| Many result codes across many targets | Broader app or network issue | Check release changes, DNS, and outbound connectivity |
+
+## Related Playbook
+
+For the full investigation workflow, see [Missing Application Telemetry](../../playbooks/missing-application-telemetry.md).
+
 ## See Also
 *   [App Insights Exceptions](exception-trends.md)
 *   [Performance Percentiles](request-performance.md)

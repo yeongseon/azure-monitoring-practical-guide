@@ -115,6 +115,24 @@ With dimensions, it can often tell you where.
 | Backend health | `BackendPool`, `BackendHttpSetting` | Find the failing target group |
 | Prometheus-style metrics | Label set | Preserve Kubernetes or workload context |
 
+#### Dimension-aware investigation with AzureMetrics
+When a platform metric is also exported to logs, the `AzureMetrics` table can help operators confirm whether the dimension split they see in the Metrics API matches the workspace view.
+This is useful when teams need to compare near-real-time alerting data with a broader KQL-based investigation path.
+
+```kusto
+AzureMetrics
+| where TimeGenerated > ago(30m)
+| where ResourceProvider == "MICROSOFT.WEB"
+| where MetricName == "Requests"
+| summarize RequestCount=sum(Total) by bin(TimeGenerated, 5m), HttpStatusCode=tostring(Tags["HttpStatusCode"])
+| order by TimeGenerated asc
+```
+
+Interpretation notes:
+- If `HttpStatusCode` is empty in the exported table, validate whether the metric export path preserves that dimension for the selected resource type.
+- If the KQL totals differ slightly from a portal chart, first compare the time grain and aggregation because mismatched intervals are the most common reason.
+- If one dimension value dominates, treat that as a targeting clue for the next log query rather than as proof of root cause.
+
 ### CLI example: list recent metric points grouped by a dimension
 ```bash
 az monitor metrics list \
@@ -176,6 +194,26 @@ Example output:
 ```
 This is the core dimension pattern used in metric-based triage.
 
+### CLI example: filter to one dimension value for targeted validation
+```bash
+az monitor metrics list \
+    --resource "$RESOURCE_ID" \
+    --metrics "Requests" \
+    --interval "PT5M" \
+    --aggregation "Total" \
+    --filter "HttpStatusCode eq '*' and HttpStatusCode eq '500'" \
+    --output table
+```
+Example output:
+```text
+Timestamp                    Total
+---------------------------  -----
+2026-04-05T08:00:00+00:00       11
+2026-04-05T08:05:00+00:00        8
+2026-04-05T08:10:00+00:00       14
+```
+Use a targeted filter like this when you want to validate whether an alert threshold is driven by a specific failing slice rather than by general traffic growth.
+
 ### Platform metrics and custom metrics serve different purposes
 Platform metrics are emitted by Azure services and resource providers.
 Custom metrics come from your application or pipeline when supported.
@@ -187,12 +225,40 @@ Use platform metrics for:
 - Autoscale and dashboard baselines.
 - Fleet-level trending.
 
+#### Common Azure Monitor metric namespaces
+Microsoft Learn documents metrics by resource provider namespace, and that namespace must match the resource type you query.
+
+| Namespace example | Typical resource | Example metric names | Operational use |
+|---|---|---|---|
+| `Microsoft.Compute/virtualMachines` | Azure VM | `Percentage CPU`, `Network In Total`, `Disk Read Bytes` | Capacity and node saturation reviews |
+| `Microsoft.Web/sites` | App Service app | `Requests`, `Http5xx`, `AverageResponseTime` | Request health and latency alerting |
+| `Microsoft.Network/applicationGateways` | Application Gateway | `HealthyHostCount`, `FailedRequests`, `Throughput` | Edge traffic and backend health |
+| `Microsoft.ContainerService/managedClusters` | AKS cluster | `node_cpu_usage_percentage`, `node_memory_working_set_percentage` | Cluster pressure and scale planning |
+| `Microsoft.Cache/redis` | Azure Cache for Redis | `connectedclients`, `serverLoad`, `cachehits` | Cache saturation and error analysis |
+
+Interpretation notes:
+- The display name shown in the portal may differ from the API name returned by `az monitor metrics list-definitions`, so always confirm the exact API value before scripting.
+- Namespace mismatches often look like "no data" problems even when the resource is healthy.
+- Cross-service dashboards work best when each chart documents the aggregation and namespace explicitly.
+
 #### Custom metrics
 Use custom metrics for:
 - Business counters that need fast alerting.
 - App-specific rates or queue depth values.
 - Cases where logs are too expensive or too delayed for the decision.
 Be selective with custom metrics because high-cardinality label or dimension design can become difficult to operate.
+
+#### Custom metrics design guidance
+Custom metrics are most valuable when they answer a specific operational decision that platform metrics cannot answer quickly enough.
+Examples include order-processing backlog, active tenant count per shard, or feature-specific throttling counters.
+
+Keep the design conservative:
+- Favor a small number of stable dimensions.
+- Avoid user-level or request-level identifiers.
+- Document the unit, reset behavior, and expected aggregation.
+- Decide in advance whether alerts will evaluate totals, averages, or maximums.
+
+If the metric is really an event trail that requires payload inspection, logs are usually the better fit.
 
 ## Data Flow
 Metric data usually follows a shorter path than log data.
@@ -256,6 +322,31 @@ When using metrics, the important configuration choices are usually on the consu
 | Dimension filter | Which series to include or split |
 | Alert threshold | Static or dynamic threshold |
 
+### CLI example: inspect dimension values before creating a split alert
+```bash
+az monitor metrics list \
+    --resource "$RESOURCE_ID" \
+    --metrics "Requests" \
+    --interval "PT5M" \
+    --aggregation "Total" \
+    --dimension "Instance" \
+    --orderby "total desc" \
+    --top 10 \
+    --output table
+```
+Example output:
+```text
+Instance             Timestamp                    Total
+-------------------  ---------------------------  -----
+app-prod-01          2026-04-05T08:15:00+00:00   1821
+app-prod-02          2026-04-05T08:15:00+00:00   1774
+app-prod-03          2026-04-05T08:15:00+00:00    944
+```
+Interpretation notes:
+- A strong skew between instances can indicate bad traffic distribution, cold instances, or a partially failing node.
+- Do not split alerts by every available dimension; split only on the dimensions operators can act on.
+- If the top values change constantly because of ephemeral instances, use the dimension for investigation rather than paging.
+
 ### CLI example: create a dimension-aware metric alert
 ```bash
 az monitor metrics alert create     --name "alert-app-http5xx"     --resource-group "$RG"     --scopes "$RESOURCE_ID"     --condition "total Http5xx > 5 where HttpStatusCode includes 500"     --window-size "PT5M"     --evaluation-frequency "PT1M"     --severity 2     --description "Trigger when 500 responses exceed five in five minutes."     --output json
@@ -300,6 +391,26 @@ Metrics are generally efficient for repeated monitoring workloads.
 - Avoid converting every metric-like signal into logs.
 - Be cautious with unnecessary high-cardinality dimension designs.
 - Use logs only when you need deeper context.
+
+### Concrete cost comparison patterns
+Metrics pricing changes by region and feature, so use the Azure pricing pages for exact amounts, but the design pattern is consistent.
+
+| Scenario | Lower-cost design pattern | Higher-cost anti-pattern | Why it matters |
+|---|---|---|---|
+| CPU threshold on 50 VMs | Native platform metric alert on `Percentage CPU` | Ingest performance counters to logs and run scheduled-query alerts every minute | Metrics are built for repeated threshold evaluation |
+| HTTP 5xx monitoring | Platform metric alert split by `HttpStatusCode` or `Instance` | Query request logs for every evaluation window | Repeated log scans cost more and add latency |
+| Business backlog signal | One custom metric with low-cardinality dimensions | High-volume event logs with parsing at alert time | A stable metric can be cheaper than constant query evaluation |
+
+In other words, metrics usually reduce both evaluation overhead and operator latency when the question is "how much" or "how many" rather than "why exactly did this record fail?"
+
+### Pricing example for architecture reviews
+Assume a team wants to detect App Service HTTP 5xx spikes every minute.
+Two common designs are:
+1. Metric alert on `Http5xx` with a five-minute window.
+2. Scheduled query alert scanning request logs every minute.
+
+The second design can still be correct when the team needs payload-level filters or joins, but it should be justified because it moves a simple threshold into the log analytics cost model.
+Microsoft Learn guidance on metrics and alerting consistently positions metrics as the preferred fast-path for threshold-based detection.
 
 ### Common anti-patterns
 - Alerting on logs for simple CPU or request count thresholds.
