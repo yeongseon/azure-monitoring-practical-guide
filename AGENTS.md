@@ -577,10 +577,10 @@ Allowed types: `feat`, `fix`, `docs`, `chore`, `refactor`
 | Service | Purpose | Key Tables |
 |---|---|---|
 | Azure Monitor | Unified monitoring platform | AzureMetrics, AzureDiagnostics |
-| Log Analytics | Log storage and query engine | All custom tables |
+| Log Analytics | Log storage and query engine | Built-in and custom tables |
 | Application Insights | APM for applications | requests, dependencies, traces, exceptions |
 | Metrics | Time-series performance data | AzureMetrics |
-| Alerts | Proactive notification system | Alert rules, Action groups |
+| Alerts | Proactive notification system | (Alert rules, Action groups — components, not tables) |
 | Workbooks | Interactive visualization | N/A |
 
 ### Common KQL Patterns
@@ -598,11 +598,11 @@ requests
 | summarize count(), avg(duration) by bin(timestamp, 1h)
 | render timechart
 
-// Alert correlation
-AlertEvidence
+// Alert history analysis
+AzureDiagnostics
+| where Category == "Alert"
 | where TimeGenerated > ago(7d)
-| join kind=inner (AlertInfo) on AlertId
-| summarize count() by Severity, bin(TimeGenerated, 1d)
+| summarize count() by AlertSeverity, bin(TimeGenerated, 1d)
 ```
 
 ### CLI Command Groups
