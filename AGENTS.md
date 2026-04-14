@@ -446,6 +446,42 @@ content_sources:
 - See [Content Validation Status](docs/reference/content-validation-status.md) for current status
 - See [Tutorial Validation Status](docs/reference/validation-status.md) for tutorial testing
 
+### Text Content Validation
+
+Every non-tutorial document should include a `content_validation` block in frontmatter to track the verification status of its core claims.
+
+```yaml
+---
+content_sources:
+  - type: mslearn-adapted
+    url: https://learn.microsoft.com/azure/{service}/...
+content_validation:
+  status: verified  # verified | pending_review | unverified
+  last_reviewed: 2026-04-12
+  reviewer: agent  # agent | human
+  core_claims:
+    - claim: "{example claim}"
+      source: https://learn.microsoft.com/azure/{service}/...
+      verified: true
+---
+```
+
+#### Validation Status Values
+
+| Status | Description |
+|--------|-------------|
+| `verified` | All core claims have been traced to Microsoft Learn sources |
+| `pending_review` | Document exists but claims need source verification |
+| `unverified` | New document, no validation performed |
+
+#### Agent Rules for Content Validation
+
+1. When creating or modifying Platform, Best Practices, or Operations documents, add `content_validation` frontmatter.
+2. List 2-5 core claims that are factual assertions (not opinions or procedures).
+3. Each claim must have a Microsoft Learn source URL.
+4. Set `status: verified` only when ALL core claims have verified sources.
+5. Run `python3 scripts/generate_content_validation_status.py` after updates.
+
 ## Quality Gates
 
 ### Line Count Requirements
@@ -477,6 +513,41 @@ Every page must have:
 - Primary source: `https://learn.microsoft.com/en-us/azure/azure-monitor/`
 - Secondary sources: `https://learn.microsoft.com/en-us/azure/` (related services)
 - Every page must cite at least one Microsoft Learn URL in `## Sources`
+
+## Tutorial Validation Tracking
+
+Every tutorial document supports **validation frontmatter** that records when and how it was last tested against a real Azure deployment.
+
+### Frontmatter Schema
+
+Add a `validation` block inside the YAML frontmatter (`---` fences) of any tutorial file:
+
+```yaml
+---
+hide:
+  - toc
+validation:
+  az_cli:
+    last_tested: 2026-04-09
+    cli_version: "2.83.0"
+    result: pass
+  bicep:
+    last_tested: null
+    result: not_tested
+---
+```
+
+### Agent Rules for Validation
+
+1. **After deploying a tutorial end-to-end**, add or update the `validation` frontmatter with the current date, CLI version, and `result: pass`.
+2. **If a tutorial step fails during validation**, set `result: fail` and note the issue.
+3. **Never fabricate validation dates.** Only stamp a tutorial after actually executing all steps against a real Azure environment.
+4. **After updating frontmatter**, regenerate the dashboard:
+    ```bash
+    python3 scripts/generate_validation_status.py
+    ```
+5. **Include the regenerated dashboard** (`docs/reference/validation-status.md`) in the same commit as the frontmatter change.
+6. **Do not manually edit** `docs/reference/validation-status.md` — it is auto-generated.
 
 ## Build & Preview
 
@@ -550,9 +621,11 @@ AlertEvidence
 
 | Repository | Description |
 |---|---|
-| [azure-app-service-practical-guide](https://github.com/yeongseon/azure-app-service-practical-guide) | Azure App Service practical guide |
 | [azure-virtual-machine-practical-guide](https://github.com/yeongseon/azure-virtual-machine-practical-guide) | Azure Virtual Machines practical guide |
 | [azure-networking-practical-guide](https://github.com/yeongseon/azure-networking-practical-guide) | Azure Networking practical guide |
-| [azure-container-apps-practical-guide](https://github.com/yeongseon/azure-container-apps-practical-guide) | Azure Container Apps practical guide |
 | [azure-storage-practical-guide](https://github.com/yeongseon/azure-storage-practical-guide) | Azure Storage practical guide |
+| [azure-app-service-practical-guide](https://github.com/yeongseon/azure-app-service-practical-guide) | Azure App Service practical guide |
 | [azure-functions-practical-guide](https://github.com/yeongseon/azure-functions-practical-guide) | Azure Functions practical guide |
+| [azure-container-apps-practical-guide](https://github.com/yeongseon/azure-container-apps-practical-guide) | Azure Container Apps practical guide |
+| [azure-kubernetes-service-practical-guide](https://github.com/yeongseon/azure-kubernetes-service-practical-guide) | Azure Kubernetes Service (AKS) practical guide |
+| [azure-architecture-practical-guide](https://github.com/yeongseon/azure-architecture-practical-guide) | Azure Architecture practical guide |
