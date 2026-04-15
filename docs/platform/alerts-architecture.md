@@ -38,7 +38,7 @@ Azure Monitor alerting is composed of rules, evaluation engines, processing logi
 Different alert types exist because metrics, logs, and control-plane events have different latency and data-model characteristics.
 <!-- diagram-id: architecture-overview -->
 ```mermaid
-flowchart LR
+flowchart TD
     SIG[Metric / log / activity / health signal] --> RULE[Alert rule]
     RULE --> EVAL[Evaluation engine]
     EVAL --> FIRING{Condition met?}

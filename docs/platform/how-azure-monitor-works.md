@@ -41,7 +41,7 @@ Azure Monitor is a platform made of collection endpoints, ingestion services, da
 Different data types move through different paths, and that difference explains why metrics feel faster than logs and why Application Insights data ends up queryable beside workspace data.
 <!-- diagram-id: architecture-overview -->
 ```mermaid
-flowchart LR
+flowchart TD
     subgraph Producers
         AZ[Azure resources]
         VM[Azure Monitor Agent / guest OS]

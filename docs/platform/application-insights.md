@@ -36,7 +36,7 @@ Application Insights should be understood as both an ingestion model and a set o
 Instrumentation emits telemetry, Azure Monitor processes and correlates it, the workspace stores it, and the Application Insights experience layer renders application-centric views on top.
 <!-- diagram-id: architecture-overview -->
 ```mermaid
-flowchart LR
+flowchart TD
     APP[Application code / runtime] --> INST[SDK or Azure Monitor OpenTelemetry]
     INST --> ING[Application Insights ingestion]
     ING --> PROC[Sampling / correlation / enrichment]

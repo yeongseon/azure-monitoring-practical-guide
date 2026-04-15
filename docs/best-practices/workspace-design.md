@@ -16,7 +16,7 @@ Use this guide to design Azure Monitor workspaces that stay governable as enviro
 
 <!-- diagram-id: workspace-design -->
 ```mermaid
-flowchart LR
+flowchart TD
     A[Azure resources] --> B[Diagnostic settings]
     C[Arc servers and agents] --> D[Data collection rules]
     B --> E[Log Analytics workspace]

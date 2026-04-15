@@ -30,7 +30,7 @@ Metrics in Azure Monitor follow a different architecture than workspace logs.
 Resource providers emit measurements into a dedicated metrics store, and consumers retrieve aggregated values by metric name, interval, aggregation, and optional dimension filters.
 <!-- diagram-id: architecture-overview -->
 ```mermaid
-flowchart LR
+flowchart TD
     SRC[Azure resource or custom metric source] --> NS[Metric namespace]
     NS --> STORE[(Azure Monitor metrics store)]
     STORE --> EXP[Metrics Explorer / Grafana]

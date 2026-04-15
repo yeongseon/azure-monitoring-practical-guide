@@ -17,7 +17,7 @@ Quick reference for common `az monitor` commands. All examples use long flags fo
 
 <!-- diagram-id: azure-monitor-cli-cheatsheet -->
 ```mermaid
-flowchart LR
+flowchart TD
     subgraph "Azure Monitor CLI Commands"
         A[az monitor] --> B[log-analytics]
         A --> C[diagnostic-settings]

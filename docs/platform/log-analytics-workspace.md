@@ -34,7 +34,7 @@ A workspace is not just a database.
 It is the operating boundary for data residency, query permissions, retention, export, daily caps, and several network access controls.
 <!-- diagram-id: architecture-overview -->
 ```mermaid
-flowchart LR
+flowchart TD
     SRC[Azure resources / AMA / App Insights / APIs] --> ING[Ingestion endpoints]
     ING --> LAW[(Log Analytics workspace)]
     LAW --> KQL[Log Analytics / KQL]

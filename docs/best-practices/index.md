@@ -17,7 +17,7 @@ Production patterns for Azure Monitor — what to do, why it matters, and how to
 
 <!-- diagram-id: best-practices -->
 ```mermaid
-graph LR
+graph TD
     A[Workspace Design] --> B[Alert Strategy]
     A --> C[Security and Access]
     A --> D[Data Retention]

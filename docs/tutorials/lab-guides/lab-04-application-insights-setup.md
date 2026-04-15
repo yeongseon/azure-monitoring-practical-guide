@@ -48,7 +48,7 @@ export WEB_TEST_NAME="webtest-monlab04"
 
 <!-- diagram-id: architecture-diagram -->
 ```mermaid
-flowchart LR
+flowchart TD
     User[Browser or synthetic client] --> App[App Service app]
     App --> SDK[Application Insights SDK]
     SDK --> AI[Application Insights component]

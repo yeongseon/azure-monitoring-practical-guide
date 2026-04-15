@@ -17,7 +17,7 @@ An alert strategy should help responders act faster, not create more noise. Use 
 
 <!-- diagram-id: alert-strategy -->
 ```mermaid
-flowchart LR
+flowchart TD
     A[Signals] --> B[Metric alerts]
     A --> C[Scheduled query alerts]
     A --> D[Activity log alerts]

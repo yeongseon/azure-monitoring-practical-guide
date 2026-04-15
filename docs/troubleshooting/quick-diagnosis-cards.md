@@ -17,7 +17,7 @@ Use these cards when you need a fast symptom-to-first-check mapping before openi
 
 <!-- diagram-id: quick-diagnosis-cards -->
 ```mermaid
-flowchart LR
+flowchart TD
     A[Symptom observed] --> B[Quick diagnosis card]
     B --> C[First 10 Minutes checklist]
     C --> D[Detailed playbook or KQL pack]

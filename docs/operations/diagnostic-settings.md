@@ -13,7 +13,7 @@ content_sources:
 Diagnostic settings route platform logs and metrics from Azure resources to Log Analytics, Storage, Event Hubs, or partner destinations. This runbook focuses on safe day-2 changes and validation with Azure CLI.
 <!-- diagram-id: diagnostic-settings -->
 ```mermaid
-flowchart LR
+flowchart TD
     Resource[Azure resource] --> Setting[Diagnostic setting]
     Setting --> Logs[Resource logs]
     Setting --> Metrics[Platform metrics]

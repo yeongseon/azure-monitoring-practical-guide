@@ -16,7 +16,7 @@ Quick lookup for CLI commands, KQL patterns, and platform limits.
 
 <!-- diagram-id: reference -->
 ```mermaid
-graph LR
+graph TD
     A[CLI Cheatsheet] --> B[az monitor]
     C[KQL Reference] --> D[Operators & Functions]
     E[Platform Limits] --> F[Quotas & Throttling]

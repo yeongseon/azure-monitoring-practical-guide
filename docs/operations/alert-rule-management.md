@@ -14,7 +14,7 @@ content_sources:
 Azure Monitor alert rules only help when they are consistent, actionable, and easy to verify after every change. This runbook covers day-2 operations for metric alerts, scheduled query alerts, and their action groups.
 <!-- diagram-id: alert-rule-management -->
 ```mermaid
-flowchart LR
+flowchart TD
     Signal[Metric or log signal] --> Rule[Alert rule]
     Rule --> Evaluation[Evaluation engine]
     Evaluation --> ActionGroup[Action group]

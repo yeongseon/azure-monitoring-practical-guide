@@ -15,7 +15,7 @@ KQL queries for Application Insights telemetry analysis.
 
 <!-- diagram-id: application-insights-queries -->
 ```mermaid
-graph LR
+graph TD
     A[requests] --> B[Performance Analysis]
     C[dependencies] --> D[Failure Detection]
     E[exceptions] --> F[Error Trends]

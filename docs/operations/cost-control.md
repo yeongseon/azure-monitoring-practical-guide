@@ -14,7 +14,7 @@ content_sources:
 Azure Monitor cost control depends on measuring ingestion, limiting unnecessary retention, and changing collection patterns before costs become billing surprises. This runbook focuses on operational controls for Log Analytics workspaces and Azure Monitor Logs usage.
 <!-- diagram-id: cost-control -->
 ```mermaid
-flowchart LR
+flowchart TD
     Sources[Agents and diagnostic settings] --> Workspace[Log Analytics workspace]
     Workspace --> Usage[Usage table analysis]
     Workspace --> Cap[Daily cap]

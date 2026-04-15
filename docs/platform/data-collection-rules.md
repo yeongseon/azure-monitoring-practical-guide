@@ -32,7 +32,7 @@ A DCR separates telemetry collection intent from the monitored resource itself.
 Instead of configuring every collection behavior directly on a machine, you declare sources, streams, transformations, and destinations in a reusable rule and then associate that rule with the relevant resource.
 <!-- diagram-id: architecture-overview -->
 ```mermaid
-flowchart LR
+flowchart TD
     SRC[VM / Arc server / custom app / API payload] --> AMA[Azure Monitor Agent or Logs Ingestion API]
     AMA --> DCR[Data collection rule]
     DCR --> XFORM[Transform and route]

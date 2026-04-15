@@ -51,7 +51,7 @@ export WORKSPACE_ID=$(az monitor log-analytics workspace show \
 
 <!-- diagram-id: architecture-diagram -->
 ```mermaid
-flowchart LR
+flowchart TD
     Sources[Workspace tables\nHeartbeat / Perf / AzureMetrics] --> Query1[Ad-hoc KQL query]
     Query1 --> Function[Saved function]
     Function --> ParamQuery[Parameterized query]

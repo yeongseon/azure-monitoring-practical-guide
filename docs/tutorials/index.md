@@ -17,7 +17,7 @@ Hands-on tutorials turn the platform and operations guidance in this repository 
 
 <!-- diagram-id: tutorials -->
 ```mermaid
-flowchart LR
+flowchart TD
     A[Monitoring tutorials] --> B[Foundation]
     A --> C[Detection]
     A --> D[Application telemetry]

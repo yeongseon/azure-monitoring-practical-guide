@@ -17,7 +17,7 @@ Data sources to check for each symptom category.
 
 <!-- diagram-id: evidence-map -->
 ```mermaid
-graph LR
+graph TD
     subgraph "Symptoms"
         A[No Data]
         B[Alert Issues]

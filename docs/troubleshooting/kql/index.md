@@ -16,7 +16,7 @@ Ready-to-use KQL queries for Azure Monitor diagnostics.
 
 <!-- diagram-id: kql-query-packs -->
 ```mermaid
-graph LR
+graph TD
     subgraph "Query Categories"
         A[Application Insights]
         B[Log Analytics]

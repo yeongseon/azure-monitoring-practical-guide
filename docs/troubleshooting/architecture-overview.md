@@ -54,7 +54,7 @@ Use this page to map the symptom first, then move to the appropriate playbook.
 
 <!-- diagram-id: 1-end-to-end-azure-monitor-flow -->
 ```mermaid
-flowchart LR
+flowchart TD
     A[Workload or Azure resource] --> B[Telemetry source and agent or SDK]
     B --> C[Collection and routing layer]
     C --> D[Azure Monitor data stores]
@@ -162,7 +162,7 @@ Azure Monitor is not a single store. Troubleshooting quality improves when you k
 
 <!-- diagram-id: 5-consumer-architecture-queries-alerts-and-workbooks -->
 ```mermaid
-flowchart LR
+flowchart TD
     A[Workspace and metrics stores] --> B[Logs query experience]
     A --> C[Scheduled query rules]
     A --> D[Metrics alerts]

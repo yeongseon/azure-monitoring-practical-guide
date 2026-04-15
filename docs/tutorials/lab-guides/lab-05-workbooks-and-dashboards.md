@@ -53,7 +53,7 @@ export WORKSPACE_ID=$(az monitor log-analytics workspace show \
 
 <!-- diagram-id: architecture-diagram -->
 ```mermaid
-flowchart LR
+flowchart TD
     LAW[Log Analytics workspace] --> KQL[Workbook KQL queries]
     KQL --> Params[Workbook parameters]
     Params --> Visuals[Charts and grids]

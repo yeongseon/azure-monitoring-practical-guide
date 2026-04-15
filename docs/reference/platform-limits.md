@@ -15,7 +15,7 @@ Reference of current service limits and quotas for Azure Monitor components. For
 
 <!-- diagram-id: platform-limits -->
 ```mermaid
-flowchart LR
+flowchart TD
     subgraph "Azure Monitor Limits Overview"
         A[Subscription Level]
         B[Workspace Level]

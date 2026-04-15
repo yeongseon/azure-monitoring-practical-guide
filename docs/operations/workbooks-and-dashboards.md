@@ -13,7 +13,7 @@ content_sources:
 Azure Monitor workbooks provide parameterized operational analysis, while Azure dashboards provide at-a-glance status views for shared audiences. This runbook focuses on maintaining both assets as reusable, versioned operational artifacts.
 <!-- diagram-id: workbooks-and-dashboards -->
 ```mermaid
-flowchart LR
+flowchart TD
     Data[Metrics and logs] --> Workbook[Azure Monitor workbook]
     Workbook --> Query[KQL and metric visuals]
     Workbook --> Dashboard[Azure dashboard pinning or summary]

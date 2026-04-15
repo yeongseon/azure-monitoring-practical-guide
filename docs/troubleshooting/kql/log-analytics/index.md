@@ -16,7 +16,7 @@ KQL queries for Log Analytics workspace analysis.
 
 <!-- diagram-id: log-analytics-queries -->
 ```mermaid
-graph LR
+graph TD
     A[Usage] --> B[Ingestion Volume]
     C[Heartbeat] --> D[Resource Health]
     E[workspace] --> F[Cross-Workspace]

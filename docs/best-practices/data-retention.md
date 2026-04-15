@@ -16,7 +16,7 @@ Retention strategy should preserve useful evidence without paying premium analyt
 
 <!-- diagram-id: data-retention -->
 ```mermaid
-flowchart LR
+flowchart TD
     A[Collected logs] --> B[Analytics retention]
     B --> C[Hot investigation window]
     B --> D[Table-level review]

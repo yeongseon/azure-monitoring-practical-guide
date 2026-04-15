@@ -16,7 +16,7 @@ Comprehensive guide for monitoring Azure workloads — from Azure Monitor fundam
 
 <!-- diagram-id: azure-monitoring-practical-guide -->
 ```mermaid
-graph LR
+graph TD
     subgraph "Navigation"
         A[Start Here] --> B[Platform]
         B --> C[Best Practices]

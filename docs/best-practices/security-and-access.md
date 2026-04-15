@@ -16,7 +16,7 @@ Azure Monitor security is about controlling who can read telemetry, who can chan
 
 <!-- diagram-id: security-and-access -->
 ```mermaid
-flowchart LR
+flowchart TD
     A[Resources and agents] --> B[Private ingestion path]
     B --> C[Log Analytics workspace]
     C --> D[RBAC]

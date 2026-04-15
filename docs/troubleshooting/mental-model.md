@@ -117,7 +117,7 @@ This prevents premature mitigation that destroys useful evidence.
 
 <!-- diagram-id: 5-minimum-evidence-set -->
 ```mermaid
-flowchart LR
+flowchart TD
     A[Symptom statement] --> B[Control query]
     A --> C[Configuration evidence]
     A --> D[Change history]

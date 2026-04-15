@@ -14,7 +14,7 @@ content_sources:
 Log Analytics workspace operations determine where Azure Monitor Logs land, how long they stay available, and who can safely query or change the environment. This runbook focuses on repeatable day-2 workspace administration with Azure CLI.
 <!-- diagram-id: workspace-management -->
 ```mermaid
-flowchart LR
+flowchart TD
     Sources[Azure resources and agents] --> Workspace[Log Analytics workspace]
     Workspace --> Retention[Retention and daily cap]
     Workspace --> Access[RBAC and query access]

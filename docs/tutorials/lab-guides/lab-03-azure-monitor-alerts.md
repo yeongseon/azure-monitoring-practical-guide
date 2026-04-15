@@ -62,7 +62,7 @@ export VM_ID=$(az vm show \
 
 <!-- diagram-id: architecture-diagram -->
 ```mermaid
-flowchart LR
+flowchart TD
     Metric[VM metric] --> MA[Metric alert]
     Log[Heartbeat query] --> LQA[Scheduled query alert]
     MA --> AG[Action group]

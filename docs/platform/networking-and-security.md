@@ -32,7 +32,7 @@ Azure Monitor security is not one toggle.
 It is the combination of identity, RBAC, workspace access mode, public network access settings, Private Link support, encryption, and resource-level configuration choices such as diagnostic settings and data collection rules.
 <!-- diagram-id: architecture-overview -->
 ```mermaid
-flowchart LR
+flowchart TD
     USER[User or automation identity] --> RBAC[Azure RBAC / access model]
     APP[App or agent] --> NET[Public endpoint or Private Link]
     RBAC --> RES[Workspace / App Insights / DCR / alerts]

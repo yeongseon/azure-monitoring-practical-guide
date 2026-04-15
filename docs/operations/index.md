@@ -17,7 +17,7 @@ Day-2 operational procedures for Azure Monitor.
 
 <!-- diagram-id: operations -->
 ```mermaid
-graph LR
+graph TD
     subgraph "Setup"
         A[Workspace Management]
         B[Diagnostic Settings]

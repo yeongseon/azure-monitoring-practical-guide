@@ -15,7 +15,7 @@ KQL queries for alert evaluation and troubleshooting.
 
 <!-- diagram-id: alert-investigation-queries -->
 ```mermaid
-graph LR
+graph TD
     A[AzureActivity] --> B[Alert Firing History]
     C[AzureDiagnostics] --> D[Action Group Failures]
 ```

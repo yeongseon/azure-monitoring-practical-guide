@@ -18,7 +18,7 @@ This guide is structured to support different operational roles. Select your pat
 
 <!-- diagram-id: learning-paths -->
 ```mermaid
-graph LR
+graph TD
     User[Select Role] --> Dev[Developer]
     User --> SRE[SRE / Ops]
     User --> Arch[Architect]

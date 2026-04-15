@@ -14,7 +14,7 @@ content_sources:
 Azure Monitor exports let you route selected tables to downstream archival, streaming, and analytics systems without giving every consumer direct workspace access. This runbook covers continuous export operations and API-driven integration checks.
 <!-- diagram-id: export-and-integration -->
 ```mermaid
-flowchart LR
+flowchart TD
     Workspace[Log Analytics workspace] --> ExportRule[Data export rule]
     ExportRule --> Storage[Storage account]
     ExportRule --> EventHubs[Event Hubs]

@@ -16,7 +16,7 @@ Hybrid and multi-cloud monitoring succeeds when collection, identity, and data o
 
 <!-- diagram-id: multi-cloud-and-hybrid-monitoring -->
 ```mermaid
-flowchart LR
+flowchart TD
     A[Azure resources] --> E[Shared monitoring model]
     B[Arc-enabled servers] --> E
     C[On-premises apps] --> D[OpenTelemetry or AMA]

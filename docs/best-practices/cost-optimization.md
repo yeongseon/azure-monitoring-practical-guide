@@ -17,7 +17,7 @@ Azure Monitor cost optimization is mostly a design discipline, not a cleanup exe
 
 <!-- diagram-id: cost-optimization -->
 ```mermaid
-flowchart LR
+flowchart TD
     A[Telemetry sources] --> B[Collection filters]
     B --> C[Workspace tables]
     C --> D[Retention decisions]

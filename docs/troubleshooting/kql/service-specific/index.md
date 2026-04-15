@@ -19,7 +19,7 @@ KQL queries for specific Azure service diagnostics.
 
 <!-- diagram-id: service-specific-queries -->
 ```mermaid
-graph LR
+graph TD
     A[AppServiceHTTPLogs] --> B[HTTP Analysis]
     C[KubePodInventory] --> D[Pod Health]
     E[ContainerAppSystemLogs_CL] --> F[Revision Events]

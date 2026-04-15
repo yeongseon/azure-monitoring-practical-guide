@@ -16,7 +16,7 @@ Quick patterns for common Azure Monitor Log Analytics operations.
 
 <!-- diagram-id: kql-quick-reference -->
 ```mermaid
-flowchart LR
+flowchart TD
     subgraph "KQL Query Structure"
         A[Table Name] --> B[where]
         B --> C[extend]

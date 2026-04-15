@@ -49,7 +49,7 @@ export DCR_NAME="dcr-monlab01"
 
 <!-- diagram-id: architecture-diagram -->
 ```mermaid
-flowchart LR
+flowchart TD
     VM[Azure VM] --> AMA[Azure Monitor Agent]
     AMA --> DCR[Data Collection Rule]
     App[Storage account diagnostics] --> DS1[Diagnostic setting]
