@@ -41,6 +41,7 @@ flowchart LR
     DATA --> QUERY[Query / alert / export path]
 ```
 A secure Azure Monitor design should answer six questions.
+
 1. **Who can read telemetry?**
     - Reading logs can reveal sensitive operational context.
 2. **Who can change collection or alert rules?**
@@ -125,6 +126,7 @@ It complements, but does not replace, AMPLS and private endpoint design for Azur
 
 #### AMPLS configuration sequence
 In practice, teams usually implement AMPLS in four decisions rather than one deployment step.
+
 1. Select the Azure Monitor resources that need private access.
 2. Associate those resources with the private link scope.
 3. Create private endpoints in the right virtual networks and subnets.

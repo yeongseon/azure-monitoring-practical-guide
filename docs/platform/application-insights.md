@@ -46,6 +46,7 @@ flowchart LR
     LIVE[Live Metrics path] --> APM
 ```
 There are five architecture concepts to keep in view.
+
 1. **Instrumentation is the source of truth**
     - No instrumentation means no request, dependency, or exception telemetry.
     - Diagnostic settings do not replace application instrumentation.
@@ -380,6 +381,7 @@ The most important practical limits are usually design-related.
 
 #### Golden signals with Application Insights
 Most production teams use Application Insights to answer four questions first.
+
 1. Is request volume normal?
 2. Is user-facing latency increasing?
 3. Are dependencies failing or slowing down?

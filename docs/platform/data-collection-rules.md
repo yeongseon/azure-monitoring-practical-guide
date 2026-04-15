@@ -40,6 +40,7 @@ flowchart LR
     XFORM --> MET[(Azure Monitor metrics store)]
 ```
 There are five architecture ideas to keep in mind.
+
 1. **DCRs are reusable collection policies**
     - One rule can be associated with many resources when the telemetry requirement is the same.
 2. **DCRs define streams, not just sources**
@@ -202,6 +203,7 @@ sequenceDiagram
 
 ### Verification path
 When DCR-based data is missing, validate in this order.
+
 1. Is Azure Monitor Agent installed and healthy?
 2. Is the right DCR associated to the resource?
 3. Does the DCR include the expected sources and streams?

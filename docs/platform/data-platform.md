@@ -45,6 +45,7 @@ flowchart TD
     LOG --> EXPORT[Export / Event Hubs / Storage]
 ```
 The data platform has four practical responsibilities.
+
 1. **Accept telemetry from many producers**
     - Azure resources emit platform metrics automatically.
     - Azure resources emit resource logs when diagnostic settings are configured.
@@ -296,6 +297,7 @@ sequenceDiagram
 
 ### Operational checkpoints in the flow
 When data is missing, validate in this order.
+
 1. **Source emitting**
     - Is the application instrumented?
     - Does the resource support the category?

@@ -38,6 +38,7 @@ flowchart LR
     STORE --> API[Metrics API / CLI]
 ```
 A metrics design review usually focuses on five questions.
+
 1. **What metric names matter most?**
     - Availability, latency, throughput, utilization, saturation, and error counters usually come first.
 2. **Which aggregation is meaningful?**
@@ -406,6 +407,7 @@ In other words, metrics usually reduce both evaluation overhead and operator lat
 ### Pricing example for architecture reviews
 Assume a team wants to detect App Service HTTP 5xx spikes every minute.
 Two common designs are:
+
 1. Metric alert on `Http5xx` with a five-minute window.
 2. Scheduled query alert scanning request logs every minute.
 
@@ -437,6 +439,7 @@ Always confirm current Microsoft Learn pages for exact service limits.
 
 ### Metric design checklist
 Use this checklist when adopting a new metric.
+
 1. Is the metric emitted automatically or do you need custom instrumentation?
 2. Which aggregation matches the operational question?
 3. Which dimension should alerts split on?

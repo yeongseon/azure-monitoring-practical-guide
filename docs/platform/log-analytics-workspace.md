@@ -43,6 +43,7 @@ flowchart LR
     NET[Public access / Private Link] --> LAW
 ```
 A production workspace design should answer six questions.
+
 1. **Where is the workspace located?**
     - Region determines data residency and can affect latency and compliance.
 2. **Who can query it?**
@@ -386,6 +387,7 @@ The main practical limits are about architecture and operations.
 
 ### Workspace design checklist
 Use the following checklist during design reviews.
+
 1. **Boundary clarity**
     - Is the workspace scoped by environment, region, business unit, or the whole platform?
     - Is that boundary documented and owned?

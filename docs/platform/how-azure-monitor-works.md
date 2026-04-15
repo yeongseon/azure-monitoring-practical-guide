@@ -91,6 +91,7 @@ flowchart LR
     LAW --> EX
 ```
 At a high level, Azure Monitor architecture breaks into five layers.
+
 1. **Producers**
     - Azure resources emit platform metrics automatically.
     - Azure resources can emit resource logs when diagnostic settings are configured.

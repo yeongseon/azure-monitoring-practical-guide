@@ -48,6 +48,7 @@ flowchart LR
     AG --> AUTO[Webhook / Logic App / Function / Runbook / ITSM]
 ```
 An alert architecture review should answer seven questions.
+
 1. **What signal type is the rule built on?**
     - Metric, log query, activity log, service health, or resource health.
 2. **How fast must the alert fire?**
