@@ -8,23 +8,22 @@ Comprehensive guide for monitoring Azure workloads — from Azure Monitor fundam
 
 | Section | Description |
 |---------|-------------|
-| [Start Here](https://yeongseon.github.io/azure-monitoring-practical-guide/) | Overview, learning paths, and repository map |
-| [Platform](https://yeongseon.github.io/azure-monitoring-practical-guide/platform/) | Azure Monitor architecture, data platform, Log Analytics, Application Insights |
-| [Best Practices](https://yeongseon.github.io/azure-monitoring-practical-guide/best-practices/) | Workspace design, alerting strategy, cost optimization, data retention |
-| [Service Guides](https://yeongseon.github.io/azure-monitoring-practical-guide/service-guides/) | Per-service monitoring for App Service, Container Apps, Functions, AKS, VMs |
-| [Operations](https://yeongseon.github.io/azure-monitoring-practical-guide/operations/) | Workspace management, diagnostic settings, alert rules, workbooks |
-| [Troubleshooting](https://yeongseon.github.io/azure-monitoring-practical-guide/troubleshooting/) | 9 playbooks, KQL query packs, decision tree, evidence map |
-| [Reference](https://yeongseon.github.io/azure-monitoring-practical-guide/reference/) | CLI cheatsheet, KQL quick reference, platform limits |
+| [Start Here](https://yeongseon.github.io/azure-monitoring-practical-guide/start-here/) | Overview, learning paths, and repository map for Azure observability |
+| [Platform](https://yeongseon.github.io/azure-monitoring-practical-guide/platform/) | Deep dive into Azure Monitor architecture: data platform, Log Analytics, and Application Insights |
+| [Best Practices](https://yeongseon.github.io/azure-monitoring-practical-guide/best-practices/) | Production-ready design for alerting strategy, cost optimization, and data retention |
+| [Service Guides](https://yeongseon.github.io/azure-monitoring-practical-guide/service-guides/) | Per-service monitoring setup for App Service, Container Apps, Functions, AKS, and VMs |
+| [Operations](https://yeongseon.github.io/azure-monitoring-practical-guide/operations/) | Day-2 guide for managing diagnostic settings, alert rules, and interactive workbooks |
+| [Troubleshooting](https://yeongseon.github.io/azure-monitoring-practical-guide/troubleshooting/) | Diagnosis playbooks with KQL query packs, decision trees, and evidence maps |
+| [Reference](https://yeongseon.github.io/azure-monitoring-practical-guide/reference/) | Quick-lookup CLI cheatsheet, KQL quick reference, and platform limits |
 
 ## Service Guides
 
-- **App Service** — Platform logs, Application Insights integration, alerts and metrics
-- **Container Apps** — Console logs, system logs, scaling metrics
-- **Functions** — Execution logs, host metrics, invocation tracing
-- **AKS** — Container Insights, Prometheus metrics, node/pod metrics
-- **Virtual Machines** — Azure Monitor Agent, VM Insights, performance counters
-
-Each guide covers: diagnostic settings, KQL queries, alerting, and dashboards.
+Tailored monitoring configurations for key Azure services:
+- **App Service**: Platform logs and Application Insights integration
+- **Container Apps**: Console/system logs and scaling metrics
+- **Functions**: Execution logs and invocation tracing
+- **AKS**: Container Insights and managed Prometheus metrics
+- **Virtual Machines**: Azure Monitor Agent (AMA) and VM Insights
 
 ## Quick Start
 
@@ -41,22 +40,14 @@ mkdocs serve
 
 Visit `http://127.0.0.1:8000` to browse the documentation locally.
 
-## KQL Query Packs
-
-Ready-to-use KQL queries organized by category:
-
-- **Application Insights** — Request performance, dependency failures, exception trends
-- **Log Analytics** — Ingestion volume, resource health, cross-workspace queries
-- **Alerts** — Alert firing history, action group failures
-- **Service-Specific** — App Service diagnostics, AKS container logs
-
 ## Contributing
 
-Contributions welcome. Please ensure:
-- All CLI examples use long flags (`--resource-group`, not `-g`)
-- All documents include Mermaid diagrams
-- All content references Microsoft Learn with source URLs
-- No PII in CLI output examples
+Contributions welcome! Please see our [Contributing Guide](https://yeongseon.github.io/azure-monitoring-practical-guide/contributing/) for:
+
+- Repository structure and content organization
+- Document templates and writing standards
+- Local development setup and build validation
+- Pull request process
 
 ## Related Projects
 
@@ -79,3 +70,4 @@ This is an independent community project. Not affiliated with or endorsed by Mic
 ## License
 
 [MIT](LICENSE)
+

@@ -204,3 +204,5 @@ nav:
      - reference/platform-limits.md
      - reference/diagnostic-tables.md
      - reference/content-validation-status.md
+  - Contributing:
+    - contributing/index.md
