@@ -7,7 +7,7 @@ content_sources:
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability-standard-tests
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps
 ---
 
@@ -42,6 +42,7 @@ export APP_INSIGHTS_NAME="appimonlab04"
 export PLAN_NAME="aspmonlab04"
 export WEBAPP_NAME="webmonlab04demo"
 export WEB_TEST_NAME="webtest-monlab04"
+export WEB_TEST_LOCATION="apac-hk-hkn-azr"
 ```
 
 ## Architecture Diagram
@@ -65,7 +66,7 @@ flowchart TD
 - Deploy a minimal App Service app and configure its connection string.
 - Generate requests, traces, and custom telemetry.
 - Confirm telemetry lands in `requests`, `traces`, and `customEvents` tables.
-- Create an availability test that probes the app endpoint.
+- Create a Standard availability test that probes the app endpoint.
 
 ## Step-by-Step Instructions
 
@@ -118,6 +119,16 @@ export APPINSIGHTS_CONNECTION_STRING=$(az monitor app-insights component show \
     --app "$APP_INSIGHTS_NAME" \
     --resource-group "$RG" \
     --query "connectionString" \
+    --output tsv)
+```
+
+Capture the Application Insights resource ID for the availability-test hidden-link tag:
+
+```bash
+export APP_INSIGHTS_ID=$(az monitor app-insights component show \
+    --app "$APP_INSIGHTS_NAME" \
+    --resource-group "$RG" \
+    --query "id" \
     --output tsv)
 ```
 
@@ -223,22 +234,42 @@ az monitor log-analytics query \
     --output table
 ```
 
-### Step 7: Create an availability test
+### Step 7: Create a Standard availability test
 
-Use a standard ping-style web test for the app endpoint.
+Use a Standard availability test for the app endpoint.
+
+!!! warning "URL ping retirement"
+    Application Insights URL ping tests retire on September 30, 2026, and existing URL ping tests are removed from resources after retirement. Use Standard tests for new single-step availability monitoring and migrate any existing URL ping tests before that date.
 
 ```bash
 az monitor app-insights web-test create \
     --resource-group "$RG" \
     --name "$WEB_TEST_NAME" \
     --location "$LOCATION" \
-    --web-test-kind "ping" \
+    --web-test-kind "standard" \
+    --defined-web-test-name "$WEB_TEST_NAME" \
+    --synthetic-monitor-id "$WEB_TEST_NAME" \
     --frequency 300 \
     --timeout 120 \
     --enabled true \
-    --request-url "https://$APP_URL" \
+    --retry-enabled true \
+    --locations Id="$WEB_TEST_LOCATION" \
+    --http-verb "GET" \
+    --request-url "https://$APP_URL/" \
+    --expected-status-code 200 \
+    --ssl-check true \
+    --ssl-lifetime-check 7 \
+    --tags "hidden-link:$APP_INSIGHTS_ID=Resource" \
     --output json
 ```
+
+| Option | Why it is used |
+|---|---|
+| `--web-test-kind "standard"` | Creates the supported Standard test type instead of the deprecated URL ping test type. |
+| `--locations Id="$WEB_TEST_LOCATION"` | Selects the Azure availability test probe location by population tag. |
+| `--expected-status-code 200` | Fails the test when the endpoint does not return HTTP 200. |
+| `--ssl-check true` and `--ssl-lifetime-check 7` | Adds TLS certificate validity and proactive lifetime checks. |
+| `--tags "hidden-link:$APP_INSIGHTS_ID=Resource"` | Associates the web test with the Application Insights component in the portal. |
 
 List the test to confirm it exists:
 
@@ -246,6 +277,7 @@ List the test to confirm it exists:
 az monitor app-insights web-test show \
     --resource-group "$RG" \
     --name "$WEB_TEST_NAME" \
+    --query "{name:name,kind:webTestKind,enabled:enabled,frequency:frequency,locations:locations}" \
     --output json
 ```
 
@@ -294,15 +326,16 @@ az monitor log-analytics query \
     --output table
 ```
 
-4. Confirm the availability test exists.
+4. Confirm the Standard availability test exists.
 
 ```bash
 az monitor app-insights web-test list \
     --resource-group "$RG" \
+    --query "[].{name:name,kind:webTestKind,enabled:enabled,frequency:frequency}" \
     --output table
 ```
 
-Validation succeeds when the Application Insights component is workspace-based, the web app contains the connection string, telemetry is queryable, and the availability test is present.
+Validation succeeds when the Application Insights component is workspace-based, the web app contains the connection string, telemetry is queryable, and the availability test exists with `webTestKind` set to `standard`.
 
 ## Cleanup Instructions
 
@@ -333,5 +366,5 @@ az group delete \
 
 - [Application Insights overview](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)
 - [Create an Application Insights resource](https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource)
-- [Monitor availability with URL ping tests](https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability)
+- [Application Insights availability tests](https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability-standard-tests)
 - [Monitor Azure App Service](https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps)
