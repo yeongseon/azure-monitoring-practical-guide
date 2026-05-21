@@ -11,6 +11,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-windows-vm
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Agent Not Reporting

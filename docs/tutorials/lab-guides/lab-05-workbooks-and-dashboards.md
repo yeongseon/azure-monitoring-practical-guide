@@ -10,6 +10,13 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards
     - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+validation:
+  az_cli:
+    last_tested: null
+    result: not_tested
+  bicep:
+    last_tested: null
+    result: not_tested
 ---
 
 # Lab 05: Workbooks and Dashboards

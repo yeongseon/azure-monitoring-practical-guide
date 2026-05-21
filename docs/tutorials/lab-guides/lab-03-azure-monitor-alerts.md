@@ -11,6 +11,13 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types#log-search-alerts
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+validation:
+  az_cli:
+    last_tested: null
+    result: not_tested
+  bicep:
+    last_tested: null
+    result: not_tested
 ---
 
 # Lab 03: Azure Monitor Alerts

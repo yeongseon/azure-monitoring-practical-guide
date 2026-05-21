@@ -1,12 +1,18 @@
 name: Deploy Documentation
 
 on:
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - 'scripts/**'
   push:
     branches:
       - main
     paths:
       - 'docs/**'
       - 'mkdocs.yml'
+      - 'scripts/**'
   workflow_dispatch:
 
 permissions:
@@ -27,7 +33,11 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: pip install mkdocs-material mkdocs-minify-plugin
+        run: pip install mkdocs-material mkdocs-minify-plugin pyyaml
+      - name: Validate generated dashboards
+        run: |
+          python scripts/generate_validation_status.py --check
+          python scripts/generate_content_validation_status.py --check
       - name: Build documentation
         run: mkdocs build --strict
       - name: Upload artifact
@@ -36,6 +46,7 @@ jobs:
           path: site
 
   deploy:
+    if: github.event_name == 'push'
     environment:
       name: github-pages
       url: ${{ github.event.deployment.payload.web_url || 'N/A' }}

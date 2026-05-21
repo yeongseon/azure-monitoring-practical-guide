@@ -23,6 +23,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/network-security-perimeter
     - https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Networking and Security

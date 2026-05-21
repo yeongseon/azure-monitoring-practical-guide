@@ -1,3 +1,11 @@
+---
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
+---
+
 # Contributing
 
 Thank you for your interest in contributing to Azure Monitoring Practical Guide!

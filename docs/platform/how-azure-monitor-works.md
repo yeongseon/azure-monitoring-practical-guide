@@ -31,6 +31,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # How Azure Monitor Works

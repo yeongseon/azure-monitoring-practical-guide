@@ -12,6 +12,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs#table-plans
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/usage
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # High Ingestion Cost

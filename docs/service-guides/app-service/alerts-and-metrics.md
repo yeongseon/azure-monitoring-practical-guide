@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric
     - https://learn.microsoft.com/en-us/azure/app-service/web-sites-monitor#metrics-granularity-and-retention-policy
     mslearn_url: https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Alerts and Metrics

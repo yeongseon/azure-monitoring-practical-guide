@@ -8,6 +8,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/container-apps/observability
     - https://learn.microsoft.com/en-us/azure/container-apps/log-streaming
     mslearn_url: https://learn.microsoft.com/en-us/azure/container-apps/observability
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Observability in Azure Container Apps

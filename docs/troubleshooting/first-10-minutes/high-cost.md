@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs
     - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # First 10 Minutes: High Cost

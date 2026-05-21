@@ -9,6 +9,11 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Decision Tree

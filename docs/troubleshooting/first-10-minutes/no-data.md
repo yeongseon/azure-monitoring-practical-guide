@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # First 10 Minutes: No Data

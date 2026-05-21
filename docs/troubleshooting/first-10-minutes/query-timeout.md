@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/scope
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # First 10 Minutes: Query Timeout

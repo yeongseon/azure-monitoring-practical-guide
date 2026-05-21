@@ -11,6 +11,11 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/container-apps/log-monitoring
         - https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
         - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Service-Specific Queries

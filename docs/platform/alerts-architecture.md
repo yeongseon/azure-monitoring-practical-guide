@@ -29,6 +29,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/cli/azure/monitor/metrics/alert?view=azure-cli-latest
     - https://learn.microsoft.com/en-us/cli/azure/monitor/scheduled-query?view=azure-cli-latest
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Alerts Architecture

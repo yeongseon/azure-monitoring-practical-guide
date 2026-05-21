@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-enable?tabs=aspnetcore
     mslearn_url: https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Application Insights Integration

@@ -8,6 +8,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Workbooks and Dashboards

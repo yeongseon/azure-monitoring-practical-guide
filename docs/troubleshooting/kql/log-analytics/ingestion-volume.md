@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Ingestion Volume (Data Volume by Table)

@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-getting-started
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Request Performance (P50, P95, P99)

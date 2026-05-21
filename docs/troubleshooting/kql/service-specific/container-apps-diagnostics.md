@@ -8,6 +8,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/container-apps/log-monitoring
     - https://learn.microsoft.com/en-us/azure/container-apps/observability
     mslearn_url: https://learn.microsoft.com/en-us/azure/container-apps/log-monitoring
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Container Apps Diagnostics (Revision and Startup Analysis)

@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/prometheus-metrics-overview
     mslearn_url: https://learn.microsoft.com/en-us/azure/aks/monitor-aks
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # AKS Observability

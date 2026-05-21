@@ -25,6 +25,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
     - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Log Analytics Workspace

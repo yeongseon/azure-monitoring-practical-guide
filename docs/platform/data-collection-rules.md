@@ -23,6 +23,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection
     - https://learn.microsoft.com/en-us/cli/azure/monitor/data-collection/rule?view=azure-cli-latest
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Data Collection Rules

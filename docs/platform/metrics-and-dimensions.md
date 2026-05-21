@@ -21,6 +21,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/metrics-index
     - https://learn.microsoft.com/en-us/cli/azure/monitor/metrics?view=azure-cli-latest
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Metrics and Dimensions

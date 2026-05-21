@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # First 10 Minutes: Alert Not Firing

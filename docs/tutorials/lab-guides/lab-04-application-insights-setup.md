@@ -10,6 +10,13 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability-standard-tests
     - https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+validation:
+  az_cli:
+    last_tested: null
+    result: not_tested
+  bicep:
+    last_tested: null
+    result: not_tested
 ---
 
 # Lab 04: Application Insights Setup

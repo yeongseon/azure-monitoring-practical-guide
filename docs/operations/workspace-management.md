@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Workspace Management

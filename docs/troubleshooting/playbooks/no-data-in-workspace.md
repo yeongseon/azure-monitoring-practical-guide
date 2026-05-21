@@ -14,6 +14,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/azurediagnostics
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-ingestion-time
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # No Data in Workspace

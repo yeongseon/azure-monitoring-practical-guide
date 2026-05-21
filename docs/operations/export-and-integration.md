@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Export and Integration

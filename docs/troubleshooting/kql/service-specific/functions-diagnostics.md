@@ -8,6 +8,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
     - https://learn.microsoft.com/en-us/azure/azure-functions/analyze-telemetry-data
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Functions Diagnostics (Execution Failures and Timeouts)

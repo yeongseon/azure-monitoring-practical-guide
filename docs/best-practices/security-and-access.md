@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Security and Access

@@ -4,11 +4,15 @@ on:
   pull_request:
     paths:
       - 'docs/**/*.md'
+      - 'mkdocs.yml'
+      - 'scripts/**'
   push:
     branches:
       - main
     paths:
       - 'docs/**/*.md'
+      - 'mkdocs.yml'
+      - 'scripts/**'
 
 jobs:
   validate-content-sources:
@@ -39,6 +43,11 @@ jobs:
       - name: Validate content sources
         run: |
           python scripts/validate_content_sources.py
+
+      - name: Validate generated dashboards
+        run: |
+          python scripts/generate_validation_status.py --check
+          python scripts/generate_content_validation_status.py --check
       
       - name: Check for missing diagram IDs
         run: |

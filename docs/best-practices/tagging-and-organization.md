@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
     - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Tagging and Organization

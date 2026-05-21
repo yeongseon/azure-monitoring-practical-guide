@@ -8,6 +8,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-overview
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # VM Diagnostics (Performance and Heartbeat Gaps)

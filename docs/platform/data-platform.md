@@ -25,6 +25,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
     - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Data Platform

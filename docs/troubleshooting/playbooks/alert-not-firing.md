@@ -12,6 +12,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types#log-search-alerts
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/perf
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Alert Not Firing

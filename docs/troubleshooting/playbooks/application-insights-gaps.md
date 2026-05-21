@@ -15,6 +15,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apptraces
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appexceptions
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Application Insights Data Gaps

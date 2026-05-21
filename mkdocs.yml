@@ -203,6 +203,7 @@ nav:
      - reference/kql-quick-reference.md
      - reference/platform-limits.md
      - reference/diagnostic-tables.md
+     - reference/validation-status.md
      - reference/content-validation-status.md
   - Contributing:
     - contributing/index.md

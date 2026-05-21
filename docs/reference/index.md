@@ -10,6 +10,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
     justification: Synthesized for this guide from the Microsoft Learn sources listed
       in based_on.
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Reference

@@ -8,6 +8,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
     - https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs
     mslearn_url: https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # App Service Diagnostics (HTTP Log Analysis)

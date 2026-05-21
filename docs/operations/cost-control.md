@@ -9,6 +9,11 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+content_validation:
+  status: pending_review
+  last_reviewed: null
+  reviewer: agent
+  core_claims: []
 ---
 
 # Cost Control
