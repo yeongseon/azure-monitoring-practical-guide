@@ -1,14 +1,15 @@
 ---
 content_sources:
   diagrams:
-    - id: cost-optimization
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/pricing
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+  - id: cost-optimization
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/pricing
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
 ---
 
 # Cost Optimization

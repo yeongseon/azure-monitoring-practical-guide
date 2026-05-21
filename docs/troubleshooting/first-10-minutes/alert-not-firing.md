@@ -1,13 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: quick-context
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule
+  - id: quick-context
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
 ---
 
 # First 10 Minutes: Alert Not Firing

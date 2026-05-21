@@ -1,13 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: data-flow-diagram
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/aks/monitor-aks
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/prometheus-metrics-overview
+  - id: data-flow-diagram
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/aks/monitor-aks
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/prometheus-metrics-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/aks/monitor-aks
 ---
 
 # AKS Observability

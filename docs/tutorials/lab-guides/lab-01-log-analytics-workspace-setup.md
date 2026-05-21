@@ -1,15 +1,16 @@
 ---
 content_sources:
   diagrams:
-    - id: architecture-diagram
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/create-diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+  - id: architecture-diagram
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/create-diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
 ---
 
 # Lab 01: Log Analytics Workspace Setup

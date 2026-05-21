@@ -1,13 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: data-flow
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-getting-started
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+  - id: data-flow
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-getting-started
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
 ---
 
 # Request Performance (P50, P95, P99)

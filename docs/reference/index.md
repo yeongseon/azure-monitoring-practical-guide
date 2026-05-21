@@ -1,13 +1,15 @@
 ---
 content_sources:
   diagrams:
-    - id: reference
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+  - id: reference
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # Reference

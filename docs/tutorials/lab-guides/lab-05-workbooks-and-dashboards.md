@@ -1,14 +1,15 @@
 ---
 content_sources:
   diagrams:
-    - id: architecture-diagram
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-create-workbook
-        - https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
+  - id: architecture-diagram
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-create-workbook
+    - https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
 ---
 
 # Lab 05: Workbooks and Dashboards

@@ -1,12 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: core-capabilities
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+  - id: core-capabilities
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # Overview

@@ -1,12 +1,13 @@
 ---
 content_sources:
   diagrams:
-    - id: summary
-      type: pie
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/
-        - https://learn.microsoft.com/en-us/azure/
+  - id: summary
+    type: pie
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/
+    - https://learn.microsoft.com/en-us/azure/
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/
 ---
 
 # Content Source Validation Status

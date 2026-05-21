@@ -1,13 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: quick-context
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+  - id: quick-context
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot
 ---
 
 # First 10 Minutes: No Data

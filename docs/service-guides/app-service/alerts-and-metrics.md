@@ -1,13 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: data-flow-diagram
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric
-        - https://learn.microsoft.com/en-us/azure/app-service/web-sites-monitor#metrics-granularity-and-retention-policy
+  - id: data-flow-diagram
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric
+    - https://learn.microsoft.com/en-us/azure/app-service/web-sites-monitor#metrics-granularity-and-retention-policy
+    mslearn_url: https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
 ---
 
 # Alerts and Metrics

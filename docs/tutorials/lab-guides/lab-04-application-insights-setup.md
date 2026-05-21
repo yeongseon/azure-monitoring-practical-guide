@@ -1,14 +1,15 @@
 ---
 content_sources:
   diagrams:
-    - id: architecture-diagram
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability-standard-tests
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps
+  - id: architecture-diagram
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability-standard-tests
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
 ---
 
 # Lab 04: Application Insights Setup

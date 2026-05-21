@@ -1,12 +1,13 @@
 ---
 content_sources:
   diagrams:
-    - id: first-10-minutes
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+  - id: first-10-minutes
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
 ---
 
 # First 10 Minutes

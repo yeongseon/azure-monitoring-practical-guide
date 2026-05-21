@@ -1,12 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: platform-limits
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+  - id: platform-limits
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # Platform Limits

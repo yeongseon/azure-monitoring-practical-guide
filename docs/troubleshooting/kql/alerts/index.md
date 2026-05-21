@@ -1,12 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: alert-investigation-queries
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+  - id: alert-investigation-queries
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # Alert Investigation Queries

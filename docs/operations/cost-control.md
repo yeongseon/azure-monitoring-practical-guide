@@ -1,13 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: cost-control
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+  - id: cost-control
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
 ---
 
 # Cost Control

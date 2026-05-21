@@ -1,12 +1,13 @@
 ---
 content_sources:
   diagrams:
-    - id: data-flow
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
-        - https://learn.microsoft.com/en-us/azure/azure-functions/analyze-telemetry-data
+  - id: data-flow
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
+    - https://learn.microsoft.com/en-us/azure/azure-functions/analyze-telemetry-data
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
 ---
 
 # Functions Diagnostics (Execution Failures and Timeouts)

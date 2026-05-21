@@ -1,12 +1,13 @@
 ---
 content_sources:
   diagrams:
-    - id: data-flow
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine
+  - id: data-flow
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-overview
 ---
 
 # VM Diagnostics (Performance and Heartbeat Gaps)

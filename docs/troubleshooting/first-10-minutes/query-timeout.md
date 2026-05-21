@@ -1,13 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: quick-context
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/scope
+  - id: quick-context
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/scope
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
 ---
 
 # First 10 Minutes: Query Timeout

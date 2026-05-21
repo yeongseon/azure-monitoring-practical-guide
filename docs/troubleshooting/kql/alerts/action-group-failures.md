@@ -1,12 +1,13 @@
 ---
 content_sources:
   diagrams:
-    - id: data-flow
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+  - id: data-flow
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
 ---
 
 # Action Group Failures (Configuration Write Failures)

@@ -1,12 +1,13 @@
 ---
 content_sources:
   diagrams:
-    - id: data-flow-diagram
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/container-apps/observability
-        - https://learn.microsoft.com/en-us/azure/container-apps/log-streaming
+  - id: data-flow-diagram
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/container-apps/observability
+    - https://learn.microsoft.com/en-us/azure/container-apps/log-streaming
+    mslearn_url: https://learn.microsoft.com/en-us/azure/container-apps/observability
 ---
 
 # Observability in Azure Container Apps

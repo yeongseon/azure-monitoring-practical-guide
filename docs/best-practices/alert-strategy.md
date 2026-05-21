@@ -1,14 +1,15 @@
 ---
 content_sources:
   diagrams:
-    - id: alert-strategy
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+  - id: alert-strategy
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
 ---
 
 # Alert Strategy

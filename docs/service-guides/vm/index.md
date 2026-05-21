@@ -1,12 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: vm-monitoring
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-overview
+  - id: vm-monitoring
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-overview
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # VM Monitoring

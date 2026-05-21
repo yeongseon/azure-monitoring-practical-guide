@@ -1,14 +1,16 @@
 ---
 content_sources:
   diagrams:
-    - id: service-guides
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
-        - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
-        - https://learn.microsoft.com/en-us/azure/aks/monitor-aks
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine
+  - id: service-guides
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+    - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+    - https://learn.microsoft.com/en-us/azure/aks/monitor-aks
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # Service Guides

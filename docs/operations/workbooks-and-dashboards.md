@@ -1,12 +1,13 @@
 ---
 content_sources:
   diagrams:
-    - id: workbooks-and-dashboards
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
+  - id: workbooks-and-dashboards
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
 ---
 
 # Workbooks and Dashboards

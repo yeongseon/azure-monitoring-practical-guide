@@ -1,13 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: data-flow-diagram
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-enable?tabs=aspnetcore
+  - id: data-flow-diagram
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-enable?tabs=aspnetcore
+    mslearn_url: https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
 ---
 
 # Application Insights Integration

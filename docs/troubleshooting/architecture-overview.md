@@ -1,36 +1,39 @@
 ---
 content_sources:
   diagrams:
-    - id: 1-end-to-end-azure-monitor-flow
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-    - id: 3-collection-and-routing-path
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-    - id: 5-consumer-architecture-queries-alerts-and-workbooks
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+  - id: 1-end-to-end-azure-monitor-flow
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+  - id: 3-collection-and-routing-path
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+  - id: 5-consumer-architecture-queries-alerts-and-workbooks
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
 ---
 
 # Troubleshooting Architecture Overview

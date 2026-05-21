@@ -1,12 +1,13 @@
 ---
 content_sources:
   diagrams:
-    - id: data-flow-diagram
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitoring
-        - https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
+  - id: data-flow-diagram
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitoring
+    - https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitoring
 ---
 
 # Observability in Azure Functions

@@ -1,14 +1,16 @@
 ---
 content_sources:
   diagrams:
-    - id: best-practices
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+  - id: best-practices
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # Best Practices

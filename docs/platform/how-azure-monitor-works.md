@@ -1,34 +1,36 @@
 ---
 content_sources:
   diagrams:
-    - id: architecture-overview
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
-    - id: data-flow-diagram-by-signal-type
-      type: sequenceDiagram
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+  - id: architecture-overview
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+  - id: data-flow-diagram-by-signal-type
+    type: sequenceDiagram
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
 ---
 
 # How Azure Monitor Works

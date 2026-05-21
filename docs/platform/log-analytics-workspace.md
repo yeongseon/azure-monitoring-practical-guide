@@ -1,28 +1,30 @@
 ---
 content_sources:
   diagrams:
-    - id: architecture-overview
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
-    - id: data-flow-diagram-focused-on-the-workspace
-      type: sequenceDiagram
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+  - id: architecture-overview
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+  - id: data-flow-diagram-focused-on-the-workspace
+    type: sequenceDiagram
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
 ---
 
 # Log Analytics Workspace

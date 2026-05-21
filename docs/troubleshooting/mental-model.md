@@ -1,33 +1,36 @@
 ---
 content_sources:
   diagrams:
-    - id: symptom-to-hypothesis-framework
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-    - id: 5-minimum-evidence-set
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-    - id: 9-recovery-verification-model
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+  - id: symptom-to-hypothesis-framework
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+  - id: 5-minimum-evidence-set
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+  - id: 9-recovery-verification-model
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
 ---
 
 # Troubleshooting Mental Model

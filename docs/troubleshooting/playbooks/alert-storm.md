@@ -1,15 +1,16 @@
 ---
 content_sources:
   diagrams:
-    - id: 1-summary
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/perf
+  - id: 1-summary
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/perf
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
 ---
 
 # Alert Storm

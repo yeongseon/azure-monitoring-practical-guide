@@ -1,11 +1,12 @@
 ---
 content_sources:
   diagrams:
-    - id: playbooks
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+  - id: playbooks
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
 ---
 
 # Playbooks

@@ -1,18 +1,19 @@
 ---
 content_sources:
   diagrams:
-    - id: 1-summary
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/azurediagnostics
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-ingestion-time
+  - id: 1-summary
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/azurediagnostics
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-ingestion-time
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot
 ---
 
 # No Data in Workspace

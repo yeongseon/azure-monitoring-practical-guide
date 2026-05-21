@@ -1,13 +1,15 @@
 ---
 content_sources:
   diagrams:
-    - id: azure-monitoring-practical-guide
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+  - id: azure-monitoring-practical-guide
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # Azure Monitoring Practical Guide

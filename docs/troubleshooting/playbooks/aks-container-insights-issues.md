@@ -1,17 +1,18 @@
 ---
 content_sources:
   diagrams:
-    - id: troubleshooting-decision-flow
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-enable-aks
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-data-collection-filter
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/containerlogv2
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
+  - id: troubleshooting-decision-flow
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-enable-aks
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-data-collection-filter
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/containerlogv2
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview
 ---
 
 # AKS Container Insights Issues

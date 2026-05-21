@@ -1,12 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: container-apps-monitoring
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/container-apps/observability
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+  - id: container-apps-monitoring
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/container-apps/observability
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # Container Apps Monitoring

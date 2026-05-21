@@ -1,14 +1,15 @@
 ---
 content_sources:
   diagrams:
-    - id: architecture-diagram
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/functions
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+  - id: architecture-diagram
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/functions
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+    mslearn_url: https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/
 ---
 
 # Lab 02: Custom KQL Queries

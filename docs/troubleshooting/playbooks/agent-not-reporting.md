@@ -1,15 +1,16 @@
 ---
 content_sources:
   diagrams:
-    - id: 1-summary
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-windows-vm
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-linux-vm
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
+  - id: 1-summary
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-windows-vm
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-linux-vm
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-windows-vm
 ---
 
 # Agent Not Reporting

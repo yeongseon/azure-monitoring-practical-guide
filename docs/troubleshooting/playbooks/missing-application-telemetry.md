@@ -1,18 +1,19 @@
 ---
 content_sources:
   diagrams:
-    - id: 1-summary
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-troubleshooting-missing-telemetry
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/ip-addresses
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apprequests
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appdependencies
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apptraces
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appexceptions
+  - id: 1-summary
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-troubleshooting-missing-telemetry
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/ip-addresses
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apprequests
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appdependencies
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apptraces
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appexceptions
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-troubleshooting-missing-telemetry
 ---
 
 # Missing Application Telemetry

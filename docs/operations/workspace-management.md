@@ -1,13 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: workspace-management
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+  - id: workspace-management
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
 ---
 
 # Workspace Management

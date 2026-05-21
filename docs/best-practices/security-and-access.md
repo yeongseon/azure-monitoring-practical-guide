@@ -1,13 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: security-and-access
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+  - id: security-and-access
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
 ---
 
 # Security and Access

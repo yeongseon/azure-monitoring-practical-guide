@@ -1,26 +1,28 @@
 ---
 content_sources:
   diagrams:
-    - id: architecture-overview
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-transformations-create
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-ingestion-api-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection
-        - https://learn.microsoft.com/en-us/cli/azure/monitor/data-collection/rule?view=azure-cli-latest
-    - id: data-flow-diagram-with-transformation-stage
-      type: sequenceDiagram
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-transformations-create
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-ingestion-api-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection
-        - https://learn.microsoft.com/en-us/cli/azure/monitor/data-collection/rule?view=azure-cli-latest
+  - id: architecture-overview
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-transformations-create
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-ingestion-api-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection
+    - https://learn.microsoft.com/en-us/cli/azure/monitor/data-collection/rule?view=azure-cli-latest
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+  - id: data-flow-diagram-with-transformation-stage
+    type: sequenceDiagram
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-transformations-create
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-ingestion-api-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection
+    - https://learn.microsoft.com/en-us/cli/azure/monitor/data-collection/rule?view=azure-cli-latest
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
 ---
 
 # Data Collection Rules

@@ -1,12 +1,13 @@
 ---
 content_sources:
   diagrams:
-    - id: diagnostic-settings
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+  - id: diagnostic-settings
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
 ---
 
 # Diagnostic Settings

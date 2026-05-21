@@ -1,12 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: diagnostic-tables-reference
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+  - id: diagnostic-tables-reference
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # Diagnostic Tables Reference

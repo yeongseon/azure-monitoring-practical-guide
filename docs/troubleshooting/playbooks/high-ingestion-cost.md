@@ -1,16 +1,17 @@
 ---
 content_sources:
   diagrams:
-    - id: 1-summary
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/pricing
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs#table-plans
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/usage
+  - id: 1-summary
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/pricing
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs#table-plans
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/usage
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
 ---
 
 # High Ingestion Cost

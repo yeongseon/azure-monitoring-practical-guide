@@ -1,12 +1,13 @@
 ---
 content_sources:
   diagrams:
-    - id: data-flow
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/container-apps/log-monitoring
-        - https://learn.microsoft.com/en-us/azure/container-apps/observability
+  - id: data-flow
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/container-apps/log-monitoring
+    - https://learn.microsoft.com/en-us/azure/container-apps/observability
+    mslearn_url: https://learn.microsoft.com/en-us/azure/container-apps/log-monitoring
 ---
 
 # Container Apps Diagnostics (Revision and Startup Analysis)

@@ -1,30 +1,32 @@
 ---
 content_sources:
   diagrams:
-    - id: architecture-overview
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/live-stream
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/distributed-trace-data
-        - https://learn.microsoft.com/en-us/cli/azure/monitor/app-insights?view=azure-cli-latest
-        - https://learn.microsoft.com/en-us/cli/azure/monitor/scheduled-query?view=azure-cli-latest
-    - id: data-flow-diagram-for-a-web-request
-      type: sequenceDiagram
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/live-stream
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/distributed-trace-data
-        - https://learn.microsoft.com/en-us/cli/azure/monitor/app-insights?view=azure-cli-latest
-        - https://learn.microsoft.com/en-us/cli/azure/monitor/scheduled-query?view=azure-cli-latest
+  - id: architecture-overview
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/live-stream
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/distributed-trace-data
+    - https://learn.microsoft.com/en-us/cli/azure/monitor/app-insights?view=azure-cli-latest
+    - https://learn.microsoft.com/en-us/cli/azure/monitor/scheduled-query?view=azure-cli-latest
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+  - id: data-flow-diagram-for-a-web-request
+    type: sequenceDiagram
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/live-stream
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/distributed-trace-data
+    - https://learn.microsoft.com/en-us/cli/azure/monitor/app-insights?view=azure-cli-latest
+    - https://learn.microsoft.com/en-us/cli/azure/monitor/scheduled-query?view=azure-cli-latest
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
 ---
 
 # Application Insights

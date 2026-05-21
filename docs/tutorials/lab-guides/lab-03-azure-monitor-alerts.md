@@ -1,15 +1,16 @@
 ---
 content_sources:
   diagrams:
-    - id: architecture-diagram
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types#log-search-alerts
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
+  - id: architecture-diagram
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types#log-search-alerts
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
 ---
 
 # Lab 03: Azure Monitor Alerts

@@ -1,26 +1,28 @@
 ---
 content_sources:
   diagrams:
-    - id: architecture-overview
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/network-security-perimeter
-        - https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview
-    - id: data-flow-with-private-connectivity
-      type: sequenceDiagram
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/network-security-perimeter
-        - https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview
+  - id: architecture-overview
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/network-security-perimeter
+    - https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+  - id: data-flow-with-private-connectivity
+    type: sequenceDiagram
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/network-security-perimeter
+    - https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
 ---
 
 # Networking and Security

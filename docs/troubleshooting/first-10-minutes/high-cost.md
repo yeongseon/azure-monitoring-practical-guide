@@ -1,13 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: quick-context
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+  - id: quick-context
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
 ---
 
 # First 10 Minutes: High Cost

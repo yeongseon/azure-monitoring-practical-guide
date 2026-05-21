@@ -1,12 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: app-service-monitoring
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+  - id: app-service-monitoring
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # App Service Monitoring

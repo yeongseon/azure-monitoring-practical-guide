@@ -1,19 +1,20 @@
 ---
 content_sources:
   diagrams:
-    - id: 1-summary
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits
-        - https://learn.microsoft.com/en-us/azure/service-health/service-health-portal-update
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apprequests
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/usage
+  - id: 1-summary
+    type: flowchart
+    source: mslearn-adapted
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits
+    - https://learn.microsoft.com/en-us/azure/service-health/service-health-portal-update
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apprequests
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/usage
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
 ---
 
 # Slow Query Performance

@@ -1,13 +1,15 @@
 ---
 content_sources:
   diagrams:
-    - id: kql-query-packs
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+  - id: kql-query-packs
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # KQL Query Packs

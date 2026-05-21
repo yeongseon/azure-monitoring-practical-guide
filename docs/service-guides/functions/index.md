@@ -1,12 +1,14 @@
 ---
 content_sources:
   diagrams:
-    - id: functions-monitoring
-      type: flowchart
-      source: self-generated
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
-        - https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitoring
+  - id: functions-monitoring
+    type: flowchart
+    source: self-generated
+    based_on:
+    - https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
+    - https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitoring
+    justification: Synthesized for this guide from the Microsoft Learn sources listed
+      in based_on.
 ---
 
 # Functions Monitoring
