@@ -6,7 +6,7 @@ content_sources:
     source: mslearn-adapted
     based_on:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
     - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits
@@ -489,7 +489,7 @@ If the coarse version is much faster and more useful, high-cardinality design wa
 ## Sources
 
 - [Optimize log queries in Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization)
-- [Best practices for Azure Monitor Logs queries](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices)
+- [Best practices for Azure Monitor Logs queries](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs)
 - [Overview of log queries in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview)
 - [Analyze usage in a Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage)
 - [Azure Monitor service limits](https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits)

@@ -6,8 +6,8 @@ content_sources:
       source: self-generated
       justification: "Synthesized from Microsoft Learn troubleshooting articles for Azure Monitor and Log Analytics"
       based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
 content_validation:
   status: pending_review
@@ -236,5 +236,5 @@ AzureActivity
 
 ## Sources
 
-- [Troubleshoot Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/troubleshoot)
-- [Troubleshoot Log Analytics](https://learn.microsoft.com/azure/azure-monitor/logs/troubleshoot)
+- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview)
+- [Troubleshoot Log Analytics](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewtroubleshoot)

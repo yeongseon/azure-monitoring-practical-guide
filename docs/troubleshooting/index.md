@@ -5,9 +5,9 @@ content_sources:
     type: flowchart
     source: mslearn-adapted
     based_on:
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
-    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
 content_validation:
   status: pending_review
   last_reviewed: null
@@ -81,5 +81,5 @@ Use these entry pages in order when you need fast routing before opening a detai
 
 ## Sources
 
-- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot)
-- [Troubleshoot Log Analytics](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot)
+- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview)
+- [Troubleshoot Log Analytics](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs)

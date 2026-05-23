@@ -8,7 +8,7 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric-overview
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-log-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
     - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
@@ -22,7 +22,7 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric-overview
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-log-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
     - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
@@ -532,7 +532,7 @@ Review the highest-severity alerts most often.
 - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
 - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types
 - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric-overview
-- https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-log-overview
+- https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
 - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
 - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
 - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage

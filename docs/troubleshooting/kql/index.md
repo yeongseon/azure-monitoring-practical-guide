@@ -6,7 +6,7 @@ content_sources:
     source: self-generated
     based_on:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
     justification: Synthesized for this guide from the Microsoft Learn sources listed
       in based_on.
@@ -61,5 +61,5 @@ graph TD
 
 ## Sources
 
-- [Log queries in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/log-query-overview)
+- [Log queries in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewlog-query-overview)
 - [KQL quick reference](https://learn.microsoft.com/azure/data-explorer/kusto/query/kql-quick-reference)

@@ -317,6 +317,14 @@ az monitor log-analytics workspace show \
 ## Cost Impact
 Security controls can add cost through private endpoints, private DNS, or CMK-related operational work, but they reduce the far greater risk of uncontrolled data exposure or unapproved configuration changes. Scope-limited RBAC also lowers operational review cost by making access audits smaller and clearer.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Security and Access. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 - [Best Practices](./index.md)
 - [Workspace Design](./workspace-design.md)
@@ -324,8 +332,8 @@ Security controls can add cost through private endpoints, private DNS, or CMK-re
 - [Platform - Networking and Security](../platform/networking-and-security.md)
 
 ## Sources
-- [Manage access to Log Analytics workspaces](https://learn.microsoft.com/azure/azure-monitor/logs/manage-access)
-- [Private Link for Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/private-link-security)
-- [Customer-managed keys for Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/customer-managed-keys)
+- [Manage access to Log Analytics workspaces](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewmanage-access)
+- [Private Link for Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewprivate-link-security)
+- [Customer-managed keys for Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/customer-managed-keys)
 - [Azure Monitor built-in roles](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles/monitor)
 - [Manage access to Azure Monitor workspaces](https://learn.microsoft.com/azure/azure-monitor/metrics/azure-monitor-workspace-manage-access)

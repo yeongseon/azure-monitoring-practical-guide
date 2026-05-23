@@ -322,6 +322,14 @@ Typical automation patterns:
 - Trigger an alert or pull request when retention or cap values drift.
 - Pair workspace inventory reports with cost review from the `Usage` table.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Workspace Management. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 - [Operations index](index.md)
 - [Diagnostic Settings](diagnostic-settings.md)
@@ -329,8 +337,8 @@ Typical automation patterns:
 - [Cost Control](cost-control.md)
 
 ## Sources
-- [Microsoft Learn: Create a Log Analytics workspace in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/quick-create-workspace)
-- [Microsoft Learn: Manage access to Log Analytics workspaces](https://learn.microsoft.com/azure/azure-monitor/logs/manage-access)
-- [Microsoft Learn: Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/cost-logs)
-- [Microsoft Learn: Set daily cap on a Log Analytics workspace](https://learn.microsoft.com/azure/azure-monitor/logs/daily-cap)
-- [Microsoft Learn: Azure Monitor Logs best practices](https://learn.microsoft.com/azure/azure-monitor/logs/best-practices-logs)
+- [Microsoft Learn: Create a Log Analytics workspace in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewquick-create-workspace)
+- [Microsoft Learn: Manage access to Log Analytics workspaces](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewmanage-access)
+- [Microsoft Learn: Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)
+- [Microsoft Learn: Set daily cap on a Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/daily-cap)
+- [Microsoft Learn: Azure Monitor Logs best practices](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs)

@@ -162,6 +162,14 @@ az monitor action-group list \
     --resource-group <resource-group-name>
 ```
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Azure Monitor CLI Cheatsheet. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [KQL Quick Reference](kql-quick-reference.md)

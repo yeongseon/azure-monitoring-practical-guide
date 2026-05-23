@@ -5,10 +5,10 @@ content_sources:
     type: flowchart
     source: mslearn-adapted
     based_on:
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
-    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
 content_validation:
   status: pending_review
   last_reviewed: null
@@ -138,6 +138,14 @@ union isfuzzy=true Heartbeat, Perf, AzureActivity
 - [Agent Not Reporting](../playbooks/agent-not-reporting.md)
 - [Ingestion Volume Queries](../kql/log-analytics/ingestion-volume.md)
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to First 10 Minutes: No Data. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [First 10 Minutes](index.md)
@@ -146,6 +154,6 @@ union isfuzzy=true Heartbeat, Perf, AzureActivity
 
 ## Sources
 
-- [Troubleshoot Azure Monitor Agent issues](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot)
+- [Troubleshoot Azure Monitor Agent issues](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview)
 - [Create and edit diagnostic settings in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings)
-- [Troubleshoot Log Analytics in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot)
+- [Troubleshoot Log Analytics in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs)

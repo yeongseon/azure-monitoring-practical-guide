@@ -292,6 +292,14 @@ az monitor log-analytics workspace update \
 
 Good workspace design lowers cost by reducing duplicate ingestion, minimizing abandoned workspaces, and making commitment-tier planning realistic. Over-segmentation prevents shared optimization, while under-segmentation mixes noisy test data with critical production tables and inflates retention cost.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Workspace Design. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [Best Practices](./index.md)
@@ -301,10 +309,10 @@ Good workspace design lowers cost by reducing duplicate ingestion, minimizing ab
 
 ## Sources
 
-- [Azure Monitor Logs best practices](https://learn.microsoft.com/azure/azure-monitor/logs/best-practices-logs)
-- [Design a Log Analytics workspace deployment](https://learn.microsoft.com/azure/azure-monitor/logs/design-logs-deployment)
+- [Azure Monitor Logs best practices](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs)
+- [Design a Log Analytics workspace deployment](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment)
 - [Data collection rules in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/data-collection/data-collection-rule-overview)
-- [Manage access to Log Analytics workspaces](https://learn.microsoft.com/azure/azure-monitor/logs/manage-access)
+- [Manage access to Log Analytics workspaces](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewmanage-access)
 - [Create and configure workspace-based Application Insights resources](https://learn.microsoft.com/azure/azure-monitor/app/create-workspace-resource)
-- [Private Link for Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/private-link-security)
-- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/framework/)
+- [Private Link for Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewprivate-link-security)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/)

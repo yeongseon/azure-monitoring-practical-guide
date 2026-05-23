@@ -8,7 +8,7 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-create-workbook
     - https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
 validation:
   az_cli:
@@ -17,8 +17,16 @@ validation:
   bicep:
     last_tested: null
     result: not_tested
+content_validation:
+  status: verified
+  last_reviewed: '2026-05-23'
+  reviewer: agent
+  core_claims:
+  - claim: This page uses Microsoft Learn as the primary source basis for its Azure-specific
+      guidance.
+    source: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+    verified: true
 ---
-
 # Lab 05: Workbooks and Dashboards
 
 This lab turns raw telemetry and alert logic into shareable operational views. You will create a workbook backed by Azure Monitor queries, add parameters and visualizations, and publish a simple Azure dashboard for team consumption.
@@ -301,4 +309,4 @@ If the entire sandbox is no longer needed, delete the resource group instead.
 - [Azure Monitor workbooks overview](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview)
 - [Create interactive reports with Azure Monitor workbooks](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-create-workbook)
 - [Azure dashboards](https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards)
-- [Visualize data in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview)
+- [Visualize data in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview)

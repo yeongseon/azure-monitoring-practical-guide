@@ -62,6 +62,14 @@ To get the most out of this repository, follow these navigation principles:
 *   **Searchable Patterns**: Use the `troubleshooting/kql/` directory as a library of reusable search queries.
 *   **Actionable Advice**: Look for the `playbooks/` sections when dealing with active incidents.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Repository Map. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 *   [Overview](overview.md)

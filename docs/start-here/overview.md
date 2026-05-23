@@ -70,6 +70,14 @@ The guide is organized into logical sections that follow the monitoring lifecycl
 6.  **Troubleshooting**: Decision trees, evidence mapping, KQL query packs, and incident playbooks.
 7.  **Reference**: Quick lookup material for CLI commands, KQL syntax, diagnostic tables, and platform limits.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Overview. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 *   [Learning Paths](learning-paths.md)

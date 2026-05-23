@@ -5,7 +5,7 @@ content_sources:
     type: flowchart
     source: mslearn-adapted
     based_on:
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-troubleshooting-missing-telemetry
+    - https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/app-insights/telemetry/investigate-missing-telemetry
     - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
     - https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling
     - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/ip-addresses
@@ -13,7 +13,7 @@ content_sources:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appdependencies
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/apptraces
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appexceptions
-    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-troubleshooting-missing-telemetry
+    mslearn_url: https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/app-insights/telemetry/investigate-missing-telemetry
 content_validation:
   status: pending_review
   last_reviewed: null
@@ -463,7 +463,7 @@ Finally, test endpoint reachability during network changes. Telemetry is often t
 - [KQL: Exception Trends](../kql/app-insights/exception-trends.md)
 
 ## Sources
-- [Microsoft Learn: Troubleshoot missing application telemetry in Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-troubleshooting-missing-telemetry)
+- [Microsoft Learn: Troubleshoot missing application telemetry in Application Insights](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/app-insights/telemetry/investigate-missing-telemetry)
 - [Microsoft Learn: Workspace-based Application Insights resources](https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource)
 - [Microsoft Learn: Azure Monitor Application Insights sampling](https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling)
 - [Microsoft Learn: IP addresses used by Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/ip-addresses)

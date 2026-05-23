@@ -141,6 +141,14 @@ Usage
 - [Ingestion Volume Queries](../kql/log-analytics/ingestion-volume.md)
 - [Cost Control Operations](../../operations/cost-control.md)
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to First 10 Minutes: High Cost. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [First 10 Minutes](index.md)

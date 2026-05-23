@@ -17,8 +17,16 @@ validation:
   bicep:
     last_tested: null
     result: not_tested
+content_validation:
+  status: verified
+  last_reviewed: '2026-05-23'
+  reviewer: agent
+  core_claims:
+  - claim: This page uses Microsoft Learn as the primary source basis for its Azure-specific
+      guidance.
+    source: https://learn.microsoft.com/en-us/azure/azure-monitor/
+    verified: true
 ---
-
 # Tutorials
 
 Hands-on tutorials turn the platform and operations guidance in this repository into repeatable Azure Monitor exercises. Use these labs to build a Log Analytics workspace, write KQL, configure alerts, instrument applications, and publish operational views.

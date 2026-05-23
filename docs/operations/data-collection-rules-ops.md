@@ -294,6 +294,14 @@ Useful automation patterns:
 - Tag DCR files by owning team and approved destination workspace.
 - Review transformation logic whenever downstream schemas change.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Data Collection Rules Operations. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 - [Operations index](index.md)
 - [Workspace Management](workspace-management.md)

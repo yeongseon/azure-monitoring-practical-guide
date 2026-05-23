@@ -6,7 +6,7 @@ content_sources:
     source: mslearn-adapted
     based_on:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/scope
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
 content_validation:
@@ -128,6 +128,14 @@ az servicehealth events list \
 - [Ingestion Volume Queries](../kql/log-analytics/ingestion-volume.md)
 - [Cross-Workspace Queries](../kql/log-analytics/cross-workspace.md)
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to First 10 Minutes: Query Timeout. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [First 10 Minutes](index.md)
@@ -137,5 +145,5 @@ az servicehealth events list \
 ## Sources
 
 - [Optimize log queries in Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization)
-- [Troubleshoot Log Analytics in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot)
+- [Troubleshoot Log Analytics in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs)
 - [Query scope in Azure Monitor Log Analytics](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/scope)

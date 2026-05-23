@@ -311,6 +311,14 @@ Useful automation patterns:
 - Review cost posture after every major diagnostic-setting rollout or AMA onboarding wave.
 - Keep a documented list of tables that may justify premium spend during incidents.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Cost Control. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 - [Operations index](index.md)
 - [Workspace Management](workspace-management.md)
@@ -324,9 +332,9 @@ Useful automation patterns:
 - [Alert Rule Management](alert-rule-management.md)
 
 ## Sources
-- [Microsoft Learn: Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/cost-logs)
+- [Microsoft Learn: Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)
 - [Microsoft Learn: Azure Monitor cost and usage](https://learn.microsoft.com/azure/azure-monitor/cost-usage)
-- [Microsoft Learn: Analyze usage in a Log Analytics workspace](https://learn.microsoft.com/azure/azure-monitor/logs/analyze-usage)
-- [Microsoft Learn: Cost optimization for Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/cost-logs)
-- [Microsoft Learn: Azure Monitor Logs pricing model](https://learn.microsoft.com/azure/azure-monitor/logs/cost-logs#pricing-model)
-- [Microsoft Learn: Configure workspace daily cap](https://learn.microsoft.com/azure/azure-monitor/logs/daily-cap)
+- [Microsoft Learn: Analyze usage in a Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage)
+- [Microsoft Learn: Cost optimization for Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)
+- [Microsoft Learn: Azure Monitor Logs pricing model](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs#pricing-model)
+- [Microsoft Learn: Configure workspace daily cap](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/daily-cap)

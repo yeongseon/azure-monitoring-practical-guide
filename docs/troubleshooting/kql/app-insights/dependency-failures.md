@@ -96,5 +96,5 @@ For the full investigation workflow, see [Missing Application Telemetry](../../p
 *   [Performance Percentiles](request-performance.md)
 
 ## Sources
-*   [MS Learn: Application Insights dependencies schema](https://learn.microsoft.com/azure/azure-monitor/reference/tables/dependencies)
+*   [MS Learn: Application Insights dependencies schema](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/dependencies)
 *   [MS Learn: Troubleshooting dependencies](https://learn.microsoft.com/azure/azure-monitor/app/asp-net-dependencies)

@@ -6,7 +6,7 @@ content_sources:
     source: mslearn-adapted
     based_on:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
@@ -304,6 +304,14 @@ az monitor action-group list \
 
 Well-designed alerts reduce hidden cost by lowering wasted incident effort and avoiding unnecessary log query evaluations. Overly broad scheduled query rules can also increase query execution volume, so moving real-time symptoms to metric alerts can improve both signal quality and efficiency.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Alert Strategy. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [Best Practices](./index.md)
@@ -320,4 +328,4 @@ Well-designed alerts reduce hidden cost by lowering wasted incident effort and a
 - [Create and manage log search alerts](https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-create-log-alert-rule)
 - [Dynamic thresholds in Azure Monitor alerts](https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-dynamic-thresholds)
 - [Alert processing rules](https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-processing-rules)
-- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/framework/)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/)

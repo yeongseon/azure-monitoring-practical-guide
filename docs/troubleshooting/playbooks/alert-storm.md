@@ -6,7 +6,7 @@ content_sources:
     source: mslearn-adapted
     based_on:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
     - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/perf
@@ -483,7 +483,7 @@ Finally, make one team responsible for each alert family. Ownership clarity prev
 
 ## Sources
 - [Microsoft Learn: Troubleshoot Azure Monitor alerts](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot)
-- [Microsoft Learn: Azure Monitor alerts best practices](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices)
+- [Microsoft Learn: Azure Monitor alerts best practices](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview)
 - [Microsoft Learn: Alerts processing rules in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules)
 - [Microsoft Learn: Action groups in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups)
 - [Microsoft Learn: Perf table reference](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/perf)

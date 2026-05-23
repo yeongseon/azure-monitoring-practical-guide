@@ -279,6 +279,14 @@ az monitor log-analytics workspace data-export list \
 
 Retention settings directly affect storage cost. Shorter analytics retention reduces premium hot storage. Table-level overrides keep a few expensive tables from inflating the whole workspace. Archive and export preserve required history more cheaply, but they add retrieval workflow and sometimes extra storage cost outside Azure Monitor.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Data Retention. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [Best Practices](./index.md)
@@ -288,7 +296,7 @@ Retention settings directly affect storage cost. Shorter analytics retention red
 
 ## Sources
 
-- [Manage data retention in a Log Analytics workspace](https://learn.microsoft.com/azure/azure-monitor/logs/data-retention-configure)
-- [Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/cost-logs)
-- [Data export in Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/logs-data-export)
-- [Azure Monitor Logs overview](https://learn.microsoft.com/azure/azure-monitor/logs/data-platform-logs)
+- [Manage data retention in a Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-configure)
+- [Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)
+- [Data export in Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewlogs-data-export)
+- [Azure Monitor Logs overview](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs)

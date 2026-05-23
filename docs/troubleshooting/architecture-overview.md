@@ -5,35 +5,35 @@ content_sources:
     type: flowchart
     source: mslearn-adapted
     based_on:
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
     - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
   - id: 3-collection-and-routing-path
     type: flowchart
     source: mslearn-adapted
     based_on:
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
     - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
   - id: 5-consumer-architecture-queries-alerts-and-workbooks
     type: flowchart
     source: mslearn-adapted
     based_on:
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
     - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
 content_validation:
   status: pending_review
   last_reviewed: null
@@ -293,8 +293,8 @@ If those conditions are not met, stay in the relevant playbook and continue with
 
 ## Sources
 
-- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot)
-- [Azure Monitor data collection overview](https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-overview)
+- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview)
+- [Azure Monitor data collection overview](https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview)
 - [Create diagnostic settings in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings)
 - [Azure Monitor Agent overview](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview)
 - [Application Insights overview](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)

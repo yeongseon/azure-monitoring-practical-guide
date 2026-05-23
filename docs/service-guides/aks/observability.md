@@ -352,6 +352,14 @@ When alerts fire, review evidence in this order:
 - Use Prometheus metrics for high-frequency infrastructure trends instead of exporting every event as logs.
 - Keep log alerts focused on state changes and failure signals rather than every warning line.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to AKS Observability. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [Container Apps Observability](../container-apps/observability.md)

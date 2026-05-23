@@ -18,8 +18,16 @@ validation:
   bicep:
     last_tested: null
     result: not_tested
+content_validation:
+  status: verified
+  last_reviewed: '2026-05-23'
+  reviewer: agent
+  core_claims:
+  - claim: This page uses Microsoft Learn as the primary source basis for its Azure-specific
+      guidance.
+    source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+    verified: true
 ---
-
 # Lab 03: Azure Monitor Alerts
 
 This lab turns monitoring data into action. You will create an action group, build metric and scheduled query alerts, and add an alert processing rule so your sandbox can model both detection and noise suppression patterns.

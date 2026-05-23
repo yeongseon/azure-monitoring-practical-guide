@@ -293,6 +293,14 @@ For each production app, create a dashboard or workbook with these tiles:
 - Treating single-minute `Http5xx` bursts as incidents without checking traffic volume
 - Creating separate alerts for every metric without a triage runbook
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Alerts and Metrics. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [Platform Logs](platform-logs.md)

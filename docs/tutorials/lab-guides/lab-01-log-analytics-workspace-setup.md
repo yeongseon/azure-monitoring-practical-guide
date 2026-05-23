@@ -18,8 +18,16 @@ validation:
   bicep:
     last_tested: null
     result: not_tested
+content_validation:
+  status: verified
+  last_reviewed: '2026-05-23'
+  reviewer: agent
+  core_claims:
+  - claim: This page uses Microsoft Learn as the primary source basis for its Azure-specific
+      guidance.
+    source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+    verified: true
 ---
-
 # Lab 01: Log Analytics Workspace Setup
 
 This lab builds the shared data platform for the rest of the tutorial sequence. You will create a Log Analytics workspace, configure retention and daily cap settings, and connect Azure resources so telemetry lands in one searchable location.

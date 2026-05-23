@@ -263,6 +263,14 @@ This sequence reduces false assumptions. For example, an increase in 5xx respons
 - Console error trend after each deployment
 - Drill-through link from `ScStatus >= 500` rows to Application Insights request details
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to App Service Platform Logs. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [Application Insights Integration](application-insights-integration.md)

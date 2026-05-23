@@ -98,4 +98,4 @@ For the full investigation workflow, see [Missing Application Telemetry](../../p
 
 ## Sources
 *   [MS Learn: summarize operator](https://learn.microsoft.com/azure/data-explorer/kusto/query/summarizeoperator)
-*   [MS Learn: Application Insights requests schema](https://learn.microsoft.com/azure/azure-monitor/reference/tables/requests)
+*   [MS Learn: Application Insights requests schema](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/requests)

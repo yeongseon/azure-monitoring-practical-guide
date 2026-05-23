@@ -7,7 +7,7 @@ content_sources:
     based_on:
     - https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs
     justification: Synthesized for this guide from the Microsoft Learn sources listed
       in based_on.
 content_validation:
@@ -119,6 +119,14 @@ AzureActivity
 | render piechart
 ```
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to KQL Quick Reference. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [CLI Cheatsheet](cli-cheatsheet.md)
@@ -128,6 +136,6 @@ AzureActivity
 ## Sources
 
 - [KQL quick reference](https://learn.microsoft.com/azure/data-explorer/kusto/query/kql-quick-reference)
-- [Query best practices](https://learn.microsoft.com/azure/azure-monitor/logs/query-optimization)
-- [Log Analytics tutorial](https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-tutorial)
+- [Query best practices](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewquery-optimization)
+- [Log Analytics tutorial](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewlog-analytics-tutorial)
 - [Summarize operator](https://learn.microsoft.com/azure/data-explorer/kusto/query/summarize-operator)

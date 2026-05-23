@@ -5,12 +5,12 @@ content_sources:
     type: flowchart
     source: mslearn-adapted
     based_on:
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-windows-vm
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-linux-vm
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
     - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat
-    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-windows-vm
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
 content_validation:
   status: pending_review
   last_reviewed: null
@@ -485,8 +485,8 @@ Finally, review guest log paths during runbook design. Microsoft Learn explicitl
 - [KQL: Resource Health](../kql/log-analytics/resource-health.md)
 
 ## Sources
-- [Microsoft Learn: Troubleshoot Azure Monitor Agent on Windows virtual machines](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-windows-vm)
-- [Microsoft Learn: Troubleshoot Azure Monitor Agent on Linux virtual machines](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-linux-vm)
+- [Microsoft Learn: Troubleshoot Azure Monitor Agent on Windows virtual machines](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview)
+- [Microsoft Learn: Troubleshoot Azure Monitor Agent on Linux virtual machines](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview)
 - [Microsoft Learn: Azure Monitor Agent overview](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview)
 - [Microsoft Learn: Data collection rules in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview)
 - [Microsoft Learn: Heartbeat table reference](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/heartbeat)

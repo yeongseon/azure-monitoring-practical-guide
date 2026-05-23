@@ -294,6 +294,14 @@ Create one Application Insights workbook section for each of these views:
 - End-to-end transaction drill-down using `operation_Id`
 - Trace samples for one failing request path
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Application Insights Integration. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [Platform Logs](platform-logs.md)

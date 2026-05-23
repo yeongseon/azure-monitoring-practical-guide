@@ -280,6 +280,14 @@ Useful automation patterns:
 - Keep a small canary export rule for validation before broadening coverage to high-volume tables.
 - Test both push and pull integrations during platform recovery exercises.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Export and Integration. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 - [Operations index](index.md)
 - [Workspace Management](workspace-management.md)
@@ -287,7 +295,7 @@ Useful automation patterns:
 - [Cost Control](cost-control.md)
 
 ## Sources
-- [Microsoft Learn: Log Analytics workspace data export in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/logs-data-export)
-- [Microsoft Learn: Configure Azure Monitor Logs export](https://learn.microsoft.com/azure/azure-monitor/logs/logs-data-export-configure)
-- [Microsoft Learn: Query logs in Azure Monitor by using Azure CLI](https://learn.microsoft.com/azure/azure-monitor/logs/azure-cli-query)
+- [Microsoft Learn: Log Analytics workspace data export in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewlogs-data-export)
+- [Microsoft Learn: Configure Azure Monitor Logs export](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overviewlogs-data-export-configure)
+- [Microsoft Learn: Query logs in Azure Monitor by using Azure CLI](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries)
 - [Microsoft Learn: Data Exports REST API for Log Analytics](https://learn.microsoft.com/rest/api/loganalytics/data-exports)

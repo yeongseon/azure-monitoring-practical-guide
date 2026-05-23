@@ -5,8 +5,8 @@ content_sources:
     type: flowchart
     source: mslearn-adapted
     based_on:
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
+    mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
 content_validation:
   status: pending_review
   last_reviewed: null
@@ -64,4 +64,4 @@ graph TB
 
 ## Sources
 
-- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot)
+- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview)

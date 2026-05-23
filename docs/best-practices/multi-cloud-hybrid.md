@@ -277,6 +277,14 @@ az monitor action-group list \
 
 Hybrid monitoring can increase cost if teams duplicate workspaces and collect different telemetry sets for the same service. Standardized DCRs, shared tag taxonomies, and portable application telemetry reduce duplication and make cost review possible across environments.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Multi-Cloud and Hybrid Monitoring. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [Best Practices](./index.md)

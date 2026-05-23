@@ -6,7 +6,7 @@ content_sources:
     source: mslearn-adapted
     based_on:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs
     - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
 content_validation:
@@ -97,5 +97,5 @@ For the full investigation workflow, see [No Data in Workspace](../../playbooks/
 *   [Cross-Workspace Query Patterns](cross-workspace.md)
 
 ## Sources
-*   [MS Learn: Heartbeat table reference](https://learn.microsoft.com/azure/azure-monitor/reference/tables/heartbeat)
-*   [MS Learn: Monitor VM health](https://learn.microsoft.com/azure/azure-monitor/vm/monitor-virtual-machines)
+*   [MS Learn: Heartbeat table reference](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/heartbeat)
+*   [MS Learn: Monitor VM health](https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm)

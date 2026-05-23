@@ -44,5 +44,5 @@ graph TD
 
 ## Sources
 
-- [Analyze usage in Log Analytics workspace](https://learn.microsoft.com/azure/azure-monitor/logs/analyze-usage)
-- [Cross-resource query Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/cross-workspace-query)
+- [Analyze usage in Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage)
+- [Cross-resource query Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cross-workspace-query)

@@ -266,6 +266,14 @@ az group list \
 
 Tags and organization do not change ingestion charges directly, but they make cost control possible. Accurate ownership and cost-center tags let teams review spend, identify abandoned workspaces, and assign remediation to the right owner faster.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Tagging and Organization. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [Best Practices](./index.md)
@@ -280,4 +288,4 @@ Tags and organization do not change ingestion charges directly, but they make co
 - [Define your Azure tagging strategy](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/azure-best-practices/resource-tagging)
 - [Tag support for Azure resources](https://learn.microsoft.com/azure/azure-resource-manager/management/tag-support)
 - [Assign Azure Policy definitions for tag governance](https://learn.microsoft.com/azure/governance/policy/assign-policy-portal)
-- [Azure Monitor Logs best practices](https://learn.microsoft.com/azure/azure-monitor/logs/best-practices-logs)
+- [Azure Monitor Logs best practices](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs)

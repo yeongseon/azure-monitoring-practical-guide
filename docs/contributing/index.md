@@ -263,6 +263,9 @@ Brief introduction (1-2 sentences)
 [Important considerations]
 
 ## See Also
+
+## See Also
+- [Repository Map](../start-here/repository-map.md)
 ## Sources
 ```
 
@@ -347,6 +350,3 @@ mkdocs serve
 
 ## Code of Conduct
 See [CODE_OF_CONDUCT.md](https://github.com/yeongseon/azure-monitoring-practical-guide/blob/main/CODE_OF_CONDUCT.md).
-
-## See Also
-- [Repository Map](../start-here/repository-map.md)

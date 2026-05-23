@@ -267,6 +267,14 @@ Useful automation patterns:
 - Keep per-resource-type JSON examples in source control for faster operational recovery.
 - Tag policy exemptions with an expiry date so temporary exceptions do not become permanent.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Diagnostic Settings. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 - [Operations index](index.md)
 - [Workspace Management](workspace-management.md)
@@ -278,6 +286,6 @@ Useful automation patterns:
 
 ## Sources
 - [Microsoft Learn: Diagnostic settings in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
-- [Microsoft Learn: Create diagnostic settings using Azure CLI](https://learn.microsoft.com/azure/azure-monitor/essentials/diagnostic-settings-cli)
+- [Microsoft Learn: Create diagnostic settings using Azure CLI](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings)
 - [Microsoft Learn: Supported resource logs categories](https://learn.microsoft.com/azure/azure-monitor/essentials/resource-logs-categories)
 - [Microsoft Learn: Metrics and logs destinations for diagnostic settings](https://learn.microsoft.com/azure/azure-monitor/essentials/diagnostic-settings#destinations)

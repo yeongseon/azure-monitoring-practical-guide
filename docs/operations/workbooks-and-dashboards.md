@@ -6,7 +6,7 @@ content_sources:
     source: mslearn-adapted
     based_on:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
-    - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
     mslearn_url: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
 content_validation:
   status: pending_review
@@ -295,6 +295,14 @@ Useful automation patterns:
 - Export workbook metadata regularly so private copies and shared copies are easy to compare.
 - Validate at least one parameterized workbook query after every monitoring schema change.
 - Review dashboard viewers and owners during quarterly operational access checks.
+
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Workbooks and Dashboards. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
 
 ## See Also
 - [Operations index](index.md)

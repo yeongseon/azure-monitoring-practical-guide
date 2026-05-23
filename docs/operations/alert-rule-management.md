@@ -303,6 +303,14 @@ Useful automation patterns:
 - Use scheduled jobs to flag disabled rules older than a maintenance window.
 - Pair rule inventory with incident review to retire low-value alerts.
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to Alert Rule Management. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 - [Operations index](index.md)
 - [Workbooks and Dashboards](workbooks-and-dashboards.md)

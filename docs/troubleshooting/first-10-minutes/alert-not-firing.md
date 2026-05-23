@@ -137,6 +137,14 @@ AzureActivity
 - [Alert Firing History](../kql/alerts/alert-firing-history.md)
 - [Action Group Failures](../kql/alerts/action-group-failures.md)
 
+## Review Matrix
+
+| Review area | Page-specific check |
+|---|---|
+| Scope | Confirm the guidance applies to First 10 Minutes: Alert Not Firing. |
+| Source basis | Validate the recommendation against the Microsoft Learn sources in this page. |
+| Evidence | Capture command output, portal state, metrics, logs, or screenshots before treating the result as proven. |
+
 ## See Also
 
 - [First 10 Minutes](index.md)
