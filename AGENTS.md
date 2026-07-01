@@ -400,10 +400,6 @@ For MkDocs admonitions (`!!!` / `???`), every line in the body must be indented 
     - List item also inside
 ```
 
-### Mermaid Diagrams
-
-See `## Mermaid Diagrams` above (part of the Series-Wide Documentation Contract). Repository-specific orientation and diagram-type guidance is preserved in that section.
-
 ### Nested List Indentation
 
 All nested list items MUST use **4-space indent** (Python-Markdown standard).
