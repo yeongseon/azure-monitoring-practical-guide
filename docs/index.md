@@ -4,6 +4,7 @@ content_sources:
     - id: azure-monitoring-practical-guide
       type: flowchart
       source: self-generated
+      justification: "Navigation-map diagram introducing the guide's seven top-level sections (Start Here -> Platform -> Best Practices -> Service Guides -> Operations -> Troubleshooting -> Reference) as an ordered reading flow for the homepage. Synthesized from the Azure Monitor fundamentals overview and the Log Analytics and Application Insights overviews in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview

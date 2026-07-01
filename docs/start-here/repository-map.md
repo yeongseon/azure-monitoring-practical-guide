@@ -4,6 +4,7 @@ content_sources:
     - id: repository-map
       type: flowchart
       source: self-generated
+      justification: "Directory-map diagram showing the seven top-level docs/ subdirectories of this repository (start-here, platform, service-guides, operations, troubleshooting, best-practices, reference) as a tree, so readers can orient themselves before drilling into any single section. Synthesized from the Azure Monitor fundamentals, Log Analytics, alerts, and Application Insights overviews in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview

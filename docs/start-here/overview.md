@@ -4,6 +4,7 @@ content_sources:
     - id: core-capabilities
       type: flowchart
       source: self-generated
+      justification: "Capability-map diagram summarizing the Azure Monitor pipeline (Sources -> Azure Monitor -> Insights / Visualize / Analyze / Respond / Integrate) with the four core data platform pillars (Metrics, Logs, Traces, Changes). Synthesized from the Azure Monitor fundamentals overview and data sources documentation in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources

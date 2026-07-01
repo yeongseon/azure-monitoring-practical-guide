@@ -4,6 +4,7 @@ content_sources:
     - id: vm-monitoring
       type: flowchart
       source: self-generated
+      justification: "Overview diagram synthesizing the VM monitoring collection path (Guest OS + Applications -> Azure Monitor Agent + VM Insights -> Performance Counters / Event Logs / Dependencies) for the VM service-guide hub. Combines Azure Monitor Agent collection behavior and VM Insights dependency-map semantics documented in the based_on Microsoft Learn articles into a single navigational map; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine
         - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-overview

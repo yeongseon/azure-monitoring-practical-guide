@@ -4,6 +4,7 @@ content_sources:
     - id: alert-investigation-queries
       type: flowchart
       source: self-generated
+      justification: "Query-source diagram mapping the two alert-investigation query files in this hub to the Azure tables they read (AzureActivity -> alert firing history; AzureDiagnostics -> action group failures). Synthesized from the alerts overview and alerts troubleshooting guidance in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot

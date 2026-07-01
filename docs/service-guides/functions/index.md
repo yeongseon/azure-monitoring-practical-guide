@@ -4,6 +4,7 @@ content_sources:
     - id: functions-monitoring
       type: flowchart
       source: self-generated
+      justification: "Overview diagram synthesizing the Functions telemetry paths (Function App -> Functions -> Execution Logs / Application Insights / Host Metrics) for the Functions service-guide hub. Combines Functions-native monitoring semantics and Application Insights integration documented in the based_on Microsoft Learn articles into a single navigational map; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions
         - https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitoring

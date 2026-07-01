@@ -4,6 +4,7 @@ content_sources:
     - id: container-apps-monitoring
       type: flowchart
       source: self-generated
+      justification: "Overview diagram synthesizing Container Apps observability signals (Container App + Replicas -> Console Logs / System Logs and Request / Replica / CPU-Memory metrics) for the Container Apps service-guide hub. Combines the Container Apps observability model and Log Analytics workspace ingestion behavior documented in the based_on Microsoft Learn articles into a single navigational map; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/container-apps/observability
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
