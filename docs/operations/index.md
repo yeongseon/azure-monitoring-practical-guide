@@ -4,6 +4,7 @@ content_sources:
     - id: operations
       type: flowchart
       source: self-generated
+      justification: "Day-2 workflow diagram ordering operations tasks from Setup (Workspace Management / Diagnostic Settings / Data Collection Rules) through Monitoring (Alert Rules / Workbooks and Dashboards) to Maintenance (Cost Control / Export and Integration) for the Operations section hub. Synthesized from the Azure Monitor fundamentals, alerts, data collection rule, and workbooks overviews in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview

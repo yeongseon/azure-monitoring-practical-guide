@@ -4,6 +4,7 @@ content_sources:
     - id: aks-monitoring
       type: flowchart
       source: self-generated
+      justification: "Overview diagram synthesizing the AKS observability stack (Nodes/Pods/Containers -> Container Insights -> Prometheus -> Managed Grafana) for the AKS service-guide hub. Combines the AKS-Container Insights integration and Managed Prometheus / Managed Grafana concepts documented across the based_on Microsoft Learn articles into a single navigational map; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/aks/monitor-aks
         - https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview

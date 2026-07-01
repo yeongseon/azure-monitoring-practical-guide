@@ -4,6 +4,7 @@ content_sources:
     - id: service-guides
       type: flowchart
       source: self-generated
+      justification: "Fan-out diagram mapping the five compute services covered by this section (App Service / Container Apps / Functions / AKS / Virtual Machines) to their common monitoring surfaces (Platform Logs / Application Insights / Metrics and Alerts) for the Service Guides hub. Synthesized from the per-service monitoring overviews in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
         - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service

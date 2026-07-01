@@ -4,6 +4,7 @@ content_sources:
     - id: platform
       type: flowchart
       source: self-generated
+      justification: "Platform-architecture diagram grouping data sources (Applications / Infrastructure / Azure Resources) into the Azure Monitor data platform (Metrics / Logs / Traces) and the platform-level tools built on that platform (Alerts / Dashboards / Workbooks) for the Platform section hub. Synthesized from the Azure Monitor fundamentals, data sources, alerts, and Application Insights overviews in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources

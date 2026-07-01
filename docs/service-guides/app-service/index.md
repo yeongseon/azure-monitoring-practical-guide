@@ -4,6 +4,7 @@ content_sources:
     - id: app-service-monitoring
       type: flowchart
       source: self-generated
+      justification: "Overview diagram synthesizing App Service monitoring surfaces (Web App -> Platform Logs / Application Insights / Metrics -> AppServiceHTTPLogs / AppServiceConsoleLogs / AppServicePlatformLogs Log Analytics tables) for the App Service service-guide hub. Combines the App Service monitoring integrations and Application Insights overview documented in the based_on Microsoft Learn articles into a single navigational map; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview

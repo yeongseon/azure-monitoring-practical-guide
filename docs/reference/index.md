@@ -4,6 +4,7 @@ content_sources:
     - id: reference
       type: flowchart
       source: self-generated
+      justification: "Section-index diagram mapping the four reference sub-pages (CLI Cheatsheet, KQL Reference, Platform Limits, Diagnostic Tables) to what each covers (az monitor commands, operators and functions, quotas and throttling, schema reference) for the Reference section hub. Synthesized from the Azure Monitor fundamentals overview, service limits, and log query overview in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits

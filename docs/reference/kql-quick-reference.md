@@ -4,6 +4,7 @@ content_sources:
     - id: kql-quick-reference
       type: flowchart
       source: self-generated
+      justification: "Query-structure diagram showing the canonical KQL pipeline order (Table -> where -> extend -> summarize -> project -> order by -> render) with dotted-line cross-references from each stage to a common-operator category (Filtering, Aggregation, Transformation, Visualization) so readers building a query can see both syntax order and intent at once. Synthesized from the Kusto Query Language reference, log query overview, and query best-practices in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview

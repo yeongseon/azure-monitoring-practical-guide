@@ -4,6 +4,7 @@ content_sources:
     - id: best-practices
       type: flowchart
       source: self-generated
+      justification: "Best-practices topic-map diagram fanning Workspace Design (the anchor decision) out to six downstream practice areas (Alert Strategy, Security and Access, Data Retention, Cost Optimization, Tagging and Organization, Multi-Cloud and Hybrid) with dependency edges (Security -> Alert Strategy, Retention -> Cost Optimization) for the Best Practices section hub. Synthesized from the Azure Monitor fundamentals, log deployment design, alerts best practices, and cost/storage management guidance in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment

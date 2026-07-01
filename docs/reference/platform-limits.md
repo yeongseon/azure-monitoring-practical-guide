@@ -4,6 +4,7 @@ content_sources:
     - id: platform-limits
       type: flowchart
       source: self-generated
+      justification: "Limits-scope diagram grouping key Azure Monitor limits by the level at which they apply (Subscription: metric/scheduled-query/activity alert counts; Workspace: retention, columns per table, custom tables; Query: max records, timeout, concurrent queries) so readers can quickly answer 'which limit will I hit first'. Values are pointer-only and the page itself defers to the official service limits page for current numbers. Synthesized from the Azure Monitor service limits and cost/usage overviews in the based_on Microsoft Learn articles."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/service-limits
         - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage

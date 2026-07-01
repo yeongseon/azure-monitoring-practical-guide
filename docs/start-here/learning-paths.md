@@ -4,6 +4,7 @@ content_sources:
     - id: learning-paths
       type: flowchart
       source: self-generated
+      justification: "Role-selector diagram routing readers from a role choice (Developer / SRE / Architect / Incident Responder) to the specific Azure Monitor subject areas they should read first (Instrumentation, App Insights, Alerting, Log Analytics, Governance, DCE/DCR, KQL Queries, Playbooks). Synthesized from the fundamentals, Log Analytics, alerts, Application Insights, and workbooks overviews in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview

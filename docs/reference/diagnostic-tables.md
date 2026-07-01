@@ -4,6 +4,7 @@ content_sources:
     - id: diagnostic-tables-reference
       type: flowchart
       source: self-generated
+      justification: "Table-catalog diagram grouping common Log Analytics tables by owning service (Platform Logs, App Service, Container Apps, Application Insights, and other subgraphs) so readers can locate the correct table before writing a KQL query. Synthesized from the Azure Monitor tables reference by category and Log Analytics overview in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview

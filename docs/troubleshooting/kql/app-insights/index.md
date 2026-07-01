@@ -4,6 +4,7 @@ content_sources:
     - id: application-insights-queries
       type: flowchart
       source: self-generated
+      justification: "Query-source diagram mapping the three Application Insights query files in this hub to their source tables (requests -> performance analysis; dependencies -> failure detection; exceptions -> error trends). Synthesized from the Application Insights overview and log query overview in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
