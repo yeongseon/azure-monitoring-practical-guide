@@ -11,15 +11,16 @@ This page describes how diagram and content sources are declared in this reposit
 
 ## Source Type Policy
 
-The `content_sources.diagrams[].source` field must be one of the following values:
+The `content_sources.diagrams[].source` field must be one of the three values below. These are the exact set accepted by `scripts/validate_content_sources.py` today; any other value causes CI to fail.
 
-| Type | Description | Allowed? |
+| Type | Description | Additional requirement |
 |---|---|---|
-| `mslearn` | Content directly from Microsoft Learn | Yes |
-| `mslearn-adapted` | Content adapted or synthesized from Microsoft Learn | Yes, with `based_on` URLs |
-| `self-generated` | Original content created for this guide | Requires `justification` |
-| `community` | Community source content | Not for core content |
-| `unknown` | Source not documented | Must be validated before publication |
+| `mslearn` | Content directly from Microsoft Learn | `mslearn_url` OR a non-empty `based_on` list |
+| `mslearn-adapted` | Content adapted or synthesized from Microsoft Learn | `mslearn_url` OR a non-empty `based_on` list |
+| `self-generated` | Original content created for this guide | `justification` field |
+
+!!! note "Broader source vocabulary in AGENTS.md"
+    [AGENTS.md](https://github.com/yeongseon/azure-monitoring-practical-guide/blob/main/AGENTS.md) also references `community` and `unknown` source categories as part of the aspirational content-validation policy. Those values are **not** currently accepted by the validator on any Mermaid page in this repository; they belong to the same "not yet implemented" bucket as document-level `content_validation` metadata.
 
 ## How Diagram Sources Are Declared
 
@@ -59,19 +60,19 @@ This is the same validator that runs in the `Validate Content Sources` CI workfl
 
 The following scripts run against the repository today. There is no dashboard-generator script in this repository, so this page is maintained manually rather than being regenerated.
 
-| Script | Purpose |
-|---|---|
-| `scripts/validate_content_sources.py` | Enforces that every Mermaid block has a `diagram-id` HTML comment and a matching `content_sources.diagrams[]` entry with a valid `source` value. |
-| `scripts/validate_mermaid_format.py` | Enforces Mermaid orientation rules and formatting conventions. |
-| `scripts/validate_mermaid_syntax.py` | Parses each Mermaid block to catch syntax errors before build. |
-| `scripts/validate_mslearn_urls.py` | Checks that Microsoft Learn URLs cited in `content_sources` are reachable. |
+| Script | Purpose | Where it runs |
+|---|---|---|
+| `scripts/validate_content_sources.py` | Enforces that every Mermaid block has a `diagram-id` HTML comment and a matching `content_sources.diagrams[]` entry with a valid `source` value. | **Blocking** PR check (`Validate Content Sources`) |
+| `scripts/validate_mermaid_format.py` | Enforces Mermaid orientation rules and formatting conventions. | **Blocking** PR check (same workflow) |
+| `scripts/validate_mermaid_syntax.py` | Parses each Mermaid block to catch syntax errors before build. | **Blocking** PR check (same workflow) |
+| `scripts/validate_mslearn_urls.py` | Checks that Microsoft Learn URLs cited in `content_sources` are reachable. | **Reporting only:** runs on push to `main` with `continue-on-error`, not a blocking PR gate |
 
 ## Validation Rules Enforced Today
 
 !!! danger "Enforced in CI"
     1. Every Mermaid block must have a `diagram-id` HTML comment.
     2. Every declared `diagram-id` must have a matching `content_sources.diagrams[]` entry.
-    3. `mslearn-adapted` diagrams must have either an `mslearn_url` field or a populated `based_on` list of Microsoft Learn URLs.
+    3. `mslearn-adapted` and `mslearn` diagrams must have either an `mslearn_url` field or a **non-empty** `based_on` list. The validator does **not** currently verify that every `based_on` URL points to `learn.microsoft.com`; that is a repository convention, not an enforced rule.
     4. `self-generated` diagrams must include a `justification` field.
     5. Mermaid syntax must parse successfully.
 
