@@ -225,7 +225,12 @@ az monitor log-analytics query \
 
 ### Step 7: Create an availability test
 
-Use a standard ping-style web test for the app endpoint.
+!!! warning "URL ping tests are deprecated"
+    Microsoft has announced that Application Insights **URL ping tests retire on September 30, 2026** ([availability tests reference](https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability)). The Az CLI command shown below still uses `--web-test-kind "ping"` and creates a URL ping test; use it only if you understand it must be migrated before the retirement date.
+
+    The forward path is **Standard tests**, which cover the same single-request use case and additionally validate TLS/SSL certificate lifetime, custom HTTP verbs, custom headers, and custom request bodies. Standard tests are created through the Application Insights portal blade (`Availability` → `Add Standard test`) or through ARM templates. See the [official migration guide](https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability#migrate-classic-url-ping-tests-to-standard-tests) for the PowerShell-based migration path.
+
+Create a URL ping test for the app endpoint (subject to the deprecation note above):
 
 ```bash
 az monitor app-insights web-test create \
@@ -333,5 +338,6 @@ az group delete \
 
 - [Application Insights overview](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)
 - [Create an Application Insights resource](https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource)
-- [Monitor availability with URL ping tests](https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability)
+- [Application Insights availability tests (Standard tests + URL ping deprecation)](https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability)
+- [URL ping tests (archived / retiring 2026-09-30)](https://learn.microsoft.com/en-us/previous-versions/azure/azure-monitor/app/monitor-web-app-availability)
 - [Monitor Azure App Service](https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps)
