@@ -6,15 +6,17 @@ Comprehensive guide for monitoring Azure workloads — from Azure Monitor fundam
 
 ## What's Inside
 
-| Section | Description |
-|---------|-------------|
-| [Start Here](https://yeongseon.github.io/azure-monitoring-practical-guide/start-here/) | Overview, learning paths, and repository map for Azure observability |
-| [Platform](https://yeongseon.github.io/azure-monitoring-practical-guide/platform/) | Deep dive into Azure Monitor architecture: data platform, Log Analytics, and Application Insights |
-| [Best Practices](https://yeongseon.github.io/azure-monitoring-practical-guide/best-practices/) | Production-ready design for alerting strategy, cost optimization, and data retention |
-| [Service Guides](https://yeongseon.github.io/azure-monitoring-practical-guide/service-guides/) | Per-service monitoring setup for App Service, Container Apps, Functions, AKS, and VMs |
-| [Operations](https://yeongseon.github.io/azure-monitoring-practical-guide/operations/) | Day-2 guide for managing diagnostic settings, alert rules, and interactive workbooks |
-| [Troubleshooting](https://yeongseon.github.io/azure-monitoring-practical-guide/troubleshooting/) | Diagnosis playbooks with KQL query packs, decision trees, and evidence maps |
-| [Reference](https://yeongseon.github.io/azure-monitoring-practical-guide/reference/) | Quick-lookup CLI cheatsheet, KQL quick reference, and platform limits |
+| Section | Description | Status |
+|---------|-------------|--------|
+| [Start Here](https://yeongseon.github.io/azure-monitoring-practical-guide/start-here/) | Overview, learning paths, and repository map for Azure observability | Comprehensive |
+| [Platform](https://yeongseon.github.io/azure-monitoring-practical-guide/platform/) | Deep dive into Azure Monitor architecture: data platform, Log Analytics, and Application Insights | Comprehensive |
+| [Best Practices](https://yeongseon.github.io/azure-monitoring-practical-guide/best-practices/) | Production-ready design for alerting strategy, cost optimization, and data retention | Comprehensive |
+| [Service Guides](https://yeongseon.github.io/azure-monitoring-practical-guide/service-guides/) | Per-service monitoring setup for App Service, Container Apps, Functions, AKS, and VMs | Comprehensive |
+| [Operations](https://yeongseon.github.io/azure-monitoring-practical-guide/operations/) | Day-2 guide for managing diagnostic settings, alert rules, and interactive workbooks | Comprehensive |
+| [Troubleshooting](https://yeongseon.github.io/azure-monitoring-practical-guide/troubleshooting/) | Diagnosis playbooks with KQL query packs, decision trees, and evidence maps | Comprehensive |
+| [Reference](https://yeongseon.github.io/azure-monitoring-practical-guide/reference/) | Quick-lookup CLI cheatsheet, KQL quick reference, and platform limits | Comprehensive |
+
+**Status legend**: **Lab-validated** = Comprehensive + reproducible labs prove the guidance · **Comprehensive** = Full section, MSLearn-verified, production-ready · **Published** = Core content in place, still expanding · **In progress** = Partial content, active development · **Planned** = Placeholder, content not yet started
 
 ## Service Guides
 
