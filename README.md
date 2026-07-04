@@ -28,13 +28,13 @@ Tailored monitoring configurations for key Azure services:
 ## Quick Start
 
 ```bash
-# Clone the repository
 git clone https://github.com/yeongseon/azure-monitoring-practical-guide.git
+cd azure-monitoring-practical-guide
 
-# Install MkDocs dependencies
-pip install mkdocs-material mkdocs-minify-plugin
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements-docs.txt
 
-# Start local documentation server
 mkdocs serve
 ```
 
