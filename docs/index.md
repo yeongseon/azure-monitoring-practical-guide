@@ -52,6 +52,7 @@ Choose your path based on your role:
 ## See Also
 
 - [Learning Paths](start-here/learning-paths.md)
+- [Scenario Router](start-here/scenario-router.md)
 - [Repository Map](start-here/repository-map.md)
 
 ## Sources

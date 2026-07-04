@@ -67,6 +67,7 @@ The guide is organized into logical sections that follow the monitoring lifecycl
 ## See Also
 
 *   [Learning Paths](learning-paths.md)
+*   [Scenario Router](scenario-router.md)
 *   [Repository Map](repository-map.md)
 
 ## Sources

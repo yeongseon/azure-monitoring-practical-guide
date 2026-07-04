@@ -33,6 +33,7 @@ graph TD
 *   `docs/start-here/`
     *   `overview.md`: Introduction to the guide and Azure Monitor concepts.
     *   `learning-paths.md`: Tailored reading paths based on roles.
+    *   `scenario-router.md`: Situation-to-destination router across Plan, Deploy, Operate, Troubleshoot phases.
     *   `repository-map.md`: This file, explaining the guide's structure.
 *   `docs/platform/`
     *   Guides for foundational components: Log Analytics, Application Insights, and Data Collection Rules.
@@ -60,6 +61,7 @@ To get the most out of this repository, follow these navigation principles:
 
 *   [Overview](overview.md)
 *   [Learning Paths](learning-paths.md)
+*   [Scenario Router](scenario-router.md)
 
 ## Sources
 
