@@ -32,6 +32,7 @@ graph TD
 | [KQL Quick Reference](kql-quick-reference.md) | Operator summary, time functions, aggregations |
 | [Platform Limits](platform-limits.md) | Workspace limits, alert rule limits, query limits |
 | [Diagnostic Tables Reference](diagnostic-tables.md) | Common tables by service with schema summaries |
+| [Diagnostic Settings Matrix](diagnostic-settings-matrix.md) | Cross-service matrix of log categories, metrics, destinations, and caveats across sibling `azure-*-practical-guide` services |
 
 ## See Also
 

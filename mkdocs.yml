@@ -204,6 +204,7 @@ nav:
      - reference/kql-quick-reference.md
      - reference/platform-limits.md
      - reference/diagnostic-tables.md
+     - reference/diagnostic-settings-matrix.md
      - reference/content-validation-status.md
   - Contributing:
     - contributing/index.md
