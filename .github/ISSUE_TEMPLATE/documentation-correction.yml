@@ -1,0 +1,25 @@
+name: Documentation Correction
+description: Suggest a factual correction, clarity fix, or broken-link repair in the guide.
+title: "[Docs]: "
+labels: []
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      description: Provide a short summary of the correction.
+      placeholder: The command or explanation needs correction.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Identify the page, describe the issue, and share the corrected wording or source.
+      placeholder: |
+        Page or file:
+        Current text or issue:
+        Suggested correction:
+        Supporting source or context:
+    validations:
+      required: true
