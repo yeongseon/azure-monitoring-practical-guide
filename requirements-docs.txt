@@ -1,3 +1,6 @@
 mkdocs-material
 mkdocs-minify-plugin
+mkdocs-macros-plugin
 pymdown-extensions
+PyYAML
+azure-guide-capture-toolkit @ git+https://github.com/yeongseon/azure-guide-capture-toolkit@v0.1.0
