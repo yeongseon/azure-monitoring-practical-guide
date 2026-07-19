@@ -49,6 +49,14 @@ export WORKSPACE_ID=$(az monitor log-analytics workspace show \
     --output tsv)
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ## Architecture Diagram
 
 <!-- diagram-id: architecture-diagram -->
@@ -81,12 +89,26 @@ az monitor workbook list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook list` | List workbooks. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ```bash
 az portal dashboard list \
     --resource-group "$RG" \
     --query "[].{name:name,location:location}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az portal dashboard list` | List portal dashboards. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 This prevents duplicate artifacts and gives you a baseline before creation.
 
@@ -138,6 +160,17 @@ az monitor workbook create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook create` | Create a workbook. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--location` | Azure region for the resource. |
+| `--display-name` | Display name shown in the portal. |
+| `--kind` | Resource kind. |
+| `--serialized-data` | Serialized JSON payload defining the resource. |
+| `--output` | Output format for the result. |
+
 Read the workbook back:
 
 ```bash
@@ -148,6 +181,14 @@ az monitor workbook show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook show` | Show a workbook. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ### Step 4: Validate workbook queries directly
 
 ```bash
@@ -157,12 +198,26 @@ az monitor log-analytics query \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
+
 ```bash
 az monitor log-analytics query \
     --workspace "$WORKSPACE_ID" \
     --analytics-query "Perf | where TimeGenerated > ago(1h) | where ObjectName == 'Processor' and CounterName == '% Processor Time' | summarize AvgCpu=avg(CounterValue) by bin(TimeGenerated, 5m)" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 These checks make sure the workbook visuals are backed by working queries before you publish broadly.
 
@@ -188,6 +243,16 @@ az portal dashboard create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az portal dashboard create` | Create a portal dashboard. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--location` | Azure region for the resource. |
+| `--input-path` | Path to the input payload file. |
+| `--tags` | Tags applied to the resource. |
+| `--output` | Output format for the result. |
+
 Review the dashboard:
 
 ```bash
@@ -197,6 +262,14 @@ az portal dashboard show \
     --query "{name:name,location:location,tags:tags}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az portal dashboard show` | Show a portal dashboard. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 ### Step 7: Update workbook content when queries evolve
 
@@ -210,6 +283,14 @@ az monitor workbook update \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook update` | Update a workbook. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--serialized-data` | Serialized JSON payload defining the resource. |
+| `--output` | Output format for the result. |
+
 This pattern is especially important when dashboards depend on stable workbook identifiers.
 
 ### Step 8: Review artifacts as a team-facing package
@@ -221,12 +302,26 @@ az monitor workbook list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook list` | List workbooks. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ```bash
 az portal dashboard list \
     --resource-group "$RG" \
     --query "[].{name:name,location:location}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az portal dashboard list` | List portal dashboards. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 ## Validation Steps
 
@@ -242,6 +337,14 @@ az monitor workbook show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook show` | Show a workbook. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 2. Confirm the dashboard exists in the same resource group.
 
 ```bash
@@ -252,6 +355,14 @@ az portal dashboard show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az portal dashboard show` | Show a portal dashboard. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 3. Confirm that workbook-backed queries still return data.
 
 ```bash
@@ -260,6 +371,13 @@ az monitor log-analytics query \
     --analytics-query "union isfuzzy=true Heartbeat, Perf, AzureMetrics | where TimeGenerated > ago(1h) | summarize Records=count() by Type" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 Validation succeeds when the workbook and dashboard exist, the workbook is marked shared, and the source queries return current rows.
 
@@ -273,12 +391,25 @@ az portal dashboard delete \
     --name "$DASHBOARD_NAME"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az portal dashboard delete` | Delete a portal dashboard. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+
 ```bash
 az monitor workbook delete \
     --name "$WORKBOOK_NAME" \
     --resource-group "$RG" \
     --yes
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook delete` | Delete a workbook. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--yes` | Skips the confirmation prompt. |
 
 If the entire sandbox is no longer needed, delete the resource group instead.
 

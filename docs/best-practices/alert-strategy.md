@@ -88,6 +88,25 @@ az monitor metrics alert show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--severity` | Severity level of the alert. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--action` | Action group or webhook to invoke when the alert fires. |
+| `--output` | Output format for the result. |
+| `az monitor metrics alert show` | Show a metric alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -131,6 +150,20 @@ az monitor action-group show \
     --query "{name:name,groupShortName:groupShortName,emailReceivers:emailReceivers[].name,webhookReceivers:webhookReceivers[].name}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group create` | Create an action group for alert notifications. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--short-name` | Short name used in alert notifications. |
+| `--action` | Action group or webhook to invoke when the alert fires. |
+| `--output` | Output format for the result. |
+| `az monitor action-group show` | Show an action group. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -184,6 +217,27 @@ az monitor scheduled-query show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--condition-query` | Named query referenced by the alert condition. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--skip-query-validation` | Skips server-side validation of the query. |
+| `--description` | Human-readable description of the resource. |
+| `--action-groups` | Action groups notified when the alert fires. |
+| `--output` | Output format for the result. |
+| `az monitor scheduled-query show` | Show a scheduled query alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -230,6 +284,23 @@ az monitor alert-processing-rule show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor alert-processing-rule create` | Create an alert processing rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--rule-type` | Type of the rule resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--schedule-start-datetime` | Start of the schedule window. |
+| `--schedule-end-datetime` | End of the schedule window. |
+| `--description` | Human-readable description of the resource. |
+| `--output` | Output format for the result. |
+| `az monitor alert-processing-rule show` | Show an alert processing rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -269,6 +340,13 @@ az monitor metrics alert list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert list` | List metric alert rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ### Anti-Pattern 2: Shared action groups for every team and every severity
 
 **What happens**: Platform, app, and security teams all receive the same notifications regardless of ownership.
@@ -283,6 +361,13 @@ az monitor action-group list \
     --query "[].{name:name,shortName:groupShortName}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group list` | List action groups. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 ## Validation Checklist
 

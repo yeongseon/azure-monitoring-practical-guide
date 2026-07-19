@@ -58,6 +58,19 @@ export VM_ID=$(az vm show \
     --output tsv)
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+| `az vm show` | Show properties of a virtual machine. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ## Architecture Diagram
 
 <!-- diagram-id: architecture-diagram -->
@@ -97,6 +110,15 @@ az monitor action-group create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group create` | Create an action group for alert notifications. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--short-name` | Short name used in alert notifications. |
+| `--action` | Action group or webhook to invoke when the alert fires. |
+| `--output` | Output format for the result. |
+
 Capture the action group resource ID:
 
 ```bash
@@ -107,6 +129,14 @@ export ACTION_GROUP_ID=$(az monitor action-group show \
     --output tsv)
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group show` | Show an action group. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ### Step 2: Review available VM metrics
 
 ```bash
@@ -115,6 +145,13 @@ az monitor metrics list-definitions \
     --query "[?contains(name.value, 'CPU')].{metric:name.value,namespace:resourceId}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list-definitions` | List available metric definitions for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 This confirms the exact metric name before you create the rule.
 
@@ -134,6 +171,20 @@ az monitor metrics alert create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--action` | Action group or webhook to invoke when the alert fires. |
+| `--output` | Output format for the result. |
+
 Read the rule back:
 
 ```bash
@@ -144,6 +195,14 @@ az monitor metrics alert show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert show` | Show a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ### Step 4: Validate the heartbeat query before creating a log alert
 
 ```bash
@@ -152,6 +211,13 @@ az monitor log-analytics query \
     --analytics-query "Heartbeat | where Computer == '$VM_NAME' | where TimeGenerated > ago(15m) | summarize LastSeen=max(TimeGenerated), Beats=count() by Computer" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 This baseline matters because a log alert is only as good as the query it evaluates.
 
@@ -173,6 +239,22 @@ az monitor scheduled-query create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--condition-query` | Named query referenced by the alert condition. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--skip-query-validation` | Skips server-side validation of the query. |
+| `--action-groups` | Action groups notified when the alert fires. |
+| `--description` | Human-readable description of the resource. |
+| `--output` | Output format for the result. |
+
 Review the scheduled query rule:
 
 ```bash
@@ -182,6 +264,14 @@ az monitor scheduled-query show \
     --query "{name:name,severity:severity,enabled:enabled,evaluationFrequency:evaluationFrequency,windowSize:windowSize}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query show` | Show a scheduled query alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 ### Step 6: Create an alert processing rule for planned maintenance
 
@@ -198,6 +288,17 @@ az monitor alert-processing-rule create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor alert-processing-rule create` | Create an alert processing rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--rule-type` | Type of the rule resource. |
+| `--schedule` | Schedule expression for the rule. |
+| `--description` | Human-readable description of the resource. |
+| `--output` | Output format for the result. |
+
 Read the processing rule back:
 
 ```bash
@@ -208,6 +309,14 @@ az monitor alert-processing-rule show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor alert-processing-rule show` | Show an alert processing rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ### Step 7: Review all alert artifacts together
 
 ```bash
@@ -217,6 +326,13 @@ az monitor action-group list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group list` | List action groups. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ```bash
 az monitor metrics alert list \
     --resource-group "$RG" \
@@ -224,12 +340,26 @@ az monitor metrics alert list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert list` | List metric alert rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ```bash
 az monitor scheduled-query list \
     --resource-group "$RG" \
     --query "[].{name:name,severity:severity,enabled:enabled}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query list` | List scheduled query alert rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 ## Validation Steps
 
@@ -245,6 +375,14 @@ az monitor action-group show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group show` | Show an action group. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 2. Confirm the metric alert is enabled and scoped correctly.
 
 ```bash
@@ -254,6 +392,14 @@ az monitor metrics alert show \
     --query "{name:name,enabled:enabled,scopes:scopes}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert show` | Show a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 3. Confirm the log alert is enabled and references the workspace.
 
@@ -265,6 +411,14 @@ az monitor scheduled-query show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query show` | Show a scheduled query alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 4. Confirm the alert processing rule exists.
 
 ```bash
@@ -273,6 +427,13 @@ az monitor alert-processing-rule list \
     --query "[].{name:name,enabled:enabled}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor alert-processing-rule list` | List alert processing rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 Validation succeeds when the action group, metric alert, log alert, and alert processing rule are all present and enabled in the expected scope.
 
@@ -286,11 +447,23 @@ az monitor alert-processing-rule delete \
     --resource-group "$RG"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor alert-processing-rule delete` | Delete an alert processing rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+
 ```bash
 az monitor scheduled-query delete \
     --name "$LOG_ALERT_NAME" \
     --resource-group "$RG"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query delete` | Delete a scheduled query alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
 
 ```bash
 az monitor metrics alert delete \
@@ -298,11 +471,23 @@ az monitor metrics alert delete \
     --resource-group "$RG"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert delete` | Delete a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+
 ```bash
 az monitor action-group delete \
     --name "$ACTION_GROUP_NAME" \
     --resource-group "$RG"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group delete` | Delete an action group. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
 
 Keep the workspace and VM if you are proceeding to later labs.
 

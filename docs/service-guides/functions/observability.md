@@ -79,6 +79,13 @@ az functionapp config appsettings set \
     --settings "APPLICATIONINSIGHTS_CONNECTION_STRING=<connection-string>"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az functionapp config appsettings set` | Set application settings on the function app. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--settings` | Configuration settings for the resource. |
+
 ## KQL Query Examples
 
 ### Monitor Function Execution Status
@@ -180,6 +187,13 @@ az functionapp config appsettings list \
     --query "[?name=='APPLICATIONINSIGHTS_CONNECTION_STRING']"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az functionapp config appsettings list` | List application settings of the function app. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 Sample output:
 
 ```json
@@ -200,6 +214,13 @@ az functionapp show \
     --query "{state:state, defaultHostName:defaultHostName, kind:kind, reserved:reserved}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az functionapp show` | Show properties of the function app. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 Sample output:
 
 ```json
@@ -219,6 +240,13 @@ az monitor app-insights query \
     --analytics-query "requests | where timestamp > ago(30m) | where success == false | summarize count() by name" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights query` | Run a query against Application Insights. |
+| `--app` | Application Insights component name. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -277,12 +305,25 @@ az monitor diagnostic-settings create \
     ]'
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--logs` | Log categories or settings to collect. |
+
 ### Check categories before rollout
 
 ```bash
 az monitor diagnostic-settings categories list \
     --resource "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Web/sites/my-function-app"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings categories list` | List diagnostic setting categories for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
 
 Use the category list in CI or during standards reviews so Linux, Windows, and plan-specific deployments are validated against the same observability baseline.
 
@@ -415,6 +456,19 @@ az monitor scheduled-query create \
     --action-groups "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-app-oncall"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--action-groups` | Action groups notified when the alert fires. |
+
 ### Alert on exception bursts
 
 ```bash
@@ -429,6 +483,19 @@ az monitor scheduled-query create \
     --severity 3 \
     --action-groups "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-app-oncall"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--action-groups` | Action groups notified when the alert fires. |
 
 ## Trigger-Specific Investigation Tips
 

@@ -55,6 +55,13 @@ az monitor log-analytics workspace list \
     --query "[].{name:name,location:location,sku:sku.name,retention:retentionInDays,publicNetworkAccessForIngestion:publicNetworkAccessForIngestion}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace list` | List Log Analytics workspaces. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name             Location    Sku       Retention    PublicNetworkAccessForIngestion
@@ -72,6 +79,14 @@ az monitor log-analytics workspace create \
     --location $LOCATION \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace create` | Create a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--location` | Azure region for the resource. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -97,6 +112,14 @@ az monitor log-analytics workspace show \
     --query "{id:id,customerId:customerId,provisioningState:provisioningState}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -117,6 +140,15 @@ az monitor log-analytics workspace update \
     --quota 25 \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--retention-time` | Data retention period in days. |
+| `--quota` | Daily ingestion quota for the workspace. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -139,6 +171,14 @@ az monitor log-analytics workspace show \
     --query "{retention:retentionInDays,dailyCap:workspaceCapping.dailyQuotaGb,ingestionStatus:workspaceCapping.dataIngestionStatus}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -158,6 +198,14 @@ az monitor log-analytics workspace show \
     --query "{resourcePermissions:features.enableLogAccessUsingOnlyResourcePermissions,publicQueryAccess:publicNetworkAccessForQuery,publicIngestionAccess:publicNetworkAccessForIngestion}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -173,6 +221,13 @@ az role assignment list \
     --query "[].{principalName:principalName,role:roleDefinitionName,principalType:principalType}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az role assignment list` | List role assignments. |
+| `--scope` | Scope the resource applies to. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 PrincipalName               Role                        PrincipalType
@@ -192,6 +247,14 @@ az monitor log-analytics workspace table list \
     --query "[0:5].{name:name,plan:plan,retentionInDays:retentionInDays}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace table list` | List tables in a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                Plan          RetentionInDays
@@ -211,6 +274,13 @@ az monitor log-analytics query \
     --analytics-query "Usage | where TimeGenerated > ago(1d) | summarize TotalGB=sum(Quantity)/1024 by DataType | top 5 by TotalGB desc" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 DataType         TotalGB
@@ -230,6 +300,14 @@ az monitor log-analytics workspace show \
     --query "{name:name,location:location,retention:retentionInDays,sku:sku.name,provisioningState:provisioningState}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -248,6 +326,14 @@ az monitor log-analytics workspace show \
     --query "{dailyCap:workspaceCapping.dailyQuotaGb,queryAccess:publicNetworkAccessForQuery,ingestionAccess:publicNetworkAccessForIngestion}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -268,6 +354,15 @@ az monitor log-analytics workspace update \
     --quota -1 \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--retention-time` | Data retention period in days. |
+| `--quota` | Daily ingestion quota for the workspace. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -285,6 +380,13 @@ az monitor log-analytics workspace list-deleted-workspaces \
     --query "[].{name:name,location:location,deletedDate:deletedDate}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace list-deleted-workspaces` | List soft-deleted Log Analytics workspaces. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name             Location    DeletedDate
@@ -310,6 +412,12 @@ az monitor log-analytics workspace list \
     --query "[].{name:name,id:id,retention:retentionInDays,dailyCap:workspaceCapping.dailyQuotaGb}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace list` | List Log Analytics workspaces. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Typical automation patterns:
 - Run a daily GitHub Actions or Azure DevOps job to export workspace settings.
 - Compare actual settings with a baseline JSON document stored in source control.

@@ -82,6 +82,13 @@ az group create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az group create` | Create a resource group. |
+| `--name` | Name of the resource. |
+| `--location` | Azure region for the resource. |
+| `--output` | Output format for the result. |
+
 Expected result:
 
 ```json
@@ -106,6 +113,16 @@ az monitor log-analytics workspace create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace create` | Create a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--location` | Azure region for the resource. |
+| `--sku` | SKU tier of the resource. |
+| `--retention-time` | Data retention period in days. |
+| `--output` | Output format for the result. |
+
 Review the workspace properties:
 
 ```bash
@@ -116,6 +133,14 @@ az monitor log-analytics workspace show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ### Step 3: Set a daily cap for predictable spend
 
 ```bash
@@ -125,6 +150,14 @@ az monitor log-analytics workspace update \
     --set workspaceCapping.dailyQuotaGb=2 \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--set` | Property assignment applied during update. |
+| `--output` | Output format for the result. |
 
 Why this matters:
 
@@ -144,6 +177,16 @@ az storage account create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az storage account create` | Create a storage account. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--location` | Azure region for the resource. |
+| `--sku` | SKU tier of the resource. |
+| `--kind` | Resource kind. |
+| `--output` | Output format for the result. |
+
 Capture IDs for later steps:
 
 ```bash
@@ -160,6 +203,19 @@ export STORAGE_ID=$(az storage account show \
     --output tsv)
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+| `az storage account show` | Show properties of a storage account. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ### Step 5: Connect storage logs and metrics to the workspace
 
 ```bash
@@ -172,6 +228,16 @@ az monitor diagnostic-settings create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--logs` | Log categories or settings to collect. |
+| `--metrics` | Metric categories to collect. |
+| `--output` | Output format for the result. |
+
 List the diagnostic settings to confirm the attachment:
 
 ```bash
@@ -179,6 +245,12 @@ az monitor diagnostic-settings list \
     --resource "$STORAGE_ID" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
 
 ### Step 6: Create a VM to generate heartbeat telemetry
 
@@ -194,6 +266,18 @@ az vm create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az vm create` | Create a virtual machine. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--image` | VM image used to create the virtual machine. |
+| `--admin-username` | Administrator username for the virtual machine. |
+| `--generate-ssh-keys` | Generates SSH keys for the virtual machine if missing. |
+| `--size` | Virtual machine size (SKU). |
+| `--public-ip-sku` | SKU for the public IP address. |
+| `--output` | Output format for the result. |
+
 Capture the VM resource ID:
 
 ```bash
@@ -203,6 +287,14 @@ export VM_ID=$(az vm show \
     --query "id" \
     --output tsv)
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az vm show` | Show properties of a virtual machine. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 ### Step 7: Create a data collection rule for performance counters
 
@@ -217,6 +309,17 @@ az monitor data-collection rule create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule create` | Create a data collection rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--location` | Azure region for the resource. |
+| `--data-flows` | Data flow mappings from sources to destinations. |
+| `--destinations` | Destinations that receive collected data. |
+| `--data-sources` | Data sources collected by the rule. |
+| `--output` | Output format for the result. |
+
 ### Step 8: Install Azure Monitor Agent on the VM
 
 ```bash
@@ -228,6 +331,16 @@ az vm extension set \
     --enable-auto-upgrade true \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az vm extension set` | Install or update a virtual machine extension. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--vm-name` | Name of the virtual machine. |
+| `--name` | Name of the resource. |
+| `--publisher` | Publisher of the VM extension. |
+| `--enable-auto-upgrade` | Enables automatic extension upgrades. |
+| `--output` | Output format for the result. |
 
 Associate the VM with the data collection rule:
 
@@ -245,6 +358,19 @@ az monitor data-collection rule association create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+| `az monitor data-collection rule association create` | Associate a data collection rule with a resource. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--rule-id` | Identifier of the alert rule. |
+| `--output` | Output format for the result. |
+
 ### Step 9: Wait for telemetry ingestion and run validation queries
 
 It may take several minutes before the first records appear.
@@ -256,6 +382,13 @@ az monitor log-analytics query \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
+
 Run a second query for metrics and logs from the storage account:
 
 ```bash
@@ -264,6 +397,13 @@ az monitor log-analytics query \
     --analytics-query "AzureMetrics | where TimeGenerated > ago(30m) | summarize Records=count() by ResourceProvider" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 ## Validation Steps
 
@@ -279,6 +419,14 @@ az monitor log-analytics workspace show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 2. Confirm the VM association exists.
 
 ```bash
@@ -286,6 +434,12 @@ az monitor data-collection rule association list \
     --resource "$VM_ID" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association list` | List data collection rule associations. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
 
 3. Confirm diagnostic settings are attached to the storage account.
 
@@ -296,6 +450,13 @@ az monitor diagnostic-settings list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 4. Confirm the workspace receives telemetry.
 
 ```bash
@@ -304,6 +465,13 @@ az monitor log-analytics query \
     --analytics-query "union isfuzzy=true Heartbeat, Perf, AzureMetrics | where TimeGenerated > ago(30m) | summarize Records=count() by Type" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 Validation is successful when the workspace exists, retention and quota settings are visible, the DCR association is present, and at least one telemetry table returns recent rows.
 
@@ -318,6 +486,13 @@ az group delete \
     --no-wait
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az group delete` | Delete a resource group. |
+| `--name` | Name of the resource. |
+| `--yes` | Skips the confirmation prompt. |
+| `--no-wait` | Returns without waiting for the operation to finish. |
+
 Optional partial cleanup if you want to keep the workspace but remove the VM:
 
 ```bash
@@ -326,6 +501,13 @@ az vm delete \
     --name "$VM_NAME" \
     --yes
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az vm delete` | Delete a virtual machine. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--yes` | Skips the confirmation prompt. |
 
 ## See Also
 

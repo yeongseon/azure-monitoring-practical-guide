@@ -89,6 +89,13 @@ az group delete \
     --no-wait
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az group delete` | Delete a resource group. |
+| `--name` | Name of the resource. |
+| `--yes` | Skips the confirmation prompt. |
+| `--no-wait` | Returns without waiting for the operation to finish. |
+
 !!! warning "Cost management"
     Metric alerts, web tests, dashboards, and retained logs can continue to incur charges. Delete unused resources promptly if you are not actively using the sandbox.
 

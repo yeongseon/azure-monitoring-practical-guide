@@ -109,6 +109,16 @@ az monitor log-analytics workspace create \
     --retention-time 30 \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace create` | Create a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--location` | Azure region for the resource. |
+| `--sku` | SKU tier of the resource. |
+| `--retention-time` | Data retention period in days. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -150,6 +160,14 @@ az monitor log-analytics workspace show \
     --query "{name:name,features:features,publicNetworkAccessForIngestion:publicNetworkAccessForIngestion,publicNetworkAccessForQuery:publicNetworkAccessForQuery,retentionInDays:retentionInDays}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -191,6 +209,13 @@ az monitor log-analytics query \
     --analytics-query "search * | where TimeGenerated > ago(1h) | summarize Rows=count() by \$table | top 10 by Rows desc" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 $Table                 Rows
@@ -310,6 +335,14 @@ az monitor log-analytics workspace update \
     --quota 20 \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--quota` | Daily ingestion quota for the workspace. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -330,6 +363,13 @@ az monitor log-analytics query \
     --analytics-query "Usage | where TimeGenerated > ago(1d) | summarize IngestedGB=sum(Quantity) by DataType | top 10 by IngestedGB desc" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 DataType             IngestedGB

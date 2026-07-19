@@ -73,6 +73,12 @@ flowchart TD
         --output table
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor metrics alert list` | List metric alert rules. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--output` | Output format for the result. |
+
 2. **Inventory scheduled query rules when log alerts may be contributing**
 
     ```bash
@@ -80,6 +86,12 @@ flowchart TD
         --resource-group $RG \
         --output table
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor scheduled-query list` | List scheduled query alert rules. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--output` | Output format for the result. |
 
 3. **Review alert processing rules that may already suppress or reroute storms**
 
@@ -89,6 +101,12 @@ flowchart TD
         --output json
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor alert-processing-rule list` | List alert processing rules. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--output` | Output format for the result. |
+
 4. **Review action groups attached to storming rules**
 
     ```bash
@@ -96,6 +114,12 @@ flowchart TD
         --resource-group $RG \
         --output table
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor action-group list` | List action groups. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--output` | Output format for the result. |
 
 5. **Inspect one storming metric alert in detail**
 
@@ -106,6 +130,13 @@ flowchart TD
         --output json
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor metrics alert show` | Show a metric alert rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--output` | Output format for the result. |
+
 6. **Replay the underlying signal for the worst resource before changing rule design**
 
     ```bash
@@ -114,6 +145,13 @@ flowchart TD
         --analytics-query "Perf | where TimeGenerated > ago(30m) | where ObjectName == 'Processor' and CounterName == '% Processor Time' | summarize AvgCPU=avg(CounterValue) by bin(TimeGenerated, 5m), Computer" \
         --timespan "PT30M"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--analytics-query` | Kusto (KQL) query to execute. |
+    | `--timespan` | Time range for the query. |
 
 ## 5. Evidence to Collect
 
@@ -205,6 +243,13 @@ az monitor metrics alert show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert show` | Show a metric alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -230,6 +275,12 @@ az monitor alert-processing-rule list \
     --resource-group $RG \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor alert-processing-rule list` | List alert processing rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -259,6 +310,13 @@ az monitor action-group show \
     --name $ACTION_GROUP_NAME \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group show` | Show an action group. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -298,6 +356,12 @@ az monitor metrics alert list \
     --resource-group $RG \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert list` | List metric alert rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -397,6 +461,14 @@ Interpretation:
         --evaluation-frequency 5m
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor metrics alert update` | Update a metric alert rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--window-size` | Time window over which the condition is evaluated. |
+    | `--evaluation-frequency` | How often the alert rule is evaluated. |
+
 2. Disable or narrow a duplicate alert temporarily.
 
     ```bash
@@ -406,6 +478,13 @@ Interpretation:
         --enabled false
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor metrics alert update` | Update a metric alert rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--enabled` | Whether the resource is enabled. |
+
 3. Add or enable maintenance suppression during known noisy windows.
 
     ```bash
@@ -413,6 +492,12 @@ Interpretation:
         --resource-group $RG \
         --output table
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor alert-processing-rule list` | List alert processing rules. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--output` | Output format for the result. |
 
 4. Reduce action group fan-out while the storm is active.
 
@@ -423,6 +508,13 @@ Interpretation:
         --query "{emailReceivers:emailReceivers,smsReceivers:smsReceivers,webhookReceivers:webhookReceivers}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor action-group show` | Show an action group. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 5. If one resource is dominating, fix or isolate the source before broad alert redesign.
 
     ```bash
@@ -430,6 +522,12 @@ Interpretation:
         --ids $RESOURCE_ID \
         --query "{id:id,type:type,name:name}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az resource show` | Show a generic Azure resource. |
+    | `--ids` | One or more resource IDs to target. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 ## 9. Prevention
 Prevent alert storms by designing alerts around operator actionability rather than raw detectability. Microsoft Learn best practices consistently favor consolidated coverage, explicit ownership, and stable thresholds.
@@ -442,6 +540,12 @@ az monitor metrics alert list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert list` | List metric alert rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
+
 Prefer wider windows and deliberate dimensions for paging rules.
 
 ```bash
@@ -451,6 +555,13 @@ az monitor metrics alert show \
     --query "{evaluationFrequency:evaluationFrequency,windowSize:windowSize,criteria:criteria}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert show` | Show a metric alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 Keep suppression rules ready for maintenance, but do not use them to hide permanently noisy design.
 
 ```bash
@@ -459,6 +570,12 @@ az monitor alert-processing-rule list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor alert-processing-rule list` | List alert processing rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
+
 Review receiver fan-out with the same care you apply to thresholds.
 
 ```bash
@@ -466,6 +583,12 @@ az monitor action-group list \
     --resource-group $RG \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group list` | List action groups. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 
 Finally, make one team responsible for each alert family. Ownership clarity prevents a natural tendency to add overlapping "just in case" alerts that create storms later.
 

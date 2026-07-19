@@ -53,6 +53,18 @@ az monitor metrics alert create \
     --action "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/actionGroups/{actionGroupName}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--description` | Human-readable description of the resource. |
+| `--action` | Action group or webhook to invoke when the alert fires. |
+
 ## KQL Query Examples
 
 While metrics are used for alerting, you can also query them using KQL in the `AzureMetrics` table if you have enabled metric export in diagnostic settings.
@@ -151,6 +163,12 @@ az monitor metrics list-definitions \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list-definitions` | List available metric definitions for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```text
@@ -172,6 +190,14 @@ az monitor metrics list \
     --interval "PT5M" \
     --aggregation "Total" "Average"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list` | List metric values for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--metric` | Metric name to query. |
+| `--interval` | Sampling or evaluation interval. |
+| `--aggregation` | Aggregation applied to the metric values. |
 
 Sample output:
 
@@ -214,6 +240,19 @@ az monitor metrics alert create \
     --action "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-app-oncall"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--action` | Action group or webhook to invoke when the alert fires. |
+
 ### Alert on high average response time
 
 ```bash
@@ -228,6 +267,19 @@ az monitor metrics alert create \
     --description "Average response time is above 2 seconds" \
     --action "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-app-oncall"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--action` | Action group or webhook to invoke when the alert fires. |
 
 ### Alert on App Service plan CPU pressure
 
@@ -245,6 +297,19 @@ az monitor metrics alert create \
     --description "App Service plan CPU usage is above 80 percent" \
     --action "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-platform-oncall"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--action` | Action group or webhook to invoke when the alert fires. |
 
 ## Alert Tuning Guidance
 

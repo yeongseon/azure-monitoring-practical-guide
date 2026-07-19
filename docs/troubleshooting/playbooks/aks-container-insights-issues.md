@@ -71,6 +71,13 @@ flowchart TD
         --query "{clusterName:name,monitoringEnabled:addonProfiles.omsagent.enabled,identityType:identity.type,location:location}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az aks show` | Show properties of the AKS cluster. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 2. **Check Azure Monitor extension provisioning state**
 
     ```bash
@@ -81,6 +88,15 @@ flowchart TD
         --name azuremonitor-containers \
         --query "{name:name,provisioningState:provisioningState,extensionType:extensionType,version:version}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az k8s-extension show` | Show a cluster extension. |
+    | `--cluster-name` | Name of the cluster. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--cluster-type` | Type of the cluster resource. |
+    | `--name` | Name of the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 3. **Check `ama-logs` pod status in `kube-system`**
 
@@ -99,6 +115,12 @@ flowchart TD
         --query "[].{association:name,dcrId:dataCollectionRuleId,description:description}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor data-collection rule association list` | List data collection rule associations. |
+    | `--resource` | Target resource ID or name for the operation. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 5. **Run a narrow control query for heartbeat and Container Insights tables**
 
     ```bash
@@ -107,6 +129,13 @@ flowchart TD
         --analytics-query "union isfuzzy=true (Heartbeat | where TimeGenerated > ago(15m) | summarize LastSeen=max(TimeGenerated) by TableName='Heartbeat'), (KubeNodeInventory | where TimeGenerated > ago(15m) | summarize LastSeen=max(TimeGenerated) by TableName='KubeNodeInventory'), (ContainerLogV2 | where TimeGenerated > ago(15m) | summarize LastSeen=max(TimeGenerated) by TableName='ContainerLogV2')" \
         --timespan "PT15M"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--analytics-query` | Kusto (KQL) query to execute. |
+    | `--timespan` | Time range for the query. |
 
 6. **Review recent AMA logs for endpoint or config failures**
 
@@ -218,6 +247,13 @@ az aks show \
     --query "{clusterName:name, monitoringEnabled:addonProfiles.omsagent.enabled, identityType:identity.type, location:location}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az aks show` | Show properties of the AKS cluster. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 **Sample Output (sanitized)**
 
 ```json
@@ -241,6 +277,15 @@ az k8s-extension show \
     --name azuremonitor-containers \
     --query "{name:name, provisioningState:provisioningState, extensionType:extensionType, version:version}"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az k8s-extension show` | Show a cluster extension. |
+| `--cluster-name` | Name of the cluster. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--cluster-type` | Type of the cluster resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
 
 **Sample Output (sanitized)**
 
@@ -282,6 +327,12 @@ az monitor data-collection rule association list \
     --resource "/subscriptions/<subscription-id>/resourceGroups/$RG/providers/Microsoft.ContainerService/managedClusters/$AKS_NAME" \
     --query "[].{association:name, dcrId:dataCollectionRuleId, description:description}"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association list` | List data collection rule associations. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--query` | JMESPath projection of the fields to return. |
 
 **Sample Output (sanitized)**
 
@@ -334,6 +385,13 @@ az aks show \
     --query "addonProfiles.omsagent.enabled"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az aks show` | Show properties of the AKS cluster. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 ```bash
 az k8s-extension show \
     --cluster-name "$AKS_NAME" \
@@ -342,6 +400,15 @@ az k8s-extension show \
     --name azuremonitor-containers \
     --query "provisioningState"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az k8s-extension show` | Show a cluster extension. |
+| `--cluster-name` | Name of the cluster. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--cluster-type` | Type of the cluster resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
 
 If either command fails or returns disabled/failed state, resolve enablement before looking at tables.
 
@@ -388,6 +455,13 @@ az monitor data-collection rule show \
     --resource-group "$MONITORING_RG" \
     --query "{destinations:destinations.logAnalytics, dataFlows:dataFlows, dataSources:dataSources}"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
 
 ```bash
 kubectl get configmap \

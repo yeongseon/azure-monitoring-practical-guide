@@ -37,6 +37,13 @@ az monitor log-analytics query \
     --timespan "PT15M"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--timespan` | Time range for the query. |
+
 - Good signal: control query is fast, so the workspace is generally healthy.
 - Bad signal: even simple narrow queries are slow, raising service-health or access-path suspicion.
 
@@ -83,6 +90,13 @@ az monitor scheduled-query show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query show` | Show a scheduled query alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
+
 - Good signal: one workspace and one clear cadence match the intended design.
 - Bad signal: cross-workspace scope, large evaluation windows, or heavy workbooks expand the query beyond what operators expect.
 
@@ -96,6 +110,14 @@ az monitor log-analytics workspace table show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace table show` | Show a table in a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
+
 - Good signal: table settings look normal and optimization should focus on KQL shape.
 - Bad signal: a high-volume table with wide schema or dynamic fields is the real bottleneck.
 
@@ -105,6 +127,11 @@ az monitor log-analytics workspace table show \
 az servicehealth events list \
     --query "[?contains(title, 'Azure Monitor') || contains(title, 'Log Analytics')].{title:title,status:status}"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az servicehealth events list` | List Azure Service Health events. |
+| `--query` | JMESPath projection of the fields to return. |
 
 - Good signal: no active event and narrow queries are healthy.
 - Bad signal: active Azure Monitor or Log Analytics event aligns with broad slowness.

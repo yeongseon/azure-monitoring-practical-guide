@@ -56,6 +56,13 @@ az monitor diagnostic-settings list \
     --query "value[].{name:name,workspaceId:workspaceId,storageAccountId:storageAccountId}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name           WorkspaceId                                                                                           StorageAccountId
@@ -69,6 +76,13 @@ az monitor diagnostic-settings categories list \
     --query "[].{name:name,type:categoryType}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings categories list` | List diagnostic setting categories for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                   Type
@@ -89,6 +103,16 @@ az monitor diagnostic-settings create \
     --metrics '[{"category":"AllMetrics","enabled":true}]' \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--logs` | Log categories or settings to collect. |
+| `--metrics` | Metric categories to collect. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -125,6 +149,17 @@ az monitor diagnostic-settings create \
     --metrics '[{"category":"AllMetrics","enabled":true}]' \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--storage-account` | Storage account used by the operation. |
+| `--logs` | Log categories or settings to collect. |
+| `--metrics` | Metric categories to collect. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -144,6 +179,14 @@ az monitor diagnostic-settings show \
     --query "{name:name,logs:logs[].category,metrics:metrics[].category,workspaceId:workspaceId,storageAccountId:storageAccountId}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings show` | Show a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -168,6 +211,13 @@ az monitor log-analytics query \
     --analytics-query "AzureDiagnostics | where ResourceId == '$RESOURCE_ID' | where TimeGenerated > ago(1h) | summarize Records=count() by Category | top 10 by Records desc" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Category      Records
@@ -185,6 +235,13 @@ az monitor diagnostic-settings list \
     --query "value[].{name:name,workspaceId:workspaceId,storageAccountId:storageAccountId}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name           WorkspaceId                                                                                           StorageAccountId
@@ -198,6 +255,13 @@ az monitor log-analytics query \
     --analytics-query "AzureDiagnostics | where ResourceId == '$RESOURCE_ID' | where TimeGenerated > ago(1h) | count" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Count
@@ -210,6 +274,12 @@ az monitor diagnostic-settings categories list \
     --resource $RESOURCE_ID \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings categories list` | List diagnostic setting categories for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                   Type
@@ -226,6 +296,12 @@ az monitor diagnostic-settings delete \
     --name $DIAG_NAME \
     --resource $RESOURCE_ID
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings delete` | Delete a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
 Create a corrected setting immediately after deletion to avoid a monitoring gap.
 
 Common problems:
@@ -249,6 +325,12 @@ az monitor diagnostic-settings list \
     --resource $RESOURCE_ID \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
 Useful automation patterns:
 - Use Azure Policy initiatives to enforce a baseline destination.
 - Export current settings and compare them against a golden configuration.

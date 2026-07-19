@@ -66,6 +66,15 @@ az vm extension set \
     --enable-auto-upgrade true
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az vm extension set` | Install or update a virtual machine extension. |
+| `--name` | Name of the resource. |
+| `--publisher` | Publisher of the VM extension. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--vm-name` | Name of the virtual machine. |
+| `--enable-auto-upgrade` | Enables automatic extension upgrades. |
+
 ### Associating a DCR via CLI
 
 After creating a Data Collection Rule, associate it with a VM:
@@ -76,6 +85,13 @@ az monitor data-collection rule association create \
     --resource "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}" \
     --rule-id "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association create` | Associate a data collection rule with a resource. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--rule-id` | Identifier of the alert rule. |
 
 ## AMA vs Legacy Agent Comparison
 
@@ -185,6 +201,13 @@ az vm extension list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az vm extension list` | List extensions installed on a virtual machine. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--vm-name` | Name of the virtual machine. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```text
@@ -199,6 +222,11 @@ AzureMonitorLinuxAgent   Microsoft.Azure.Monitor   Succeeded
 az monitor data-collection rule association list \
     --resource "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Compute/virtualMachines/my-linux-vm"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association list` | List data collection rule associations. |
+| `--resource` | Target resource ID or name for the operation. |
 
 Sample output:
 
@@ -219,6 +247,13 @@ az monitor log-analytics query \
     --analytics-query "Heartbeat | where TimeGenerated > ago(30m) | summarize LastHeartbeat=max(TimeGenerated) by Computer" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -255,6 +290,14 @@ az monitor diagnostic-settings create \
     ]'
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--metrics` | Metric categories to collect. |
+
 ### Subscription Activity Log categories to correlate with VM incidents
 
 For platform-side change and outage visibility, route these Activity Log categories to the same workspace used for VM investigations:
@@ -288,6 +331,14 @@ az monitor diagnostic-settings create \
         }
     ]'
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--logs` | Log categories or settings to collect. |
 
 ### Why this matters
 
@@ -346,6 +397,14 @@ az monitor data-collection rule create \
         ]
     }'
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule create` | Create a data collection rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--location` | Azure region for the resource. |
+| `--data-flows` | Data flow mappings from sources to destinations. |
 
 The exact counter set can differ by operating system, but the pattern stays the same: keep a small high-value baseline at 60-second frequency and add specialized counters only when the workload justifies them.
 
@@ -461,6 +520,19 @@ az monitor scheduled-query create \
     --action-groups "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-platform-oncall"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--action-groups` | Action groups notified when the alert fires. |
+
 ### Alert on sustained CPU saturation
 
 ```bash
@@ -475,6 +547,19 @@ az monitor metrics alert create \
     --description "Virtual machine CPU usage is above 85 percent" \
     --action "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-platform-oncall"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--action` | Action group or webhook to invoke when the alert fires. |
 
 ## Investigation Workflow
 

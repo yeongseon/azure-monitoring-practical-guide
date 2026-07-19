@@ -78,6 +78,13 @@ az group create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az group create` | Create a resource group. |
+| `--name` | Name of the resource. |
+| `--location` | Azure region for the resource. |
+| `--output` | Output format for the result. |
+
 ```bash
 az monitor log-analytics workspace create \
     --resource-group "$RG" \
@@ -88,6 +95,16 @@ az monitor log-analytics workspace create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace create` | Create a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--location` | Azure region for the resource. |
+| `--sku` | SKU tier of the resource. |
+| `--retention-time` | Data retention period in days. |
+| `--output` | Output format for the result. |
+
 Capture the workspace ID:
 
 ```bash
@@ -97,6 +114,14 @@ export WORKSPACE_ID=$(az monitor log-analytics workspace show \
     --query "id" \
     --output tsv)
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 ### Step 2: Create a workspace-based Application Insights resource
 
@@ -111,6 +136,17 @@ az monitor app-insights component create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component create` | Create an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--location` | Azure region for the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--application-type` | Application Insights application type. |
+| `--kind` | Resource kind. |
+| `--output` | Output format for the result. |
+
 Retrieve the connection string:
 
 ```bash
@@ -120,6 +156,14 @@ export APPINSIGHTS_CONNECTION_STRING=$(az monitor app-insights component show \
     --query "connectionString" \
     --output tsv)
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 ### Step 3: Create an App Service plan and web app
 
@@ -133,6 +177,16 @@ az appservice plan create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az appservice plan create` | Create an App Service plan. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--location` | Azure region for the resource. |
+| `--sku` | SKU tier of the resource. |
+| `--is-linux` | Creates a Linux App Service plan. |
+| `--output` | Output format for the result. |
+
 ```bash
 az webapp create \
     --name "$WEBAPP_NAME" \
@@ -141,6 +195,15 @@ az webapp create \
     --runtime "PYTHON:3.11" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az webapp create` | Create a web app. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--plan` | App Service plan for the web app. |
+| `--runtime` | Runtime stack for the app. |
+| `--output` | Output format for the result. |
 
 ### Step 4: Configure application settings for telemetry
 
@@ -154,6 +217,14 @@ az webapp config appsettings set \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az webapp config appsettings set` | Set application settings on the web app. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--settings` | Configuration settings for the resource. |
+| `--output` | Output format for the result. |
+
 Optionally enable App Service logs for troubleshooting during instrumentation.
 
 ```bash
@@ -166,6 +237,17 @@ az webapp log config \
     --failed-request-tracing true \
     --web-server-logging filesystem
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az webapp log config` | Configure logging for the web app. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--application-logging` | Enables application logging for the web app. |
+| `--level` | Severity level filter. |
+| `--detailed-error-messages` | Enables detailed error message logging. |
+| `--failed-request-tracing` | Enables failed request tracing for the web app. |
+| `--web-server-logging` | Enables web server logging for the app. |
 
 ### Step 5: Generate requests and custom telemetry
 
@@ -192,11 +274,25 @@ export APP_URL=$(az webapp show \
     --output tsv)
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az webapp show` | Show properties of the web app. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ```bash
 az rest \
     --method get \
     --url "https://$APP_URL/"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az rest` | Invoke a raw Azure REST API request. |
+| `--method` | HTTP method for the REST call. |
+| `--url` | Target URL for the operation. |
 
 Repeat the request a few times so the `requests` table has fresh rows.
 
@@ -209,6 +305,13 @@ az monitor log-analytics query \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
+
 ```bash
 az monitor log-analytics query \
     --workspace "$WORKSPACE_ID" \
@@ -216,12 +319,26 @@ az monitor log-analytics query \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
+
 ```bash
 az monitor log-analytics query \
     --workspace "$WORKSPACE_ID" \
     --analytics-query "customEvents | where timestamp > ago(30m) | summarize EventCount=count() by name" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 ### Step 7: Create an availability test
 
@@ -245,6 +362,19 @@ az monitor app-insights web-test create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights web-test create` | Create an availability web test. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--location` | Azure region for the resource. |
+| `--web-test-kind` | Type of availability web test. |
+| `--frequency` | Evaluation frequency of the rule. |
+| `--timeout` | Maximum time to wait for the operation. |
+| `--enabled` | Whether the resource is enabled. |
+| `--request-url` | URL invoked by the availability web test. |
+| `--output` | Output format for the result. |
+
 List the test to confirm it exists:
 
 ```bash
@@ -253,6 +383,13 @@ az monitor app-insights web-test show \
     --name "$WEB_TEST_NAME" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights web-test show` | Show an availability web test. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
 
 ### Step 8: Review component settings
 
@@ -263,6 +400,14 @@ az monitor app-insights component show \
     --query "{name:name,workspaceResourceId:workspaceResourceId,applicationType:applicationType,connectionString:connectionString}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 This confirms the component is workspace-based and ready for alerts and workbooks.
 
@@ -280,6 +425,14 @@ az monitor app-insights component show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 2. Confirm the App Service app has the connection string setting.
 
 ```bash
@@ -290,6 +443,14 @@ az webapp config appsettings list \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az webapp config appsettings list` | List application settings of the web app. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 3. Confirm request telemetry is arriving.
 
 ```bash
@@ -299,6 +460,13 @@ az monitor log-analytics query \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
+
 4. Confirm the availability test exists.
 
 ```bash
@@ -306,6 +474,12 @@ az monitor app-insights web-test list \
     --resource-group "$RG" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights web-test list` | List availability web tests. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 
 Validation succeeds when the Application Insights component is workspace-based, the web app contains the connection string, telemetry is queryable, and the availability test is present.
 
@@ -319,6 +493,12 @@ az monitor app-insights web-test delete \
     --name "$WEB_TEST_NAME"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights web-test delete` | Delete an availability web test. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+
 If you want to delete the full lab environment:
 
 ```bash
@@ -327,6 +507,13 @@ az group delete \
     --yes \
     --no-wait
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az group delete` | Delete a resource group. |
+| `--name` | Name of the resource. |
+| `--yes` | Skips the confirmation prompt. |
+| `--no-wait` | Returns without waiting for the operation to finish. |
 
 ## See Also
 

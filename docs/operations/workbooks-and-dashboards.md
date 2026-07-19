@@ -58,6 +58,13 @@ az monitor workbook list \
     --query "[].{name:name,displayName:displayName,location:location,kind:kind}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook list` | List workbooks. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                   DisplayName                Location    Kind
@@ -71,6 +78,13 @@ az portal dashboard list \
     --query "[].{name:name,location:location,tags:tags}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az portal dashboard list` | List portal dashboards. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                            Location    Tags
@@ -90,6 +104,17 @@ az monitor workbook create \
     --serialized-data @$WORKBOOK_FILE \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook create` | Create a workbook. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--location` | Azure region for the resource. |
+| `--display-name` | Display name shown in the portal. |
+| `--kind` | Resource kind. |
+| `--serialized-data` | Serialized JSON payload defining the resource. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -108,6 +133,14 @@ az monitor workbook update \
     --serialized-data @$WORKBOOK_FILE \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook update` | Update a workbook. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--serialized-data` | Serialized JSON payload defining the resource. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -126,6 +159,14 @@ az monitor workbook show \
     --query "{name:name,displayName:displayName,kind:kind,location:location,version:version}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook show` | Show a workbook. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -149,6 +190,16 @@ az portal dashboard create \
     --tags owner=monitoring tier=ops \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az portal dashboard create` | Create a portal dashboard. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--location` | Azure region for the resource. |
+| `--input-path` | Path to the input payload file. |
+| `--tags` | Tags applied to the resource. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -172,6 +223,13 @@ az monitor log-analytics query \
     --analytics-query "Heartbeat | where TimeGenerated > ago(1h) | summarize ActiveAgents=dcount(Computer)" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 ActiveAgents
@@ -186,6 +244,14 @@ az portal dashboard show \
     --query "{name:name,location:location,tags:tags}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az portal dashboard show` | Show a portal dashboard. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -207,6 +273,13 @@ az monitor workbook list \
     --query "[].{name:name,displayName:displayName}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook list` | List workbooks. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                   DisplayName
@@ -220,6 +293,13 @@ az portal dashboard list \
     --query "[].{name:name,location:location}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az portal dashboard list` | List portal dashboards. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                            Location
@@ -234,6 +314,14 @@ az monitor workbook show \
     --query "{name:name,kind:kind,displayName:displayName}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook show` | Show a workbook. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -252,12 +340,25 @@ az monitor workbook delete \
     --resource-group $RG \
     --yes
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook delete` | Delete a workbook. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--yes` | Skips the confirmation prompt. |
 Delete a broken dashboard:
 ```bash
 az portal dashboard delete \
     --resource-group $RG \
     --name $DASHBOARD_NAME
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az portal dashboard delete` | Delete a portal dashboard. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
 Common problems:
 - Workbook loads but visual is empty
     - Run the underlying KQL manually and validate parameters.
@@ -279,6 +380,12 @@ az monitor workbook list \
     --query "[].{name:name,resourceGroup:resourceGroup,displayName:displayName}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor workbook list` | List workbooks. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Useful automation patterns:
 - Store workbook JSON and dashboard JSON in the repository.
 - Deploy both through CI after pull-request review.

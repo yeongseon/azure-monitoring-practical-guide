@@ -105,6 +105,16 @@ Some workloads still use classic Application Insights SDKs or auto-instrumentati
 ```bash
 az monitor app-insights component create     --app "$APP_INSIGHTS_NAME"     --location "$LOCATION"     --resource-group "$RG"     --workspace "$WORKSPACE_ID"     --application-type "web"     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component create` | Create an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--location` | Azure region for the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--application-type` | Application Insights application type. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -151,6 +161,13 @@ That is what allows you to follow one user operation through several microservic
 ```bash
 az monitor log-analytics query     --workspace "$WORKSPACE_ID"     --analytics-query "requests | where timestamp > ago(1h) | summarize Requests=count(), FailureRate=100.0 * avg(todouble(not(success))), P95DurationMs=percentile(duration, 95) / 1ms by cloud_RoleName"     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 cloud_RoleName      Requests    FailureRate    P95DurationMs
@@ -227,6 +244,13 @@ sequenceDiagram
 ```bash
 az monitor log-analytics query     --workspace "$WORKSPACE_ID"     --analytics-query "dependencies | where timestamp > ago(1h) | where cloud_RoleName == 'checkout-api' | summarize Calls=count(), Failures=countif(success == false), P95Ms=percentile(duration, 95) / 1ms by target, type"     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 target                         type    Calls    Failures    P95Ms
@@ -274,6 +298,14 @@ Application Insights has several settings that materially affect operations.
 ```bash
 az monitor app-insights component show     --app "$APP_INSIGHTS_NAME"     --resource-group "$RG"     --query "{name:name,kind:kind,location:location,applicationType:applicationType,workspaceResourceId:workspaceResourceId,connectionString:connectionString}"     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -302,6 +334,21 @@ az monitor scheduled-query create \
     --skip-query-validation true \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--condition-query` | Named query referenced by the alert condition. |
+| `--description` | Human-readable description of the resource. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--skip-query-validation` | Skips server-side validation of the query. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {

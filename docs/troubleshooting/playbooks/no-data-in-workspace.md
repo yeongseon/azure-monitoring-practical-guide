@@ -77,6 +77,13 @@ flowchart TD
         --query "{name:name,provisioningState:provisioningState,retentionInDays:retentionInDays,sku:sku.name}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--workspace-name` | Name of the Log Analytics workspace. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 2. **Check whether the workspace cap is stopping ingestion**
 
     ```bash
@@ -85,6 +92,13 @@ flowchart TD
         --workspace-name $WORKSPACE_NAME \
         --query "workspaceCapping"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--workspace-name` | Name of the Log Analytics workspace. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 3. **Run a control heartbeat query against the workspace**
 
@@ -95,6 +109,13 @@ flowchart TD
         --timespan "PT15M"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--analytics-query` | Kusto (KQL) query to execute. |
+    | `--timespan` | Time range for the query. |
+
 4. **Verify that the resource still has diagnostic settings targeting the expected workspace**
 
     ```bash
@@ -102,6 +123,12 @@ flowchart TD
         --resource $RESOURCE_ID \
         --output json
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+    | `--resource` | Target resource ID or name for the operation. |
+    | `--output` | Output format for the result. |
 
 5. **Verify that AMA-backed resources still have a DCR association**
 
@@ -111,6 +138,12 @@ flowchart TD
         --output json
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor data-collection rule association list` | List data collection rule associations. |
+    | `--resource` | Target resource ID or name for the operation. |
+    | `--output` | Output format for the result. |
+
 6. **Check whether the Azure Monitor Agent extension is still installed on the VM**
 
     ```bash
@@ -119,6 +152,13 @@ flowchart TD
         --vm-name $VM_NAME \
         --query "[].{name:name,provisioningState:provisioningState,publisher:publisher}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az vm extension list` | List extensions installed on a virtual machine. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--vm-name` | Name of the virtual machine. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 ## 5. Evidence to Collect
 
@@ -211,6 +251,13 @@ az monitor log-analytics workspace show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -242,6 +289,12 @@ az monitor data-collection rule association list \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association list` | List data collection rule associations. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -268,6 +321,12 @@ az monitor diagnostic-settings list \
     --resource $RESOURCE_ID \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -306,6 +365,13 @@ az vm extension list \
     --vm-name $VM_NAME \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az vm extension list` | List extensions installed on a virtual machine. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--vm-name` | Name of the virtual machine. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -381,6 +447,13 @@ Interpretation:
         --quota 10
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--workspace-name` | Name of the Log Analytics workspace. |
+    | `--quota` | Daily ingestion quota for the workspace. |
+
 2. Recreate the DCR association for an affected AMA source.
 
     ```bash
@@ -389,6 +462,13 @@ Interpretation:
         --resource $RESOURCE_ID \
         --rule-id $DCR_ID
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor data-collection rule association create` | Associate a data collection rule with a resource. |
+    | `--name` | Name of the resource. |
+    | `--resource` | Target resource ID or name for the operation. |
+    | `--rule-id` | Identifier of the alert rule. |
 
 3. Restore diagnostic settings on a resource whose platform logs stopped flowing.
 
@@ -401,6 +481,15 @@ Interpretation:
         --metrics '[{"category":"AllMetrics","enabled":true}]'
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+    | `--name` | Name of the resource. |
+    | `--resource` | Target resource ID or name for the operation. |
+    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--logs` | Log categories or settings to collect. |
+    | `--metrics` | Metric categories to collect. |
+
 4. Restart AMA after configuration repair and confirm new heartbeat.
 
     ```bash
@@ -411,6 +500,14 @@ Interpretation:
         --scripts "sudo systemctl restart azuremonitoragent"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az vm run-command invoke` | Run a command on a virtual machine. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--command-id` | Run-command identifier to invoke. |
+    | `--scripts` | Inline script content to run. |
+
 5. Widen lookback windows if delayed ingestion is the only immediate issue.
 
     ```bash
@@ -420,6 +517,14 @@ Interpretation:
         --evaluation-frequency 10m \
         --window-size 15m
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor scheduled-query update` | Update a scheduled query alert rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--evaluation-frequency` | How often the alert rule is evaluated. |
+    | `--window-size` | Time window over which the condition is evaluated. |
 
 ## 9. Prevention
 Prevent workspace-wide data gaps by treating routing, cost, and freshness as separate controls. Microsoft Learn guidance is consistent here: avoid relying on daily cap as a normal operating control, keep DCR and diagnostic settings under repeatable configuration management, and monitor collection freshness directly.
@@ -433,6 +538,13 @@ az monitor data-collection rule show \
     --query "{name:name,dataFlows:dataFlows,destinations:destinations}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 Prefer filtering and table plan decisions over hard workspace stoppage.
 
 ```bash
@@ -443,6 +555,14 @@ az monitor log-analytics workspace table update \
     --plan Basic
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace table update` | Update a table in a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
+| `--plan` | App Service plan for the web app. |
+
 Keep diagnostic settings explicit and auditable.
 
 ```bash
@@ -450,6 +570,12 @@ az monitor diagnostic-settings list \
     --resource $RESOURCE_ID \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
 
 Create an explicit freshness alert so stale ingestion becomes visible quickly.
 
@@ -467,6 +593,21 @@ az monitor scheduled-query create \
     --description "Trigger when heartbeat data in the workspace is older than fifteen minutes." \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--condition-query` | Named query referenced by the alert condition. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--skip-query-validation` | Skips server-side validation of the query. |
+| `--description` | Human-readable description of the resource. |
+| `--output` | Output format for the result. |
 
 Finally, keep at least one control-plane stream such as `AzureActivity` landing in the workspace. It gives you a fast discriminator between a true workspace problem and a source-specific collection failure.
 

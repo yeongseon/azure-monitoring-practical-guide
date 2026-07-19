@@ -51,6 +51,14 @@ az aks enable-addons \
     --workspace-resource-id "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az aks enable-addons` | Enable add-ons on the AKS cluster. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--addons` | Comma-separated list of cluster add-ons to enable. |
+| `--workspace-resource-id` | Resource ID of the Log Analytics workspace. |
+
 ### Enabling Managed Prometheus via CLI
 
 ```bash
@@ -59,6 +67,13 @@ az aks update \
     --name "my-aks-cluster" \
     --enable-azure-monitor-metrics
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az aks update` | Update configuration of the AKS cluster. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--enable-azure-monitor-metrics` | Enables Azure Monitor managed metrics collection. |
 
 ## KQL Query Examples
 
@@ -160,6 +175,13 @@ az aks show \
     --query "addonProfiles.omsagent"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az aks show` | Show properties of the AKS cluster. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 Sample output:
 
 ```json
@@ -183,6 +205,13 @@ az aks show \
     --query "azureMonitorProfile.metrics"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az aks show` | Show properties of the AKS cluster. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 Sample output:
 
 ```json
@@ -202,6 +231,13 @@ az monitor log-analytics query \
     --analytics-query "KubeNodeInventory | summarize Nodes=dcount(Computer)" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -230,6 +266,19 @@ az monitor metrics alert create \
     --action "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-platform-oncall"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--action` | Action group or webhook to invoke when the alert fires. |
+
 ### Scheduled query alert for failed pods
 
 ```bash
@@ -244,6 +293,19 @@ az monitor scheduled-query create \
     --severity 2 \
     --action-groups "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-platform-oncall"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--action-groups` | Action groups notified when the alert fires. |
 
 ### What to alert on first
 

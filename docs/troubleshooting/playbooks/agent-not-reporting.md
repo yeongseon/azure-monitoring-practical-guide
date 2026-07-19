@@ -72,6 +72,13 @@ flowchart TD
         --query "identity"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az vm show` | Show properties of a virtual machine. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 2. **Confirm AMA extension deployment and publisher details**
 
     ```bash
@@ -80,6 +87,13 @@ flowchart TD
         --vm-name $VM_NAME \
         --query "[].{name:name,provisioningState:provisioningState,publisher:publisher}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az vm extension list` | List extensions installed on a virtual machine. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--vm-name` | Name of the virtual machine. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 3. **Query the workspace for current heartbeat state before changing the VM**
 
@@ -90,6 +104,13 @@ flowchart TD
         --timespan "P1D"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--analytics-query` | Kusto (KQL) query to execute. |
+    | `--timespan` | Time range for the query. |
+
 4. **List DCR associations on the affected resource**
 
     ```bash
@@ -97,6 +118,12 @@ flowchart TD
         --resource $RESOURCE_ID \
         --output json
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor data-collection rule association list` | List data collection rule associations. |
+    | `--resource` | Target resource ID or name for the operation. |
+    | `--output` | Output format for the result. |
 
 5. **Inspect the DCR data flows and destination workspace**
 
@@ -107,6 +134,13 @@ flowchart TD
         --output json
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor data-collection rule show` | Show a data collection rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--output` | Output format for the result. |
+
 6. **If Arc is involved, inspect the connected machine resource state**
 
     ```bash
@@ -115,6 +149,13 @@ flowchart TD
         --name $MACHINE_NAME \
         --query "{status:status,location:location,id:id}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az connectedmachine show` | Show a connected (Arc-enabled) machine. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 ## 5. Evidence to Collect
 
@@ -203,6 +244,13 @@ az vm show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az vm show` | Show properties of a virtual machine. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -233,6 +281,13 @@ az vm extension list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az vm extension list` | List extensions installed on a virtual machine. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--vm-name` | Name of the virtual machine. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```text
@@ -254,6 +309,12 @@ az monitor data-collection rule association list \
     --resource $RESOURCE_ID \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association list` | List data collection rule associations. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -281,6 +342,13 @@ az monitor data-collection rule show \
     --name $DCR_NAME \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -386,6 +454,13 @@ Interpretation:
         --rule-id $DCR_ID
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor data-collection rule association create` | Associate a data collection rule with a resource. |
+    | `--name` | Name of the resource. |
+    | `--resource` | Target resource ID or name for the operation. |
+    | `--rule-id` | Identifier of the alert rule. |
+
 2. Reinstall or update AMA if the extension is missing or damaged.
 
     ```bash
@@ -397,6 +472,15 @@ Interpretation:
         --enable-auto-upgrade true
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az vm extension set` | Install or update a virtual machine extension. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--vm-name` | Name of the virtual machine. |
+    | `--publisher` | Publisher of the VM extension. |
+    | `--name` | Name of the resource. |
+    | `--enable-auto-upgrade` | Enables automatic extension upgrades. |
+
 3. Restart AMA after configuration repair.
 
     ```bash
@@ -407,6 +491,14 @@ Interpretation:
         --scripts "sudo systemctl restart azuremonitoragent"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az vm run-command invoke` | Run a command on a virtual machine. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--command-id` | Run-command identifier to invoke. |
+    | `--scripts` | Inline script content to run. |
+
 4. Restore system-assigned identity when it was removed.
 
     ```bash
@@ -414,6 +506,12 @@ Interpretation:
         --resource-group $RG \
         --name $VM_NAME
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az vm identity assign` | Assign a managed identity to a virtual machine. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
 
 5. If the issue is stream mismatch, attach the correct DCR or restore missing streams immediately.
 
@@ -423,6 +521,13 @@ Interpretation:
         --name $DCR_NAME \
         --query "dataFlows"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor data-collection rule show` | Show a data collection rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 ## 9. Prevention
 Prevent AMA reporting failures by treating onboarding as a four-part contract: extension, identity, DCR association, and endpoint access. Missing any one of them causes silent collection gaps.
@@ -435,6 +540,12 @@ az monitor data-collection rule association list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association list` | List data collection rule associations. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
+
 Keep identity configuration explicit in VM build templates and post-deployment validation.
 
 ```bash
@@ -444,6 +555,13 @@ az vm show \
     --query "identity.type"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az vm show` | Show properties of a virtual machine. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 Use standard network validation for Azure Monitor and IMDS endpoints when firewalls or private routing change.
 
 ```bash
@@ -452,6 +570,13 @@ az monitor data-collection rule show \
     --name $DCR_NAME \
     --query "destinations"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
 
 Create a stale-heartbeat alert so a failed agent path is detected quickly.
 
@@ -469,6 +594,21 @@ az monitor scheduled-query create \
     --description "Trigger when AMA heartbeat data is older than fifteen minutes." \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--condition-query` | Named query referenced by the alert condition. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--skip-query-validation` | Skips server-side validation of the query. |
+| `--description` | Human-readable description of the resource. |
+| `--output` | Output format for the result. |
 
 Finally, review guest log paths during runbook design. Microsoft Learn explicitly directs troubleshooters to local AMA logs because workspace queries alone cannot explain why a machine never started sending.
 

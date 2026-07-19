@@ -55,6 +55,13 @@ az monitor metrics alert list \
     --query "[].{name:name,enabled:enabled,severity:severity,scopes:scopes}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert list` | List metric alert rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                    Enabled    Severity    Scopes
@@ -69,6 +76,13 @@ az monitor action-group show \
     --query "{name:name,shortName:groupShortName,enabled:enabled}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group show` | Show an action group. |
+| `--ids` | One or more resource IDs to target. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -93,6 +107,20 @@ az monitor metrics alert create \
     --description "CPU is above 85 percent for 5 minutes on vm-prod-01" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--action` | Action group or webhook to invoke when the alert fires. |
+| `--description` | Human-readable description of the resource. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -125,6 +153,22 @@ az monitor scheduled-query create \
     --description "Trigger when vm-prod-01 has no fresh heartbeat data for five minutes." \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--condition-query` | Named query referenced by the alert condition. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--skip-query-validation` | Skips server-side validation of the query. |
+| `--action-groups` | Action groups notified when the alert fires. |
+| `--description` | Human-readable description of the resource. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -147,6 +191,13 @@ az monitor log-analytics query \
     --analytics-query "Heartbeat | where Computer == 'vm-prod-01' and TimeGenerated > ago(5m) | count" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Count
@@ -164,6 +215,15 @@ az monitor metrics alert update \
     --enabled false \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert update` | Update a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--description` | Human-readable description of the resource. |
+| `--enabled` | Whether the resource is enabled. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -180,6 +240,14 @@ az monitor metrics alert update \
     --enabled true \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert update` | Update a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--enabled` | Whether the resource is enabled. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -198,6 +266,14 @@ az monitor metrics alert show \
     --query "{name:name,enabled:enabled,severity:severity,windowSize:windowSize,evaluationFrequency:evaluationFrequency}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert show` | Show a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -216,6 +292,14 @@ az monitor activity-log list \
     --query "[?contains(operationName.localizedValue, 'alert')].{time:eventTimestamp,status:status.value,operation:operationName.localizedValue}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor activity-log list` | List activity log events. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--offset` | Time offset for the query window. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Time                         Status     Operation
@@ -232,6 +316,13 @@ az monitor metrics alert list \
     --query "[].{name:name,enabled:enabled,severity:severity}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert list` | List metric alert rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                    Enabled    Severity
@@ -247,6 +338,14 @@ az monitor scheduled-query show \
     --query "{name:name,enabled:enabled,windowSize:windowSize,evaluationFrequency:evaluationFrequency}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query show` | Show a scheduled query alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -267,6 +366,14 @@ az monitor metrics alert update \
     --enabled false \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert update` | Update a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--enabled` | Whether the resource is enabled. |
+| `--output` | Output format for the result. |
 Delete a faulty scheduled query rule if the definition itself is wrong:
 ```bash
 az monitor scheduled-query delete \
@@ -274,6 +381,13 @@ az monitor scheduled-query delete \
     --resource-group $RG \
     --yes
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query delete` | Delete a scheduled query alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--yes` | Skips the confirmation prompt. |
 Common problems:
 - Alert never fires
     - Check whether the metric namespace and scope match the target resource.
@@ -291,6 +405,12 @@ az monitor metrics alert list \
     --query "[].{name:name,resourceGroup:resourceGroup,enabled:enabled,severity:severity}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert list` | List metric alert rules. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Useful automation patterns:
 - Export alert definitions nightly and store them in source control.
 - Run lint checks for naming, severity, and action group presence.

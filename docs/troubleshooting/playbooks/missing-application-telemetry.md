@@ -76,6 +76,13 @@ flowchart TD
         --query "{name:name,workspaceResourceId:workspaceResourceId,connectionString:connectionString,applicationType:applicationType}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor app-insights component show` | Show an Application Insights component. |
+    | `--app` | Application Insights component name. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 2. **Confirm the host still has the expected connection string setting**
 
     ```bash
@@ -84,6 +91,13 @@ flowchart TD
         --name $APP_NAME \
         --query "[?name=='APPLICATIONINSIGHTS_CONNECTION_STRING' || name=='APPINSIGHTS_INSTRUMENTATIONKEY']"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az webapp config appsettings list` | List application settings of the web app. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 3. **Run a control query against AppRequests in the workspace**
 
@@ -94,6 +108,13 @@ flowchart TD
         --timespan "PT15M"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--analytics-query` | Kusto (KQL) query to execute. |
+    | `--timespan` | Time range for the query. |
+
 4. **Confirm the component is workspace-based and points to the intended workspace**
 
     ```bash
@@ -102,6 +123,13 @@ flowchart TD
         --resource-group $RG \
         --query "{workspaceResourceId:workspaceResourceId,connectionString:connectionString}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor app-insights component show` | Show an Application Insights component. |
+    | `--app` | Application Insights component name. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 5. **Capture current component-level sampling configuration**
 
@@ -112,6 +140,13 @@ flowchart TD
         --query "{samplingPercentage:samplingPercentage}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor app-insights component show` | Show an Application Insights component. |
+    | `--app` | Application Insights component name. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 6. **Capture workspace identity for direct KQL validation**
 
     ```bash
@@ -120,6 +155,13 @@ flowchart TD
         --workspace-name $WORKSPACE_NAME \
         --query "{id:id,customerId:customerId}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--workspace-name` | Name of the Log Analytics workspace. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 ## 5. Evidence to Collect
 
@@ -206,6 +248,13 @@ az monitor app-insights component show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -233,6 +282,13 @@ az webapp config appsettings list \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az webapp config appsettings list` | List application settings of the web app. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -259,6 +315,13 @@ az monitor app-insights component show \
     --query "{samplingPercentage:samplingPercentage,workspaceResourceId:workspaceResourceId,applicationType:applicationType}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 Sample output:
 
 ```json
@@ -283,6 +346,13 @@ az monitor log-analytics workspace show \
     --workspace-name $WORKSPACE_NAME \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -372,6 +442,13 @@ Interpretation:
         --settings APPLICATIONINSIGHTS_CONNECTION_STRING="<connection-string>"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az webapp config appsettings set` | Set application settings on the web app. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--settings` | Configuration settings for the resource. |
+
 2. Confirm the Application Insights component points to the intended workspace.
 
     ```bash
@@ -381,6 +458,13 @@ Interpretation:
         --query "{workspaceResourceId:workspaceResourceId,connectionString:connectionString}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor app-insights component show` | Show an Application Insights component. |
+    | `--app` | Application Insights component name. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 3. Temporarily reduce sampling only if necessary for a critical investigation.
 
     ```bash
@@ -389,6 +473,13 @@ Interpretation:
         --resource-group $RG \
         --query "{samplingPercentage:samplingPercentage}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor app-insights component show` | Show an Application Insights component. |
+    | `--app` | Application Insights component name. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 4. Widen alert or dashboard lookback windows if delay is the primary issue.
 
@@ -400,6 +491,14 @@ Interpretation:
         --window-size 15m
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor scheduled-query update` | Update a scheduled query alert rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--evaluation-frequency` | How often the alert rule is evaluated. |
+    | `--window-size` | Time window over which the condition is evaluated. |
+
 5. Restart the application after fixing configuration drift.
 
     ```bash
@@ -407,6 +506,12 @@ Interpretation:
         --resource-group $RG \
         --name $APP_NAME
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az webapp restart` | Restart the web app. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
 
 ## 9. Prevention
 Prevent telemetry gaps by making instrumentation part of application release validation, not an afterthought. Microsoft Learn consistently recommends verifying connection strings, understanding sampling, and testing the real data path into workspace-based tables.
@@ -420,6 +525,13 @@ az webapp config appsettings list \
     --query "[?name=='APPLICATIONINSIGHTS_CONNECTION_STRING']"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az webapp config appsettings list` | List application settings of the web app. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 Review workspace linkage during component creation and migration.
 
 ```bash
@@ -428,6 +540,13 @@ az monitor app-insights component show \
     --resource-group $RG \
     --query "{workspaceResourceId:workspaceResourceId,applicationType:applicationType}"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
 
 Document whether your SDK uses adaptive or fixed sampling and what operators should expect in KQL.
 
@@ -438,6 +557,13 @@ az monitor app-insights component show \
     --query "{samplingPercentage:samplingPercentage}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 Create a validation query pack for each service so teams can quickly confirm requests, dependencies, traces, and exceptions after deployment.
 
 ```bash
@@ -446,6 +572,13 @@ az monitor log-analytics workspace show \
     --workspace-name $WORKSPACE_NAME \
     --query "{customerId:customerId,id:id}"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
 
 Finally, test endpoint reachability during network changes. Telemetry is often the first thing blocked and the last thing remembered.
 

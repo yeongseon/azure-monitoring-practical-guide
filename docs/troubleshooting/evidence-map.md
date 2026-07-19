@@ -169,6 +169,18 @@ az vm extension list \
     --vm-name $VM_NAME
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `az monitor metrics alert list` | List metric alert rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `az monitor data-collection rule association list` | List data collection rule associations. |
+| `--resource` | Target resource ID or name for the operation. |
+| `az vm extension list` | List extensions installed on a virtual machine. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--vm-name` | Name of the virtual machine. |
+
 ## Change-History Evidence
 
 Use `AzureActivity` to test whether the incident began immediately after a monitoring configuration, deployment, identity, or networking change. Microsoft Learn troubleshooting guidance repeatedly emphasizes correlating the first missing-data window with recent control-plane writes before assuming a platform outage.

@@ -94,6 +94,12 @@ That is why broad access to observability data should be intentional.
 ```bash
 az role assignment list     --scope "$WORKSPACE_ID"     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az role assignment list` | List role assignments. |
+| `--scope` | Scope the resource applies to. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 Principal                             Role                     Scope
@@ -141,6 +147,14 @@ Interpretation notes:
 ```bash
 az monitor log-analytics workspace show     --resource-group "$RG"     --workspace-name "$WORKSPACE_NAME"     --query "{name:name,publicNetworkAccessForIngestion:publicNetworkAccessForIngestion,publicNetworkAccessForQuery:publicNetworkAccessForQuery,features:features}"     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -257,6 +271,14 @@ az resource list \
     --query "[?contains(id, '$AMPLS_NAME')].{name:name,linkedResourceId:properties.linkedResourceId,provisioningState:properties.provisioningState}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az resource list` | List Azure resources. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--resource-type` | Azure resource type. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 Name                                LinkedResourceId                                                                                                                  ProvisioningState
@@ -277,6 +299,15 @@ az monitor log-analytics workspace update \
     --query-access "Disabled" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--ingestion-access` | Controls ingestion access to the workspace. |
+| `--query-access` | Controls query access to the workspace. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -290,6 +321,13 @@ Example output:
 ```bash
 az resource show     --ids "$AMPLS_ID"     --query "{name:name,type:type,location:location}"     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az resource show` | Show a generic Azure resource. |
+| `--ids` | One or more resource IDs to target. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -305,6 +343,12 @@ az network private-endpoint-connection list \
     --id "$AMPLS_ID" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az network private-endpoint-connection list` | List private endpoint connections. |
+| `--id` | Resource ID to target. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 Name                                            PrivateLinkServiceConnectionState    ProvisioningState
@@ -320,6 +364,13 @@ Interpretation notes:
 ```bash
 az monitor log-analytics query     --workspace "$WORKSPACE_ID"     --analytics-query "AzureActivity | where TimeGenerated > ago(1d) | summarize Events=count() by Caller, CategoryValue | top 10 by Events desc"     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 Caller                          CategoryValue     Events

@@ -59,6 +59,13 @@ az monitor data-collection rule list \
     --query "[].{name:name,location:location,kind:kind,dataFlows:length(properties.dataFlows)}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule list` | List data collection rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name         Location    Kind    DataFlows
@@ -72,6 +79,13 @@ az monitor data-collection rule association list-by-resource \
     --query "[].{name:name,ruleId:properties.dataCollectionRuleId}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association list-by-resource` | List data collection rule associations for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                    RuleId
@@ -89,6 +103,15 @@ az monitor data-collection rule create \
     --rule-file $DCR_FILE \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule create` | Create a data collection rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--location` | Azure region for the resource. |
+| `--rule-file` | Path to the file defining the rule. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -106,6 +129,14 @@ az monitor data-collection rule update \
     --rule-file $DCR_FILE \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule update` | Update a data collection rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--rule-file` | Path to the file defining the rule. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -123,6 +154,14 @@ az monitor data-collection rule show \
     --query "{streams:properties.dataFlows[].streams,destinations:properties.destinations.logAnalytics[].workspaceResourceId,dataSources:keys(properties.dataSources)}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -150,6 +189,14 @@ az monitor data-collection rule association create \
     --rule-id "/subscriptions/<subscription-id>/resourceGroups/rg-monitoring-prod/providers/Microsoft.Insights/dataCollectionRules/dcr-vm-perf" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association create` | Associate a data collection rule with a resource. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--rule-id` | Identifier of the alert rule. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -168,6 +215,14 @@ az monitor data-collection rule association show \
     --query "{name:name,ruleId:properties.dataCollectionRuleId}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association show` | Show a data collection rule association. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -184,6 +239,13 @@ az monitor log-analytics query \
     --analytics-query "Perf | where Computer == 'vm-prod-01' and TimeGenerated > ago(30m) | summarize Samples=count() by ObjectName, CounterName | top 10 by Samples desc" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 ObjectName    CounterName                    Samples
@@ -202,6 +264,13 @@ az monitor data-collection rule association list-by-resource \
     --query "[].{name:name,ruleId:properties.dataCollectionRuleId}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association list-by-resource` | List data collection rule associations for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                    RuleId
@@ -216,6 +285,14 @@ az monitor data-collection rule show \
     --query "{name:name,location:location,provisioningState:provisioningState}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -232,6 +309,13 @@ az vm extension list \
     --query "[].{name:name,publisher:publisher,type:type,provisioningState:provisioningState}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az vm extension list` | List extensions installed on a virtual machine. |
+| `--ids` | One or more resource IDs to target. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                           Publisher                    Type                      ProvisioningState
@@ -247,6 +331,12 @@ az monitor data-collection rule association delete \
     --name "dcr-assoc-vm-prod-01" \
     --resource $VM_ID
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association delete` | Remove a data collection rule association. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
 Delete a faulty DCR only after associations are removed:
 ```bash
 az monitor data-collection rule delete \
@@ -254,6 +344,13 @@ az monitor data-collection rule delete \
     --resource-group $RG \
     --yes
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule delete` | Delete a data collection rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--yes` | Skips the confirmation prompt. |
 Common problems:
 - No data in `Perf`
     - Verify Azure Monitor Agent is installed and healthy on the VM.
@@ -275,6 +372,12 @@ az monitor data-collection rule list \
     --query "[].{name:name,resourceGroup:resourceGroup,location:location}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule list` | List data collection rules. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Useful automation patterns:
 - Store every DCR JSON file with pull-request review.
 - Reapply DCRs from CI after approved changes.

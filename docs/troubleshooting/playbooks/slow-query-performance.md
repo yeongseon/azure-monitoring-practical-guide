@@ -76,6 +76,13 @@ flowchart TD
         --query "{id:id,customerId:customerId,sku:sku.name,retentionInDays:retentionInDays,publicNetworkAccessForQuery:publicNetworkAccessForQuery}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--workspace-name` | Name of the Log Analytics workspace. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 2. **Run a narrow control query against the workspace**
 
     ```bash
@@ -84,6 +91,13 @@ flowchart TD
         --analytics-query "Heartbeat | where TimeGenerated > ago(15m) | summarize LastHeartbeat=max(TimeGenerated) by Computer | take 5" \
         --timespan "PT15M"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--analytics-query` | Kusto (KQL) query to execute. |
+    | `--timespan` | Time range for the query. |
 
 3. **Replay recent usage for the heaviest tables**
 
@@ -94,6 +108,13 @@ flowchart TD
         --timespan "P1D"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--analytics-query` | Kusto (KQL) query to execute. |
+    | `--timespan` | Time range for the query. |
+
 4. **If the query powers an alert, inspect the scheduled query rule cadence**
 
     ```bash
@@ -102,6 +123,13 @@ flowchart TD
         --name "$ALERT_RULE_NAME" \
         --output json
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor scheduled-query show` | Show a scheduled query alert rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--output` | Output format for the result. |
 
 5. **Inspect table settings when one hot table dominates the query path**
 
@@ -113,12 +141,25 @@ flowchart TD
         --output json
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics workspace table show` | Show a table in a Log Analytics workspace. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--workspace-name` | Name of the Log Analytics workspace. |
+    | `--name` | Name of the resource. |
+    | `--output` | Output format for the result. |
+
 6. **Check whether Azure Monitor currently has a service-health event**
 
     ```bash
     az servicehealth events list \
         --query "[?contains(title, 'Azure Monitor') || contains(title, 'Log Analytics')].{title:title,status:status}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az servicehealth events list` | List Azure Service Health events. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 ## 5. Evidence to Collect
 
@@ -201,6 +242,13 @@ az monitor log-analytics workspace show \
     --query "{id:id,name:name,sku:sku.name,retentionInDays:retentionInDays,dailyQuotaGb:workspaceCapping.dailyQuotaGb,publicNetworkAccessForQuery:publicNetworkAccessForQuery}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+
 **Sample Output (sanitized)**
 
 ```json
@@ -225,6 +273,13 @@ az monitor log-analytics query \
     --timespan "PT15M"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--timespan` | Time range for the query. |
+
 **Sample Output (sanitized)**
 
 ```text
@@ -246,6 +301,13 @@ az monitor log-analytics query \
     --timespan "PT6H"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--timespan` | Time range for the query. |
+
 **Sample Output (sanitized)**
 
 ```text
@@ -266,6 +328,13 @@ az monitor scheduled-query show \
     --name "$ALERT_RULE_NAME" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query show` | Show a scheduled query alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
 
 **Sample Output (sanitized)**
 
@@ -370,10 +439,22 @@ az monitor log-analytics query \
     --timespan "PT30M"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--timespan` | Time range for the query. |
+
 ```bash
 az servicehealth events list \
     --query "[?contains(summary, 'Azure Monitor') || contains(summary, 'Log Analytics')].{summary:summary,status:status}"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az servicehealth events list` | List Azure Service Health events. |
+| `--query` | JMESPath projection of the fields to return. |
 
 Consistent slowness for trivial control queries plus service-health evidence is the strongest H4 signal.
 

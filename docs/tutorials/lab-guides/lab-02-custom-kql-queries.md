@@ -47,6 +47,14 @@ export WORKSPACE_ID=$(az monitor log-analytics workspace show \
     --output tsv)
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ## Architecture Diagram
 
 <!-- diagram-id: architecture-diagram -->
@@ -80,6 +88,13 @@ az monitor log-analytics query \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
+
 What to look for:
 
 - `Heartbeat` confirms agent connectivity.
@@ -95,6 +110,13 @@ az monitor log-analytics query \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
+
 Why this query matters:
 
 1. It narrows the scope to one counter family.
@@ -109,6 +131,13 @@ az monitor log-analytics query \
     --analytics-query "let LastHeartbeat = Heartbeat | summarize LastSeen=max(TimeGenerated) by Computer; let RecentCpu = Perf | where TimeGenerated > ago(1h) | where ObjectName == 'Processor' and CounterName == '% Processor Time' | summarize AvgCpu=avg(CounterValue) by Computer; LastHeartbeat | join kind=leftouter RecentCpu on Computer | project Computer, LastSeen, AvgCpu | order by LastSeen desc" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 This pattern is useful for distinguishing a silent VM from a healthy but busy VM.
 
@@ -131,6 +160,15 @@ az resource create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az resource create` | Create a generic Azure resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--resource-type` | Azure resource type. |
+| `--name` | Name of the resource. |
+| `--api-version` | REST API version to target. |
+| `--properties` | JSON properties applied to the resource. |
+
 Read the function back:
 
 ```bash
@@ -143,6 +181,16 @@ az resource show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az resource show` | Show a generic Azure resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--resource-type` | Azure resource type. |
+| `--name` | Name of the resource. |
+| `--api-version` | REST API version to target. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ### Step 5: Run the saved function from a query
 
 ```bash
@@ -151,6 +199,13 @@ az monitor log-analytics query \
     --analytics-query "RecentPerfSignals | summarize PeakCpu=max(MaxCpu), AverageCpu=avg(AvgCpu) by Computer" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 This proves the alias can be reused in later workbooks and scheduled query rules.
 
@@ -164,6 +219,13 @@ az monitor log-analytics query \
     --analytics-query "declare query_parameters(TargetComputer:string='vmmonlab01', CpuThreshold:real=60); Perf | where TimeGenerated > ago(1h) | where Computer == TargetComputer | where ObjectName == 'Processor' and CounterName == '% Processor Time' | summarize AvgCpu=avg(CounterValue), MaxCpu=max(CounterValue) by Computer | extend ThresholdBreached = MaxCpu > CpuThreshold" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 Try the same pattern with a time window parameter:
 
@@ -183,6 +245,13 @@ az monitor log-analytics query \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
+
 Use this design pattern when you want one query to serve multiple environments without editing the body each time.
 
 ### Step 8: Export query logic for source control
@@ -195,6 +264,15 @@ az resource show \
     --api-version "2022-10-01" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az resource show` | Show a generic Azure resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--resource-type` | Azure resource type. |
+| `--name` | Name of the resource. |
+| `--api-version` | REST API version to target. |
+| `--output` | Output format for the result. |
 
 Store the JSON output in source control so function changes are reviewed like code.
 
@@ -212,6 +290,14 @@ az resource list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az resource list` | List Azure resources. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--resource-type` | Azure resource type. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 2. Validate that the function alias executes without errors.
 
 ```bash
@@ -220,6 +306,13 @@ az monitor log-analytics query \
     --analytics-query "RecentPerfSignals | take 5" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 3. Validate that the parameterized query returns rows and a Boolean threshold result.
 
@@ -230,6 +323,13 @@ az monitor log-analytics query \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
+
 4. Validate that the workspace still contains recent source data.
 
 ```bash
@@ -238,6 +338,13 @@ az monitor log-analytics query \
     --analytics-query "union Heartbeat, Perf | where TimeGenerated > ago(30m) | summarize Records=count() by Type" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 Validation is complete when the saved search exists, the alias runs successfully, parameterized queries execute cleanly, and the base tables still contain recent telemetry.
 
@@ -252,6 +359,14 @@ az resource delete \
     --name "$WORKSPACE_NAME/$SAVED_SEARCH_NAME" \
     --api-version "2022-10-01"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az resource delete` | Delete a generic Azure resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--resource-type` | Azure resource type. |
+| `--name` | Name of the resource. |
+| `--api-version` | REST API version to target. |
 
 If you want to preserve the function for Lab 05 workbook reuse, skip this step.
 

@@ -46,6 +46,13 @@ az monitor metrics alert show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert show` | Show a metric alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
+
 Scheduled query alert:
 
 ```bash
@@ -54,6 +61,13 @@ az monitor scheduled-query show \
     --name "$ALERT_RULE_NAME" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query show` | Show a scheduled query alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
 
 - Good signal: rule is enabled, scope is correct, and window/frequency match the expected symptom.
 - Bad signal: rule is disabled, scoped to the wrong resource, or uses a window that misses the event.
@@ -91,6 +105,12 @@ az monitor action-group list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group list` | List action groups. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
+
 - Good signal: the expected action group is attached and active.
 - Bad signal: wrong action group, missing receiver, or outdated endpoint.
 
@@ -101,6 +121,12 @@ az monitor alert-processing-rule list \
     --resource-group "$RG" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor alert-processing-rule list` | List alert processing rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 
 - Good signal: no rule suppresses the affected scope or time window.
 - Bad signal: maintenance or routing rules suppress notifications.

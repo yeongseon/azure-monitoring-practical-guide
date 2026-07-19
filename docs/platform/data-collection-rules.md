@@ -85,6 +85,15 @@ az monitor data-collection rule create \
     --rule-file "$DCR_FILE" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule create` | Create a data collection rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--location` | Azure region for the resource. |
+| `--rule-file` | Path to the file defining the rule. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -112,6 +121,15 @@ az monitor data-collection rule association create \
     --description "Associate Linux baseline telemetry collection with vm-app-01." \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association create` | Associate a data collection rule with a resource. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--rule-id` | Identifier of the alert rule. |
+| `--description` | Human-readable description of the resource. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -146,6 +164,12 @@ The goal is pre-ingestion shaping, not replacing KQL investigation.
 ```bash
 az monitor data-collection rule association list     --resource "$RESOURCE_ID"     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association list` | List data collection rule associations. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 [
@@ -248,6 +272,13 @@ DCR configuration choices directly affect cost, fidelity, and maintainability.
 ```bash
 az monitor data-collection rule show     --name "$DCR_NAME"     --resource-group "$RG"     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -278,6 +309,13 @@ Example output:
 ```bash
 az monitor log-analytics query     --workspace "$WORKSPACE_ID"     --analytics-query "Syslog | where TimeGenerated > ago(30m) | summarize Records=count() by Facility, SeverityLevel | top 10 by Records desc"     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 Facility     SeverityLevel    Records
