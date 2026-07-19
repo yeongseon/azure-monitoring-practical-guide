@@ -557,7 +557,7 @@ az monitor diagnostic-settings create \
 | `az monitor diagnostic-settings create` | Create a diagnostic setting. |
 | `--name` | Name of the resource. |
 | `--resource` | Target resource ID or name for the operation. |
-| `--workspace` | Log Analytics workspace ID for the query. |
+| `--workspace` | Log Analytics workspace name or resource ID that receives the logs. |
 | `--logs` | Log categories or settings to collect. |
 | `--metrics` | Metric categories to collect. |
 | `--output` | Output format for the result. |

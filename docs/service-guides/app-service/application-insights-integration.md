@@ -161,7 +161,7 @@ az monitor app-insights component create \
 | `--app` | Application Insights component name. |
 | `--location` | Azure region for the resource. |
 | `--resource-group` | Resource group that contains the resource. |
-| `--workspace` | Log Analytics workspace ID for the query. |
+| `--workspace` | Log Analytics workspace resource ID that backs the component. |
 | `--application-type` | Application Insights application type. |
 
 Sample output:

@@ -86,7 +86,7 @@ az monitor data-collection rule association create \
 | `--output` | Output format for the result. |
 | `az monitor data-collection rule association create` | Associate a data collection rule with a resource. |
 | `--name` | Name of the resource. |
-| `--rule-id` | Identifier of the alert rule. |
+| `--rule-id` | Resource ID of the data collection rule to associate. |
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
@@ -205,7 +205,7 @@ az monitor scheduled-query create \
 | `--resource-group` | Resource group that contains the resource. |
 | `--name` | Name of the resource. |
 | `--short-name` | Short name used in alert notifications. |
-| `--action` | Action group or webhook to invoke when the alert fires. |
+| `--action` | Receiver or action added to the action group. |
 | `--output` | Output format for the result. |
 | `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
 | `--name` | Name of the resource. |
@@ -275,7 +275,7 @@ az monitor app-insights component show \
 | `--app` | Application Insights component name. |
 | `--location` | Azure region for the resource. |
 | `--resource-group` | Resource group that contains the resource. |
-| `--workspace` | Log Analytics workspace ID for the query. |
+| `--workspace` | Log Analytics workspace resource ID that backs the component. |
 | `--application-type` | Application Insights application type. |
 | `--kind` | Resource kind. |
 | `--output` | Output format for the result. |

@@ -239,7 +239,7 @@ az monitor log-analytics workspace table update \
 | `--resource-group` | Resource group that contains the resource. |
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--name` | Name of the resource. |
-| `--plan` | App Service plan for the web app. |
+| `--plan` | Table plan (Analytics or Basic) for the Log Analytics table. |
 | `--retention-time` | Data retention period in days. |
 | `--total-retention-time` | Total retention period including archive, in days. |
 | `--output` | Output format for the result. |

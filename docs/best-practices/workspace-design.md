@@ -206,7 +206,7 @@ az monitor app-insights component show \
 | `--app` | Application Insights component name. |
 | `--location` | Azure region for the resource. |
 | `--resource-group` | Resource group that contains the resource. |
-| `--workspace` | Log Analytics workspace ID for the query. |
+| `--workspace` | Log Analytics workspace resource ID that backs the component. |
 | `--application-type` | Application Insights application type. |
 | `--kind` | Resource kind. |
 | `--output` | Output format for the result. |
@@ -267,7 +267,7 @@ az monitor diagnostic-settings list \
 | `az monitor diagnostic-settings create` | Create a diagnostic setting. |
 | `--name` | Name of the resource. |
 | `--resource` | Target resource ID or name for the operation. |
-| `--workspace` | Log Analytics workspace ID for the query. |
+| `--workspace` | Log Analytics workspace name or resource ID that receives the logs. |
 | `--logs` | Log categories or settings to collect. |
 | `--metrics` | Metric categories to collect. |
 | `--output` | Output format for the result. |

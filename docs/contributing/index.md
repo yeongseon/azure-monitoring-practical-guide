@@ -278,7 +278,6 @@ az monitor log-analytics workspace create -g $RG -n $WORKSPACE_NAME  # ❌ Don't
 | `--resource-group` | Resource group that contains the resource. |
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--location` | Azure region for the resource. |
-| `az monitor log-analytics workspace create` | Create a Log Analytics workspace. |
 
 ### Variables
 | Variable | Description | Example |

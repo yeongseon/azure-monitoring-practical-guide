@@ -116,7 +116,7 @@ az monitor action-group create \
 | `--name` | Name of the resource. |
 | `--resource-group` | Resource group that contains the resource. |
 | `--short-name` | Short name used in alert notifications. |
-| `--action` | Action group or webhook to invoke when the alert fires. |
+| `--action` | Receiver or action added to the action group. |
 | `--output` | Output format for the result. |
 
 Capture the action group resource ID:

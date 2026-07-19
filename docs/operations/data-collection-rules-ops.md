@@ -195,7 +195,7 @@ az monitor data-collection rule association create \
 | `az monitor data-collection rule association create` | Associate a data collection rule with a resource. |
 | `--name` | Name of the resource. |
 | `--resource` | Target resource ID or name for the operation. |
-| `--rule-id` | Identifier of the alert rule. |
+| `--rule-id` | Resource ID of the data collection rule to associate. |
 | `--output` | Output format for the result. |
 Expected output:
 ```json

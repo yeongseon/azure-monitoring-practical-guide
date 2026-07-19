@@ -98,7 +98,7 @@ az role assignment list     --scope "$WORKSPACE_ID"     --output table
 | Command | Purpose |
 | --- | --- |
 | `az role assignment list` | List role assignments. |
-| `--scope` | Scope the resource applies to. |
+| `--scope` | Azure resource scope the operation applies to. |
 | `--output` | Output format for the result. |
 Example output:
 ```text

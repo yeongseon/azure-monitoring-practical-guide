@@ -468,7 +468,7 @@ Interpretation:
     | `az monitor data-collection rule association create` | Associate a data collection rule with a resource. |
     | `--name` | Name of the resource. |
     | `--resource` | Target resource ID or name for the operation. |
-    | `--rule-id` | Identifier of the alert rule. |
+    | `--rule-id` | Resource ID of the data collection rule to associate. |
 
 3. Restore diagnostic settings on a resource whose platform logs stopped flowing.
 
@@ -486,7 +486,7 @@ Interpretation:
     | `az monitor diagnostic-settings create` | Create a diagnostic setting. |
     | `--name` | Name of the resource. |
     | `--resource` | Target resource ID or name for the operation. |
-    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--workspace` | Log Analytics workspace name or resource ID that receives the logs. |
     | `--logs` | Log categories or settings to collect. |
     | `--metrics` | Metric categories to collect. |
 
@@ -561,7 +561,7 @@ az monitor log-analytics workspace table update \
 | `--resource-group` | Resource group that contains the resource. |
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--name` | Name of the resource. |
-| `--plan` | App Service plan for the web app. |
+| `--plan` | Table plan (Analytics or Basic) for the Log Analytics table. |
 
 Keep diagnostic settings explicit and auditable.
 

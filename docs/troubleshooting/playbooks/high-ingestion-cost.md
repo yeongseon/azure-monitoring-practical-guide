@@ -481,7 +481,7 @@ Interpretation:
     | `az monitor diagnostic-settings create` | Create a diagnostic setting. |
     | `--name` | Name of the resource. |
     | `--resource` | Target resource ID or name for the operation. |
-    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--workspace` | Log Analytics workspace name or resource ID that receives the logs. |
     | `--logs` | Log categories or settings to collect. |
     | `--metrics` | Metric categories to collect. |
 
@@ -517,7 +517,7 @@ Interpretation:
     | `--resource-group` | Resource group that contains the resource. |
     | `--workspace-name` | Name of the Log Analytics workspace. |
     | `--name` | Name of the resource. |
-    | `--plan` | App Service plan for the web app. |
+    | `--plan` | Table plan (Analytics or Basic) for the Log Analytics table. |
 
 4. Reintroduce or increase telemetry sampling for a high-volume application.
 

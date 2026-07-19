@@ -225,7 +225,7 @@ az role assignment list \
 | Command | Purpose |
 | --- | --- |
 | `az role assignment list` | List role assignments. |
-| `--scope` | Scope the resource applies to. |
+| `--scope` | Azure resource scope the operation applies to. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
 Expected output:
