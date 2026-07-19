@@ -184,6 +184,8 @@ nav:
       - troubleshooting/playbooks/agent-not-reporting.md
       - troubleshooting/playbooks/aks-container-insights-issues.md
       - troubleshooting/playbooks/application-insights-gaps.md
+    - Lab Guides:
+      - troubleshooting/lab-guides/index.md
     - KQL Queries:
       - troubleshooting/kql/index.md
       - Application Insights:
