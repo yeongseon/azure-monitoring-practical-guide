@@ -115,6 +115,7 @@ az monitor app-insights component create     --app "$APP_INSIGHTS_NAME"     --lo
 | `--workspace` | Log Analytics workspace resource ID that backs the component. |
 | `--application-type` | Application Insights application type. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -168,6 +169,7 @@ az monitor log-analytics query     --workspace "$WORKSPACE_ID"     --analytics-q
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 cloud_RoleName      Requests    FailureRate    P95DurationMs
@@ -251,6 +253,7 @@ az monitor log-analytics query     --workspace "$WORKSPACE_ID"     --analytics-q
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 target                         type    Calls    Failures    P95Ms
@@ -306,6 +309,7 @@ az monitor app-insights component show     --app "$APP_INSIGHTS_NAME"     --reso
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -349,6 +353,7 @@ az monitor scheduled-query create \
 | `--severity` | Severity level of the alert. |
 | `--skip-query-validation` | Skips server-side validation of the query. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {

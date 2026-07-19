@@ -67,6 +67,7 @@ az monitor log-analytics workspace show \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -94,6 +95,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 DataType          IngestedGB
@@ -119,6 +121,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 DataType          TimeGenerated           IngestedGB
@@ -147,6 +150,7 @@ az monitor log-analytics workspace update \
 | `--retention-time` | Data retention period in days. |
 | `--quota` | Daily ingestion quota for the workspace. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -176,6 +180,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 DataType          IngestedGB
@@ -205,6 +210,7 @@ az consumption usage list \
 | `--end-date` | End of the query or billing time range. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 InstanceName       Cost    Currency
@@ -227,6 +233,7 @@ az monitor log-analytics workspace show \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -250,6 +257,7 @@ az consumption usage list \
 | `--end-date` | End of the query or billing time range. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 InstanceName        Cost    Meter
@@ -275,6 +283,7 @@ az monitor log-analytics workspace show \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -297,6 +306,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 IsBillable    TotalMB
@@ -318,6 +328,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 DataType          IngestedGB
@@ -347,6 +358,7 @@ az monitor log-analytics workspace update \
 | `--retention-time` | Data retention period in days. |
 | `--quota` | Daily ingestion quota for the workspace. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -387,6 +399,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Useful automation patterns:
 - Schedule a daily ingestion report from the `Usage` table.
 - Alert when one table grows beyond its normal baseline.

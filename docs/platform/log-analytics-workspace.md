@@ -119,6 +119,7 @@ az monitor log-analytics workspace create \
 | `--sku` | SKU tier of the resource. |
 | `--retention-time` | Data retention period in days. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -168,6 +169,7 @@ az monitor log-analytics workspace show \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -216,6 +218,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 $Table                 Rows
@@ -343,6 +346,7 @@ az monitor log-analytics workspace update \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--quota` | Daily ingestion quota for the workspace. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -370,6 +374,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 DataType             IngestedGB

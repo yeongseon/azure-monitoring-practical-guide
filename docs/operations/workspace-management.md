@@ -62,6 +62,7 @@ az monitor log-analytics workspace list \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name             Location    Sku       Retention    PublicNetworkAccessForIngestion
@@ -87,6 +88,7 @@ az monitor log-analytics workspace create \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--location` | Azure region for the resource. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -120,6 +122,7 @@ az monitor log-analytics workspace show \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -149,6 +152,7 @@ az monitor log-analytics workspace update \
 | `--retention-time` | Data retention period in days. |
 | `--quota` | Daily ingestion quota for the workspace. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -179,6 +183,7 @@ az monitor log-analytics workspace show \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -206,6 +211,7 @@ az monitor log-analytics workspace show \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -228,6 +234,7 @@ az role assignment list \
 | `--scope` | Azure resource scope the operation applies to. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 PrincipalName               Role                        PrincipalType
@@ -255,6 +262,7 @@ az monitor log-analytics workspace table list \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name                Plan          RetentionInDays
@@ -281,6 +289,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 DataType         TotalGB
@@ -308,6 +317,7 @@ az monitor log-analytics workspace show \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -334,6 +344,7 @@ az monitor log-analytics workspace show \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -363,6 +374,7 @@ az monitor log-analytics workspace update \
 | `--retention-time` | Data retention period in days. |
 | `--quota` | Daily ingestion quota for the workspace. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -387,6 +399,7 @@ az monitor log-analytics workspace list-deleted-workspaces \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name             Location    DeletedDate
@@ -418,6 +431,7 @@ az monitor log-analytics workspace list \
 | `az monitor log-analytics workspace list` | List Log Analytics workspaces. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Typical automation patterns:
 - Run a daily GitHub Actions or Azure DevOps job to export workspace settings.
 - Compare actual settings with a baseline JSON document stored in source control.
