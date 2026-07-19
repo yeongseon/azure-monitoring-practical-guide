@@ -65,6 +65,7 @@ az monitor workbook list \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name                   DisplayName                Location    Kind
@@ -85,6 +86,7 @@ az portal dashboard list \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name                            Location    Tags
@@ -115,6 +117,7 @@ az monitor workbook create \
 | `--kind` | Resource kind. |
 | `--serialized-data` | Serialized JSON payload defining the resource. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -141,6 +144,7 @@ az monitor workbook update \
 | `--resource-group` | Resource group that contains the resource. |
 | `--serialized-data` | Serialized JSON payload defining the resource. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -167,6 +171,7 @@ az monitor workbook show \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -200,6 +205,7 @@ az portal dashboard create \
 | `--input-path` | Path to the input payload file. |
 | `--tags` | Tags applied to the resource. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -230,6 +236,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 ActiveAgents
@@ -252,6 +259,7 @@ az portal dashboard show \
 | `--name` | Name of the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -280,6 +288,7 @@ az monitor workbook list \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name                   DisplayName
@@ -300,6 +309,7 @@ az portal dashboard list \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name                            Location
@@ -322,6 +332,7 @@ az monitor workbook show \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -347,6 +358,7 @@ az monitor workbook delete \
 | `--name` | Name of the resource. |
 | `--resource-group` | Resource group that contains the resource. |
 | `--yes` | Skips the confirmation prompt. |
+
 Delete a broken dashboard:
 ```bash
 az portal dashboard delete \
@@ -359,6 +371,7 @@ az portal dashboard delete \
 | `az portal dashboard delete` | Delete a portal dashboard. |
 | `--resource-group` | Resource group that contains the resource. |
 | `--name` | Name of the resource. |
+
 Common problems:
 - Workbook loads but visual is empty
     - Run the underlying KQL manually and validate parameters.
@@ -386,6 +399,7 @@ az monitor workbook list \
 | `az monitor workbook list` | List workbooks. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Useful automation patterns:
 - Store workbook JSON and dashboard JSON in the repository.
 - Deploy both through CI after pull-request review.

@@ -94,6 +94,7 @@ az monitor data-collection rule create \
 | `--location` | Azure region for the resource. |
 | `--rule-file` | Path to the file defining the rule. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -130,6 +131,7 @@ az monitor data-collection rule association create \
 | `--rule-id` | Resource ID of the data collection rule to associate. |
 | `--description` | Human-readable description of the resource. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -170,6 +172,7 @@ az monitor data-collection rule association list     --resource "$RESOURCE_ID"  
 | `az monitor data-collection rule association list` | List data collection rule associations. |
 | `--resource` | Target resource ID or name for the operation. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 [
@@ -279,6 +282,7 @@ az monitor data-collection rule show     --name "$DCR_NAME"     --resource-group
 | `--name` | Name of the resource. |
 | `--resource-group` | Resource group that contains the resource. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -316,6 +320,7 @@ az monitor log-analytics query     --workspace "$WORKSPACE_ID"     --analytics-q
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 Facility     SeverityLevel    Records

@@ -136,6 +136,7 @@ az monitor log-analytics workspace show \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -195,6 +196,7 @@ az monitor metrics list-definitions \
 | `az monitor metrics list-definitions` | List available metric definitions for a resource. |
 | `--resource` | Target resource ID or name for the operation. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 Name                          Unit       Primary Aggregation Type    Dimensions
@@ -236,6 +238,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 Computer        OSType    LastSeen
@@ -385,6 +388,7 @@ az monitor diagnostic-settings create \
 | `--logs` | Log categories or settings to collect. |
 | `--metrics` | Metric categories to collect. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -420,6 +424,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 $Table                Records

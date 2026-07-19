@@ -100,9 +100,62 @@ def has_following_table(lines: list[str], start_index: int) -> bool:
     return separator.startswith("|") and "---" in separator
 
 
+def find_unterminated_tables(lines: list[str]) -> list[int]:
+    """Return the 1-based line numbers where a house `| Command | Purpose |`
+    table is immediately followed by a non-blank line.
+
+    python-markdown's ``tables`` extension treats the first non-blank line after
+    a table as another table row (a phantom ``<td>...</td>`` cell) unless a blank
+    line terminates the table. Fenced code regions are tracked so that pipe-led
+    lines inside ```` ```kusto ```` blocks (``| where``, ``| summarize``) are not
+    mistaken for table rows.
+
+    >>> ok = ["| Command | Purpose |", "| --- | --- |", "| `az x` | y |", "", "next"]
+    >>> find_unterminated_tables(ok)
+    []
+    >>> bad = ["| Command | Purpose |", "| --- | --- |", "| `az x` | y |", "Example output:"]
+    >>> find_unterminated_tables(bad)
+    [4]
+    >>> eof = ["| Command | Purpose |", "| --- | --- |", "| `az x` | y |"]
+    >>> find_unterminated_tables(eof)
+    []
+    >>> kql = ["```kusto", "AzureActivity", "| where x == 1", "```", "prose"]
+    >>> find_unterminated_tables(kql)
+    []
+    """
+    hits: list[int] = []
+    i = 0
+    n = len(lines)
+    in_fence = False
+    while i < n:
+        if FENCE_PATTERN.match(lines[i]):
+            in_fence = not in_fence
+            i += 1
+            continue
+        if not in_fence and _table_cells(lines[i]) == ["command", "purpose"]:
+            j = i
+            while j < n and lines[j].lstrip().startswith("|"):
+                j += 1
+            if j < n and lines[j].strip() != "":
+                hits.append(j + 1)
+            i = j
+            continue
+        i += 1
+    return hits
+
+
 def validate_file(path: Path) -> list[Finding]:
     lines = path.read_text(encoding="utf-8").splitlines()
     findings: list[Finding] = []
+    for line_no in find_unterminated_tables(lines):
+        findings.append(
+            Finding(
+                path=path,
+                line=line_no,
+                message="Explanation table must be followed by a blank line "
+                "(otherwise the next line is absorbed as a phantom table row).",
+            )
+        )
     in_fence = False
     fence_indent = ""
     block_start = 0

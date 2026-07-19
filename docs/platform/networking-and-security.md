@@ -100,6 +100,7 @@ az role assignment list     --scope "$WORKSPACE_ID"     --output table
 | `az role assignment list` | List role assignments. |
 | `--scope` | Azure resource scope the operation applies to. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 Principal                             Role                     Scope
@@ -155,6 +156,7 @@ az monitor log-analytics workspace show     --resource-group "$RG"     --workspa
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -279,6 +281,7 @@ az resource list \
 | `--resource-type` | Azure resource type. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 Name                                LinkedResourceId                                                                                                                  ProvisioningState
@@ -308,6 +311,7 @@ az monitor log-analytics workspace update \
 | `--ingestion-access` | Controls ingestion access to the workspace. |
 | `--query-access` | Controls query access to the workspace. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -328,6 +332,7 @@ az resource show     --ids "$AMPLS_ID"     --query "{name:name,type:type,locatio
 | `--ids` | One or more resource IDs to target. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -349,6 +354,7 @@ az network private-endpoint-connection list \
 | `az network private-endpoint-connection list` | List private endpoint connections. |
 | `--id` | Resource ID to target. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 Name                                            PrivateLinkServiceConnectionState    ProvisioningState
@@ -371,6 +377,7 @@ az monitor log-analytics query     --workspace "$WORKSPACE_ID"     --analytics-q
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 Caller                          CategoryValue     Events

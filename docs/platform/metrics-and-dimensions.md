@@ -93,6 +93,7 @@ az monitor metrics list-definitions     --resource "$RESOURCE_ID"     --output t
 | `az monitor metrics list-definitions` | List available metric definitions for a resource. |
 | `--resource` | Target resource ID or name for the operation. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 Name                      Unit       Primary Aggregation Type    Dimensions
@@ -162,6 +163,7 @@ az monitor metrics list \
 | `--dimension` | Dimension filter applied to the metric. |
 | `--top` | Maximum number of results to return. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -232,6 +234,7 @@ az monitor metrics list \
 | `--aggregation` | Aggregation applied to the metric values. |
 | `--filter` | OData filter applied to the results. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 Timestamp                    Total
@@ -374,6 +377,7 @@ az monitor metrics list \
 | `--orderby` | Ordering expression for the results. |
 | `--top` | Maximum number of results to return. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 Instance             Timestamp                    Total
@@ -404,6 +408,7 @@ az monitor metrics alert create     --name "alert-app-http5xx"     --resource-gr
 | `--severity` | Severity level of the alert. |
 | `--description` | Human-readable description of the resource. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -435,6 +440,7 @@ az monitor metrics list \
 | `--aggregation` | Aggregation applied to the metric values. |
 | `--top` | Maximum number of results to return. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 Timestamp                    Maximum

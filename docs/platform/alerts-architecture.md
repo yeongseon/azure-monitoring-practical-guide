@@ -145,6 +145,7 @@ az monitor metrics alert create \
 | `--severity` | Severity level of the alert. |
 | `--description` | Human-readable description of the resource. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -208,6 +209,7 @@ az monitor action-group create \
 | `--short-name` | Short name used in alert notifications. |
 | `--action` | Receiver or action added to the action group. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -260,6 +262,7 @@ az monitor scheduled-query create \
 | `--skip-query-validation` | Skips server-side validation of the query. |
 | `--description` | Human-readable description of the resource. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -368,6 +371,7 @@ az monitor metrics alert show \
 | `--name` | Name of the resource. |
 | `--resource-group` | Resource group that contains the resource. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -393,6 +397,7 @@ az monitor action-group show \
 | `--name` | Name of the resource. |
 | `--resource-group` | Resource group that contains the resource. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {

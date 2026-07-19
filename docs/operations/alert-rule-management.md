@@ -62,6 +62,7 @@ az monitor metrics alert list \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name                    Enabled    Severity    Scopes
@@ -83,6 +84,7 @@ az monitor action-group show \
 | `--ids` | One or more resource IDs to target. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -121,6 +123,7 @@ az monitor metrics alert create \
 | `--action` | Action group or webhook to invoke when the alert fires. |
 | `--description` | Human-readable description of the resource. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -169,6 +172,7 @@ az monitor scheduled-query create \
 | `--action-groups` | Action groups notified when the alert fires. |
 | `--description` | Human-readable description of the resource. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -198,6 +202,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Count
@@ -224,6 +229,7 @@ az monitor metrics alert update \
 | `--description` | Human-readable description of the resource. |
 | `--enabled` | Whether the resource is enabled. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -248,6 +254,7 @@ az monitor metrics alert update \
 | `--resource-group` | Resource group that contains the resource. |
 | `--enabled` | Whether the resource is enabled. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -274,6 +281,7 @@ az monitor metrics alert show \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -300,6 +308,7 @@ az monitor activity-log list \
 | `--offset` | Time offset for the query window. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Time                         Status     Operation
@@ -323,6 +332,7 @@ az monitor metrics alert list \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name                    Enabled    Severity
@@ -346,6 +356,7 @@ az monitor scheduled-query show \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -374,6 +385,7 @@ az monitor metrics alert update \
 | `--resource-group` | Resource group that contains the resource. |
 | `--enabled` | Whether the resource is enabled. |
 | `--output` | Output format for the result. |
+
 Delete a faulty scheduled query rule if the definition itself is wrong:
 ```bash
 az monitor scheduled-query delete \
@@ -388,6 +400,7 @@ az monitor scheduled-query delete \
 | `--name` | Name of the resource. |
 | `--resource-group` | Resource group that contains the resource. |
 | `--yes` | Skips the confirmation prompt. |
+
 Common problems:
 - Alert never fires
     - Check whether the metric namespace and scope match the target resource.
@@ -411,6 +424,7 @@ az monitor metrics alert list \
 | `az monitor metrics alert list` | List metric alert rules. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Useful automation patterns:
 - Export alert definitions nightly and store them in source control.
 - Run lint checks for naming, severity, and action group presence.

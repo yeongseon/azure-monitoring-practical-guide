@@ -66,6 +66,7 @@ az monitor data-collection rule list \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name         Location    Kind    DataFlows
@@ -86,6 +87,7 @@ az monitor data-collection rule association list-by-resource \
 | `--resource` | Target resource ID or name for the operation. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name                    RuleId
@@ -112,6 +114,7 @@ az monitor data-collection rule create \
 | `--location` | Azure region for the resource. |
 | `--rule-file` | Path to the file defining the rule. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -137,6 +140,7 @@ az monitor data-collection rule update \
 | `--resource-group` | Resource group that contains the resource. |
 | `--rule-file` | Path to the file defining the rule. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -162,6 +166,7 @@ az monitor data-collection rule show \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -197,6 +202,7 @@ az monitor data-collection rule association create \
 | `--resource` | Target resource ID or name for the operation. |
 | `--rule-id` | Resource ID of the data collection rule to associate. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -223,6 +229,7 @@ az monitor data-collection rule association show \
 | `--resource` | Target resource ID or name for the operation. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -246,6 +253,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 ObjectName    CounterName                    Samples
@@ -271,6 +279,7 @@ az monitor data-collection rule association list-by-resource \
 | `--resource` | Target resource ID or name for the operation. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name                    RuleId
@@ -293,6 +302,7 @@ az monitor data-collection rule show \
 | `--resource-group` | Resource group that contains the resource. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```json
 {
@@ -316,6 +326,7 @@ az vm extension list \
 | `--ids` | One or more resource IDs to target. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Expected output:
 ```text
 Name                           Publisher                    Type                      ProvisioningState
@@ -337,6 +348,7 @@ az monitor data-collection rule association delete \
 | `az monitor data-collection rule association delete` | Remove a data collection rule association. |
 | `--name` | Name of the resource. |
 | `--resource` | Target resource ID or name for the operation. |
+
 Delete a faulty DCR only after associations are removed:
 ```bash
 az monitor data-collection rule delete \
@@ -351,6 +363,7 @@ az monitor data-collection rule delete \
 | `--name` | Name of the resource. |
 | `--resource-group` | Resource group that contains the resource. |
 | `--yes` | Skips the confirmation prompt. |
+
 Common problems:
 - No data in `Perf`
     - Verify Azure Monitor Agent is installed and healthy on the VM.
@@ -378,6 +391,7 @@ az monitor data-collection rule list \
 | `az monitor data-collection rule list` | List data collection rules. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Useful automation patterns:
 - Store every DCR JSON file with pull-request review.
 - Reapply DCRs from CI after approved changes.

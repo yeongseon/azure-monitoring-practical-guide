@@ -191,6 +191,7 @@ az monitor log-analytics workspace show \
 | `--workspace-name` | Name of the Log Analytics workspace. |
 | `--query` | JMESPath projection of the fields to return. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -225,6 +226,7 @@ az monitor metrics list \
 | `--aggregation` | Aggregation applied to the metric values. |
 | `--top` | Maximum number of results to return. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -279,6 +281,7 @@ az monitor log-analytics query \
 | `--workspace` | Log Analytics workspace ID for the query. |
 | `--analytics-query` | Kusto (KQL) query to execute. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```text
 CategoryValue           Events
@@ -331,6 +334,7 @@ az monitor diagnostic-settings list \
 | `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
 | `--resource` | Target resource ID or name for the operation. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 [
@@ -526,6 +530,7 @@ az monitor log-analytics workspace create \
 | `--sku` | SKU tier of the resource. |
 | `--retention-time` | Data retention period in days. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -561,6 +566,7 @@ az monitor diagnostic-settings create \
 | `--logs` | Log categories or settings to collect. |
 | `--metrics` | Metric categories to collect. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
@@ -612,6 +618,7 @@ az monitor metrics alert create \
 | `--evaluation-frequency` | How often the alert rule is evaluated. |
 | `--severity` | Severity level of the alert. |
 | `--output` | Output format for the result. |
+
 Example output:
 ```json
 {
