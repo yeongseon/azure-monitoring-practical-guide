@@ -75,6 +75,28 @@ az monitor data-collection rule association create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule create` | Create a data collection rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--location` | Azure region for the resource. |
+| `--name` | Name of the resource. |
+| `--data-flows` | Data flow mappings from sources to destinations. |
+| `--destinations` | Destinations that receive collected data. |
+| `--output` | Output format for the result. |
+| `az monitor data-collection rule association create` | Associate a data collection rule with a resource. |
+| `--name` | Name of the resource. |
+| `--rule-id` | Resource ID of the data collection rule to associate. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+| `--resource` | Target resource ID or name for the operation. |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -111,6 +133,17 @@ az resource show \
     --query "{name:name,type:type,tags:tags}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az tag create` | Create or update tags on a resource. |
+| `--resource-id` | Resource ID the setting applies to. |
+| `--tags` | Tags applied to the resource. |
+| `--output` | Output format for the result. |
+| `az resource show` | Show a generic Azure resource. |
+| `--ids` | One or more resource IDs to target. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -166,6 +199,34 @@ az monitor scheduled-query create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group create` | Create an action group for alert notifications. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--short-name` | Short name used in alert notifications. |
+| `--action` | Receiver or action added to the action group. |
+| `--output` | Output format for the result. |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--condition-query` | Named query referenced by the alert condition. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--skip-query-validation` | Skips server-side validation of the query. |
+| `--description` | Human-readable description of the resource. |
+| `--action-groups` | Action groups notified when the alert fires. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+| `az monitor action-group show` | Show an action group. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -208,6 +269,22 @@ az monitor app-insights component show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component create` | Create an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--location` | Azure region for the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace` | Log Analytics workspace resource ID that backs the component. |
+| `--application-type` | Application Insights application type. |
+| `--kind` | Resource kind. |
+| `--output` | Output format for the result. |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -243,6 +320,12 @@ az monitor data-collection rule association list-by-resource \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association list-by-resource` | List data collection rule associations for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
+
 ### Anti-Pattern 2: Using cloud location as the primary alert ownership boundary
 
 **What happens**: The same service pages different teams depending on where the failing component runs.
@@ -257,6 +340,13 @@ az monitor action-group list \
     --query "[].{name:name,shortName:groupShortName}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group list` | List action groups. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 ## Validation Checklist
 

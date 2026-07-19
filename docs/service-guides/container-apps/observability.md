@@ -69,6 +69,14 @@ az containerapp logs show \
     --format text
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az containerapp logs show` | Show logs for a container app. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--follow` | Streams new log output as it arrives. |
+| `--format` | Output serialization format. |
+
 ## KQL Query Examples
 
 ### Search Console Logs for Errors
@@ -151,6 +159,12 @@ az containerapp show \
     --name "my-container-app"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az containerapp show` | Show properties of a container app. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+
 Sample output:
 
 ```json
@@ -178,6 +192,13 @@ az containerapp revision list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az containerapp revision list` | List revisions of a container app. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```text
@@ -195,6 +216,13 @@ az monitor log-analytics query \
     --analytics-query "ContainerAppSystemLogs_CL | where TimeGenerated > ago(15m) | take 5" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 
 ## Diagnostic Settings Strategy
 
@@ -235,6 +263,14 @@ az monitor diagnostic-settings create \
     ]'
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--workspace` | Log Analytics workspace name or resource ID that receives the logs. |
+| `--logs` | Log categories or settings to collect. |
+
 ### Validate enabled categories
 
 ```bash
@@ -242,6 +278,12 @@ az monitor diagnostic-settings show \
     --name "diag-containerapp-observability" \
     --resource "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.App/containerApps/my-container-app"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings show` | Show a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
 
 Sample output:
 
@@ -361,6 +403,14 @@ az monitor metrics list \
     --aggregation "Average" "Maximum"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list` | List metric values for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--metric` | Metric name to query. |
+| `--interval` | Sampling or evaluation interval. |
+| `--aggregation` | Aggregation applied to the metric values. |
+
 Sample output:
 
 ```json
@@ -413,6 +463,19 @@ az monitor scheduled-query create \
     --action-groups "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-app-oncall"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--action-groups` | Action groups notified when the alert fires. |
+
 ### Alert on application error bursts in console logs
 
 ```bash
@@ -427,6 +490,19 @@ az monitor scheduled-query create \
     --severity 2 \
     --action-groups "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-app-oncall"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--action-groups` | Action groups notified when the alert fires. |
 
 ## Triage Workflow
 

@@ -64,6 +64,13 @@ az group create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az group create` | Create a resource group. |
+| `--name` | Name of the resource. |
+| `--location` | Azure region for the resource. |
+| `--output` | Output format for the result. |
+
 Expected outcome:
 
 - A clean sandbox resource group exists.

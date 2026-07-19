@@ -132,6 +132,19 @@ az monitor metrics alert create \
     --description "Trigger when average VM CPU exceeds 80 percent for five minutes." \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -186,6 +199,15 @@ az monitor action-group create \
     --action email platformoncall ops-team@example.com \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group create` | Create an action group for alert notifications. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--short-name` | Short name used in alert notifications. |
+| `--action` | Receiver or action added to the action group. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -223,6 +245,21 @@ az monitor scheduled-query create \
     --description "Trigger when checkout application failure rate exceeds 2 percent over five minutes." \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--condition-query` | Named query referenced by the alert condition. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--skip-query-validation` | Skips server-side validation of the query. |
+| `--description` | Human-readable description of the resource. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -324,6 +361,13 @@ az monitor metrics alert show \
     --resource-group "$RG" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert show` | Show a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -342,6 +386,13 @@ az monitor action-group show \
     --resource-group "$RG" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group show` | Show an action group. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {

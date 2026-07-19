@@ -59,6 +59,14 @@ az monitor log-analytics workspace show \
     --query "{name:name,retention:retentionInDays,dailyCap:workspaceCapping.dailyQuotaGb,ingestionStatus:workspaceCapping.dataIngestionStatus,sku:sku.name}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -79,6 +87,13 @@ az monitor log-analytics query \
     --analytics-query "Usage | where TimeGenerated > ago(7d) | where IsBillable == true | summarize IngestedGB=sum(Quantity)/1024 by DataType | top 10 by IngestedGB desc" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 DataType          IngestedGB
@@ -97,6 +112,13 @@ az monitor log-analytics query \
     --analytics-query "Usage | where TimeGenerated > ago(7d) | where IsBillable == true | summarize IngestedGB=sum(Quantity)/1024 by DataType, bin(TimeGenerated, 1d) | sort by TimeGenerated asc" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 DataType          TimeGenerated           IngestedGB
@@ -116,6 +138,15 @@ az monitor log-analytics workspace update \
     --quota 20 \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--retention-time` | Data retention period in days. |
+| `--quota` | Daily ingestion quota for the workspace. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -138,6 +169,13 @@ az monitor log-analytics query \
     --analytics-query "Usage | where TimeGenerated > ago(24h) | where IsBillable == true | summarize IngestedGB=sum(Quantity)/1024 by DataType | top 10 by IngestedGB desc" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 DataType          IngestedGB
@@ -159,6 +197,14 @@ az consumption usage list \
     --query "[?contains(instanceName, 'law-ops-central')].{instanceName:instanceName,cost:pretaxCost,currency:currency}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az consumption usage list` | List consumption usage details. |
+| `--start-date` | Start of the query or billing time range. |
+| `--end-date` | End of the query or billing time range. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 InstanceName       Cost    Currency
@@ -173,6 +219,14 @@ az monitor log-analytics workspace show \
     --query "{dailyCap:workspaceCapping.dailyQuotaGb,ingestionStatus:workspaceCapping.dataIngestionStatus}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -188,6 +242,14 @@ az consumption usage list \
     --query "[?contains(instanceName, 'monitor')].{instanceName:instanceName,cost:pretaxCost,meter:meterDetails.meterName}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az consumption usage list` | List consumption usage details. |
+| `--start-date` | Start of the query or billing time range. |
+| `--end-date` | End of the query or billing time range. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 InstanceName        Cost    Meter
@@ -205,6 +267,14 @@ az monitor log-analytics workspace show \
     --query "{retention:retentionInDays,dailyCap:workspaceCapping.dailyQuotaGb,sku:sku.name}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -220,6 +290,13 @@ az monitor log-analytics query \
     --analytics-query "Usage | where TimeGenerated > ago(1h) | summarize TotalMB=sum(Quantity) by IsBillable" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 IsBillable    TotalMB
@@ -234,6 +311,13 @@ az monitor log-analytics query \
     --analytics-query "Usage | where TimeGenerated > ago(1d) | where IsBillable == true | summarize IngestedGB=sum(Quantity)/1024 by DataType | top 5 by IngestedGB desc" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 DataType          IngestedGB
@@ -254,6 +338,15 @@ az monitor log-analytics workspace update \
     --quota 25 \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--retention-time` | Data retention period in days. |
+| `--quota` | Daily ingestion quota for the workspace. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -287,6 +380,13 @@ az monitor log-analytics query \
     --analytics-query "Usage | where TimeGenerated > ago(1d) | where IsBillable == true | summarize IngestedGB=sum(Quantity)/1024 by DataType" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Useful automation patterns:
 - Schedule a daily ingestion report from the `Usage` table.
 - Alert when one table grows beyond its normal baseline.

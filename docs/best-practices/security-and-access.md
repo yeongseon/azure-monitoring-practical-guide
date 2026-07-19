@@ -78,6 +78,19 @@ az role assignment list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az role assignment create` | Create a role assignment. |
+| `--assignee-object-id` | Object ID of the identity receiving the role. |
+| `--assignee-principal-type` | Principal type of the role assignee. |
+| `--role` | Role definition granted to the assignee. |
+| `--scope` | Azure resource scope the operation applies to. |
+| `--output` | Output format for the result. |
+| `az role assignment list` | List role assignments. |
+| `--scope` | Azure resource scope the operation applies to. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```text
@@ -112,6 +125,20 @@ az monitor private-link-scope create \
     --location $LOCATION \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--public-network-access-for-ingestion` | Controls public network access for ingestion. |
+| `--public-network-access-for-query` | Controls public network access for query. |
+| `--output` | Output format for the result. |
+| `az monitor private-link-scope create` | Create an Azure Monitor private link scope. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--location` | Azure region for the resource. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -152,6 +179,19 @@ az role assignment list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az role assignment create` | Create a role assignment. |
+| `--assignee-object-id` | Object ID of the identity receiving the role. |
+| `--assignee-principal-type` | Principal type of the role assignee. |
+| `--role` | Role definition granted to the assignee. |
+| `--scope` | Azure resource scope the operation applies to. |
+| `--output` | Output format for the result. |
+| `az role assignment list` | List role assignments. |
+| `--scope` | Azure resource scope the operation applies to. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```text
@@ -183,6 +223,14 @@ az monitor log-analytics workspace show \
     --query "{name:name,retentionInDays:retentionInDays,sku:sku.name,features:features}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -226,6 +274,19 @@ az monitor log-analytics workspace show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--enable-log-access-using-only-resource-permissions` | Restricts log access to resource-level permissions only. |
+| `--output` | Output format for the result. |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -255,6 +316,17 @@ az role assignment list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az role assignment list` | List role assignments. |
+| `--scope` | Azure resource scope the operation applies to. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+| `az role assignment list` | List role assignments. |
+| `--scope` | Azure resource scope the operation applies to. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ```text
 PrincipalId                            PrincipalType      Role
 -------------------------------------  -----------------  ----------------------
@@ -281,6 +353,13 @@ az role assignment list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az role assignment list` | List role assignments. |
+| `--scope` | Azure resource scope the operation applies to. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ### Anti-Pattern 2: Private access mandated by policy but public query left enabled
 
 **What happens**: A private-link project is deployed, but the workspace still accepts public query or ingestion.
@@ -296,6 +375,14 @@ az monitor log-analytics workspace show \
     --query "{queryAccess:publicNetworkAccessForQuery,ingestionAccess:publicNetworkAccessForIngestion}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 ## Validation Checklist
 

@@ -87,6 +87,12 @@ That means you must choose the aggregation intentionally.
 ```bash
 az monitor metrics list-definitions     --resource "$RESOURCE_ID"     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list-definitions` | List available metric definitions for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 Name                      Unit       Primary Aggregation Type    Dimensions
@@ -145,6 +151,17 @@ az monitor metrics list \
     --top 5 \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list` | List metric values for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--metrics` | Metric categories to collect. |
+| `--interval` | Sampling or evaluation interval. |
+| `--aggregation` | Aggregation applied to the metric values. |
+| `--dimension` | Dimension filter applied to the metric. |
+| `--top` | Maximum number of results to return. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -205,6 +222,16 @@ az monitor metrics list \
     --filter "HttpStatusCode eq '500'" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list` | List metric values for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--metrics` | Metric categories to collect. |
+| `--interval` | Sampling or evaluation interval. |
+| `--aggregation` | Aggregation applied to the metric values. |
+| `--filter` | OData filter applied to the results. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 Timestamp                    Total
@@ -335,6 +362,18 @@ az monitor metrics list \
     --top 10 \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list` | List metric values for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--metrics` | Metric categories to collect. |
+| `--interval` | Sampling or evaluation interval. |
+| `--aggregation` | Aggregation applied to the metric values. |
+| `--dimension` | Dimension filter applied to the metric. |
+| `--orderby` | Ordering expression for the results. |
+| `--top` | Maximum number of results to return. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 Instance             Timestamp                    Total
@@ -352,6 +391,19 @@ Interpretation notes:
 ```bash
 az monitor metrics alert create     --name "alert-app-http5xx"     --resource-group "$RG"     --scopes "$RESOURCE_ID"     --condition "total Http5xx > 5 where HttpStatusCode includes 500"     --window-size "PT5M"     --evaluation-frequency "PT1M"     --severity 2     --description "Trigger when 500 responses exceed five in five minutes."     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -373,6 +425,16 @@ az monitor metrics list \
     --top 10 \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list` | List metric values for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--metrics` | Metric categories to collect. |
+| `--interval` | Sampling or evaluation interval. |
+| `--aggregation` | Aggregation applied to the metric values. |
+| `--top` | Maximum number of results to return. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 Timestamp                    Maximum

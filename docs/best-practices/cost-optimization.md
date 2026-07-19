@@ -80,6 +80,18 @@ az monitor log-analytics workspace show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace table list` | List tables in a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--output` | Output format for the result. |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -119,6 +131,18 @@ az monitor data-collection rule update \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
+| `az monitor data-collection rule update` | Update a data collection rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--set` | Property assignment applied during update. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -151,6 +175,14 @@ az monitor app-insights component show \
     --query "{name:name,workspaceResourceId:workspaceResourceId,applicationType:applicationType}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -195,6 +227,23 @@ az monitor log-analytics workspace table update \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace table show` | Show a table in a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+| `az monitor log-analytics workspace table update` | Update a table in a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
+| `--plan` | Table plan (Analytics or Basic) for the Log Analytics table. |
+| `--retention-time` | Data retention period in days. |
+| `--total-retention-time` | Total retention period including archive, in days. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -234,6 +283,19 @@ az monitor log-analytics workspace update \
     --sku CapacityReservation \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--quota` | Daily ingestion quota for the workspace. |
+| `--output` | Output format for the result. |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--sku` | SKU tier of the resource. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -277,6 +339,13 @@ az monitor log-analytics workspace table list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace table list` | List tables in a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--output` | Output format for the result. |
+
 ### Anti-Pattern 2: Using commitment tiers to mask noisy ingestion
 
 **What happens**: A team moves to a commitment tier without first fixing verbose telemetry.
@@ -291,6 +360,13 @@ az monitor data-collection rule show \
     --name $DCR_NAME \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
 
 ## Validation Checklist
 

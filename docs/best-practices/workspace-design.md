@@ -82,6 +82,21 @@ az monitor log-analytics workspace show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace create` | Create a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--location` | Azure region for the resource. |
+| `--sku` | SKU tier of the resource. |
+| `--retention-time` | Data retention period in days. |
+| `--output` | Output format for the result. |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -124,6 +139,21 @@ az monitor data-collection rule show \
     --query "{name:name,location:location,streams:properties.dataFlows[0].streams,destination:properties.destinations.logAnalytics[0].workspaceResourceId}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule create` | Create a data collection rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--location` | Azure region for the resource. |
+| `--name` | Name of the resource. |
+| `--data-flows` | Data flow mappings from sources to destinations. |
+| `--destinations` | Destinations that receive collected data. |
+| `--output` | Output format for the result. |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -169,6 +199,22 @@ az monitor app-insights component show \
     --query "{name:name,workspaceResourceId:workspaceResourceId,location:location,applicationType:applicationType}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component create` | Create an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--location` | Azure region for the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace` | Log Analytics workspace resource ID that backs the component. |
+| `--application-type` | Application Insights application type. |
+| `--kind` | Resource kind. |
+| `--output` | Output format for the result. |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -216,6 +262,20 @@ az monitor diagnostic-settings list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--workspace` | Log Analytics workspace name or resource ID that receives the logs. |
+| `--logs` | Log categories or settings to collect. |
+| `--metrics` | Metric categories to collect. |
+| `--output` | Output format for the result. |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```text
@@ -255,6 +315,15 @@ az monitor log-analytics workspace list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
+| `az monitor log-analytics workspace list` | List Log Analytics workspaces. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ### Anti-Pattern 2: Shared workspace with unmanaged access and mixed compliance scope
 
 **What happens**: A central workspace stores everything from every environment, including restricted datasets, while dozens of readers receive broad access.
@@ -271,6 +340,15 @@ az monitor log-analytics workspace update \
     --public-network-access-for-query Disabled \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--public-network-access-for-ingestion` | Controls public network access for ingestion. |
+| `--public-network-access-for-query` | Controls public network access for query. |
+| `--output` | Output format for the result. |
 
 ## Validation Checklist
 

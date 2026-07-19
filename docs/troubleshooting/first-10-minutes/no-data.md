@@ -55,6 +55,13 @@ az monitor log-analytics workspace show \
     --query "{provisioningState:provisioningState,dailyQuotaGb:workspaceCapping.dailyQuotaGb,quotaNextResetTime:workspaceCapping.quotaNextResetTime}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+
 - Good signal: `provisioningState` is `Succeeded` and cap is not unexpectedly low.
 - Bad signal: cap was reached recently or the workspace state is abnormal.
 
@@ -79,6 +86,12 @@ az monitor diagnostic-settings list \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
+
 - Good signal: expected categories still point to the correct workspace.
 - Bad signal: diagnostic settings were removed, changed, or target the wrong destination.
 
@@ -89,6 +102,12 @@ az monitor data-collection rule association list \
     --resource "$RESOURCE_ID" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule association list` | List data collection rule associations. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
 
 - Good signal: expected DCR association exists for the affected resource.
 - Bad signal: no association or the wrong DCR is attached.

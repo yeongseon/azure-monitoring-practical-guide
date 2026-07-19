@@ -183,6 +183,14 @@ az monitor log-analytics workspace show \
     --query "{name:name,location:location,sku:sku.name,retentionInDays:retentionInDays,publicNetworkAccessForIngestion:publicNetworkAccessForIngestion,publicNetworkAccessForQuery:publicNetworkAccessForQuery}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -207,6 +215,16 @@ az monitor metrics list \
     --top 3 \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list` | List metric values for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--metrics` | Metric categories to collect. |
+| `--interval` | Sampling or evaluation interval. |
+| `--aggregation` | Aggregation applied to the metric values. |
+| `--top` | Maximum number of results to return. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -254,6 +272,13 @@ az monitor log-analytics query \
     --analytics-query "AzureActivity | where TimeGenerated > ago(1h) | summarize Events=count() by CategoryValue" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 CategoryValue           Events
@@ -300,6 +325,12 @@ az monitor diagnostic-settings list \
     --resource "$RESOURCE_ID" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 [
@@ -485,6 +516,16 @@ az monitor log-analytics workspace create \
     --retention-time 30 \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace create` | Create a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--location` | Azure region for the resource. |
+| `--sku` | SKU tier of the resource. |
+| `--retention-time` | Data retention period in days. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -510,6 +551,16 @@ az monitor diagnostic-settings create \
     --metrics '[{"category":"AllMetrics","enabled":true}]' \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--workspace` | Log Analytics workspace name or resource ID that receives the logs. |
+| `--logs` | Log categories or settings to collect. |
+| `--metrics` | Metric categories to collect. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -548,6 +599,19 @@ az monitor metrics alert create \
     --severity 2 \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {

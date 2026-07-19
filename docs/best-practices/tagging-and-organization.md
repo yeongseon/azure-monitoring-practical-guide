@@ -72,6 +72,17 @@ az resource show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az tag create` | Create or update tags on a resource. |
+| `--resource-id` | Resource ID the setting applies to. |
+| `--tags` | Tags applied to the resource. |
+| `--output` | Output format for the result. |
+| `az resource show` | Show a generic Azure resource. |
+| `--ids` | One or more resource IDs to target. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -120,6 +131,22 @@ az monitor action-group create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace create` | Create a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--location` | Azure region for the resource. |
+| `--sku` | SKU tier of the resource. |
+| `--retention-time` | Data retention period in days. |
+| `--output` | Output format for the result. |
+| `az monitor action-group create` | Create an action group for alert notifications. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--short-name` | Short name used in alert notifications. |
+| `--action` | Receiver or action added to the action group. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -156,6 +183,18 @@ az group show \
     --query "{name:name,location:location,tags:tags}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az group create` | Create a resource group. |
+| `--name` | Name of the resource. |
+| `--location` | Azure region for the resource. |
+| `--tags` | Tags applied to the resource. |
+| `--output` | Output format for the result. |
+| `az group show` | Show properties of a resource group. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -197,6 +236,17 @@ az resource list \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az resource list` | List Azure resources. |
+| `--tag` | Tag applied to the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+| `az resource list` | List Azure resources. |
+| `--tag` | Tag applied to the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```text
@@ -233,6 +283,12 @@ az resource list \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az resource list` | List Azure resources. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 ### Anti-Pattern 2: Monitoring resources hidden inside unrelated application groups
 
 **What happens**: Shared action groups and workspaces are created wherever the first application team happened to deploy them.
@@ -246,6 +302,12 @@ az group list \
     --query "[?contains(name, 'monitoring')].{name:name,location:location}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az group list` | List resource groups. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 ## Validation Checklist
 

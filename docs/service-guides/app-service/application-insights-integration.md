@@ -48,6 +48,13 @@ az webapp config appsettings set \
     "XDT_MicrosoftApplicationInsights_PreemptSdk=1"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az webapp config appsettings set` | Set application settings on the web app. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--settings` | Configuration settings for the resource. |
+
 ## KQL Query Examples
 
 ### Slowest Requests
@@ -148,6 +155,15 @@ az monitor app-insights component create \
     --application-type "web"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component create` | Create an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--location` | Azure region for the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace` | Log Analytics workspace resource ID that backs the component. |
+| `--application-type` | Application Insights application type. |
+
 Sample output:
 
 ```json
@@ -169,6 +185,14 @@ az monitor app-insights component show \
     --output tsv
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```text
@@ -183,6 +207,13 @@ az webapp config appsettings list \
     --name "my-app-service" \
     --query "[?name=='APPLICATIONINSIGHTS_CONNECTION_STRING' || name=='ApplicationInsightsAgent_EXTENSION_VERSION']"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az webapp config appsettings list` | List application settings of the web app. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
 
 Sample output:
 
@@ -246,6 +277,19 @@ az monitor scheduled-query create \
     --action-groups "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-app-oncall"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--action-groups` | Action groups notified when the alert fires. |
+
 ### Scheduled query alert for unhandled exceptions
 
 ```bash
@@ -260,6 +304,19 @@ az monitor scheduled-query create \
     --severity 3 \
     --action-groups "/subscriptions/<subscription-id>/resourceGroups/my-resource-group/providers/Microsoft.Insights/actionGroups/ag-app-oncall"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--description` | Human-readable description of the resource. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--action-groups` | Action groups notified when the alert fires. |
 
 ## What Good Telemetry Looks Like
 

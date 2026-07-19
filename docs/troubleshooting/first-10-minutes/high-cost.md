@@ -65,6 +65,13 @@ az monitor log-analytics workspace show \
     --query "{sku:sku.name,retentionInDays:retentionInDays,dailyQuotaGb:workspaceCapping.dailyQuotaGb}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+
 - Good signal: pricing settings are unchanged and only ingestion shape changed.
 - Bad signal: no cap and rising ingestion mean cost will continue until the source is reduced.
 
@@ -75,6 +82,12 @@ az monitor data-collection rule list \
     --resource-group "$RG" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule list` | List data collection rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 
 - Good signal: no recent DCR additions or stream expansion.
 - Bad signal: a new DCR or changed stream selection aligns with the cost spike.
@@ -87,6 +100,12 @@ az monitor diagnostic-settings list \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
+
 - Good signal: only required categories are enabled.
 - Bad signal: verbose or duplicated categories are sent to the workspace.
 
@@ -98,6 +117,13 @@ az monitor app-insights component show \
     --resource-group "$RG" \
     --query "{workspaceResourceId:workspaceResourceId,applicationType:applicationType,samplingPercentage:samplingPercentage}"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
 
 ```kusto
 union requests, dependencies, traces, exceptions

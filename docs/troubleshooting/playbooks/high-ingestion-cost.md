@@ -75,6 +75,13 @@ flowchart TD
         --query "{id:id,customerId:customerId}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--workspace-name` | Name of the Log Analytics workspace. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 2. **Replay top billable tables directly from the workspace**
 
     ```bash
@@ -83,6 +90,13 @@ flowchart TD
         --analytics-query "Usage | where TimeGenerated > ago(24h) | where IsBillable == true | summarize TotalGB=round(sum(Quantity)/1024.0,2) by DataType | order by TotalGB desc | take 10" \
         --timespan "P1D"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--analytics-query` | Kusto (KQL) query to execute. |
+    | `--timespan` | Time range for the query. |
 
 3. **Review workspace pricing, retention, and cap settings**
 
@@ -93,6 +107,13 @@ flowchart TD
         --query "{sku:sku.name,retentionInDays:retentionInDays,workspaceCapping:workspaceCapping.dailyQuotaGb}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--workspace-name` | Name of the Log Analytics workspace. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 4. **Verify whether the spike lines up with a DCR rollout**
 
     ```bash
@@ -100,6 +121,12 @@ flowchart TD
         --resource-group $RG \
         --output table
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor data-collection rule list` | List data collection rules. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--output` | Output format for the result. |
 
 5. **If platform logs are implicated, inspect diagnostic settings on a top resource**
 
@@ -109,6 +136,12 @@ flowchart TD
         --output json
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+    | `--resource` | Target resource ID or name for the operation. |
+    | `--output` | Output format for the result. |
+
 6. **If Application Insights tables grew, check the component and workspace connection**
 
     ```bash
@@ -117,6 +150,13 @@ flowchart TD
         --resource-group $RG \
         --query "{workspaceResourceId:workspaceResourceId,applicationType:applicationType,samplingPercentage:samplingPercentage}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor app-insights component show` | Show an Application Insights component. |
+    | `--app` | Application Insights component name. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 ## 5. Evidence to Collect
 
@@ -206,6 +246,13 @@ az monitor log-analytics workspace show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -237,6 +284,13 @@ az monitor data-collection rule show \
     --name $DCR_NAME \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule show` | Show a data collection rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -280,6 +334,12 @@ az monitor diagnostic-settings list \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -316,6 +376,13 @@ az monitor app-insights component show \
     --resource-group $RG \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -409,6 +476,15 @@ Interpretation:
         --metrics '[{"category":"AllMetrics","enabled":true}]'
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+    | `--name` | Name of the resource. |
+    | `--resource` | Target resource ID or name for the operation. |
+    | `--workspace` | Log Analytics workspace name or resource ID that receives the logs. |
+    | `--logs` | Log categories or settings to collect. |
+    | `--metrics` | Metric categories to collect. |
+
 2. Remove unnecessary AMA streams or destinations from the DCR.
 
     ```bash
@@ -417,6 +493,13 @@ Interpretation:
         --name $DCR_NAME \
         --query "dataFlows"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor data-collection rule show` | Show a data collection rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 3. Move a suitable high-volume table to Basic plan.
 
@@ -428,6 +511,14 @@ Interpretation:
         --plan Basic
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics workspace table update` | Update a table in a Log Analytics workspace. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--workspace-name` | Name of the Log Analytics workspace. |
+    | `--name` | Name of the resource. |
+    | `--plan` | Table plan (Analytics or Basic) for the Log Analytics table. |
+
 4. Reintroduce or increase telemetry sampling for a high-volume application.
 
     ```bash
@@ -437,6 +528,13 @@ Interpretation:
         --query "{name:name,workspaceResourceId:workspaceResourceId}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor app-insights component show` | Show an Application Insights component. |
+    | `--app` | Application Insights component name. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 5. Use a temporary daily cap only as a guardrail while fixes are being applied.
 
     ```bash
@@ -445,6 +543,13 @@ Interpretation:
         --workspace-name $WORKSPACE_NAME \
         --quota 20
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--workspace-name` | Name of the Log Analytics workspace. |
+    | `--quota` | Daily ingestion quota for the workspace. |
 
 ## 9. Prevention
 Preventing ingestion cost incidents is mainly about design discipline. Microsoft Learn recommends understanding table usage, choosing the right table plan, and filtering or scoping data before it hits the workspace.
@@ -458,6 +563,13 @@ az monitor log-analytics workspace show \
     --query "{id:id,customerId:customerId,sku:sku.name}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+
 Make DCR streams explicit and minimal, especially when onboarding many VMs or Arc servers.
 
 ```bash
@@ -465,6 +577,12 @@ az monitor data-collection rule list \
     --resource-group $RG \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor data-collection rule list` | List data collection rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 
 Replace blanket diagnostic settings with category choices that map to real operational use cases.
 
@@ -474,6 +592,12 @@ az monitor diagnostic-settings categories list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings categories list` | List diagnostic setting categories for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
+
 Align table plans with query frequency and retention needs.
 
 ```bash
@@ -482,6 +606,13 @@ az monitor log-analytics workspace table show \
     --workspace-name $WORKSPACE_NAME \
     --name AppServiceHTTPLogs
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace table show` | Show a table in a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
 
 For application telemetry, keep logging levels and sampling part of release review. A bug that floods `traces` or `exceptions` is both a reliability issue and a cost issue.
 

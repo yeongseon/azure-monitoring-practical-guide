@@ -73,6 +73,13 @@ flowchart TD
         --output json
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor metrics alert show` | Show a metric alert rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--output` | Output format for the result. |
+
 2. **If it is a scheduled query rule, inspect evaluation settings and scopes**
 
     ```bash
@@ -81,6 +88,13 @@ flowchart TD
         --name $ALERT_RULE_NAME \
         --output json
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor scheduled-query show` | Show a scheduled query alert rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--output` | Output format for the result. |
 
 3. **Replay a control query against the workspace when the rule is log-based**
 
@@ -91,6 +105,13 @@ flowchart TD
         --timespan "PT15M"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--analytics-query` | Kusto (KQL) query to execute. |
+    | `--timespan` | Time range for the query. |
+
 4. **List action groups wired to the rule**
 
     ```bash
@@ -98,6 +119,12 @@ flowchart TD
         --resource-group $RG \
         --output table
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor action-group list` | List action groups. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--output` | Output format for the result. |
 
 5. **Review alert processing rules that can suppress notifications**
 
@@ -107,6 +134,12 @@ flowchart TD
         --output json
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor alert-processing-rule list` | List alert processing rules. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--output` | Output format for the result. |
+
 6. **Confirm the target resource and dimensions actually match the rule scope**
 
     ```bash
@@ -114,6 +147,12 @@ flowchart TD
         --ids $RESOURCE_ID \
         --query "{id:id,type:type,name:name,location:location}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az resource show` | Show a generic Azure resource. |
+    | `--ids` | One or more resource IDs to target. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 ## 5. Evidence to Collect
 
@@ -202,6 +241,13 @@ az monitor metrics alert show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert show` | Show a metric alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -231,6 +277,13 @@ az monitor scheduled-query show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query show` | Show a scheduled query alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -257,6 +310,12 @@ az monitor alert-processing-rule list \
     --resource-group $RG \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor alert-processing-rule list` | List alert processing rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -286,6 +345,13 @@ az monitor action-group show \
     --name $ACTION_GROUP_NAME \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group show` | Show an action group. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -385,6 +451,13 @@ Interpretation:
         --enabled true
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor metrics alert update` | Update a metric alert rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--enabled` | Whether the resource is enabled. |
+
 2. Widen the scheduled query alert window when late data is the issue.
 
     ```bash
@@ -395,6 +468,14 @@ Interpretation:
         --window-size 15m
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor scheduled-query update` | Update a scheduled query alert rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--evaluation-frequency` | How often the alert rule is evaluated. |
+    | `--window-size` | Time window over which the condition is evaluated. |
+
 3. Disable or narrow an overlapping alert processing rule.
 
     ```bash
@@ -403,6 +484,13 @@ Interpretation:
         --name $PROCESSING_RULE_NAME \
         --enabled false
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor alert-processing-rule update` | Update an alert processing rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--enabled` | Whether the resource is enabled. |
 
 4. Repair action group receivers and revalidate delivery.
 
@@ -413,6 +501,13 @@ Interpretation:
         --query "{enabled:enabled,emailReceivers:emailReceivers,webhookReceivers:webhookReceivers}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor action-group show` | Show an action group. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 5. If dimensions caused the miss, temporarily simplify to the exact monitored target.
 
     ```bash
@@ -421,6 +516,13 @@ Interpretation:
         --name $ALERT_RULE_NAME \
         --query "{scopes:scopes,criteria:criteria}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor metrics alert show` | Show a metric alert rule. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--name` | Name of the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 ## 9. Prevention
 Prevent missed alerts by validating the whole alert path, not just the threshold. Replay the rule logic against real historical data before relying on it in production.
@@ -434,6 +536,13 @@ az monitor scheduled-query show \
     --query "{enabled:enabled,scopes:scopes,evaluationFrequency:evaluationFrequency,windowSize:windowSize}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query show` | Show a scheduled query alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 Avoid windows shorter than normal ingestion latency for log alerts.
 
 ```bash
@@ -443,6 +552,13 @@ az monitor scheduled-query update \
     --window-size 15m
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query update` | Update a scheduled query alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--window-size` | Time window over which the condition is evaluated. |
+
 Keep suppression rules narrow in scope and duration.
 
 ```bash
@@ -450,6 +566,12 @@ az monitor alert-processing-rule list \
     --resource-group $RG \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor alert-processing-rule list` | List alert processing rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 
 Test action groups as part of onboarding and after receiver changes.
 
@@ -459,6 +581,13 @@ az monitor action-group show \
     --name $ACTION_GROUP_NAME \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group show` | Show an action group. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
 
 Finally, document whether each alert is per-resource, per-dimension, or fleet-wide. Most operator confusion comes from expecting one model while the rule actually uses another.
 

@@ -99,6 +99,15 @@ az monitor diagnostic-settings create \
     --metrics '[{"category":"AllMetrics","enabled":true}]'
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--workspace` | Log Analytics workspace name or resource ID that receives the logs. |
+| `--logs` | Log categories or settings to collect. |
+| `--metrics` | Metric categories to collect. |
+
 Prefer category groups (`audit`, `allLogs`) over enumerating individual categories when the resource type supports them, because Azure adds new categories over time and category groups pick them up automatically. See [Category groups](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings#category-groups) for the current supported list.
 
 ## Destination selection guidance

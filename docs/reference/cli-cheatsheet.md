@@ -55,11 +55,25 @@ az monitor log-analytics workspace create \
     --retention-time 30
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace create` | Create a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--location` | Azure region for the resource. |
+| `--sku` | SKU tier of the resource. |
+| `--retention-time` | Data retention period in days. |
+
 ### List Workspaces
 ```bash
 az monitor log-analytics workspace list \
     --resource-group <resource-group-name>
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace list` | List Log Analytics workspaces. |
+| `--resource-group` | Resource group that contains the resource. |
 
 ### Show Workspace Details
 ```bash
@@ -67,6 +81,12 @@ az monitor log-analytics workspace show \
     --resource-group <resource-group-name> \
     --workspace-name <workspace-name>
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
 
 ## Diagnostic Settings
 
@@ -80,11 +100,25 @@ az monitor diagnostic-settings create \
     --metrics '[{"category": "AllMetrics", "enabled": true}]'
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--workspace` | Log Analytics workspace name or resource ID that receives the logs. |
+| `--logs` | Log categories or settings to collect. |
+| `--metrics` | Metric categories to collect. |
+
 ### List Diagnostic Settings
 ```bash
 az monitor diagnostic-settings list \
     --resource <resource-id>
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
 
 ## Alert Rules
 
@@ -99,6 +133,17 @@ az monitor metrics alert create \
     --evaluation-frequency 1m \
     --description "High CPU alert"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics alert create` | Create a metric alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--description` | Human-readable description of the resource. |
 
 ### Create Scheduled Query Alert
 ```bash
@@ -116,6 +161,21 @@ az monitor scheduled-query create \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor scheduled-query create` | Create a scheduled query (log) alert rule. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--scopes` | Target resource scopes for the alert rule. |
+| `--condition` | Condition expression that triggers the alert. |
+| `--condition-query` | Named query referenced by the alert condition. |
+| `--evaluation-frequency` | How often the alert rule is evaluated. |
+| `--window-size` | Time window over which the condition is evaluated. |
+| `--severity` | Severity level of the alert. |
+| `--skip-query-validation` | Skips server-side validation of the query. |
+| `--description` | Human-readable description of the resource. |
+| `--output` | Output format for the result. |
+
 ## Metrics and Logs
 
 ### List Metric Definitions
@@ -123,6 +183,11 @@ az monitor scheduled-query create \
 az monitor metrics list-definitions \
     --resource <resource-id>
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list-definitions` | List available metric definitions for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
 
 ### Query Metrics
 ```bash
@@ -132,12 +197,25 @@ az monitor metrics list \
     --interval 1m
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list` | List metric values for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--metric` | Metric name to query. |
+| `--interval` | Sampling or evaluation interval. |
+
 ### Query Logs (Ad-hoc)
 ```bash
 az monitor log-analytics query \
     --workspace <workspace-id> \
     --analytics-query "AzureActivity | take 10"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
 
 ## Action Groups
 
@@ -150,11 +228,24 @@ az monitor action-group create \
     --action email admin admin@example.com
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group create` | Create an action group for alert notifications. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--short-name` | Short name used in alert notifications. |
+| `--action` | Receiver or action added to the action group. |
+
 ### List Action Groups
 ```bash
 az monitor action-group list \
     --resource-group <resource-group-name>
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor action-group list` | List action groups. |
+| `--resource-group` | Resource group that contains the resource. |
 
 ## See Also
 

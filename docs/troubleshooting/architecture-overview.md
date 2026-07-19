@@ -131,6 +131,16 @@ az monitor app-insights component show \
     --app "$APP_INSIGHTS_NAME"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings list` | List diagnostic settings for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `az monitor data-collection rule association list` | List data collection rule associations. |
+| `--resource` | Target resource ID or name for the operation. |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--app` | Application Insights component name. |
+
 ### Routing-layer interpretation
 
 - If a resource emits metrics but no logs, the problem is often diagnostic settings rather than resource health.
@@ -209,6 +219,17 @@ az monitor scheduled-query show \
     --name "$ALERT_RULE_NAME" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `az monitor scheduled-query show` | Show a scheduled query alert rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--name` | Name of the resource. |
+| `--output` | Output format for the result. |
 
 ```kusto
 Heartbeat

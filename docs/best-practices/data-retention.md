@@ -76,6 +76,19 @@ az monitor log-analytics workspace show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace update` | Update a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--retention-time` | Data retention period in days. |
+| `--output` | Output format for the result. |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -121,6 +134,22 @@ az monitor log-analytics workspace table update \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace table show` | Show a table in a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+| `az monitor log-analytics workspace table update` | Update a table in a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
+| `--retention-time` | Data retention period in days. |
+| `--total-retention-time` | Total retention period including archive, in days. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```json
@@ -163,6 +192,22 @@ az monitor log-analytics workspace data-export list \
     --query "[].{name:name,destination:destinationResourceId,enabled:enable,tables:tableNames}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace data-export create` | Create a workspace data export rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
+| `--destination` | Export destination for the data. |
+| `--enable` | Enables the feature or resource. |
+| `--tables` | Tables included in the export or operation. |
+| `--output` | Output format for the result. |
+| `az monitor log-analytics workspace data-export list` | List workspace data export rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 
 Sample output:
 
@@ -209,6 +254,19 @@ az monitor log-analytics workspace show \
     --output json
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace table list` | List tables in a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 Sample output:
 
 ```text
@@ -245,6 +303,13 @@ az monitor log-analytics workspace table list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace table list` | List tables in a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--output` | Output format for the result. |
+
 ### Anti-Pattern 2: Reducing retention without a preservation alternative
 
 **What happens**: A cost-cutting change shortens retention, but audit or investigation teams still expect the old access window.
@@ -259,6 +324,13 @@ az monitor log-analytics workspace data-export list \
     --workspace-name $WORKSPACE_NAME \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace data-export list` | List workspace data export rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--output` | Output format for the result. |
 
 ## Validation Checklist
 

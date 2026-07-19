@@ -73,6 +73,13 @@ flowchart TD
         --query "{name:name,location:location,workspaceResourceId:workspaceResourceId,connectionString:connectionString}"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor app-insights component show` | Show an Application Insights component. |
+    | `--app` | Application Insights component name. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
+
 2. **Check host application settings for the expected connection string**
 
     ```bash
@@ -81,6 +88,13 @@ flowchart TD
         --resource-group "$APP_RG" \
         --query "[?name=='APPLICATIONINSIGHTS_CONNECTION_STRING' || name=='APPINSIGHTS_INSTRUMENTATIONKEY' || name=='APPLICATIONINSIGHTS_ENABLE_AGENT'].{name:name,value:value}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az webapp config appsettings list` | List application settings of the web app. |
+    | `--name` | Name of the resource. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 3. **Run a control query that compares major telemetry tables together**
 
@@ -91,6 +105,13 @@ flowchart TD
         --timespan "PT15M"
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--analytics-query` | Kusto (KQL) query to execute. |
+    | `--timespan` | Time range for the query. |
+
 4. **Check whether AppRequests show sampling behavior**
 
     ```bash
@@ -99,6 +120,13 @@ flowchart TD
         --analytics-query "AppRequests | where TimeGenerated > ago(1h) | summarize Recorded=count(), Estimated=sum(ItemCount) | extend EffectiveSamplingPercent=round(100.0 * todouble(Recorded) / todouble(Estimated), 2)" \
         --timespan "PT1H"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+    | `--workspace` | Log Analytics workspace ID for the query. |
+    | `--analytics-query` | Kusto (KQL) query to execute. |
+    | `--timespan` | Time range for the query. |
 
 5. **Review recent deployment timing before changing telemetry code**
 
@@ -110,6 +138,14 @@ flowchart TD
         --output table
     ```
 
+    | Command | Purpose |
+    | --- | --- |
+    | `az webapp deployment list` | List deployments of the web app. |
+    | `--name` | Name of the resource. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
+    | `--output` | Output format for the result. |
+
 6. **If private networking is involved, inspect related private endpoints**
 
     ```bash
@@ -117,6 +153,12 @@ flowchart TD
         --resource-group "$NETWORK_RG" \
         --query "[?contains(name, 'appi') || contains(name, 'monitor')].{name:name,subnet:subnet.id,provisioningState:provisioningState}"
     ```
+
+    | Command | Purpose |
+    | --- | --- |
+    | `az network private-endpoint list` | List private endpoints. |
+    | `--resource-group` | Resource group that contains the resource. |
+    | `--query` | JMESPath projection of the fields to return. |
 
 ## 5. Evidence to Collect
 
@@ -214,6 +256,13 @@ az monitor app-insights component show \
     --query "{name:name, location:location, applicationType:applicationType, connectionString:connectionString}"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights component show` | Show an Application Insights component. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+
 **Sample Output (sanitized)**
 
 ```json
@@ -235,6 +284,13 @@ az webapp config appsettings list \
     --resource-group "$APP_RG" \
     --query "[?name=='APPLICATIONINSIGHTS_CONNECTION_STRING' || name=='APPINSIGHTS_INSTRUMENTATIONKEY' || name=='APPLICATIONINSIGHTS_ENABLE_AGENT'].{name:name, value:value}"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az webapp config appsettings list` | List application settings of the web app. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
 
 **Sample Output (sanitized)**
 
@@ -263,6 +319,14 @@ az webapp deployment list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az webapp deployment list` | List deployments of the web app. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
+
 **Sample Output (sanitized)**
 
 ```text
@@ -283,6 +347,13 @@ az monitor app-insights query \
         --analytics-query "AppRequests | where TimeGenerated > ago(15m) | summarize Count=sum(ItemCount), LastSeen=max(TimeGenerated) by AppRoleName"
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az monitor app-insights query` | Run a query against Application Insights. |
+| `--app` | Application Insights component name. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+
 **Sample Output (sanitized)**
 
 ```text
@@ -300,6 +371,12 @@ az network private-endpoint list \
     --resource-group "$NETWORK_RG" \
     --query "[?contains(name, 'appi') || contains(name, 'monitor')].{name:name, subnet:subnet.id, provisioningState:provisioningState}"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az network private-endpoint list` | List private endpoints. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
 
 **Sample Output (sanitized)**
 
@@ -347,6 +424,13 @@ az webapp config appsettings list \
     --resource-group "$APP_RG" \
     --query "[?name=='APPLICATIONINSIGHTS_CONNECTION_STRING'].value"
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az webapp config appsettings list` | List application settings of the web app. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--query` | JMESPath projection of the fields to return. |
 
 ```kusto
 union AppRequests, AppTraces
@@ -418,11 +502,24 @@ az webapp deployment list \
     --output table
 ```
 
+| Command | Purpose |
+| --- | --- |
+| `az webapp deployment list` | List deployments of the web app. |
+| `--name` | Name of the resource. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
+
 ```bash
 az network private-endpoint list \
     --resource-group "$NETWORK_RG" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az network private-endpoint list` | List private endpoints. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--output` | Output format for the result. |
 
 When the gap begins immediately after deployment, private endpoint rollout, or app setting change, H4 becomes much more credible.
 

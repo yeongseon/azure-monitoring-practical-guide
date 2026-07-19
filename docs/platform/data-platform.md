@@ -128,6 +128,14 @@ az monitor log-analytics workspace show \
     --query "{name:name,location:location,sku:sku.name,retentionInDays:retentionInDays,features:features,workspaceCapping:workspaceCapping}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace show` | Show a Log Analytics workspace. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -181,6 +189,12 @@ az monitor metrics list-definitions \
     --resource "$RESOURCE_ID" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor metrics list-definitions` | List available metric definitions for a resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 Name                          Unit       Primary Aggregation Type    Dimensions
@@ -215,6 +229,13 @@ az monitor log-analytics query \
     --analytics-query "Heartbeat | where TimeGenerated > ago(15m) | summarize LastSeen=max(TimeGenerated) by Computer, OSType" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 Computer        OSType    LastSeen
@@ -354,6 +375,16 @@ az monitor diagnostic-settings create \
     --metrics '[{"category":"AllMetrics","enabled":true}]' \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor diagnostic-settings create` | Create a diagnostic setting. |
+| `--name` | Name of the resource. |
+| `--resource` | Target resource ID or name for the operation. |
+| `--workspace` | Log Analytics workspace name or resource ID that receives the logs. |
+| `--logs` | Log categories or settings to collect. |
+| `--metrics` | Metric categories to collect. |
+| `--output` | Output format for the result. |
 Example output:
 ```json
 {
@@ -382,6 +413,13 @@ az monitor log-analytics query \
     --analytics-query "search * | where TimeGenerated > ago(10m) | summarize Records=count() by \$table | top 5 by Records desc" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Example output:
 ```text
 $Table                Records

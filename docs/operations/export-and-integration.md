@@ -59,6 +59,14 @@ az monitor log-analytics workspace data-export list \
     --query "[].{name:name,destination:destination.resourceId,tables:tableNames,enabled:enable}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace data-export list` | List workspace data export rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                  Destination                                                                                       Tables                            Enabled
@@ -72,6 +80,13 @@ az monitor log-analytics query \
     --analytics-query "Usage | where TimeGenerated > ago(1d) | summarize TotalGB=sum(Quantity)/1024 by DataType | top 10 by TotalGB desc" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 DataType         TotalGB
@@ -93,6 +108,17 @@ az monitor log-analytics workspace data-export create \
     --enable true \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace data-export create` | Create a workspace data export rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
+| `--destination` | Export destination for the data. |
+| `--tables` | Tables included in the export or operation. |
+| `--enable` | Enables the feature or resource. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -122,6 +148,17 @@ az monitor log-analytics workspace data-export create \
     --enable true \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace data-export create` | Create a workspace data export rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
+| `--destination` | Export destination for the data. |
+| `--tables` | Tables included in the export or operation. |
+| `--enable` | Enables the feature or resource. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -148,6 +185,15 @@ az monitor log-analytics workspace data-export show \
     --query "{name:name,destination:destination.resourceId,tables:tableNames,enabled:enable}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace data-export show` | Show a workspace data export rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -170,6 +216,13 @@ az monitor log-analytics query \
     --analytics-query "Heartbeat | where TimeGenerated > ago(30m) | summarize LastSeen=max(TimeGenerated), Agents=dcount(Computer)" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 LastSeen                     Agents
@@ -188,6 +241,14 @@ az monitor log-analytics workspace data-export list \
     --query "[].{name:name,destination:destination.resourceId,enabled:enable}" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace data-export list` | List workspace data export rules. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Name                       Destination                                                                                     Enabled
@@ -202,6 +263,13 @@ az monitor log-analytics query \
     --analytics-query "SecurityEvent | where TimeGenerated > ago(1h) | count" \
     --output table
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics query` | Run a KQL query against a Log Analytics workspace. |
+| `--workspace` | Log Analytics workspace ID for the query. |
+| `--analytics-query` | Kusto (KQL) query to execute. |
+| `--output` | Output format for the result. |
 Expected output:
 ```text
 Count
@@ -217,6 +285,15 @@ az monitor log-analytics workspace data-export show \
     --query "{name:name,destination:destination.resourceId,tables:tableNames}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace data-export show` | Show a workspace data export rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Expected output:
 ```json
 {
@@ -238,6 +315,14 @@ az monitor log-analytics workspace data-export delete \
     --name $EXPORT_RULE_NAME \
     --yes
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace data-export delete` | Delete a workspace data export rule. |
+| `--resource-group` | Resource group that contains the resource. |
+| `--workspace-name` | Name of the Log Analytics workspace. |
+| `--name` | Name of the resource. |
+| `--yes` | Skips the confirmation prompt. |
 Recreate the rule with the corrected destination or table list immediately after deletion if monitoring continuity matters.
 
 Common problems:
@@ -261,6 +346,12 @@ az monitor log-analytics workspace data-export list \
     --query "[].{name:name,resourceGroup:resourceGroup,destination:destination.resourceId}" \
     --output json
 ```
+
+| Command | Purpose |
+| --- | --- |
+| `az monitor log-analytics workspace data-export list` | List workspace data export rules. |
+| `--query` | JMESPath projection of the fields to return. |
+| `--output` | Output format for the result. |
 Useful automation patterns:
 - Export rule inventory checks in CI or scheduled jobs.
 - Drift detection against approved table lists and destination IDs.
