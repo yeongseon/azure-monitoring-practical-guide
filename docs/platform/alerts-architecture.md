@@ -27,6 +27,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
         - https://learn.microsoft.com/en-us/cli/azure/monitor/metrics/alert?view=azure-cli-latest
         - https://learn.microsoft.com/en-us/cli/azure/monitor/scheduled-query?view=azure-cli-latest
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Azure Monitor supports multiple alert types, including metric alerts, log search alerts, and activity log alerts."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types
+      verified: true
+    - claim: "Alerts trigger action groups, which define the notifications and automated actions taken when an alert fires."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+      verified: true
+    - claim: "Alert processing rules can suppress or modify alert notifications, for example during a planned maintenance window."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
+      verified: true
+    - claim: "An alert instance has an alert state (such as New, Acknowledged, or Closed) that is independent of its monitor condition."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
+      verified: true
 ---
 
 # Alerts Architecture

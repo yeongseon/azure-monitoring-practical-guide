@@ -19,6 +19,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/analyze-metrics
         - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/metrics-index
         - https://learn.microsoft.com/en-us/cli/azure/monitor/metrics?view=azure-cli-latest
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Azure Monitor stores metrics in a time-series database optimized for fast retrieval and repeated alert evaluation."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+      verified: true
+    - claim: "Platform metrics are collected automatically for supported Azure resources without any configuration."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+      verified: true
+    - claim: "Metrics support multiple dimensions, allowing metric values to be filtered and split by dimension in analysis and alerting."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+      verified: true
+    - claim: "Metric alerts evaluate a metric time series against a threshold at a configured evaluation frequency and window."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-metric-overview
+      verified: true
 ---
 
 # Metrics and Dimensions
