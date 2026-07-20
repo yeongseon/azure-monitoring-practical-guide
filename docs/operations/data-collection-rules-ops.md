@@ -8,6 +8,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "A data collection rule defines the data sources to collect, optional transformations, and the destinations where data is sent."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+      verified: true
+    - claim: "Azure Monitor Agent collects guest OS telemetry according to the data collection rules associated with the monitored machine."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+      verified: true
+    - claim: "A data collection rule takes effect on a machine only after a data collection rule association links the rule to that resource."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+      verified: true
+    - claim: "DCR transformations use KQL to filter or modify incoming data before it is stored in the destination."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+      verified: true
 ---
 
 # Data Collection Rules Operations

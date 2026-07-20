@@ -8,6 +8,20 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Log Analytics workspace data export continuously sends data from selected tables to a Storage account or Event Hubs as it arrives."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-data-export
+      verified: true
+    - claim: "A data export rule specifies the source tables and a single destination, and each destination type has its own rule."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-data-export
+      verified: true
+    - claim: "Data export sends data to a Storage account for archival or to Event Hubs for streaming to external systems."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-data-export
+      verified: true
 ---
 
 # Export and Integration
