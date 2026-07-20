@@ -21,6 +21,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/network-security-perimeter
         - https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Azure Monitor Private Link Scope (AMPLS) connects Azure Monitor resources to a virtual network through private endpoints."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+      verified: true
+    - claim: "Access to Azure Monitor is controlled through Azure RBAC roles such as Monitoring Reader and Monitoring Contributor."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
+      verified: true
+    - claim: "Log Analytics supports resource-context and workspace-context access modes to control table-level access to log data."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+      verified: true
+    - claim: "Network security perimeter can control public network access to Azure Monitor resources."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/network-security-perimeter
+      verified: true
 ---
 
 # Networking and Security

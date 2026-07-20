@@ -23,6 +23,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
         - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Azure Monitor Logs is built on the Log Analytics workspace, the primary Azure Monitor Logs resource that holds tables into which data is collected."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs
+      verified: true
+    - claim: "Azure Monitor Metrics stores numeric data in a time-series database, separate from the log data platform."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/data-platform-metrics
+      verified: true
+    - claim: "Log data in a Log Analytics workspace is retrieved with Kusto Query Language (KQL), and KQL queries in Log Analytics are read-only."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs
+      verified: true
+    - claim: "Diagnostic settings route resource logs to a workspace, Storage account, Event Hubs, or partner destination."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
+      verified: true
 ---
 
 # Data Platform

@@ -25,6 +25,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/distributed-trace-data
         - https://learn.microsoft.com/en-us/cli/azure/monitor/app-insights?view=azure-cli-latest
         - https://learn.microsoft.com/en-us/cli/azure/monitor/scheduled-query?view=azure-cli-latest
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Application Insights collects application telemetry including requests, dependencies, exceptions, traces, and page views."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+      verified: true
+    - claim: "Workspace-based Application Insights resources send their telemetry to a linked Log Analytics workspace."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
+      verified: true
+    - claim: "Azure Monitor OpenTelemetry Distro is the recommended way to instrument applications for Application Insights."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-overview
+      verified: true
+    - claim: "Live Metrics streams application telemetry in near real time with roughly one-second latency."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/app/live-stream
+      verified: true
 ---
 
 # Application Insights

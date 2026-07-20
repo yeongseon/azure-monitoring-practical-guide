@@ -23,6 +23,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
         - https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category
         - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "A Log Analytics workspace is the primary Azure Monitor Logs resource and the boundary for data storage, retention, and access control."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+      verified: true
+    - claim: "Default interactive (Analytics plan) retention is 30 days, and 90 days for Application Insights and Microsoft Sentinel data."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+      verified: true
+    - claim: "Total data retention in a Log Analytics workspace can be extended up to 12 years."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+      verified: true
+    - claim: "Log Analytics supports workspace-context and resource-context access modes, plus table-level RBAC, to manage access to log data."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+      verified: true
 ---
 
 # Log Analytics Workspace

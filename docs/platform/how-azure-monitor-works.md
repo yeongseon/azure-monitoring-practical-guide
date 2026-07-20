@@ -29,6 +29,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Azure Monitor uses a different storage engine per data type: metrics are stored in a time-series metrics database and logs are stored in a Log Analytics workspace."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs
+      verified: true
+    - claim: "Platform metrics are collected automatically for supported Azure resources, while resource logs are only collected when a diagnostic setting is configured."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
+      verified: true
+    - claim: "Workspace-based Application Insights stores application telemetry in a linked Log Analytics workspace."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+      verified: true
+    - claim: "Diagnostic settings are configured per resource and route logs and metrics to destinations such as a Log Analytics workspace, Storage account, or Event Hubs."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
+      verified: true
 ---
 
 # How Azure Monitor Works

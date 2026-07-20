@@ -21,6 +21,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-ingestion-api-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection
         - https://learn.microsoft.com/en-us/cli/azure/monitor/data-collection/rule?view=azure-cli-latest
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Data collection rules (DCRs) define what data Azure Monitor collects, how it is transformed, and where it is sent."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+      verified: true
+    - claim: "Azure Monitor Agent uses data collection rules associated with monitored resources to collect guest OS telemetry."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+      verified: true
+    - claim: "DCR transformations use KQL to filter or modify incoming data before it is stored."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-transformations-create
+      verified: true
+    - claim: "The Logs Ingestion API sends custom data to a Log Analytics workspace using a data collection rule."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-ingestion-api-overview
+      verified: true
 ---
 
 # Data Collection Rules
