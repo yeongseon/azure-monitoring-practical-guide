@@ -29,7 +29,7 @@ Document-level `content_validation` blocks record the verification status of a p
 | Section | Status | Notes |
 |---|---|---|
 | `docs/platform/` | Rolled out | All eight factual platform pages carry a `content_validation` block. The section landing page (`index.md`) is navigation-only and is intentionally excluded. |
-| `docs/best-practices/` | Planned | Follows in a subsequent pull request. |
+| `docs/best-practices/` | Rolled out | All seven factual best-practices pages carry a `content_validation` block. The section landing page (`index.md`) is navigation-only and is intentionally excluded. |
 | `docs/operations/` | Planned | Follows in a subsequent pull request. |
 
 Sections not listed are out of scope for document-level `content_validation` (for example, reference look-ups, tutorials, and KQL packs make no standalone factual platform claims).

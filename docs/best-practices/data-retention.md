@@ -8,6 +8,20 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "A Log Analytics workspace has a default interactive retention that can be overridden at the table level."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+      verified: true
+    - claim: "Total retention combines interactive retention plus archive, and can be configured up to 12 years."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+      verified: true
+    - claim: "Archived log data is retained at lower cost and can be accessed through search jobs or by restoring the data."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-archive
+      verified: true
 ---
 
 # Data Retention

@@ -8,6 +8,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "A Log Analytics workspace is the boundary for data retention, access control, and the region in which log data is stored."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
+      verified: true
+    - claim: "Log Analytics workspace access can be scoped with workspace-context and resource-context access modes."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+      verified: true
+    - claim: "Data collection rules standardize what telemetry is collected from monitored resources and where it is routed."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+      verified: true
+    - claim: "Designing a workspace deployment involves balancing centralization against isolation for access control, cost, and data residency."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
+      verified: true
 ---
 
 # Workspace Design

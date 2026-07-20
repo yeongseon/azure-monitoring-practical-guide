@@ -8,6 +8,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Azure resource tags are name-value pairs applied to resources and resource groups to organize them for management, cost, and automation."
+      source: https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources
+      verified: true
+    - claim: "Not all Azure resource types support tags, and tags applied to a resource group are not inherited by the resources within it."
+      source: https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-support
+      verified: true
+    - claim: "Azure Policy can audit or enforce required tags on resources at scale."
+      source: https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal
+      verified: true
+    - claim: "The Cloud Adoption Framework recommends a consistent resource naming convention that encodes information such as resource type, workload, and environment."
+      source: https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming
+      verified: true
 ---
 
 # Tagging and Organization

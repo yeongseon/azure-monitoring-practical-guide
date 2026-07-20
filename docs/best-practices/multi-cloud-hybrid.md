@@ -8,6 +8,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Azure Monitor Agent collects telemetry from Azure, on-premises, and other-cloud machines, using data collection rules associated with each machine."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
+      verified: true
+    - claim: "Azure Arc-enabled servers project non-Azure machines into Azure so they can be managed and monitored like native Azure resources."
+      source: https://learn.microsoft.com/en-us/azure/azure-arc/servers/overview
+      verified: true
+    - claim: "A data collection rule defines what data is collected and where it is sent, and can be reused across multiple machines."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+      verified: true
+    - claim: "The Azure Monitor OpenTelemetry Distro provides a vendor-neutral way to instrument applications that send telemetry to Application Insights."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-overview
+      verified: true
 ---
 
 # Multi-Cloud and Hybrid Monitoring
