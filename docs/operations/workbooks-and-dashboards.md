@@ -7,6 +7,20 @@ content_sources:
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Azure Monitor workbooks provide interactive, parameterized reports that combine text, queries, metrics, and visualizations."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+      verified: true
+    - claim: "Azure Monitor offers multiple visualization options, including workbooks, dashboards, and Grafana, for presenting monitoring data."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
+      verified: true
+    - claim: "A workbook's content is stored as a serialized JSON definition, which allows workbooks to be version-controlled and deployed as templates."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+      verified: true
 ---
 
 # Workbooks and Dashboards

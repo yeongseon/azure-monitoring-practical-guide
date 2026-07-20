@@ -8,6 +8,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Metric alert rules evaluate a metric against a threshold at a configured evaluation frequency and aggregation window."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-metric-alert-rule
+      verified: true
+    - claim: "Scheduled query (log search) alert rules run a Kusto query on a recurring schedule to detect log-based conditions."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-create-log-alert-rule
+      verified: true
+    - claim: "Action groups define the notifications and automated actions that run when an alert rule fires."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+      verified: true
+    - claim: "Alert processing rules can suppress or modify notifications, for example to silence alerts during a maintenance window."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
+      verified: true
 ---
 
 # Alert Rule Management

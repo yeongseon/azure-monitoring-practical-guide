@@ -7,7 +7,7 @@ description: Diagram source metadata policy for the Azure Monitoring practical g
 This page describes how diagram and content sources are declared in this repository, and what tooling is available today to validate those declarations.
 
 !!! note "Current state"
-    Diagram-level source metadata (`content_sources.diagrams`) is used across the repository, and the tooling below runs in CI to keep that metadata honest. **Document-level `content_validation` metadata is being rolled out section-by-section.** Adoption began with the `docs/platform/` factual pages (see [Document-Level `content_validation` Coverage](#document-level-content_validation-coverage) below); `docs/best-practices/` and `docs/operations/` follow in subsequent pull requests. Until a section is listed as covered, do not read the absence of a `content_validation` block on its pages as a validation failure; read it as "not yet rolled out to that section."
+    Diagram-level source metadata (`content_sources.diagrams`) is used across the repository, and the tooling below runs in CI to keep that metadata honest. **Document-level `content_validation` metadata has been rolled out to all three factual-claim sections** — `docs/platform/`, `docs/best-practices/`, and `docs/operations/` (see [Document-Level `content_validation` Coverage](#document-level-content_validation-coverage) below). Section landing pages (`index.md`) and non-factual sections (reference look-ups, tutorials, KQL packs) are intentionally out of scope; do not read the absence of a `content_validation` block on those pages as a validation failure.
 
 ## Source Type Policy
 
@@ -30,7 +30,7 @@ Document-level `content_validation` blocks record the verification status of a p
 |---|---|---|
 | `docs/platform/` | Rolled out | All eight factual platform pages carry a `content_validation` block. The section landing page (`index.md`) is navigation-only and is intentionally excluded. |
 | `docs/best-practices/` | Rolled out | All seven factual best-practices pages carry a `content_validation` block. The section landing page (`index.md`) is navigation-only and is intentionally excluded. |
-| `docs/operations/` | Planned | Follows in a subsequent pull request. |
+| `docs/operations/` | Rolled out | All seven factual operations pages carry a `content_validation` block. The section landing page (`index.md`) is navigation-only and is intentionally excluded. |
 
 Sections not listed are out of scope for document-level `content_validation` (for example, reference look-ups, tutorials, and KQL packs make no standalone factual platform claims).
 

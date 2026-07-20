@@ -7,6 +7,20 @@ content_sources:
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/data-sources
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "A diagnostic setting routes a resource's platform logs and metrics to one or more destinations: a Log Analytics workspace, Storage account, Event Hubs, or a partner solution."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+      verified: true
+    - claim: "Resource logs are not collected until a diagnostic setting is created for the resource."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+      verified: true
+    - claim: "The available log categories are specific to each Azure resource type."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
+      verified: true
 ---
 
 # Diagnostic Settings

@@ -8,6 +8,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/cost-usage
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Azure Monitor Logs cost is driven primarily by the volume of data ingested into the workspace."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs
+      verified: true
+    - claim: "A daily cap can be configured on a Log Analytics workspace to stop ingestion once a daily volume limit is reached."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/daily-cap
+      verified: true
+    - claim: "Commitment tiers offer a reduced per-GB price in exchange for a committed daily ingestion volume compared to pay-as-you-go."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs
+      verified: true
+    - claim: "The Usage and estimated costs experience and the Usage table let you analyze which tables drive ingestion."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+      verified: true
 ---
 
 # Cost Control
