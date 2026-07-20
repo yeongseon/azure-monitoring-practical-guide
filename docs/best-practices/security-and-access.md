@@ -8,6 +8,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Azure Monitor provides built-in roles such as Monitoring Reader and Monitoring Contributor to support least-privilege access."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/roles-permissions-security
+      verified: true
+    - claim: "Access to Log Analytics data can be managed with workspace-context and resource-context access modes plus table-level RBAC."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access
+      verified: true
+    - claim: "Azure Monitor Private Link Scope (AMPLS) connects Azure Monitor resources to a virtual network via private endpoints and can restrict public network access."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
+      verified: true
+    - claim: "Customer-managed keys allow Log Analytics data to be encrypted with keys stored in Azure Key Vault."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/customer-managed-keys
+      verified: true
 ---
 
 # Security and Access

@@ -9,6 +9,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Azure Monitor provides multiple alert types, including metric alerts, log search alerts, and activity log alerts."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-types
+      verified: true
+    - claim: "Action groups define the notification channels and automated actions invoked when an alert fires."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
+      verified: true
+    - claim: "Alert processing rules can suppress or route alert notifications, for example during a planned maintenance window."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
+      verified: true
+    - claim: "Dynamic thresholds use machine learning on a metric's historical behavior to set alert thresholds automatically."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-dynamic-thresholds
+      verified: true
 ---
 
 # Alert Strategy

@@ -9,6 +9,23 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/pricing
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage
+content_validation:
+  status: verified
+  last_reviewed: 2026-07-20
+  reviewer: agent
+  core_claims:
+    - claim: "Azure Monitor Logs charges are driven primarily by the volume of data ingested into the workspace."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs
+      verified: true
+    - claim: "The Basic and Auxiliary table plans offer a lower ingestion price with query and retention limitations compared to the Analytics plan."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/basic-logs-configure
+      verified: true
+    - claim: "A daily cap can be configured on a Log Analytics workspace to limit the amount of data ingested per day."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/daily-cap
+      verified: true
+    - claim: "Data collection rules can filter and transform data before ingestion, reducing the volume that is stored and billed."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+      verified: true
 ---
 
 # Cost Optimization
