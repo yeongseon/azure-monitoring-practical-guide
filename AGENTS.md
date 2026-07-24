@@ -911,6 +911,8 @@ Every page must have:
 - [ ] No short flags (`-g`, `-n`, etc.)
 - [ ] No PII in example output
 
+- [ ] **Repetition Gate**: Run `python scripts/detect_repetition.py docs` to catch generator-produced boilerplate — non-trivial prose lines repeated within a single Markdown page. Repeats matching a known scaffold marker in `scripts/repetition-markers.txt` **fail CI** (ERROR); any other significant repeat is reported as a non-blocking WARN. The detector excludes YAML frontmatter, fenced code blocks, and table/KQL-pipe rows, and honors a per-repo `scripts/repetition-allowlist.txt` of exact lines that are legitimately repeated. Enforced by the `Validate Documentation Repetition` CI job, which also runs the detector's doctests (`python -m doctest scripts/detect_repetition.py -v`). This gate is the Prevention arm of the cross-repo boilerplate-audit epic ([azure-container-apps-practical-guide#376](https://github.com/yeongseon/azure-container-apps-practical-guide/issues/376)); it is vendored per repository so each guide carries its own script, workflow, markers, and allowlist.
+
 ### Microsoft Learn Source Requirement
 
 **All content must be based on Microsoft Learn documentation.**
