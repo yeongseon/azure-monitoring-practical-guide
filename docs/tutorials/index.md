@@ -9,6 +9,14 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+validation:
+  az_cli:
+    last_tested: null
+    cli_version: null
+    result: not_tested
+  bicep:
+    last_tested: null
+    result: not_tested
 ---
 
 # Tutorials

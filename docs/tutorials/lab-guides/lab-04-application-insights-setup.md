@@ -9,6 +9,14 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/availability
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps
+validation:
+  az_cli:
+    last_tested: null
+    cli_version: null
+    result: not_tested
+  bicep:
+    last_tested: null
+    result: not_tested
 ---
 
 # Lab 04: Application Insights Setup
