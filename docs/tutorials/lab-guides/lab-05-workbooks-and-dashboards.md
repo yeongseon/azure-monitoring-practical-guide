@@ -9,6 +9,14 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-create-workbook
         - https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards
         - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
+validation:
+  az_cli:
+    last_tested: null
+    cli_version: null
+    result: not_tested
+  bicep:
+    last_tested: null
+    result: not_tested
 ---
 
 # Lab 05: Workbooks and Dashboards

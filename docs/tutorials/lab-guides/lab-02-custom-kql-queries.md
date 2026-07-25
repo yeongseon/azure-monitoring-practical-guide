@@ -9,6 +9,14 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/functions
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
+validation:
+  az_cli:
+    last_tested: null
+    cli_version: null
+    result: not_tested
+  bicep:
+    last_tested: null
+    result: not_tested
 ---
 
 # Lab 02: Custom KQL Queries

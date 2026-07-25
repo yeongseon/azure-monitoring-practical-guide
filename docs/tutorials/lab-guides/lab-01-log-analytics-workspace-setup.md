@@ -10,6 +10,14 @@ content_sources:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/create-diagnostic-settings
         - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview
+validation:
+  az_cli:
+    last_tested: null
+    cli_version: null
+    result: not_tested
+  bicep:
+    last_tested: null
+    result: not_tested
 ---
 
 # Lab 01: Log Analytics Workspace Setup
