@@ -353,4 +353,4 @@ Tags and organization do not change ingestion charges directly, but they make co
 - [Define your Azure tagging strategy](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/azure-best-practices/resource-tagging)
 - [Tag support for Azure resources](https://learn.microsoft.com/azure/azure-resource-manager/management/tag-support)
 - [Assign Azure Policy definitions for tag governance](https://learn.microsoft.com/azure/governance/policy/assign-policy-portal)
-- [Azure Monitor Logs best practices](https://learn.microsoft.com/azure/azure-monitor/logs/best-practices-logs)
+- [Azure Monitor Logs best practices](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs)

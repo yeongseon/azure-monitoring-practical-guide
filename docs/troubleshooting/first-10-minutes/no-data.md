@@ -5,9 +5,9 @@ content_sources:
       type: flowchart
       source: mslearn-adapted
       based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-linux-vm
         - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot
 ---
 
 # First 10 Minutes: No Data
@@ -159,6 +159,6 @@ union isfuzzy=true Heartbeat, Perf, AzureActivity
 
 ## Sources
 
-- [Troubleshoot Azure Monitor Agent issues](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot)
+- [Troubleshoot Azure Monitor Agent issues](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-linux-vm)
 - [Create and edit diagnostic settings in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings)
-- [Troubleshoot Log Analytics in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot)
+- [Troubleshoot Log Analytics in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot)

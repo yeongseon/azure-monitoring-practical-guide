@@ -5,8 +5,8 @@ content_sources:
       type: flowchart
       source: mslearn-adapted
       based_on:
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/best-practices-visualize
         - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
 content_validation:
   status: verified
   last_reviewed: 2026-07-20
@@ -16,7 +16,7 @@ content_validation:
       source: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
       verified: true
     - claim: "Azure Monitor offers multiple visualization options, including workbooks, dashboards, and Grafana, for presenting monitoring data."
-      source: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/visualize-overview
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/best-practices-visualize
       verified: true
     - claim: "A workbook's content is stored as a serialized JSON definition, which allows workbooks to be version-controlled and deployed as templates."
       source: https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
@@ -435,6 +435,7 @@ Useful automation patterns:
 
 ## Sources
 - [Microsoft Learn: Azure Monitor workbooks overview](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-overview)
+- [Microsoft Learn: Visualize data in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/best-practices-visualize)
 - [Microsoft Learn: Create Azure Monitor workbooks](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-create-workbook)
 - [Microsoft Learn: Create and share dashboards in the Azure portal](https://learn.microsoft.com/azure/azure-portal/azure-portal-dashboards)
 - [Microsoft Learn: Create Azure portal dashboards programmatically](https://learn.microsoft.com/azure/azure-portal/azure-portal-dashboards-create-programmatically)

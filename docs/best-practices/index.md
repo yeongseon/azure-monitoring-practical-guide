@@ -8,7 +8,7 @@ content_sources:
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/best-practices-alerts
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage
 ---
 

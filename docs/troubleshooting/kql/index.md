@@ -7,7 +7,7 @@ content_sources:
       justification: "Category-map diagram organizing the KQL query pack landing hub into four navigational sections (Application Insights, Log Analytics, Alerts, Service-Specific) and their child pages. Synthesized from the KQL / Log Analytics query overview, query best-practices, and query optimization guidance in the based_on Microsoft Learn articles; not derived from any single Microsoft Learn diagram."
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
 ---
 
@@ -55,5 +55,5 @@ graph TD
 
 ## Sources
 
-- [Log queries in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/log-query-overview)
+- [Log queries in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview)
 - [KQL quick reference](https://learn.microsoft.com/azure/data-explorer/kusto/query/kql-quick-reference)

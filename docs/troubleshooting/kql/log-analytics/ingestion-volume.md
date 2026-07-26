@@ -95,5 +95,5 @@ For the full investigation workflow, see [High Ingestion Cost](../../playbooks/h
 *   [Cross-Workspace Queries](cross-workspace.md)
 
 ## Sources
-*   [MS Learn: Usage table reference](https://learn.microsoft.com/azure/azure-monitor/reference/tables/usage)
-*   [MS Learn: Cost and usage in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/manage-cost-storage)
+*   [MS Learn: Usage table reference](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/usage)
+*   [MS Learn: Cost and usage in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-cost-storage)

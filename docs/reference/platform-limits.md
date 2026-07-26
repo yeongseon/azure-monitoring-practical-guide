@@ -109,6 +109,6 @@ Some limits can be increased by contacting Azure Support:
 ## Sources
 
 - [Azure Monitor service limits](https://learn.microsoft.com/azure/azure-monitor/service-limits)
-- [Log Analytics workspace limits](https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-workspace-overview#workspace-limits)
+- [Log Analytics workspace limits](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview#workspace-limits)
 - [Application Insights limits](https://learn.microsoft.com/azure/azure-monitor/app/pricing#limits-summary)
 

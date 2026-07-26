@@ -390,10 +390,10 @@ Good workspace design lowers cost by reducing duplicate ingestion, minimizing ab
 
 ## Sources
 
-- [Azure Monitor Logs best practices](https://learn.microsoft.com/azure/azure-monitor/logs/best-practices-logs)
-- [Design a Log Analytics workspace deployment](https://learn.microsoft.com/azure/azure-monitor/logs/design-logs-deployment)
+- [Azure Monitor Logs best practices](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs)
+- [Design a Log Analytics workspace deployment](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/design-logs-deployment)
 - [Data collection rules in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/data-collection/data-collection-rule-overview)
-- [Manage access to Log Analytics workspaces](https://learn.microsoft.com/azure/azure-monitor/logs/manage-access)
+- [Manage access to Log Analytics workspaces](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access)
 - [Create and configure workspace-based Application Insights resources](https://learn.microsoft.com/azure/azure-monitor/app/create-workspace-resource)
-- [Private Link for Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/private-link-security)
-- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/framework/)
+- [Private Link for Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/design-guides/monitoring)

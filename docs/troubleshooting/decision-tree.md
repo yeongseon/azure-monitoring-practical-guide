@@ -6,8 +6,8 @@ content_sources:
       source: self-generated
       justification: "Synthesized from Microsoft Learn troubleshooting articles for Azure Monitor, Log Analytics, and alerts"
       based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+        - https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
 ---
 
@@ -146,5 +146,5 @@ Before diving into playbooks, check these common issues:
 
 ## Sources
 
-- [Troubleshoot Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/troubleshoot)
-- [Troubleshoot Log Analytics agent](https://learn.microsoft.com/azure/azure-monitor/agents/agent-troubleshoot-overview)
+- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor)
+- [Troubleshoot Log Analytics agent](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-troubleshoot-linux-vm)

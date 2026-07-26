@@ -6,7 +6,7 @@ content_sources:
       source: mslearn-adapted
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
-        - https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/app-insights/investigate-missing-telemetry
+        - https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/app-insights/telemetry/investigate-missing-telemetry
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security
@@ -592,7 +592,7 @@ Escalate as a suspected Azure-side service issue only when control queries are h
 ## Sources
 
 - [Application Insights overview](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)
-- [Troubleshoot missing application telemetry in Azure Monitor Application Insights](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/app-insights/investigate-missing-telemetry)
+- [Troubleshoot missing application telemetry in Azure Monitor Application Insights](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/app-insights/telemetry/investigate-missing-telemetry)
 - [Sampling in Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/sampling)
 - [Monitor Azure App Service with Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/azure-web-apps)
 - [Azure Monitor private link scope and private endpoints](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security)

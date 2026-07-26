@@ -5,8 +5,8 @@ content_sources:
       type: flowchart
       source: mslearn-adapted
       based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+        - https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot
 ---
 
 # First 10 Minutes
@@ -54,5 +54,5 @@ flowchart TD
 
 ## Sources
 
-- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot)
-- [Troubleshoot Log Analytics in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot)
+- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor)
+- [Troubleshoot Log Analytics in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot)
