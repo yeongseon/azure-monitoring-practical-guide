@@ -187,6 +187,7 @@ nav:
     - Lab Guides:
       - troubleshooting/lab-guides/index.md
       - troubleshooting/lab-guides/ama-heartbeat-loss.md
+      - troubleshooting/lab-guides/app-insights-telemetry-gap.md
     - KQL Queries:
       - troubleshooting/kql/index.md
       - Application Insights:

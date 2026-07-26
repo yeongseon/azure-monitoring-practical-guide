@@ -397,7 +397,7 @@ Useful automation patterns:
 - [Cost Control](cost-control.md)
 
 ## Sources
-- [Microsoft Learn: Log Analytics workspace data export in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/logs-data-export)
-- [Microsoft Learn: Configure Azure Monitor Logs export](https://learn.microsoft.com/azure/azure-monitor/logs/logs-data-export-configure)
-- [Microsoft Learn: Query logs in Azure Monitor by using Azure CLI](https://learn.microsoft.com/azure/azure-monitor/logs/azure-cli-query)
+- [Microsoft Learn: Log Analytics workspace data export in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-data-export)
+- [Microsoft Learn: Configure Azure Monitor Logs export](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-data-export)
+- [Microsoft Learn: Query logs in Azure Monitor by using Azure CLI](https://learn.microsoft.com/en-us/cli/azure/monitor/log-analytics)
 - [Microsoft Learn: Data Exports REST API for Log Analytics](https://learn.microsoft.com/rest/api/loganalytics/data-exports)

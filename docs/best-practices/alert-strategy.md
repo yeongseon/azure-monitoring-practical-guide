@@ -6,7 +6,7 @@ content_sources:
       source: mslearn-adapted
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/best-practices-alerts
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups
 content_validation:
@@ -416,4 +416,4 @@ Well-designed alerts reduce hidden cost by lowering wasted incident effort and a
 - [Create and manage log search alerts](https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-create-log-alert-rule)
 - [Dynamic thresholds in Azure Monitor alerts](https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-dynamic-thresholds)
 - [Alert processing rules](https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-processing-rules)
-- [Azure Well-Architected Framework](https://learn.microsoft.com/azure/well-architected/framework/)
+- [Azure Well-Architected Framework](https://learn.microsoft.com/en-us/azure/well-architected/design-guides/monitoring)

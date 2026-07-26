@@ -27,11 +27,12 @@ Every lab guide follows the scientific-method skeleton so the result is reproduc
 
 ## Available Labs
 
-No labs have been published yet. This section is the scaffold that new labs land in; each new lab is added both as a file under `docs/troubleshooting/lab-guides/` and as a nav entry in `mkdocs.yml`.
+Each published lab is added as a file under `docs/troubleshooting/lab-guides/` and as a nav entry in `mkdocs.yml`. Live evidence capture status is called out explicitly so documentation-first labs do not imply fabricated proof.
 
 | Lab | Failure Mode | Status |
 |-----|--------------|--------|
-| _First lab_ | _To be added_ | Planned |
+| [AMA Heartbeat Loss](ama-heartbeat-loss.md) | DCR association deletion makes `Heartbeat` stale even though the VM and AMA extension still exist | Documentation published; pending live capture |
+| [Application Insights Telemetry Gap](app-insights-telemetry-gap.md) | Invalid `APPLICATIONINSIGHTS_CONNECTION_STRING` stops fresh `AppRequests` from arriving until the original value is restored | Documentation published; pending live capture |
 
 ## See Also
 
@@ -44,4 +45,4 @@ No labs have been published yet. This section is the scaffold that new labs land
 
 ## Sources
 
-- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot)
+- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor)

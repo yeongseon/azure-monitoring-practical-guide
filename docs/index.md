@@ -58,5 +58,5 @@ Choose your path based on your role:
 ## Sources
 
 - [Azure Monitor documentation](https://learn.microsoft.com/azure/azure-monitor/)
-- [Log Analytics documentation](https://learn.microsoft.com/azure/azure-monitor/logs/)
+- [Log Analytics documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs)
 - [Application Insights documentation](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview)

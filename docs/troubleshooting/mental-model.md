@@ -5,27 +5,27 @@ content_sources:
       type: flowchart
       source: mslearn-adapted
       based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
         - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
     - id: 5-minimum-evidence-set
       type: flowchart
       source: mslearn-adapted
       based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
         - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
     - id: 9-recovery-verification-model
       type: flowchart
       source: mslearn-adapted
       based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
         - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings
         - https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
 ---
@@ -228,8 +228,8 @@ Otherwise, continue disproof inside the relevant playbook.
 
 ## Sources
 
-- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot)
+- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor)
 - [Log Analytics workspace overview](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview)
-- [Best practices for Azure Monitor Logs queries](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-best-practices)
+- [Best practices for Azure Monitor Logs queries](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization)
 - [Create diagnostic settings in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/create-diagnostic-settings)
 - [Application Insights overview](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)

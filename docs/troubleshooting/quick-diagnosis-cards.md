@@ -5,7 +5,7 @@ content_sources:
       type: flowchart
       source: mslearn-adapted
       based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor
         - https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
@@ -143,7 +143,7 @@ flowchart TD
 
 ## Sources
 
-- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot)
+- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor)
 - [Troubleshoot Azure Monitor alerts](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot)
 - [Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)
 - [Optimize log queries in Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization)

@@ -135,7 +135,7 @@ Exceptions and errors thrown by the application.
 - [Platform Limits](platform-limits.md)
 
 ## Sources
-- [Azure Monitor Tables Reference](https://learn.microsoft.com/azure/azure-monitor/reference/tables/)
-- [AppServiceHTTPLogs Reference](https://learn.microsoft.com/azure/azure-monitor/reference/tables/appservicehttplogs)
-- [ContainerAppConsoleLogs Reference](https://learn.microsoft.com/azure/azure-monitor/reference/tables/containerappconsolelogs)
+- [Azure Monitor Tables Reference](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/tables-category)
+- [AppServiceHTTPLogs Reference](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appservicehttplogs)
+- [ContainerAppConsoleLogs Reference](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/containerappconsolelogs)
 

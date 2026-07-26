@@ -59,5 +59,5 @@ graph TD
 
 ## Sources
 
-- [Manage Log Analytics workspaces](https://learn.microsoft.com/azure/azure-monitor/logs/manage-access)
+- [Manage Log Analytics workspaces](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access)
 - [Diagnostic settings](https://learn.microsoft.com/azure/azure-monitor/essentials/diagnostic-settings)

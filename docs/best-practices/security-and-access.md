@@ -422,8 +422,8 @@ Security controls can add cost through private endpoints, private DNS, or CMK-re
 - [Platform - Networking and Security](../platform/networking-and-security.md)
 
 ## Sources
-- [Manage access to Log Analytics workspaces](https://learn.microsoft.com/azure/azure-monitor/logs/manage-access)
-- [Private Link for Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/logs/private-link-security)
-- [Customer-managed keys for Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/customer-managed-keys)
+- [Manage access to Log Analytics workspaces](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/manage-access)
+- [Private Link for Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/private-link-security)
+- [Customer-managed keys for Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/customer-managed-keys)
 - [Azure Monitor built-in roles](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles/monitor)
 - [Manage access to Azure Monitor workspaces](https://learn.microsoft.com/azure/azure-monitor/metrics/azure-monitor-workspace-manage-access)

@@ -368,7 +368,7 @@ Retention settings directly affect storage cost. Shorter analytics retention red
 
 ## Sources
 
-- [Manage data retention in a Log Analytics workspace](https://learn.microsoft.com/azure/azure-monitor/logs/data-retention-configure)
-- [Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/cost-logs)
-- [Data export in Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/logs-data-export)
-- [Azure Monitor Logs overview](https://learn.microsoft.com/azure/azure-monitor/logs/data-platform-logs)
+- [Manage data retention in a Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-configure)
+- [Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)
+- [Data export in Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-data-export)
+- [Azure Monitor Logs overview](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs)

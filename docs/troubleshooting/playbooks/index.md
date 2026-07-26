@@ -5,7 +5,7 @@ content_sources:
       type: flowchart
       source: mslearn-adapted
       based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot
+        - https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor
 ---
 
 # Playbooks
@@ -58,4 +58,4 @@ graph TB
 
 ## Sources
 
-- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/troubleshoot)
+- [Troubleshoot Azure Monitor](https://learn.microsoft.com/en-us/troubleshoot/azure/azure-monitor/welcome-azure-monitor)

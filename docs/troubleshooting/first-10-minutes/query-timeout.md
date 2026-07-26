@@ -6,7 +6,7 @@ content_sources:
       source: mslearn-adapted
       based_on:
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot
         - https://learn.microsoft.com/en-us/azure/azure-monitor/logs/scope
 ---
 
@@ -158,5 +158,5 @@ az servicehealth events list \
 ## Sources
 
 - [Optimize log queries in Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization)
-- [Troubleshoot Log Analytics in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/troubleshoot)
+- [Troubleshoot Log Analytics in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collection-troubleshoot)
 - [Query scope in Azure Monitor Log Analytics](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/scope)

@@ -448,9 +448,9 @@ Useful automation patterns:
 - [Alert Rule Management](alert-rule-management.md)
 
 ## Sources
-- [Microsoft Learn: Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/cost-logs)
+- [Microsoft Learn: Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)
 - [Microsoft Learn: Azure Monitor cost and usage](https://learn.microsoft.com/azure/azure-monitor/cost-usage)
-- [Microsoft Learn: Analyze usage in a Log Analytics workspace](https://learn.microsoft.com/azure/azure-monitor/logs/analyze-usage)
-- [Microsoft Learn: Cost optimization for Azure Monitor Logs](https://learn.microsoft.com/azure/azure-monitor/logs/cost-logs)
-- [Microsoft Learn: Azure Monitor Logs pricing model](https://learn.microsoft.com/azure/azure-monitor/logs/cost-logs#pricing-model)
-- [Microsoft Learn: Configure workspace daily cap](https://learn.microsoft.com/azure/azure-monitor/logs/daily-cap)
+- [Microsoft Learn: Analyze usage in a Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/analyze-usage)
+- [Microsoft Learn: Cost optimization for Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)
+- [Microsoft Learn: Azure Monitor Logs pricing model](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs#pricing-model)
+- [Microsoft Learn: Configure workspace daily cap](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/daily-cap)
