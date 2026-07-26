@@ -59,7 +59,7 @@ bash labs/ama-heartbeat-loss/scripts/cleanup.sh
 ## Heartbeat Query
 
 ```kusto
-Heartbeat | where Computer == '<vm-name>' | summarize LastHeartbeat=max(TimeGenerated), MinutesSinceLastHeartbeat=datetime_diff('minute', now(), max(TimeGenerated)) * -1
+Heartbeat | where Computer == '<vm-name>' | summarize LastHeartbeat=max(TimeGenerated), MinutesSinceLastHeartbeat=datetime_diff('minute', now(), max(TimeGenerated))
 ```
 
 ## Expected Interpretation

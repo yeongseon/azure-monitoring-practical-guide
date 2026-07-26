@@ -14,7 +14,7 @@ if [[ -z "$WORKSPACE_ID" ]]; then
     --output tsv)"
 fi
 
-QUERY="Heartbeat | where Computer == '$VM_NAME' | summarize LastHeartbeat=max(TimeGenerated), MinutesSinceLastHeartbeat=datetime_diff('minute', now(), max(TimeGenerated)) * -1"
+QUERY="Heartbeat | where Computer == '$VM_NAME' | summarize LastHeartbeat=max(TimeGenerated), MinutesSinceLastHeartbeat=datetime_diff('minute', now(), max(TimeGenerated))"
 
 az monitor log-analytics query \
   --workspace "$WORKSPACE_ID" \
