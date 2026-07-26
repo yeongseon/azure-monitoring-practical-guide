@@ -89,5 +89,5 @@ For the full investigation workflow, see [Alert Not Firing](../../playbooks/aler
 *   [Resource Health Status](../log-analytics/resource-health.md)
 
 ## Sources
-*   [MS Learn: AlertsManagementResources schema](https://learn.microsoft.com/en-us/azure/governance/resource-graph/reference/supported-tables-resources)
+*   [MS Learn: Azure Resource Graph supported tables reference (includes AlertsManagementResources)](https://learn.microsoft.com/en-us/azure/governance/resource-graph/reference/supported-tables-resources)
 *   [MS Learn: Manage alerts in Azure](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-manage-alert-instances)

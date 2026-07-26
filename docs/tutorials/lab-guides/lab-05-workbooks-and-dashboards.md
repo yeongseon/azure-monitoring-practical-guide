@@ -5,7 +5,7 @@ content_sources:
       type: flowchart
       source: mslearn-adapted
       based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
+        - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/best-practices-visualize
         - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-create-workbook
         - https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards
         - https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview
@@ -432,4 +432,4 @@ If the entire sandbox is no longer needed, delete the resource group instead.
 - [Azure Monitor workbooks overview](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview)
 - [Create interactive reports with Azure Monitor workbooks](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-create-workbook)
 - [Azure dashboards](https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards)
-- [Visualize data in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview)
+- [Visualize data in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/best-practices-visualize)

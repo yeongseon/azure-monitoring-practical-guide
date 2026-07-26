@@ -399,5 +399,5 @@ Useful automation patterns:
 ## Sources
 - [Microsoft Learn: Log Analytics workspace data export in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-data-export)
 - [Microsoft Learn: Configure Azure Monitor Logs export](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/logs-data-export)
-- [Microsoft Learn: Query logs in Azure Monitor by using Azure CLI](https://learn.microsoft.com/en-us/cli/azure/monitor/log-analytics)
+- [Microsoft Learn: Query logs in Azure Monitor by using Azure CLI](https://learn.microsoft.com/en-us/cli/azure/monitor/log-analytics?view=azure-cli-latest#az-monitor-log-analytics-query)
 - [Microsoft Learn: Data Exports REST API for Log Analytics](https://learn.microsoft.com/rest/api/loganalytics/data-exports)

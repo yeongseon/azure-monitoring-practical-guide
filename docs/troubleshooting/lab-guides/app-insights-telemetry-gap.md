@@ -231,7 +231,7 @@ Interpretation:
 
 Target directory for future captures: `docs/assets/troubleshooting/app-insights-telemetry-gap/`
 
-pending live capture only. Do not add markdown image references until the actual files exist and are visually verified.
+Pending live capture only. Do not add markdown image references until the actual files exist and are visually verified.
 
 Planned captures:
 
