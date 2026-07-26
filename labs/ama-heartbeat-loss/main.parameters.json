@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus"
+    },
+    "namePrefix": {
+      "value": "amahblab"
+    },
+    "vmName": {
+      "value": "vm-ama-heartbeat-loss"
+    },
+    "adminUsername": {
+      "value": "azureuser"
+    },
+    "adminPassword": {
+      "value": "<admin-password>"
+    },
+    "vmSize": {
+      "value": "Standard_B2s"
+    },
+    "workspaceName": {
+      "value": "law-ama-heartbeat-loss"
+    },
+    "dcrName": {
+      "value": "dcr-ama-heartbeat-loss"
+    },
+    "associationName": {
+      "value": "ama-heartbeat-loss"
+    },
+    "virtualNetworkAddressPrefix": {
+      "value": "10.42.0.0/16"
+    },
+    "subnetAddressPrefix": {
+      "value": "10.42.0.0/24"
+    },
+    "workspaceRetentionInDays": {
+      "value": 30
+    }
+  }
+}
