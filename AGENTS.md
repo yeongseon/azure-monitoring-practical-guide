@@ -172,6 +172,7 @@ Required by default:
 - `docs/platform/**`
 - `docs/best-practices/**`
 - `docs/operations/**`
+- `docs/service-guides/**`
 - factual troubleshooting methodology/playbook pages
 
 Usually out of scope:
