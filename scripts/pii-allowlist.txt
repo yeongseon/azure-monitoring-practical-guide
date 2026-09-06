@@ -1,0 +1,15 @@
+# PII allowlist for scripts/validate_pii.py
+#
+# One confirmed-safe value per line. Lines starting with '#' and blank lines
+# are ignored. Allowlisted values are skipped for every PII check (UUIDs,
+# email addresses, and private IPs).
+#
+# Only add a value here after confirming it is a synthetic example and NOT a
+# real Azure subscription/tenant/object ID, real email address, or real host.
+#
+# Examples:
+#   00000000-0000-0000-0000-000000000000
+#   svc-account@acme.example
+
+# No repo-specific allowlist entries are required yet. The full-repo scan
+# reports zero blocking and zero advisory findings.
