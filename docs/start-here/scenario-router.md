@@ -119,3 +119,9 @@ Some situations straddle two phases — the design choice you make while plannin
 - [Data Platform](../platform/data-platform.md) — Metrics, Logs, Traces, Changes pillars
 - [Decision Tree](../troubleshooting/decision-tree.md) — symptom-first troubleshooting router
 - [Evidence Map](../troubleshooting/evidence-map.md) — evidence-collection index
+
+## Sources
+
+- [Azure Monitor overview](https://learn.microsoft.com/en-us/azure/azure-monitor/fundamentals/overview)
+- [Log Analytics workspace overview](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview)
+- [Azure Monitor best practices](https://learn.microsoft.com/en-us/azure/azure-monitor/best-practices)
