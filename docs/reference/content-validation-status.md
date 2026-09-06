@@ -1,98 +1,165 @@
 ---
-description: Diagram source metadata policy for the Azure Monitoring practical guide, and the CI tooling that keeps that metadata honest today.
+content_sources:
+  references:
+    - type: self-generated
+      justification: Auto-generated dashboard tracking content validation status
 ---
 
-# Content Source Validation Status
+# Content Validation Status
 
-This page describes how diagram and content sources are declared in this repository, and what tooling is available today to validate those declarations.
+This page tracks `content_validation` metadata for **in-scope factual-claim documents** under `docs/best-practices/`, `docs/operations/`, `docs/platform/`, `docs/service-guides/`, `docs/troubleshooting/`. Pages outside this scope — navigation indexes (`docs/best-practices/index.md`, `docs/operations/index.md`, `docs/platform/index.md`, `docs/service-guides/index.md`, `docs/troubleshooting/first-10-minutes/index.md`, `docs/troubleshooting/index.md`, `docs/troubleshooting/playbooks/index.md`), reference-lookup KQL packs and lab guides (`docs/troubleshooting/kql/`, `docs/troubleshooting/lab-guides/`), tutorials, language guides, and start-here landing pages — are not counted here, even when legacy `content_validation` blocks exist on them (the cleanup tool only removes tautological placeholder claims). See `scripts/lib/content_scope.py` for the executable scope definition.
 
-!!! note "Current state"
-    Diagram-level source metadata (`content_sources.diagrams`) is used across the repository, and the tooling below runs in CI to keep that metadata honest. **Document-level `content_validation` metadata has been rolled out to all three factual-claim sections** — `docs/platform/`, `docs/best-practices/`, and `docs/operations/` (see [Document-Level `content_validation` Coverage](#document-level-content_validation-coverage) below). Section landing pages (`index.md`) and non-factual sections (reference look-ups, tutorials, KQL packs) are intentionally out of scope; do not read the absence of a `content_validation` block on those pages as a validation failure.
+## Summary
 
-## Source Type Policy
+*Generated: 2026-09-06*
 
-The `content_sources.diagrams[].source` field must be one of the three values below. These are the exact set accepted by `scripts/validate_content_sources.py` today; any other value causes CI to fail.
+| Content Type | Total | Verified | Pending | Unverified | No Metadata |
+|---|---:|---:|---:|---:|---:|
+| Mermaid Diagrams | 114 | 114 | 0 | 0 | 0 |
+| In-Scope Factual-Claim Documents | 52 | 22 | 0 | 0 | 30 |
 
-| Type | Description | Additional requirement |
+!!! warning "Validation In Progress"
+    30 in-scope document(s) need `content_validation` metadata added.
+
+<!-- diagram-id: content-validation-status-pie -->
+```mermaid
+pie title In-Scope Document Validation Status
+    "Verified" : 22
+    "No Metadata" : 30
+```
+
+## By Section
+
+### Platform
+
+| Document | Has Sources | Status | Claims | Last Reviewed |
+|---|---|---|---|---|
+| [Alerts Architecture](../platform/alerts-architecture.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Application Insights](../platform/application-insights.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Data Collection Rules](../platform/data-collection-rules.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Data Platform](../platform/data-platform.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [How Azure Monitor Works](../platform/how-azure-monitor-works.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Log Analytics Workspace](../platform/log-analytics-workspace.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Metrics And Dimensions](../platform/metrics-and-dimensions.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Networking And Security](../platform/networking-and-security.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+
+### Best Practices
+
+| Document | Has Sources | Status | Claims | Last Reviewed |
+|---|---|---|---|---|
+| [Alert Strategy](../best-practices/alert-strategy.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Cost Optimization](../best-practices/cost-optimization.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Data Retention](../best-practices/data-retention.md) | ✅ | ✅ Verified | 3/3 | 2026-07-20 |
+| [Multi Cloud Hybrid](../best-practices/multi-cloud-hybrid.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Security And Access](../best-practices/security-and-access.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Tagging And Organization](../best-practices/tagging-and-organization.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Workspace Design](../best-practices/workspace-design.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+
+### Operations
+
+| Document | Has Sources | Status | Claims | Last Reviewed |
+|---|---|---|---|---|
+| [Alert Rule Management](../operations/alert-rule-management.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Cost Control](../operations/cost-control.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Data Collection Rules Ops](../operations/data-collection-rules-ops.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+| [Diagnostic Settings](../operations/diagnostic-settings.md) | ✅ | ✅ Verified | 3/3 | 2026-07-20 |
+| [Export And Integration](../operations/export-and-integration.md) | ✅ | ✅ Verified | 3/3 | 2026-07-20 |
+| [Workbooks And Dashboards](../operations/workbooks-and-dashboards.md) | ✅ | ✅ Verified | 3/3 | 2026-07-20 |
+| [Workspace Management](../operations/workspace-management.md) | ✅ | ✅ Verified | 4/4 | 2026-07-20 |
+
+### Service Guides
+
+| Document | Has Sources | Status | Claims | Last Reviewed |
+|---|---|---|---|---|
+| [Alerts And Metrics](../service-guides/app-service/alerts-and-metrics.md) | ✅ | ❓ No Metadata | — | — |
+| [Application Insights Integration](../service-guides/app-service/application-insights-integration.md) | ✅ | ❓ No Metadata | — | — |
+| [Index](../service-guides/aks/index.md) | ✅ | ❓ No Metadata | — | — |
+| [Index](../service-guides/vm/index.md) | ✅ | ❓ No Metadata | — | — |
+| [Index](../service-guides/functions/index.md) | ✅ | ❓ No Metadata | — | — |
+| [Index](../service-guides/container-apps/index.md) | ✅ | ❓ No Metadata | — | — |
+| [Index](../service-guides/app-service/index.md) | ✅ | ❓ No Metadata | — | — |
+| [Observability](../service-guides/aks/observability.md) | ✅ | ❓ No Metadata | — | — |
+| [Observability](../service-guides/vm/observability.md) | ✅ | ❓ No Metadata | — | — |
+| [Observability](../service-guides/functions/observability.md) | ✅ | ❓ No Metadata | — | — |
+| [Observability](../service-guides/container-apps/observability.md) | ✅ | ❓ No Metadata | — | — |
+| [Platform Logs](../service-guides/app-service/platform-logs.md) | ✅ | ❓ No Metadata | — | — |
+
+### Troubleshooting
+
+| Document | Has Sources | Status | Claims | Last Reviewed |
+|---|---|---|---|---|
+| [Agent Not Reporting](../troubleshooting/playbooks/agent-not-reporting.md) | ✅ | ❓ No Metadata | — | — |
+| [Aks Container Insights Issues](../troubleshooting/playbooks/aks-container-insights-issues.md) | ✅ | ❓ No Metadata | — | — |
+| [Alert Not Firing](../troubleshooting/first-10-minutes/alert-not-firing.md) | ✅ | ❓ No Metadata | — | — |
+| [Alert Not Firing](../troubleshooting/playbooks/alert-not-firing.md) | ✅ | ❓ No Metadata | — | — |
+| [Alert Storm](../troubleshooting/playbooks/alert-storm.md) | ✅ | ❓ No Metadata | — | — |
+| [Application Insights Gaps](../troubleshooting/playbooks/application-insights-gaps.md) | ✅ | ❓ No Metadata | — | — |
+| [Architecture Overview](../troubleshooting/architecture-overview.md) | ✅ | ❓ No Metadata | — | — |
+| [Decision Tree](../troubleshooting/decision-tree.md) | ✅ | ❓ No Metadata | — | — |
+| [Evidence Map](../troubleshooting/evidence-map.md) | ✅ | ❓ No Metadata | — | — |
+| [High Cost](../troubleshooting/first-10-minutes/high-cost.md) | ✅ | ❓ No Metadata | — | — |
+| [High Ingestion Cost](../troubleshooting/playbooks/high-ingestion-cost.md) | ✅ | ❓ No Metadata | — | — |
+| [Mental Model](../troubleshooting/mental-model.md) | ✅ | ❓ No Metadata | — | — |
+| [Missing Application Telemetry](../troubleshooting/playbooks/missing-application-telemetry.md) | ✅ | ❓ No Metadata | — | — |
+| [No Data](../troubleshooting/first-10-minutes/no-data.md) | ✅ | ❓ No Metadata | — | — |
+| [No Data In Workspace](../troubleshooting/playbooks/no-data-in-workspace.md) | ✅ | ❓ No Metadata | — | — |
+| [Query Timeout](../troubleshooting/first-10-minutes/query-timeout.md) | ✅ | ❓ No Metadata | — | — |
+| [Quick Diagnosis Cards](../troubleshooting/quick-diagnosis-cards.md) | ✅ | ❓ No Metadata | — | — |
+| [Slow Query Performance](../troubleshooting/playbooks/slow-query-performance.md) | ✅ | ❓ No Metadata | — | — |
+
+## Validation Categories
+
+### Source Types
+
+| Type | Description | Allowed? |
 |---|---|---|
-| `mslearn` | Content directly from Microsoft Learn | `mslearn_url` OR a non-empty `based_on` list |
-| `mslearn-adapted` | Content adapted or synthesized from Microsoft Learn | `mslearn_url` OR a non-empty `based_on` list |
-| `self-generated` | Original content created for this guide | `justification` field |
+| `mslearn` | Content directly from or based on Microsoft Learn | Yes |
+| `mslearn-adapted` | Microsoft Learn content adapted for this guide | Yes, with source URL |
+| `self-generated` | Original content created for this guide | Requires justification |
+| `community` | From community sources | Not for core content |
+| `unknown` | Source not documented | Must be validated |
 
-!!! note "Broader source vocabulary in AGENTS.md"
-    [AGENTS.md](https://github.com/yeongseon/azure-monitoring-practical-guide/blob/main/AGENTS.md) also references `community` and `unknown` source categories as part of the broader content-validation policy. Those values are **not** currently accepted by the validator on any Mermaid page in this repository.
+### Validation Status
 
-## Document-Level `content_validation` Coverage
+| Status | Description |
+|---|---|
+| `verified` | All core claims traced to Microsoft Learn sources |
+| `pending_review` | Document exists but claims need source verification |
+| `unverified` | New document, no validation performed |
 
-Document-level `content_validation` blocks record the verification status of a page's core factual claims, each traced to an already-cited Microsoft Learn URL. This metadata is not machine-validated by a dashboard generator today (there is no generator script in this repository); it is maintained manually and reviewed as part of each pull request.
+## How to Add Validation
 
-| Section | Status | Notes |
-|---|---|---|
-| `docs/platform/` | Rolled out | All eight factual platform pages carry a `content_validation` block. The section landing page (`index.md`) is navigation-only and is intentionally excluded. |
-| `docs/best-practices/` | Rolled out | All seven factual best-practices pages carry a `content_validation` block. The section landing page (`index.md`) is navigation-only and is intentionally excluded. |
-| `docs/operations/` | Rolled out | All seven factual operations pages carry a `content_validation` block. The section landing page (`index.md`) is navigation-only and is intentionally excluded. |
+Before adding metadata, confirm the page is in scope. The block is required ONLY for factual-claim pages under `docs/platform/`, `docs/best-practices/`, `docs/operations/`, `docs/service-guides/`, and `docs/troubleshooting/` (excluding `troubleshooting/kql/`, `troubleshooting/lab-guides/`, and navigation landing pages listed in `scripts/lib/content_scope.NAVIGATION_INDEXES`).
 
-Sections not listed are out of scope for document-level `content_validation` (for example, reference look-ups, tutorials, and KQL packs make no standalone factual platform claims).
-
-## How Diagram Sources Are Declared
-
-### Step 1: Add `content_sources` to the document frontmatter
+For an in-scope page, add a `content_validation` block to its frontmatter:
 
 ```yaml
 ---
 content_sources:
-  diagrams:
-    - id: architecture
-      type: flowchart
-      source: mslearn-adapted
-      based_on:
-        - https://learn.microsoft.com/en-us/azure/azure-monitor/overview
+  references:
+    - type: mslearn-adapted
+      url: https://learn.microsoft.com/en-us/azure/azure-monitor/...
+content_validation:
+  status: verified
+  last_reviewed: 2026-04-12
+  reviewer: ai-agent
+  core_claims:
+    - claim: "Azure Monitor collects platform metrics automatically for most Azure resources at no cost."
+      source: https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/data-platform-metrics
+      verified: true
 ---
 ```
 
-### Step 2: Mark each Mermaid block with its `diagram-id`
+Each `core_claim` MUST be a verifiable factual assertion about Azure Monitor behavior (a documented limit, default, or feature). Meta-statements such as "this page uses Microsoft Learn as the primary source basis" are tautological and rejected — the marker text `primary source basis` triggers a fail-fast in this generator.
 
-```markdown
-<!-- diagram-id: architecture -->
-​```mermaid
-flowchart TD
-    A --> B
-​```
-```
-
-### Step 3: Run the diagram source validator
+Then regenerate this page:
 
 ```bash
-python3 scripts/validate_content_sources.py
+python3 scripts/generate_content_validation_status.py
 ```
-
-This is the same validator that runs in the `Validate Content Sources` CI workflow.
-
-## Tooling Available in This Repository
-
-The following scripts run against the repository today. There is no dashboard-generator script in this repository, so this page is maintained manually rather than being regenerated.
-
-| Script | Purpose | Where it runs |
-|---|---|---|
-| `scripts/validate_content_sources.py` | Enforces that every Mermaid block has a `diagram-id` HTML comment and a matching `content_sources.diagrams[]` entry with a valid `source` value. | **Blocking** PR check (`Validate Content Sources`) |
-| `scripts/validate_mermaid_format.py` | Enforces Mermaid orientation rules and formatting conventions. | **Blocking** PR check (same workflow) |
-| `scripts/validate_mermaid_syntax.py` | Parses each Mermaid block to catch syntax errors before build. | **Blocking** PR check (same workflow) |
-| `scripts/validate_mslearn_urls.py` | Checks that Microsoft Learn URLs cited in `content_sources` are reachable. | **Reporting only:** runs on push to `main` with `continue-on-error`, not a blocking PR gate |
-
-## Validation Rules Enforced Today
-
-!!! danger "Enforced in CI"
-    1. Every Mermaid block must have a `diagram-id` HTML comment.
-    2. Every declared `diagram-id` must have a matching `content_sources.diagrams[]` entry.
-    3. `mslearn-adapted` and `mslearn` diagrams must have either an `mslearn_url` field or a **non-empty** `based_on` list. The validator does **not** currently verify that every `based_on` URL points to `learn.microsoft.com`; that is a repository convention, not an enforced rule.
-    4. `self-generated` diagrams must include a `justification` field.
-    5. Mermaid syntax must parse successfully.
 
 ## See Also
 
-- [Reference Index](index.md)
+- [CLI Cheatsheet](cli-cheatsheet.md)
+- [Platform Limits](platform-limits.md)
 
-## Sources
-
-- https://learn.microsoft.com/en-us/azure/azure-monitor/
-- https://learn.microsoft.com/en-us/azure/

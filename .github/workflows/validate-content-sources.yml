@@ -49,6 +49,10 @@ jobs:
         run: |
           pip install pyyaml
       
+      - name: Run doctests for content_scope
+        run: |
+          python -m doctest scripts/lib/content_scope.py -v
+
       - name: Validate mermaid format
         run: |
           python scripts/validate_mermaid_format.py
