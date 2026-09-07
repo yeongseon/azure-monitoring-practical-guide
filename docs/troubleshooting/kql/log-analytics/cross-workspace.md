@@ -97,4 +97,4 @@ For the full investigation workflow, see [Slow Query Performance](../../playbook
 
 ## Sources
 *   [MS Learn: Cross-workspace queries](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cross-workspace-query)
-*   [MS Learn: union operator](https://learn.microsoft.com/azure/data-explorer/kusto/query/unionoperator)
+*   [MS Learn: union operator](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/unionoperator)

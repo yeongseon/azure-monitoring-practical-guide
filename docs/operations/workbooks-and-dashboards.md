@@ -434,9 +434,9 @@ Useful automation patterns:
 - [Reference KQL quick reference](../reference/kql-quick-reference.md)
 
 ## Sources
-- [Microsoft Learn: Azure Monitor workbooks overview](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-overview)
+- [Microsoft Learn: Azure Monitor workbooks overview](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview)
 - [Microsoft Learn: Visualize data in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/best-practices-visualize)
-- [Microsoft Learn: Create Azure Monitor workbooks](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-create-workbook)
-- [Microsoft Learn: Create and share dashboards in the Azure portal](https://learn.microsoft.com/azure/azure-portal/azure-portal-dashboards)
-- [Microsoft Learn: Create Azure portal dashboards programmatically](https://learn.microsoft.com/azure/azure-portal/azure-portal-dashboards-create-programmatically)
-- [Microsoft Learn: Azure Monitor workbook samples and templates](https://learn.microsoft.com/azure/azure-monitor/visualize/workbooks-samples)
+- [Microsoft Learn: Create Azure Monitor workbooks](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-create-workbook)
+- [Microsoft Learn: Create and share dashboards in the Azure portal](https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards)
+- [Microsoft Learn: Create Azure portal dashboards programmatically](https://learn.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards-create-programmatically)
+- [Microsoft Learn: Azure Monitor workbook samples and templates](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-samples)

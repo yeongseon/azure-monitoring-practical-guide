@@ -72,5 +72,5 @@ The guide is organized into logical sections that follow the monitoring lifecycl
 
 ## Sources
 
-*   [Azure Monitor Documentation](https://learn.microsoft.com/azure/azure-monitor/overview)
-*   [Azure Monitor Data Platform](https://learn.microsoft.com/azure/azure-monitor/data-platform)
+*   [Azure Monitor Documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/overview)
+*   [Azure Monitor Data Platform](https://learn.microsoft.com/en-us/azure/azure-monitor/data-platform)

@@ -51,5 +51,5 @@ graph TB
 
 ## Sources
 
-- [Monitor virtual machines with Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/vm/monitor-virtual-machine)
-- [VM insights overview](https://learn.microsoft.com/azure/azure-monitor/vm/vminsights-overview)
+- [Monitor virtual machines with Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine)
+- [VM insights overview](https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-overview)

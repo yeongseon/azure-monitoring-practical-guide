@@ -53,8 +53,8 @@ graph TB
 
 ## Sources
 
-- [Monitor App Service](https://learn.microsoft.com/azure/app-service/monitor-app-service)
-- [Monitor Container Apps](https://learn.microsoft.com/azure/container-apps/observability)
-- [Monitor Azure Functions](https://learn.microsoft.com/azure/azure-functions/functions-monitoring)
-- [Monitor AKS](https://learn.microsoft.com/azure/aks/monitor-aks)
-- [Monitor virtual machines](https://learn.microsoft.com/azure/azure-monitor/vm/monitor-virtual-machine)
+- [Monitor App Service](https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service)
+- [Monitor Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/observability)
+- [Monitor Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitoring)
+- [Monitor AKS](https://learn.microsoft.com/en-us/azure/aks/monitor-aks)
+- [Monitor virtual machines](https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-virtual-machine)

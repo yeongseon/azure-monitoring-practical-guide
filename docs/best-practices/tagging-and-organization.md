@@ -348,9 +348,9 @@ Tags and organization do not change ingestion charges directly, but they make co
 
 ## Sources
 
-- [Use tags to organize your Azure resources](https://learn.microsoft.com/azure/azure-resource-manager/management/tag-resources)
-- [Define your Azure resource naming convention](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming)
-- [Define your Azure tagging strategy](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/azure-best-practices/resource-tagging)
-- [Tag support for Azure resources](https://learn.microsoft.com/azure/azure-resource-manager/management/tag-support)
-- [Assign Azure Policy definitions for tag governance](https://learn.microsoft.com/azure/governance/policy/assign-policy-portal)
+- [Use tags to organize your Azure resources](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources)
+- [Define your Azure resource naming convention](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming)
+- [Define your Azure tagging strategy](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-tagging)
+- [Tag support for Azure resources](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-support)
+- [Assign Azure Policy definitions for tag governance](https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal)
 - [Azure Monitor Logs best practices](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/best-practices-logs)

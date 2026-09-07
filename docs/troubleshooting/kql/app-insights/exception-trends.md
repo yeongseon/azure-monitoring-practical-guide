@@ -89,4 +89,4 @@ For the full investigation workflow, see [Application Insights Data Gaps](../../
 
 ## Sources
 *   [MS Learn: Application Insights exceptions schema](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appexceptions)
-*   [MS Learn: Diagnostic search in Application Insights](https://learn.microsoft.com/azure/azure-monitor/app/diagnostic-search)
+*   [MS Learn: Diagnostic search in Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/diagnostic-search)

@@ -410,9 +410,9 @@ These practices directly affect billing. Pre-ingestion filtering and sampling re
 
 - [Cost optimization for Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)
 - [Manage usage and costs with Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs)
-- [Data collection rules in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/data-collection/data-collection-rule-overview)
+- [Data collection rules in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview)
 - [Basic Logs in Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/basic-logs-configure)
 - [Manage table plans and retention in a Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-retention-configure)
 - [Set daily cap on a Log Analytics workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/daily-cap)
-- [OpenTelemetry configuration for Application Insights](https://learn.microsoft.com/azure/azure-monitor/app/opentelemetry-configuration)
-- [Azure Well-Architected Framework - Cost Optimization](https://learn.microsoft.com/azure/well-architected/cost-optimization/)
+- [OpenTelemetry configuration for Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/opentelemetry-configuration)
+- [Azure Well-Architected Framework - Cost Optimization](https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/)

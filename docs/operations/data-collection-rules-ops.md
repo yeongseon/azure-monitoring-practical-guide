@@ -433,8 +433,8 @@ Useful automation patterns:
 - [Troubleshooting KQL query packs](../troubleshooting/kql/index.md)
 
 ## Sources
-- [Microsoft Learn: Data collection rules in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/data-collection/data-collection-rule-overview)
-- [Microsoft Learn: Structure of a data collection rule in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/data-collection/data-collection-rule-structure)
-- [Microsoft Learn: Create and edit data collection rules with Azure CLI](https://learn.microsoft.com/azure/azure-monitor/data-collection/data-collection-rule-create-edit)
-- [Microsoft Learn: Azure Monitor Agent overview](https://learn.microsoft.com/azure/azure-monitor/agents/azure-monitor-agent-overview)
-- [Microsoft Learn: Manage data collection rule associations](https://learn.microsoft.com/azure/azure-monitor/data-collection/data-collection-rule-associations)
+- [Microsoft Learn: Data collection rules in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview)
+- [Microsoft Learn: Structure of a data collection rule in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-structure)
+- [Microsoft Learn: Create and edit data collection rules with Azure CLI](https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-create-edit)
+- [Microsoft Learn: Azure Monitor Agent overview](https://learn.microsoft.com/en-us/azure/azure-monitor/agents/azure-monitor-agent-overview)
+- [Microsoft Learn: Manage data collection rule associations](https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-associations)

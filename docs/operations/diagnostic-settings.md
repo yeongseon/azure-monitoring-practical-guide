@@ -378,7 +378,7 @@ Useful automation patterns:
 - [Troubleshooting KQL query packs](../troubleshooting/kql/index.md)
 
 ## Sources
-- [Microsoft Learn: Diagnostic settings in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
+- [Microsoft Learn: Diagnostic settings in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/platform/diagnostic-settings)
 - [Microsoft Learn: Azure CLI diagnostic-settings create command reference](https://learn.microsoft.com/en-us/cli/azure/monitor/diagnostic-settings?view=azure-cli-latest#az-monitor-diagnostic-settings-create)
-- [Microsoft Learn: Supported resource logs categories](https://learn.microsoft.com/azure/azure-monitor/essentials/resource-logs-categories)
-- [Microsoft Learn: Metrics and logs destinations for diagnostic settings](https://learn.microsoft.com/azure/azure-monitor/essentials/diagnostic-settings#destinations)
+- [Microsoft Learn: Supported resource logs categories](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/resource-logs-categories)
+- [Microsoft Learn: Metrics and logs destinations for diagnostic settings](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings#destinations)

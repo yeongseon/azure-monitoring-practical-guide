@@ -52,5 +52,5 @@ graph TB
 
 ## Sources
 
-- [Monitor App Service](https://learn.microsoft.com/azure/app-service/monitor-app-service)
-- [Enable diagnostics logging for apps in Azure App Service](https://learn.microsoft.com/azure/app-service/troubleshoot-diagnostic-logs)
+- [Monitor App Service](https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service)
+- [Enable diagnostics logging for apps in Azure App Service](https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs)

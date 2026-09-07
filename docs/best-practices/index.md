@@ -49,5 +49,5 @@ graph TD
 
 ## Sources
 
-- [Azure Monitor best practices](https://learn.microsoft.com/azure/azure-monitor/best-practices)
-- [Cost optimization in Azure Monitor](https://learn.microsoft.com/azure/azure-monitor/best-practices-cost)
+- [Azure Monitor best practices](https://learn.microsoft.com/en-us/azure/azure-monitor/best-practices)
+- [Cost optimization in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/best-practices-cost)

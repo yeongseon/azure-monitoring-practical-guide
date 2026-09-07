@@ -37,5 +37,5 @@ graph TD
 
 ## Sources
 
-- [Application Insights log-based metrics](https://learn.microsoft.com/azure/azure-monitor/essentials/app-insights-metrics)
-- [Diagnose exceptions in web apps with Application Insights](https://learn.microsoft.com/azure/azure-monitor/app/asp-net-exceptions)
+- [Application Insights log-based metrics](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/app-insights-metrics)
+- [Diagnose exceptions in web apps with Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/asp-net-exceptions)

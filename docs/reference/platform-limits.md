@@ -12,7 +12,7 @@ content_sources:
 
 # Platform Limits
 
-Reference of current service limits and quotas for Azure Monitor components. For the most up-to-date values, always refer to the [official Microsoft Learn limits page](https://learn.microsoft.com/azure/azure-monitor/service-limits).
+Reference of current service limits and quotas for Azure Monitor components. For the most up-to-date values, always refer to the [official Microsoft Learn limits page](https://learn.microsoft.com/en-us/azure/azure-monitor/service-limits).
 
 <!-- diagram-id: platform-limits -->
 ```mermaid
@@ -108,7 +108,7 @@ Some limits can be increased by contacting Azure Support:
 
 ## Sources
 
-- [Azure Monitor service limits](https://learn.microsoft.com/azure/azure-monitor/service-limits)
+- [Azure Monitor service limits](https://learn.microsoft.com/en-us/azure/azure-monitor/service-limits)
 - [Log Analytics workspace limits](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview#workspace-limits)
-- [Application Insights limits](https://learn.microsoft.com/azure/azure-monitor/app/pricing#limits-summary)
+- [Application Insights limits](https://learn.microsoft.com/en-us/azure/azure-monitor/app/pricing#limits-summary)
 

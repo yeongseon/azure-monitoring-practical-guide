@@ -46,5 +46,5 @@ graph TB
 
 ## Sources
 
-- [Monitor Azure Kubernetes Service (AKS)](https://learn.microsoft.com/azure/aks/monitor-aks)
-- [Container insights overview](https://learn.microsoft.com/azure/azure-monitor/containers/container-insights-overview)
+- [Monitor Azure Kubernetes Service (AKS)](https://learn.microsoft.com/en-us/azure/aks/monitor-aks)
+- [Container insights overview](https://learn.microsoft.com/en-us/azure/azure-monitor/containers/container-insights-overview)

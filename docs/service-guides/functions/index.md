@@ -46,5 +46,5 @@ graph TB
 
 ## Sources
 
-- [Monitor Azure Functions](https://learn.microsoft.com/azure/azure-functions/functions-monitoring)
-- [Analyze Azure Functions telemetry in Application Insights](https://learn.microsoft.com/azure/azure-functions/analyze-telemetry-data)
+- [Monitor Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitoring)
+- [Analyze Azure Functions telemetry in Application Insights](https://learn.microsoft.com/en-us/azure/azure-functions/analyze-telemetry-data)

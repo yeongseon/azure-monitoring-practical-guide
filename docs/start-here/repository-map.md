@@ -65,5 +65,5 @@ To get the most out of this repository, follow these navigation principles:
 
 ## Sources
 
-*   [Azure Monitor Documentation](https://learn.microsoft.com/azure/azure-monitor/)
-*   [Azure Architecture Center - Monitoring](https://learn.microsoft.com/azure/architecture/best-practices/monitoring)
+*   [Azure Monitor Documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/)
+*   [Azure Architecture Center - Monitoring](https://learn.microsoft.com/en-us/azure/architecture/best-practices/monitoring)
