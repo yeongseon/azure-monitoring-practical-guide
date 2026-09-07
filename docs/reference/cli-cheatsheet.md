@@ -255,8 +255,8 @@ az monitor action-group list \
 
 ## Sources
 
-- [az monitor reference](https://learn.microsoft.com/cli/azure/monitor)
-- [az monitor log-analytics](https://learn.microsoft.com/cli/azure/monitor/log-analytics)
-- [az monitor diagnostic-settings](https://learn.microsoft.com/cli/azure/monitor/diagnostic-settings)
-- [az monitor metrics alert](https://learn.microsoft.com/cli/azure/monitor/metrics/alert)
-- [az monitor action-group](https://learn.microsoft.com/cli/azure/monitor/action-group)
+- [az monitor reference](https://learn.microsoft.com/en-us/cli/azure/monitor)
+- [az monitor log-analytics](https://learn.microsoft.com/en-us/cli/azure/monitor/log-analytics)
+- [az monitor diagnostic-settings](https://learn.microsoft.com/en-us/cli/azure/monitor/diagnostic-settings)
+- [az monitor metrics alert](https://learn.microsoft.com/en-us/cli/azure/monitor/metrics/alert)
+- [az monitor action-group](https://learn.microsoft.com/en-us/cli/azure/monitor/action-group)

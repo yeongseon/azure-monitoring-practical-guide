@@ -92,4 +92,4 @@ For the full investigation workflow, see [No Data in Workspace](../../playbooks/
 
 ## Sources
 *   [MS Learn: AppServiceHTTPLogs table reference](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/appservicehttplogs)
-*   [MS Learn: Monitor Azure App Service](https://learn.microsoft.com/azure/app-service/troubleshoot-diagnostic-logs)
+*   [MS Learn: Monitor Azure App Service](https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs)

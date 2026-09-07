@@ -41,6 +41,6 @@ graph TD
 
 ## Sources
 
-- [az monitor CLI reference](https://learn.microsoft.com/cli/azure/monitor)
-- [KQL quick reference](https://learn.microsoft.com/azure/data-explorer/kusto/query/kql-quick-reference)
-- [Azure Monitor service limits](https://learn.microsoft.com/azure/azure-monitor/service-limits)
+- [az monitor CLI reference](https://learn.microsoft.com/en-us/cli/azure/monitor)
+- [KQL quick reference](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/kql-quick-reference)
+- [Azure Monitor service limits](https://learn.microsoft.com/en-us/azure/azure-monitor/service-limits)

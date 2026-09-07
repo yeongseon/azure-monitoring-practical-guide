@@ -51,5 +51,5 @@ graph TB
 
 ## Sources
 
-- [Observability in Azure Container Apps](https://learn.microsoft.com/azure/container-apps/observability)
-- [Log streaming in Azure Container Apps](https://learn.microsoft.com/azure/container-apps/log-streaming)
+- [Observability in Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/observability)
+- [Log streaming in Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/log-streaming)

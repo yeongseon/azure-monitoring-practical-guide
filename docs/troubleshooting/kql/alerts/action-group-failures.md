@@ -99,5 +99,5 @@ For the full alert investigation workflow, see [Alert Not Firing](../../playbook
 
 ## Sources
 *   [MS Learn: AzureActivity table reference](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/azureactivity)
-*   [MS Learn: Troubleshooting Azure Monitor alerts](https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-troubleshoot)
-*   [MS Learn: Action groups](https://learn.microsoft.com/azure/azure-monitor/alerts/action-groups)
+*   [MS Learn: Troubleshooting Azure Monitor alerts](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot)
+*   [MS Learn: Action groups](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups)

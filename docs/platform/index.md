@@ -64,5 +64,5 @@ graph TB
 
 ## Sources
 
-- [Azure Monitor overview](https://learn.microsoft.com/azure/azure-monitor/overview)
-- [Azure Monitor data platform](https://learn.microsoft.com/azure/azure-monitor/data-platform)
+- [Azure Monitor overview](https://learn.microsoft.com/en-us/azure/azure-monitor/overview)
+- [Azure Monitor data platform](https://learn.microsoft.com/en-us/azure/azure-monitor/data-platform)

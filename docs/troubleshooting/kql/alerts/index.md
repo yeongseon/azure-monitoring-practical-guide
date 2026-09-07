@@ -35,5 +35,5 @@ graph TD
 
 ## Sources
 
-- [Manage your alert instances](https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-manage-alert-instances)
-- [Troubleshoot Azure Monitor alerts](https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-troubleshoot)
+- [Manage your alert instances](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-manage-alert-instances)
+- [Troubleshoot Azure Monitor alerts](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-troubleshoot)

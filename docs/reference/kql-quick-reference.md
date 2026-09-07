@@ -121,7 +121,7 @@ AzureActivity
 
 ## Sources
 
-- [KQL quick reference](https://learn.microsoft.com/azure/data-explorer/kusto/query/kql-quick-reference)
+- [KQL quick reference](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/kql-quick-reference)
 - [Query best practices](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/query-optimization)
 - [Log Analytics tutorial](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial)
-- [Summarize operator](https://learn.microsoft.com/azure/data-explorer/kusto/query/summarize-operator)
+- [Summarize operator](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/summarize-operator)
