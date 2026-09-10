@@ -106,14 +106,17 @@ nav:
     - start-here/repository-map.md
   - Platform:
     - platform/index.md
-    - platform/how-azure-monitor-works.md
-    - platform/data-platform.md
-    - platform/log-analytics-workspace.md
-    - platform/application-insights.md
-    - platform/metrics-and-dimensions.md
-    - platform/alerts-architecture.md
-    - platform/data-collection-rules.md
-    - platform/networking-and-security.md
+    - Data Platform:
+      - How Azure Monitor Works: platform/how-azure-monitor-works.md
+      - Data Platform: platform/data-platform.md
+      - Metrics and Dimensions: platform/metrics-and-dimensions.md
+    - Core Resources:
+      - Log Analytics Workspace: platform/log-analytics-workspace.md
+      - Application Insights: platform/application-insights.md
+    - Collection and Delivery:
+      - Alerts Architecture: platform/alerts-architecture.md
+      - Data Collection Rules: platform/data-collection-rules.md
+    - Networking and Security: platform/networking-and-security.md
   - Best Practices:
     - best-practices/index.md
     - best-practices/workspace-design.md
@@ -162,11 +165,13 @@ nav:
       - tutorials/lab-guides/lab-05-workbooks-and-dashboards.md
   - Troubleshooting:
     - troubleshooting/index.md
-    - troubleshooting/architecture-overview.md
-    - troubleshooting/mental-model.md
-    - troubleshooting/decision-tree.md
-    - troubleshooting/evidence-map.md
-    - Quick Diagnosis Cards: troubleshooting/quick-diagnosis-cards.md
+    - Orientation:
+      - Architecture Overview: troubleshooting/architecture-overview.md
+      - Mental Model: troubleshooting/mental-model.md
+    - Diagnosis:
+      - Quick Diagnosis Cards: troubleshooting/quick-diagnosis-cards.md
+      - Decision Tree: troubleshooting/decision-tree.md
+      - Evidence Map: troubleshooting/evidence-map.md
     - First 10 Minutes:
       - troubleshooting/first-10-minutes/index.md
       - troubleshooting/first-10-minutes/no-data.md
@@ -212,12 +217,12 @@ nav:
         - troubleshooting/kql/service-specific/functions-diagnostics.md
         - troubleshooting/kql/service-specific/vm-diagnostics.md
   - Reference:
-     - reference/index.md
-     - reference/cli-cheatsheet.md
-     - reference/kql-quick-reference.md
-     - reference/platform-limits.md
-     - reference/diagnostic-tables.md
-     - reference/diagnostic-settings-matrix.md
-     - reference/content-validation-status.md
+    - reference/index.md
+    - reference/cli-cheatsheet.md
+    - reference/kql-quick-reference.md
+    - reference/platform-limits.md
+    - reference/diagnostic-tables.md
+    - reference/diagnostic-settings-matrix.md
+    - reference/content-validation-status.md
   - Contributing:
     - contributing/index.md
