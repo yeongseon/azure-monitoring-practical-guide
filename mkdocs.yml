@@ -106,7 +106,7 @@ nav:
     - start-here/repository-map.md
   - Platform:
     - platform/index.md
-    - Data Platform:
+    - Platform Concepts:
       - How Azure Monitor Works: platform/how-azure-monitor-works.md
       - Data Platform: platform/data-platform.md
       - Metrics and Dimensions: platform/metrics-and-dimensions.md
