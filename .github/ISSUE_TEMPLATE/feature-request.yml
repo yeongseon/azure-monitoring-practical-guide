@@ -1,6 +1,6 @@
 name: Feature or Content Request
 description: Request a new tutorial, playbook, reference page, or repository improvement.
-title: "[Request]: "
+title: "docs: "
 labels: []
 body:
   - type: input
