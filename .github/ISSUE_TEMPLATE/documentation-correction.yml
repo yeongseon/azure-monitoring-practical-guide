@@ -1,6 +1,6 @@
 name: Documentation Correction
 description: Suggest a factual correction, clarity fix, or broken-link repair in the guide.
-title: "[Docs]: "
+title: "docs: "
 labels: []
 body:
   - type: input
